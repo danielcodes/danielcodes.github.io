@@ -4,7 +4,7 @@
  <title>Daniel Chia</title>
  <link href="/atom.xml" rel="self"/>
  <link href="/"/>
- <updated>2015-11-27T14:04:53-05:00</updated>
+ <updated>2015-11-27T16:16:10-05:00</updated>
  <id></id>
  <author>
    <name>Daniel Chia</name>
@@ -18,9 +18,9 @@
    <updated>2015-11-27T00:00:00-05:00</updated>
    <id>/2015/11/27/being-dumb</id>
    <content type="html">&lt;p&gt;Incredibly annoyed that it took me so long to set things up with jekyll here.
-I had wanted to change the index page, I started by making edits to the html and every darn time I restarted the server, the changes would never go through. It was by change that I decided to mess with the &lt;strong&gt;_config.yml&lt;/strong&gt; file and found that some parameters defined here were being passed to the index. This meant that no matter how many times I changed the html itself, it would just get replaced, every single time. I stupidly googled &amp;quot;jekyll not saving changes&amp;quot; too. All I can say is...&lt;/p&gt;
+I began customization through the index page, making edits to the html and every darn time I restarted the server, the changes would never go through. It was by chance that I decided to mess with the &lt;strong&gt;_config.yml&lt;/strong&gt; file and found that some parameters defined here were being passed to the index. This meant that no matter how many times I changed the html itself, it would just get replaced, every single time. I stupidly googled &amp;quot;jekyll not saving changes&amp;quot; too. All I can say is...&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://memesvault.com/wp-content/uploads/Facepalm-Meme-Gif-08.jpg&quot; alt=&quot;Facepalm&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/public/img/facepalm.jpg&quot; alt=&quot;Facepalm&quot;&gt;&lt;/p&gt;
 </content>
  </entry>
  
