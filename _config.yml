@@ -1,0 +1,20 @@
+# Dependencies
+markdown:         redcarpet
+highlighter:      pygments
+
+# Permalinks
+permalink:        pretty
+relative_permalinks: true
+
+# Setup
+title:            Daniel Chia 
+tagline:          'Student'
+description:      "Hi, I'm Daniel. I like to code and play kendama. Will occasionally rant, or mostly"
+baseurl:          /
+
+author:
+  name:           'Daniel Chia'
+  url:            https://github.com/danielcodes
+
+paginate:         5
+
