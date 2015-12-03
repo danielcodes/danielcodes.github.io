@@ -4,13 +4,28 @@
  <title>Daniel Chia</title>
  <link href="/atom.xml" rel="self"/>
  <link href="/"/>
- <updated>2015-11-27T16:16:10-05:00</updated>
+ <updated>2015-12-03T02:07:17-05:00</updated>
  <id></id>
  <author>
    <name>Daniel Chia</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Leadership is hard</title>
+   <link href="/2015/12/03/leadership/"/>
+   <updated>2015-12-03T00:00:00-05:00</updated>
+   <id>/2015/12/03/leadership</id>
+   <content type="html">&lt;p&gt;This semester I had to partake in 2 group projects. Both of which I ended up taking leadership roles in, AKA Project Management. Up until now, other than writing I haven&amp;#39;t really collaborated much on any other type of project. For this 2 projects, one of them involved mostly writing and the second was software collaboration. I can&amp;#39;t say that it has been easy nor I&amp;#39;ve done a great job at it, all I can say is that is tough and much improvement is needed.&lt;/p&gt;
+
+&lt;p&gt;It&amp;#39;s tough because being a leader means that you have to lead by example. What do I mean? If the leader (me) works hard, the rest of the group will follow right? This doesn&amp;#39;t necessarily work all the time as some people tend to take advantage and decide to not contribute at all, knowing that you&amp;#39;ll be there to pick up the slack. But I might&amp;#39;ve missed something here, besides showing yourself as capable. That isn&amp;#39;t enough, you have to delegate tasks. These are the kind of people that won&amp;#39;t do work unless you nudge them too. Yeah, it&amp;#39;s extremely annoying. But to save yourself some grief and avoid overworking yourself, you have to be assertive and demand work from others as it is their responsibility just as much as it is yours.&lt;/p&gt;
+
+&lt;p&gt;Other things that I&amp;#39;ve noticed are that as a leader, you need to provide a sense of direction. This is very important if you have very passive team members whom will solely rely on you to provide them with work to do. If it was up to me, I&amp;#39;d take initiative and start improvising things on my own. Sadly, not everyone shares the same mindset. You&amp;#39;re stunt when somebody asks, &amp;quot;what do I do?&amp;quot;. And even after you feel that you have a grasp on direction, an open mind is necessary because feedback is extremely important as the project develops. Your teammates might notice something amiss, and you have to take that into account and not ignore them, like I&amp;#39;ve done.&lt;/p&gt;
+
+&lt;p&gt;It has been a tough experience, and one that isn&amp;#39;t totally over. As bad as it sounds, I still believe that I&amp;#39;m capable of leadership and it is just something that I need to keep working on. I gotta take in everything calmly and not just rage when everything goes wrong and out of place.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Being dumb, painful Jekyll setup</title>
