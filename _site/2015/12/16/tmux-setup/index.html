@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      On using Tmux &middot; Daniel Chia
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          Daniel Chia
+        </a>
+      </h1>
+      <p class="lead">Hi, I'm Daniel. I like to code and play kendama. Will occasionally rant, or mostly</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about/">About</a>
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/portfolio/">Portfolio</a>
+          
+        
+      
+
+    </nav>
+
+    <p>&copy; 2015. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">On using Tmux</h1>
+  <span class="post-date">16 Dec 2015</span>
+  <p>I&#39;ve been wanting to write this one for a while now. This summer, I got learn two very exciting tools, <strong>Vim</strong> an <strong>Tmux</strong>. These two are a must-have for any terminal junkie and together they&#39;ve taken my workflow to a whole new level. Although tmux has some extended functionality, in this post I am going to focus on how I use it in my everyday workflow. 
+Also, I am going to assume that you&#39;ve installed the tool on your machine and know how to fire it up. If not, there are plenty of those on the internet. Ok, the big question, what do you customize?</p>
+
+<h3>Changing the prefix</h3>
+
+<p>The first thing you ought to do is change the pesky prefix mapping, <strong>CTRL+b</strong>. To do this, first create your <strong>~/.tmux.conf</strong> file, this file allows you to configure tmux settings to your liking. In there, add: </p>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="c">#prefix to ctrl+a</span>
+unbind C-b
+<span class="nb">set</span> -g prefix C-a 
+</code></pre></div>
+<p>However, your pinky finger still has to travel a mile to get to that CTRL key at the bottom left. To fix this, I&#39;d recommend looking into your system and changing the <strong>Caps Lock</strong> key mapping to <strong>CTRL</strong>. I have Ubuntu-Gnome, and it came with a nice little piece of software called Tweak Tool, here I was able to turn my Caps Lock key into CTRL.</p>
+
+<h3>Refreshing the .tmux.conf file</h3>
+
+<p>TODO</p>
+
+<h3>Pane Splitting</h3>
+
+<p>Now that we have much nicer prefix <strong>CTRL+a</strong>, what comes next is pane splitting. The defaults are set to &quot; (vertical) and % (horizontal). These bindings are hard to memorize and not so intuitive, let&#39;s change them. To your <em>.tmux.conf</em> add:</p>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="c">#intuitive pane splitting</span>
+<span class="nb">bind</span> <span class="p">|</span> split-window -h -c <span class="s2">&quot;#{pane_current_path}&quot;</span>
+<span class="nb">bind</span> - split-window -v -c <span class="s2">&quot;#{pane_current_path}&quot;</span>
+unbind <span class="s1">&#39;&quot;&#39;</span>
+unbind %
+</code></pre></div>
+<p>Wow, that&#39;s a lot of code. Ok, let&#39;s break it down. The first line is saying to use the <strong>|</strong> key to do a horizontal split. The <em>-c &quot;#{pane<em>current</em>path}&quot;</em> part makes it so that the split panes remain in the current path where you split from. Image being into directory that&#39;s 10 levels down, and having to cd there again when you create a new pane. You get the picture.</p>
+
+<h3>Moving between panes</h3>
+
+<p>TODO</p>
+
+<h2>what do I want to cover</h2>
+
+<p>-ca mapping
+-splitting with | - and making it split current path
+-refresh
+-using ca ca to move around the panes
+-using ca z to zoom into a tmux pane</p>
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2015/12/15/calm-and-balance/">
+            Calm and health
+            <small>15 Dec 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2015/12/03/leadership/">
+            Leadership is hard
+            <small>03 Dec 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2015/11/27/being-dumb/">
+            Being dumb, painful Jekyll setup
+            <small>27 Nov 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+    </div>
+
+  </body>
+</html>
