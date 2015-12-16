@@ -4,7 +4,7 @@
  <title>Daniel Chia</title>
  <link href="/atom.xml" rel="self"/>
  <link href="/"/>
- <updated>2015-12-16T01:24:25-05:00</updated>
+ <updated>2015-12-16T17:50:09-05:00</updated>
  <id></id>
  <author>
    <name>Daniel Chia</name>
@@ -17,12 +17,11 @@
    <link href="/2015/12/16/tmux-setup/"/>
    <updated>2015-12-16T00:00:00-05:00</updated>
    <id>/2015/12/16/tmux-setup</id>
-   <content type="html">&lt;p&gt;I&amp;#39;ve been wanting to write this one for a while now. This summer, I got learn two very exciting tools, &lt;strong&gt;Vim&lt;/strong&gt; an &lt;strong&gt;Tmux&lt;/strong&gt;. These two are a must-have for any terminal junkie and together they&amp;#39;ve taken my workflow to a whole new level. Although tmux has some extended functionality, in this post I am going to focus on how I use it in my everyday workflow. 
-Also, I am going to assume that you&amp;#39;ve installed the tool on your machine and know how to fire it up. If not, there are plenty of those on the internet. Ok, the big question, what do you customize?&lt;/p&gt;
+   <content type="html">&lt;p&gt;I&amp;#39;ve been wanting to write this one for a while now. This summer, I got learn two very exciting tools, &lt;strong&gt;Vim&lt;/strong&gt; an &lt;strong&gt;Tmux&lt;/strong&gt;. These two are a must-have for any terminal junkie and together they&amp;#39;ve taken my workflow to a whole new level. Although tmux has some extended functionality, in this post I am going to focus on how I personally use it. Also, I am going to assume that you&amp;#39;ve installed the tool on your machine and know how to fire it up. Ok, onto the big question, what do you customize?&lt;/p&gt;
 
 &lt;h3&gt;Changing the prefix&lt;/h3&gt;
 
-&lt;p&gt;The first thing you ought to do is change the pesky prefix mapping, &lt;strong&gt;CTRL+b&lt;/strong&gt;. To do this, first create your &lt;strong&gt;~/.tmux.conf&lt;/strong&gt; file, this file allows you to configure tmux settings to your liking. In there, add: &lt;/p&gt;
+&lt;p&gt;The first thing you ought to do is change the pesky default prefix mapping, &lt;strong&gt;CTRL+b&lt;/strong&gt;. To do this, first create your &lt;strong&gt;~/.tmux.conf&lt;/strong&gt; file, this file allows you to configure tmux settings to your liking. In there, add: &lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;&lt;span class=&quot;c&quot;&gt;#prefix to ctrl+a&lt;/span&gt;
 unbind C-b
 &lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt; -g prefix C-a 
@@ -31,30 +30,55 @@ unbind C-b
 
 &lt;h3&gt;Refreshing the .tmux.conf file&lt;/h3&gt;
 
-&lt;p&gt;TODO&lt;/p&gt;
+&lt;p&gt;Next, you gotta know how to refresh these updates that you&amp;#39;re adding. Usually, it is done by CTRL+a followed by :, then on the prompt you type, &lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;:source-file ~/.tmux.conf&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;but this is cumbersome and hard to remember, instead add:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;&lt;span class=&quot;c&quot;&gt;#reload of the config file&lt;/span&gt;
+unbind r
+&lt;span class=&quot;nb&quot;&gt;bind &lt;/span&gt;r &lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt;-file ~/.tmux.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;this will allow you to refresh with CTRL+a + r.&lt;/p&gt;
+
+&lt;p&gt;You can test this by changing window tab colors on the status bar, add,&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;&lt;span class=&quot;c&quot;&gt;#highlight current window&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt;-window-option -g window-status-current-bg white 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;try out different colors and refresh with CTRL+a + r.&lt;/p&gt;
 
 &lt;h3&gt;Pane Splitting&lt;/h3&gt;
 
-&lt;p&gt;Now that we have much nicer prefix &lt;strong&gt;CTRL+a&lt;/strong&gt;, what comes next is pane splitting. The defaults are set to &amp;quot; (vertical) and % (horizontal). These bindings are hard to memorize and not so intuitive, let&amp;#39;s change them. To your &lt;em&gt;.tmux.conf&lt;/em&gt; add:&lt;/p&gt;
+&lt;p&gt;Now that we have much nicer prefix &lt;strong&gt;CTRL+a&lt;/strong&gt;, what comes next is pane splitting. The defaults are set to &amp;quot; (vertical) and % (horizontal). These bindings are hard to memorize and not so intuitive, let&amp;#39;s change them. In your &lt;em&gt;.tmux.conf&lt;/em&gt; add:&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;&lt;span class=&quot;c&quot;&gt;#intuitive pane splitting&lt;/span&gt;
 &lt;span class=&quot;nb&quot;&gt;bind&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; split-window -h -c &lt;span class=&quot;s2&quot;&gt;&amp;quot;#{pane_current_path}&amp;quot;&lt;/span&gt;
 &lt;span class=&quot;nb&quot;&gt;bind&lt;/span&gt; - split-window -v -c &lt;span class=&quot;s2&quot;&gt;&amp;quot;#{pane_current_path}&amp;quot;&lt;/span&gt;
 unbind &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;quot;&amp;#39;&lt;/span&gt;
 unbind %
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Wow, that&amp;#39;s a lot of code. Ok, let&amp;#39;s break it down. The first line is saying to use the &lt;strong&gt;|&lt;/strong&gt; key to do a horizontal split. The &lt;em&gt;-c &amp;quot;#{pane&lt;em&gt;current&lt;/em&gt;path}&amp;quot;&lt;/em&gt; part makes it so that the split panes remain in the current path where you split from. Image being into directory that&amp;#39;s 10 levels down, and having to cd there again when you create a new pane. You get the picture.&lt;/p&gt;
+&lt;p&gt;The first line is saying to use the &lt;strong&gt;|&lt;/strong&gt; key to do a horizontal split. The &lt;code&gt;-c &amp;quot;#{pane_current_path}&amp;quot;&lt;/code&gt; part makes it so that the split pane remains in the current path where you split from. Imagine being into directory that&amp;#39;s 10 levels down, and having to cd there again when you create a new pane. You get the picture.&lt;/p&gt;
 
 &lt;h3&gt;Moving between panes&lt;/h3&gt;
 
-&lt;p&gt;TODO&lt;/p&gt;
+&lt;p&gt;By now, you can split panes, but how do you move aronud? One way to go about it, is to hit the prefix key followed by an arrow key movement. This is sloppy though, as you have to move your hand down to the arrow keys. A better way is the following, add:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;&lt;span class=&quot;c&quot;&gt;#quick pane cycling, prefix + Ctrl-a &lt;/span&gt;
+unbind ^A
+&lt;span class=&quot;nb&quot;&gt;bind&lt;/span&gt; ^A &lt;span class=&quot;k&quot;&gt;select&lt;/span&gt;-pane -t :.+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;with this, you can move from pane to pane by hitting your prefix twice.
+If you mapped your control key to CAPS LOCK, you can hit the prefix once, keep your pinky on CAPS and press &lt;em&gt;a&lt;/em&gt; again. Ah, so, so, efficient.&lt;/p&gt;
 
-&lt;h2&gt;what do I want to cover&lt;/h2&gt;
+&lt;p&gt;PS. I found this tip &lt;a href=&quot;https://robots.thoughtbot.com/a-tmux-crash-course&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;-ca mapping
--splitting with | - and making it split current path
--refresh
--using ca ca to move around the panes
--using ca z to zoom into a tmux pane&lt;/p&gt;
+&lt;p&gt;If by any chance, a pane crashes on you, you can close it with &lt;strong&gt;prefix&lt;/strong&gt; + x.&lt;/p&gt;
+
+&lt;h3&gt;Zooming in&lt;/h3&gt;
+
+&lt;p&gt;One final feature that I want to talk about is zoom. Having multiple panes is great and all but truth is most of the time your focus is only one, the pane in which you&amp;#39;re writing code. Tmux has a neat little feature that helps with this problem, do &lt;strong&gt;CTRL+a + z&lt;/strong&gt;. This command, full screens the current pane, to exit, just use the same command.&lt;/p&gt;
+
+&lt;p&gt;TL;DL My .tmux.conf is &lt;a href=&quot;https://gist.github.com/danielcodes/ea6ee30d2ff032421b2e&quot;&gt;here&lt;/a&gt;. Leave me a comment if I can improve on anything.&lt;/p&gt;
+
+&lt;p&gt;Hope you found these helpful, and happy tmuxing !&lt;/p&gt;
 </content>
  </entry>
  

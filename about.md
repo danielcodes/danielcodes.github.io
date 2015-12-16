@@ -10,3 +10,5 @@ Hi, I'm Daniel Chia. I am currently a Computer Engineering student at City Colle
 Besides coding, I like to read, play kendama, sports (basketball & tennis), and last but not least, eat all kinds of food.
 
 Thanks for visiting!
+
+Contact - danielarmandochia@gmail.com
