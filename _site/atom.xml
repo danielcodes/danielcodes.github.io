@@ -4,13 +4,30 @@
  <title>Daniel Chia</title>
  <link href="/atom.xml" rel="self"/>
  <link href="/"/>
- <updated>2015-12-16T17:50:09-05:00</updated>
+ <updated>2015-12-25T11:28:59-05:00</updated>
  <id></id>
  <author>
    <name>Daniel Chia</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>An unhealthy amount of screen time</title>
+   <link href="/2015/12/25/screen-time/"/>
+   <updated>2015-12-25T00:00:00-05:00</updated>
+   <id>/2015/12/25/screen-time</id>
+   <content type="html">&lt;p&gt;It&amp;#39;s Christmas morning, so Merry Christmas!&lt;/p&gt;
+
+&lt;p&gt;Today I want to share my insight on eye strain. I fully knew this, that before committing myself to become a software developer, that I&amp;#39;d have to spend endless time in front of computer. Although I&amp;#39;ve been trying methods here and there to manage this unhealthy, almost unavoidable habit, I always seem to break right back in. The bad habit is to sit in front of a computer for a solid 2-3 hours. This adds up if it&amp;#39;s happening on a daily basis (which it is).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/img/eye_strain.jpg&quot; alt=&quot;Patrick&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;I&amp;#39;ve always had the thought of eye health in the back of my mind, but it wasn&amp;#39;t until recently that it hit me, with a vengeance. Of course, it happened during finals week. For the past week, I&amp;#39;ve spent an insane amonut of time in front of the screen. I was mildly aware until I took a look in the mirror and saw how bad my eyes looked, they were bloodshot. I looked like Patrick. To make things worse, I started rubbing them and this is a no-no since it&amp;#39;ll make it itch more and thus continue the vicious cycle. Since the semester is over, and I didn&amp;#39;t feel like kicking back and rather learn all of the things that I&amp;#39;ve been wanting to learn. This led to more computer time, so the eye strain symptoms have started again.&lt;/p&gt;
+
+&lt;p&gt;This is a serious problem, if my eyes are bad how am I supposed write code? From now on, I&amp;#39;ll be prioritizing my eye health. My plan is to have 1 hour bursts of productivity and then taking 10-15 minute breaks.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>On using Tmux</title>
