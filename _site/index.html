@@ -68,6 +68,10 @@
           
         
       
+        
+          
+        
+      
 
     </nav>
 
@@ -81,6 +85,20 @@
   
   <div class="post">
     <h1 class="post-title">
+      <a href="/2015/12/29/js-bootcamp/">
+        Javascript Bootcamp
+      </a>
+    </h1>
+
+    <span class="post-date">29 Dec 2015</span>
+
+		Right after my finals ended I thought about how to maximize my productivity during this upcoming winter break. I started reading articles on Medium, about the latest programming craze. Of course, it turned out to be Javascript. Although I&#39;ve dabbed into the language, can&#39;t say that I have full understanding of it. This left a bad taste whenever I&#39;d have to write Javascript. I read The Good Parts by Douglas Crockford, some bits resonated while...
+	  <a href="/2015/12/29/js-bootcamp/" class="post-read-more">[Read&nbsp;More]</a>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
       <a href="/2015/12/25/screen-time/">
         An unhealthy amount of screen time
       </a>
@@ -88,15 +106,8 @@
 
     <span class="post-date">25 Dec 2015</span>
 
-    <p>It&#39;s Christmas morning, so Merry Christmas!</p>
-
-<p>Today I want to share my insight on eye strain. I fully knew this, that before committing myself to become a software developer, that I&#39;d have to spend endless time in front of computer. Although I&#39;ve been trying methods here and there to manage this unhealthy, almost unavoidable habit, I always seem to break right back in. The bad habit is to sit in front of a computer for a solid 2-3 hours. This adds up if it&#39;s happening on a daily basis (which it is).</p>
-
-<p><img src="/public/img/eye_strain.jpg" alt="Patrick"></p>
-
-<p>I&#39;ve always had the thought of eye health in the back of my mind, but it wasn&#39;t until recently that it hit me, with a vengeance. Of course, it happened during finals week. For the past week, I&#39;ve spent an insane amonut of time in front of the screen. I was mildly aware until I took a look in the mirror and saw how bad my eyes looked, they were bloodshot. I looked like Patrick. To make things worse, I started rubbing them and this is a no-no since it&#39;ll make it itch more and thus continue the vicious cycle. Since the semester is over, and I didn&#39;t feel like kicking back and rather learn all of the things that I&#39;ve been wanting to learn. This led to more computer time, so the eye strain symptoms have started again.</p>
-
-<p>This is a serious problem, if my eyes are bad how am I supposed write code? From now on, I&#39;ll be prioritizing my eye health. My plan is to have 1 hour bursts of productivity and then taking 10-15 minute breaks.</p>
+		It&#39;s Christmas morning, so Merry Christmas! Today I want to share my insight on eye strain. I fully knew this, that before committing myself to become a software developer, that I&#39;d have to spend endless time in front of computer. Although I&#39;ve been trying methods here and there to manage this unhealthy, almost unavoidable habit, I always seem to break right back in. The bad habit is to sit in front of a computer for...
+	  <a href="/2015/12/25/screen-time/" class="post-read-more">[Read&nbsp;More]</a>
 
   </div>
   
@@ -109,68 +120,8 @@
 
     <span class="post-date">16 Dec 2015</span>
 
-    <p>I&#39;ve been wanting to write this one for a while now. This summer, I got learn two very exciting tools, <strong>Vim</strong> an <strong>Tmux</strong>. These two are a must-have for any terminal junkie and together they&#39;ve taken my workflow to a whole new level. Although tmux has some extended functionality, in this post I am going to focus on how I personally use it. Also, I am going to assume that you&#39;ve installed the tool on your machine and know how to fire it up. Ok, onto the big question, what do you customize?</p>
-
-<h3>Changing the prefix</h3>
-
-<p>The first thing you ought to do is change the pesky default prefix mapping, <strong>CTRL+b</strong>. To do this, first create your <strong>~/.tmux.conf</strong> file, this file allows you to configure tmux settings to your liking. In there, add: </p>
-<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="c">#prefix to ctrl+a</span>
-unbind C-b
-<span class="nb">set</span> -g prefix C-a 
-</code></pre></div>
-<p>However, your pinky finger still has to travel a mile to get to that CTRL key at the bottom left. To fix this, I&#39;d recommend looking into your system and changing the <strong>Caps Lock</strong> key mapping to <strong>CTRL</strong>. I have Ubuntu-Gnome, and it came with a nice little piece of software called Tweak Tool, here I was able to turn my Caps Lock key into CTRL.</p>
-
-<h3>Refreshing the .tmux.conf file</h3>
-
-<p>Next, you gotta know how to refresh these updates that you&#39;re adding. Usually, it is done by CTRL+a followed by :, then on the prompt you type, </p>
-
-<p><code>:source-file ~/.tmux.conf</code></p>
-
-<p>but this is cumbersome and hard to remember, instead add:</p>
-<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="c">#reload of the config file</span>
-unbind r
-<span class="nb">bind </span>r <span class="nb">source</span>-file ~/.tmux.conf
-</code></pre></div>
-<p>this will allow you to refresh with CTRL+a + r.</p>
-
-<p>You can test this by changing window tab colors on the status bar, add,</p>
-<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="c">#highlight current window</span>
-<span class="nb">set</span>-window-option -g window-status-current-bg white 
-</code></pre></div>
-<p>try out different colors and refresh with CTRL+a + r.</p>
-
-<h3>Pane Splitting</h3>
-
-<p>Now that we have much nicer prefix <strong>CTRL+a</strong>, what comes next is pane splitting. The defaults are set to &quot; (vertical) and % (horizontal). These bindings are hard to memorize and not so intuitive, let&#39;s change them. In your <em>.tmux.conf</em> add:</p>
-<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="c">#intuitive pane splitting</span>
-<span class="nb">bind</span> <span class="p">|</span> split-window -h -c <span class="s2">&quot;#{pane_current_path}&quot;</span>
-<span class="nb">bind</span> - split-window -v -c <span class="s2">&quot;#{pane_current_path}&quot;</span>
-unbind <span class="s1">&#39;&quot;&#39;</span>
-unbind %
-</code></pre></div>
-<p>The first line is saying to use the <strong>|</strong> key to do a horizontal split. The <code>-c &quot;#{pane_current_path}&quot;</code> part makes it so that the split pane remains in the current path where you split from. Imagine being into directory that&#39;s 10 levels down, and having to cd there again when you create a new pane. You get the picture.</p>
-
-<h3>Moving between panes</h3>
-
-<p>By now, you can split panes, but how do you move aronud? One way to go about it, is to hit the prefix key followed by an arrow key movement. This is sloppy though, as you have to move your hand down to the arrow keys. A better way is the following, add:</p>
-<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="c">#quick pane cycling, prefix + Ctrl-a </span>
-unbind ^A
-<span class="nb">bind</span> ^A <span class="k">select</span>-pane -t :.+
-</code></pre></div>
-<p>with this, you can move from pane to pane by hitting your prefix twice.
-If you mapped your control key to CAPS LOCK, you can hit the prefix once, keep your pinky on CAPS and press <em>a</em> again. Ah, so, so, efficient.</p>
-
-<p>PS. I found this tip <a href="https://robots.thoughtbot.com/a-tmux-crash-course">here</a></p>
-
-<p>If by any chance, a pane crashes on you, you can close it with <strong>prefix</strong> + x.</p>
-
-<h3>Zooming in</h3>
-
-<p>One final feature that I want to talk about is zoom. Having multiple panes is great and all but truth is most of the time your focus is only one, the pane in which you&#39;re writing code. Tmux has a neat little feature that helps with this problem, do <strong>CTRL+a + z</strong>. This command, full screens the current pane, to exit, just use the same command.</p>
-
-<p>TL;DL My .tmux.conf is <a href="https://gist.github.com/danielcodes/ea6ee30d2ff032421b2e">here</a>. Leave me a comment if I can improve on anything.</p>
-
-<p>Hope you found these helpful, and happy tmuxing !</p>
+		I&#39;ve been wanting to write this one for a while now. This summer, I got learn two very exciting tools, Vim an Tmux. These two are a must-have for any terminal junkie and together they&#39;ve taken my workflow to a whole new level. Although tmux has some extended functionality, in this post I am going to focus on how I personally use it. Also, I am going to assume that you&#39;ve installed the tool on...
+	  <a href="/2015/12/16/tmux-setup/" class="post-read-more">[Read&nbsp;More]</a>
 
   </div>
   
@@ -183,13 +134,8 @@ If you mapped your control key to CAPS LOCK, you can hit the prefix once, keep y
 
     <span class="post-date">15 Dec 2015</span>
 
-    <p>It&#39;s been one heck of a semester. From thinking, &#39;oh it&#39;s going to be fun learning this and that&#39; to &#39;shit, I have to get this and that done&#39;, see the difference, not much fun. While I underestimated the semester&#39;s course load, I&#39;d say that I&#39;ve improved in other aspects. Those being controlling my temper when things go wrong and maintaining a healthy lifestyle. </p>
-
-<p>I&#39;d like to address the first, my temper. Ever since I can remember i&#39;ve always been a hot-head. I would always act in the spur of the moment, and deal with consequences after. This, of course, always got me into lots of trouble. Now, how does this relate to the present? Well, previously I ranted about being in a leadership position and having a hard time getting others to do their part. Although it&#39;s been a frustrating experience, I have learned that nothing good comes out of agitating myself further and that I have to deal with things in a calm manner and try not to break walls.</p>
-
-<p><img src="/public/img/desk_flip.jpg" alt="Fliptable"></p>
-
-<p>While learning to maintain calm in situations of high stress, I have also learned the importance of my health. It hasn&#39;t been the best year for me in terms of health. I got a severe injury that has prevented me from going into the gym to lift weights and will remain that way for the next couple of months. As much as this sucks, I can&#39;t do anything. Maintaining good health is crucial to suceed in others aspects of life. Just as easily as it has taken me out of the weight room, it can do so as well for everyday tasks that I take for granted. Health comes above all else. </p>
+		It&#39;s been one heck of a semester. From thinking, &#39;oh it&#39;s going to be fun learning this and that&#39; to &#39;shit, I have to get this and that done&#39;, see the difference, not much fun. While I underestimated the semester&#39;s course load, I&#39;d say that I&#39;ve improved in other aspects. Those being controlling my temper when things go wrong and maintaining a healthy lifestyle.  I&#39;d like to address the first, my temper. Ever since...
+	  <a href="/2015/12/15/calm-and-balance/" class="post-read-more">[Read&nbsp;More]</a>
 
   </div>
   
@@ -202,29 +148,8 @@ If you mapped your control key to CAPS LOCK, you can hit the prefix once, keep y
 
     <span class="post-date">03 Dec 2015</span>
 
-    <p>This semester I had to partake in 2 group projects. Both of which I ended up taking leadership roles in, AKA Project Management. Up until now, other than writing I haven&#39;t really collaborated much on any other type of project. For this 2 projects, one of them involved mostly writing and the second was software collaboration. I can&#39;t say that it has been easy nor I&#39;ve done a great job at it, all I can say is that is tough and much improvement is needed.</p>
-
-<p>It&#39;s tough because being a leader means that you have to lead by example. What do I mean? If the leader (me) works hard, the rest of the group will follow right? This doesn&#39;t necessarily work all the time as some people tend to take advantage and decide to not contribute at all, knowing that you&#39;ll be there to pick up the slack. But I might&#39;ve missed something here, besides showing yourself as capable. That isn&#39;t enough, you have to delegate tasks. These are the kind of people that won&#39;t do work unless you nudge them too. Yeah, it&#39;s extremely annoying. But to save yourself some grief and avoid overworking yourself, you have to be assertive and demand work from others as it is their responsibility just as much as it is yours.</p>
-
-<p>Other things that I&#39;ve noticed are that as a leader, you need to provide a sense of direction. This is very important if you have very passive team members whom will solely rely on you to provide them with work to do. If it was up to me, I&#39;d take initiative and start improvising things on my own. Sadly, not everyone shares the same mindset. You&#39;re stunt when somebody asks, &quot;what do I do?&quot;. And even after you feel that you have a grasp on direction, an open mind is necessary because feedback is extremely important as the project develops. Your teammates might notice something amiss, and you have to take that into account and not ignore them, like I&#39;ve done.</p>
-
-<p>It has been a tough experience, and one that isn&#39;t totally over. As bad as it sounds, I still believe that I&#39;m capable of leadership and it is just something that I need to keep working on. I gotta take in everything calmly and not just rage when everything goes wrong and out of place.</p>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/2015/11/27/being-dumb/">
-        Being dumb, painful Jekyll setup
-      </a>
-    </h1>
-
-    <span class="post-date">27 Nov 2015</span>
-
-    <p>Incredibly annoyed that it took me so long to set things up with jekyll here.
-I began customization through the index page, making edits to the html and every darn time I restarted the server, the changes would never go through. It was by chance that I decided to mess with the <strong>_config.yml</strong> file and found that some parameters defined here were being passed to the index. This meant that no matter how many times I changed the html itself, it would just get replaced, every single time. I stupidly googled &quot;jekyll not saving changes&quot; too. All I can say is...</p>
-
-<p><img src="/public/img/facepalm.jpg" alt="Facepalm"></p>
+		This semester I had to partake in 2 group projects. Both of which I ended up taking leadership roles in, AKA Project Management. Up until now, other than writing I haven&#39;t really collaborated much on any other type of project. For this 2 projects, one of them involved mostly writing and the second was software collaboration. I can&#39;t say that it has been easy nor I&#39;ve done a great job at it, all I can...
+	  <a href="/2015/12/03/leadership/" class="post-read-more">[Read&nbsp;More]</a>
 
   </div>
   
@@ -232,12 +157,13 @@ I began customization through the index page, making edits to the html and every
 
 <div class="pagination">
   
-    <span class="pagination-item older">Older</span>
+    <a class="pagination-item older" href="/page2">Older</a>
   
   
     <span class="pagination-item newer">Newer</span>
   
 </div>
+
     </div>
 
   </body>

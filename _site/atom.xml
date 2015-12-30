@@ -4,13 +4,26 @@
  <title>Daniel Chia</title>
  <link href="/atom.xml" rel="self"/>
  <link href="/"/>
- <updated>2015-12-25T11:28:59-05:00</updated>
+ <updated>2015-12-29T21:54:18-05:00</updated>
  <id></id>
  <author>
    <name>Daniel Chia</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Javascript Bootcamp</title>
+   <link href="/2015/12/29/js-bootcamp/"/>
+   <updated>2015-12-29T00:00:00-05:00</updated>
+   <id>/2015/12/29/js-bootcamp</id>
+   <content type="html">&lt;p&gt;Right after my finals ended I thought about how to maximize my productivity during this upcoming winter break. I started reading articles on Medium, about the latest programming craze. Of course, it turned out to be Javascript. Although I&amp;#39;ve dabbed into the language, can&amp;#39;t say that I have full understanding of it. This left a bad taste whenever I&amp;#39;d have to write Javascript. I read The Good Parts by Douglas Crockford, some bits resonated while others just seemed too dense. What really got the ball rolling was this &lt;a href=&quot;https://medium.com/@_cmdv_/i-want-to-learn-javascript-in-2015-e96cd85ad225#.hcraa63br&quot;&gt;post&lt;/a&gt;. Next I started the You-Dont-Know-JS series. And after having finished the first two installments, I have to say that the style of teaching is very enjoyable and I am slowly uncovering Javascript. Anything that we can&amp;#39;t comprehend creates frustration, but if you have an understanding of things, there isn&amp;#39;t such problem.&lt;/p&gt;
+
+&lt;p&gt;Then, by some crazy/lucky occurrence, I was on the Javascript subreddit and found that these books were offered in video form. However, they were offered from sites such as Frontend Masters and Pluralsight, both of which required a paid subscription. Luckily, one of the comments pointed to the &lt;a href=&quot;https://www.visualstudio.com/en-us/products/visual-studio-dev-essentials-vs.aspx&quot;&gt;Visual Studio Dev Essentials&lt;/a&gt; site, which gave a free 6-month subscription to Pluralsight. Of course, I signed up right away.&lt;/p&gt;
+
+&lt;p&gt;Pluralsight not only has the YDKJS&amp;#39;s author videos but also a plethora of anything software related. I felt like I hit the jackpot. This is the perfect opportunity for me since I&amp;#39;ve been wanting to learn all things Javascript, and the tutorials seem legit enough. Now it&amp;#39;s only a matter of creating a sane schedule where I can slowly chip at the content everyday.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>An unhealthy amount of screen time</title>
