@@ -1,6 +1,7 @@
 ---
 layout: post
 title: An unhealthy amount of screen time 
+comments: true
 ---
 
 It's Christmas morning, so Merry Christmas!

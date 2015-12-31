@@ -1,6 +1,7 @@
 ---
 layout: post
 title: On using Tmux 
+comments: true
 ---
 
 I've been wanting to write this one for a while now. This summer, I got learn two very exciting tools, **Vim** an **Tmux**. These two are a must-have for any terminal junkie and together they've taken my workflow to a whole new level. Although tmux has some extended functionality, in this post I am going to focus on how I personally use it. Also, I am going to assume that you've installed the tool on your machine and know how to fire it up. Ok, onto the big question, what do you customize?

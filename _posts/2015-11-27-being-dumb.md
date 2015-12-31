@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Being dumb, painful Jekyll setup 
+comments: true
 ---
 
 Incredibly annoyed that it took me so long to set things up with jekyll here.

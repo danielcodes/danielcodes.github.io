@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Leadership is hard 
+comments: true
 ---
 
 This semester I had to partake in 2 group projects. Both of which I ended up taking leadership roles in, AKA Project Management. Up until now, other than writing I haven't really collaborated much on any other type of project. For this 2 projects, one of them involved mostly writing and the second was software collaboration. I can't say that it has been easy nor I've done a great job at it, all I can say is that is tough and much improvement is needed.

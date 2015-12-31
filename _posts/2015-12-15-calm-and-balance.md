@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Calm and health 
+comments: true
 ---
 
 It's been one heck of a semester. From thinking, 'oh it's going to be fun learning this and that' to 'shit, I have to get this and that done', see the difference, not much fun. While I underestimated the semester's course load, I'd say that I've improved in other aspects. Those being controlling my temper when things go wrong and maintaining a healthy lifestyle. 
