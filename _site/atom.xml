@@ -4,13 +4,38 @@
  <title>Daniel Chia</title>
  <link href="/atom.xml" rel="self"/>
  <link href="/"/>
- <updated>2015-12-30T20:06:51-05:00</updated>
+ <updated>2016-01-02T08:13:53-05:00</updated>
  <id></id>
  <author>
    <name>Daniel Chia</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Thinkpad saves the day</title>
+   <link href="/2016/01/02/my-setup/"/>
+   <updated>2016-01-02T00:00:00-05:00</updated>
+   <id>/2016/01/02/my-setup</id>
+   <content type="html">&lt;p&gt;The first laptop I bought, a &lt;a href=&quot;http://www.cnet.com/products/lenovo-y40-70-laptop-59423030-black-doorbuster-4th-generation-intel-core-i7-4510u-2-00ghz-1600-mhz-4mb/specs/&quot;&gt;Lenovo Y40&lt;/a&gt;, turned out to be horrible disappointment. From a keyboard that I didn&amp;#39;t like, a screen resolution that sucked and to top things off the battery died on me after 5 months of usage. It didn&amp;#39;t completely die on me, but the darn machine would not work unless it was plugged in. Rendering my laptop&amp;#39;s portability useless, as everytime I&amp;#39;d need ot use it, boot up was necessary. I sent in the laptop since it was still under warranty but I was still in need of a laptop for my coding needs as school was already in session.&lt;/p&gt;
+
+&lt;p&gt;I first resorted to borrowing a friend&amp;#39;s tiny notebook. It was a really tiny machine with Ubuntu on it, ultimately the laptop&amp;#39;s keyboard was too small and the fan noise was irritable enough to keep me from using it. But I&amp;#39;d found something cool, that Linux could run on machines with minimal specs! &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/img/laptop/screen.jpg&quot; alt=&quot;Screen&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;I started looking around for cheap computer options, and eventually after much fishing, chose to buy a used ThinkPad T420. You can find these &lt;a href=&quot;http://www.ebay.com/sch/i.html?_from=R40&amp;amp;_trksid=p2050601.m570.l1311.R1.TR12.TRC2.A0.H0.Xthinkpad+t.TRS0&amp;amp;_nkw=thinkpad+t420&amp;amp;_sacat=0&quot;&gt;under 200 on ebay&lt;/a&gt;. I coughed up a tiny bit more to get one that wasn&amp;#39;t too beat up. The specs were decent, i5, 250GB storage and 4GB RAM, more than enough for any Linux OS. After receiving the computer, I instantly liked it a lot more than the being-repaired Y40. The screen was still mediocre but the keyboard made a world&amp;#39;s difference. One thing that I can&amp;#39;t stand is having a shortened right SHIFT key. Exactly what the Y40 had, and to add onto the bad design, the keys had the depth of about a nanometer. This ThinkPad had the old school IBM keyboards, it felt clicky, and the right SHIFT was not shortened. The only downside is that, it is literally a brick to carry around.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/img/laptop/keyboard.jpg&quot; alt=&quot;Keyboard&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Soon after, a friend helped me install Linux on it, specifically &lt;a href=&quot;https://ubuntugnome.org/&quot;&gt;Ubuntu-GNOME&lt;/a&gt;. It felt good to finally work in this OS after many failed attempts to get it on VirtualBox. Not that I failed, the VM&amp;#39;s ran so slow (2 - 3 second delays), that it was pretty unbearable so I gave up on it. Then I found about Vagrant + Cygwin, which initially cost me a lot of grief (it lost my VM at some point). But I did have Linux-y tools for a brief period of time (troubled times with symlinks and shared folders).&lt;/p&gt;
+
+&lt;p&gt;I really can&amp;#39;t emphasize how good it is once you make the switch to a Linux OS. I&amp;#39;m being biased here, as I&amp;#39;ve always wanted this environment where I can just do all my work in a terminal. But if you&amp;#39;re a developer or an aspiring programmer, definitely try it out this set up if you have 200 bucks to spare.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt; Don&amp;#39;t be fooled by a laptop&amp;#39;s specs. If you just want to program, buy a cheap Thinkpad and throw Linux on it. Or get a Mac if you can afford it.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/img/laptop/cover.jpg&quot; alt=&quot;Cover&quot;&gt;&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Javascript Bootcamp</title>

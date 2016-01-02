@@ -9,7 +9,7 @@ relative_permalinks: true
 # Setup
 title:            Daniel Chia 
 tagline:          'Human'
-description:      "Hi, I'm Daniel. I like to code and play kendama. Will occasionally rant, or mostly"
+description:      "Hi, I'm Daniel. Here's where I rant."
 baseurl:          /
 
 author:
