@@ -4,13 +4,34 @@
  <title>Daniel Chia</title>
  <link href="/atom.xml" rel="self"/>
  <link href="/"/>
- <updated>2016-01-02T08:13:53-05:00</updated>
+ <updated>2016-01-12T02:29:28-05:00</updated>
  <id></id>
  <author>
    <name>Daniel Chia</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Resuming TDD with Python</title>
+   <link href="/2016/01/12/resuming-python/"/>
+   <updated>2016-01-12T00:00:00-05:00</updated>
+   <id>/2016/01/12/resuming-python</id>
+   <content type="html">&lt;p&gt;I am taking a small detour from learning Javascript. Reason being that there is still some unfinished Python business. I got the wake up call from watching this &lt;a href=&quot;https://youtu.be/z_ESakf05PQ&quot;&gt;small clip&lt;/a&gt;. The point is you can&amp;#39;t start something and not finish it. You want to...&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Always be closing&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This fall semester I was tasked with learning and developing an application with Django, and do it in a Test-Driven manner if possible. This was hard, especially since my first tutorial on Django was &lt;a href=&quot;http://www.tangowithdjango.com/&quot;&gt;Tango with Django&lt;/a&gt;. As good as this tutorial was at teaching me the workflow for developing my first Django application, I still didn&amp;#39;t know a thing about testing (it was only touched on very briefly in one of the later chapters). Like any other curious programmer, I consulted the web. After a few searches, I found &lt;a href=&quot;http://chimera.labs.oreilly.com/books/1234000000754/index.html&quot;&gt;Test-Driven Development with Python&lt;/a&gt;. This was the perfect solution for my woes, I had found &lt;strong&gt;THE MANUAL&lt;/strong&gt; on how to get started with building an application on a test-first basis. I quickly went through the first 6 chapters, doing one chapter a day. With this I was able to dip my toes into TDD and use the code as reference for my &lt;a href=&quot;https://bitbucket.org/danielcodes/pipeline_monitor&quot;&gt;class project&lt;/a&gt;. However, I would be stuck on this chapter for a month or so since school things would take priority.&lt;/p&gt;
+
+&lt;p&gt;Fast foward a bit (school ended), I was still stuck on Chapter 8 of the tutorial. This chapter covered deployment, the requirements included a server and a domain name. I got mine from the &lt;a href=&quot;https://education.github.com/pack&quot;&gt;GitHub Student Package&lt;/a&gt;, both were being used to serve my class project and it needed to stay up for the professor to check that it was &amp;quot;live&amp;quot;. I waited until I received my grade and finally unhooked the domain name and destroyed the droplet. It was time to continue this TDD with Python tutorial. You can check my progress &lt;a href=&quot;https://github.com/danielcodes/superlists&quot;&gt;here&lt;/a&gt;. Currently &lt;a href=&quot;http://danielchia.me/&quot;&gt;live&lt;/a&gt;! :) &lt;/p&gt;
+
+&lt;p&gt;It just leaves a bad taste to leave things hanging, so it feels good to finally get this tutorial rolling again. I&amp;#39;m learning a ton. While I&amp;#39;m at it, I also solidifying my Python knowledge through this &lt;a href=&quot;https://www.pluralsight.com/courses/python-fundamentals&quot;&gt;Pluralsight course&lt;/a&gt;. The learning never stops.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt; Wrapping up TDD with Python, and learning more Python on Pluralsight &lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Thinkpad saves the day</title>
