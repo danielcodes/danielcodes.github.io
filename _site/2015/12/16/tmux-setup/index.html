@@ -100,7 +100,13 @@
       <div class="post">
   <h1 class="post-title">On using Tmux</h1>
   <span class="post-date">16 Dec 2015</span>
-  <p>I&#39;ve been wanting to write this one for a while now. This summer, I got learn two very exciting tools, <strong>Vim</strong> an <strong>Tmux</strong>. These two are a must-have for any terminal junkie and together they&#39;ve taken my workflow to a whole new level. Although tmux has some extended functionality, in this post I am going to focus on how I personally use it. Also, I am going to assume that you&#39;ve installed the tool on your machine and know how to fire it up. Ok, onto the big question, what do you customize?</p>
+  <h4>Update</h4>
+
+<h6>01/12/16 - Scrollbar locked when using tmux</h6>
+
+<p><hr></p>
+
+<p>I&#39;ve been wanting to write this one for a while now. This summer, I got learn two very exciting tools, <strong>Vim</strong> an <strong>Tmux</strong>. These two are a must-have for any terminal junkie and together they&#39;ve taken my workflow to a whole new level. Although tmux has some extended functionality, in this post I am going to focus on how I personally use it. Also, I am going to assume that you&#39;ve installed the tool on your machine and know how to fire it up. Ok, onto the big question, what do you customize?</p>
 
 <h3>Changing the prefix</h3>
 
@@ -159,6 +165,12 @@ If you mapped your control key to CAPS LOCK, you can hit the prefix once, keep y
 
 <p>One final feature that I want to talk about is zoom. Having multiple panes is great and all but truth is most of the time your focus is only one, the pane in which you&#39;re writing code. Tmux has a neat little feature that helps with this problem, do <strong>CTRL+a + z</strong>. This command, full screens the current pane, to exit, just use the same command.</p>
 
+<h3>Scrolling - updated 01/12/16</h3>
+
+<p>I noticed a small issue with Tmux when I first started using it. It locked up my scrollbar. At first I didn&#39;t think much of the issue. But ever since failing tests started giving error messages that cover the screen and more, it has become imperative for me to get this functionality back. This is solved with the following lines:</p>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="c">#allows scrolling</span>
+setw -g mode-mouse on
+</code></pre></div>
 <p>TL;DL My .tmux.conf is <a href="https://gist.github.com/danielcodes/ea6ee30d2ff032421b2e">here</a>. Leave me a comment if I can improve on anything.</p>
 
 <p>Hope you found these helpful, and happy tmuxing !</p>

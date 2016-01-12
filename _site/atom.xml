@@ -4,7 +4,7 @@
  <title>Daniel Chia</title>
  <link href="/atom.xml" rel="self"/>
  <link href="/"/>
- <updated>2016-01-12T02:29:28-05:00</updated>
+ <updated>2016-01-12T02:41:29-05:00</updated>
  <id></id>
  <author>
    <name>Daniel Chia</name>
@@ -93,7 +93,13 @@
    <link href="/2015/12/16/tmux-setup/"/>
    <updated>2015-12-16T00:00:00-05:00</updated>
    <id>/2015/12/16/tmux-setup</id>
-   <content type="html">&lt;p&gt;I&amp;#39;ve been wanting to write this one for a while now. This summer, I got learn two very exciting tools, &lt;strong&gt;Vim&lt;/strong&gt; an &lt;strong&gt;Tmux&lt;/strong&gt;. These two are a must-have for any terminal junkie and together they&amp;#39;ve taken my workflow to a whole new level. Although tmux has some extended functionality, in this post I am going to focus on how I personally use it. Also, I am going to assume that you&amp;#39;ve installed the tool on your machine and know how to fire it up. Ok, onto the big question, what do you customize?&lt;/p&gt;
+   <content type="html">&lt;h4&gt;Update&lt;/h4&gt;
+
+&lt;h6&gt;01/12/16 - Scrollbar locked when using tmux&lt;/h6&gt;
+
+&lt;p&gt;&lt;hr&gt;&lt;/p&gt;
+
+&lt;p&gt;I&amp;#39;ve been wanting to write this one for a while now. This summer, I got learn two very exciting tools, &lt;strong&gt;Vim&lt;/strong&gt; an &lt;strong&gt;Tmux&lt;/strong&gt;. These two are a must-have for any terminal junkie and together they&amp;#39;ve taken my workflow to a whole new level. Although tmux has some extended functionality, in this post I am going to focus on how I personally use it. Also, I am going to assume that you&amp;#39;ve installed the tool on your machine and know how to fire it up. Ok, onto the big question, what do you customize?&lt;/p&gt;
 
 &lt;h3&gt;Changing the prefix&lt;/h3&gt;
 
@@ -152,6 +158,12 @@ If you mapped your control key to CAPS LOCK, you can hit the prefix once, keep y
 
 &lt;p&gt;One final feature that I want to talk about is zoom. Having multiple panes is great and all but truth is most of the time your focus is only one, the pane in which you&amp;#39;re writing code. Tmux has a neat little feature that helps with this problem, do &lt;strong&gt;CTRL+a + z&lt;/strong&gt;. This command, full screens the current pane, to exit, just use the same command.&lt;/p&gt;
 
+&lt;h3&gt;Scrolling - updated 01/12/16&lt;/h3&gt;
+
+&lt;p&gt;I noticed a small issue with Tmux when I first started using it. It locked up my scrollbar. At first I didn&amp;#39;t think much of the issue. But ever since failing tests started giving error messages that cover the screen and more, it has become imperative for me to get this functionality back. This is solved with the following lines:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;&lt;span class=&quot;c&quot;&gt;#allows scrolling&lt;/span&gt;
+setw -g mode-mouse on
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;TL;DL My .tmux.conf is &lt;a href=&quot;https://gist.github.com/danielcodes/ea6ee30d2ff032421b2e&quot;&gt;here&lt;/a&gt;. Leave me a comment if I can improve on anything.&lt;/p&gt;
 
 &lt;p&gt;Hope you found these helpful, and happy tmuxing !&lt;/p&gt;

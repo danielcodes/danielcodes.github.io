@@ -4,6 +4,11 @@ title: On using Tmux
 comments: true
 ---
 
+####Update
+######01/12/16 - Scrollbar locked when using tmux
+
+<hr>
+
 I've been wanting to write this one for a while now. This summer, I got learn two very exciting tools, **Vim** an **Tmux**. These two are a must-have for any terminal junkie and together they've taken my workflow to a whole new level. Although tmux has some extended functionality, in this post I am going to focus on how I personally use it. Also, I am going to assume that you've installed the tool on your machine and know how to fire it up. Ok, onto the big question, what do you customize?
 
 ###Changing the prefix
@@ -74,6 +79,14 @@ If by any chance, a pane crashes on you, you can close it with **prefix** + x.
 
 ###Zooming in
 One final feature that I want to talk about is zoom. Having multiple panes is great and all but truth is most of the time your focus is only one, the pane in which you're writing code. Tmux has a neat little feature that helps with this problem, do **CTRL+a + z**. This command, full screens the current pane, to exit, just use the same command.
+
+###Scrolling - updated 01/12/16
+I noticed a small issue with Tmux when I first started using it. It locked up my scrollbar. At first I didn't think much of the issue. But ever since failing tests started giving error messages that cover the screen and more, it has become imperative for me to get this functionality back. This is solved with the following lines:
+
+```sh
+#allows scrolling
+setw -g mode-mouse on
+```
 
 TL;DL My .tmux.conf is [here](https://gist.github.com/danielcodes/ea6ee30d2ff032421b2e). Leave me a comment if I can improve on anything.
 
