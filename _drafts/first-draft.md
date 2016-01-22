@@ -1,19 +1,10 @@
 ---
 layout: post
-title: Reading Python
+title: Reading Python, a formatted table
 comments: true
 ---
 
--add `` quotes for all str and repr
--delete wat.py and table.py 
-My list of WTF's
-first rediscovering generator expressions
-finding about zip unpacking
-escaping the { with a dobule {
-creating the padding
-
-
-I have moved on from the __Python Fundamentals__ course on Pluralsight and moved on to __Python - Beyong the Basics__. Today I went over the module about string and representations, which covered ```str()``` and ```repr()```. Both methods when called on provide information about the object instance, str() providing a general description (contents) while repr() provides a fuller description (type, other small details). The module was short and sweet, about 20 minutes long. However, near the end of the course, a program was introduced that created tables based on provided lists. And this Table class had str() and repr() methods defined. The str() method provided the table contents in nice formatted output, while repr() simply provided the type and column titles.
+I have moved on from the __Python Fundamentals__ course on Pluralsight and moved on to __Python - Beyong the Basics__. Today I went over the module about string and representations, which covered ```str()``` and ```repr()```. Both methods when called on provide information about the object instance, ```str()``` providing a general description (contents) while ```repr()``` provides a fuller description (type, other small details). The module was short and sweet, about 20 minutes long. However, near the end of the course, a program was introduced that created tables based on provided lists. And this Table class had ```str()``` and ```repr()``` methods defined. The ```str()``` method provided the table contents in nice formatted output, while ```repr()``` simply provided the type and column titles.
 
 ```python
 #Defining columns
@@ -59,7 +50,6 @@ First, a few variables are defined:
 The 3rd defined variable, provides a list of the string formatters, ``` [{:column_width}, {:..}, .. ] ```
 
 ```python
-
 #padding, example
 first_name = '{:10}'.format('Daniel')
 
@@ -68,50 +58,83 @@ first_name = '{:10}'.format('Daniel')
 
 After setting up those variables, everything else is pretty straight forward, the table is built row by row.
 
-First an empty list is created, then 3 append calls are made, one for the header, one for the = line separators and lastly pair up the data lists and place them row by row.
+First an empty list is created, then 3 append calls are made, one for the header, one for the = line separators and lastly pair up the data lists and place them row by row. Each row is then tied together with a space, and returned with new line separators for a tabular display. 
+
+Here are the code snippets:
+
+First the empty list,
 
 ```python
-#Note, I suggest you fire up a python shell and test snippets yourself
-#I use the ipython shell, running python3 | or just type python3
+#Run the examples!
+#I use the ipython shell, running python3 | or fire it up with python3
 #empyt list
 result = []
+```
 
+Next, append the headers,
+
+```python
 #append header, a generator expression 
 #formatters is the list with {:col_width}, ie. {:10}
 #header is a list of column titles, ie. ['First name', 'Last name']
 #done for each column
-#outputs -> ('First name', 'Last Name')
+'''
+outputs -> ('First name', 'Last Name')
+'''
 result.append(
 	formatters[i].format(self.header[i])
 	for i in range(col_count))
 
+```
+
+the line separators (=),
+
+```python
 #append = line separator, also a generator expression
 #grab the widths, ie. [10, 9]
-#outputs -> ('==========', '=========')
+'''
+outputs -> ('==========', '=========')
+'''
 result.append(
 	('=' * col_widths[i]
 	 for i in range(col_count)))
 
+```
+
+creating the rows based on the provided data lists,
+
+```python
 #append data from lists (first and last names), tricky part
-#self.data is a tuple of the data lists, ie. ( [first_names], [last_names], etc )
+#self.data is a tuple of the data lists 
+#ie. ( [first_names], [last_names], etc )
 #by using zip and the * operator, we're unpacking this tuple and creating the pairs
 #we end up with [(first_name, last_name), (another_fn, another_ln), ..], which are the rows themselves!
 #next iterate through each pair and append to result
-#outputs -> [ ['Daniel    ', 'Chia     '], ['Ronnie    ', 'Hernandez'], ['Vanessa   ', 'Luka     '] ] , notice lists!
+'''
+outputs -> [ ['Daniel    ', 'Chia     '],
+			  ['Ronnie    ', 'Hernandez'], 
+			  ['Vanessa   ', 'Luka     '] ] , notice lists!
+'''
+
 for row in zip(*self.data):
 	result.append(
 		[formatters[i].format(row[i])
 		 for i in range(col_count)])
+```
 
+and tying everything together.
 
+```python
 #at this point our result list is almost complete
 #it looks like this, printing the items inside it
 
-#('First name', 'Last Name')
-#('==========', '=========')
-#['Daniel    ', 'Chia     '] 
-#['Ronnie    ', 'Hernandez']
-#['Vanessa   ', 'Luka     '] 
+'''
+('First name', 'Last Name')
+('==========', '=========')
+['Daniel    ', 'Chia     '] 
+['Ronnie    ', 'Hernandez']
+['Vanessa   ', 'Luka     '] 
+'''
 
 #join the rows with spaces 
 result = (' '.join(r) for r in result)
@@ -119,18 +142,29 @@ result = (' '.join(r) for r in result)
 #return the list with line separators added
 #voila! the list is done
 return '\n'.join(rslt)
-
 ```
 
--finish this tmr, what confuse you? + read over
-provide what the table looked like for you when debugging
+Looking back at the code, it doesn't seem so bad. It's often lack of understanding that brings those 'wat' moments, so it's worthwhile to spend the time understading the concept. Read and read more code. Narrowing down on the concepts that threw me off a bit, there are:
+
+* lists comprehensions ```[]``` vs. generator expressions ```()```
+  * these are similar in providing a group a values
+  * some differences are that gen. expressions take less memory and cannot be accessed by index
+  * usage, for several iterations use a list, one time use, a generator expression
+* zip function, unpacking arguments with *
+  * passing the * operator to ```zip()```, unpacks whatever arguments you throw at it
+  * in the example above, data is a tuple of lists (first, last) and we want to create rows out of that data. Without *, the lists would have been needed to be passed indidually to zip, ```zip(list1, list2, ...)```
+* escaping the '{}' on format method
+  * in order to create a list of formatters ```{:col_widths}```, the { character needed to be escaped
+  * more info in the [official docs](https://docs.python.org/2/library/string.html#format-string-syntax)
 
 
+###Conclusion
+Reading someone else's code can be a humbling experience. It can be tough to break down the code into it's lowest complexity level and understand it, but at the same time extremely rewarding. The __I GOT IT!__ moment.
 
 
-source
-stack overflow for list vs gen
-the article
-zip with *
+###References
+[1] [Generator expressions](http://code-maven.com/list-comprehension-vs-generator-expression)
+
+[2] Zip, [here](http://stackoverflow.com/questions/2511300/why-does-x-y-zipzipa-b-work-in-python) and [here](http://pavdmyt.com/python-zip-fu/)
 
 
