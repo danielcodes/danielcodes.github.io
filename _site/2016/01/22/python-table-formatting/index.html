@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Reading Python, a formatted table &middot; Daniel Chia
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71833164-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          Daniel Chia
+        </a>
+      </h1>
+      <p class="lead">Hi, I'm Daniel. Here's where I rant.</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about/">About</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/archive/">Archive</a>
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/portfolio/">Portfolio</a>
+          
+        
+      
+        
+          
+        
+      
+
+    </nav>
+
+    <p>&copy; 2016. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">Reading Python, a formatted table</h1>
+  <span class="post-date">22 Jan 2016</span>
+  <p>After finshing the <strong>Python Fundamentals</strong> course on Pluralsight, the next step was the follow-up course, <strong>Python - Beyond the Basics</strong>. I recently went over the module about string and representations, which covered <code>str()</code> and <code>repr()</code>. Both methods when called on, provide information about the object instance. <code>str()</code> providing a general description (contents) while <code>repr()</code> provides a fuller description (type and other small details). The module was short and sweet, about 20 minutes long. However, near the end of the course, a program was introduced that created tables based on provided lists. And this Table class had <code>str()</code> and <code>repr()</code> methods defined. The <code>str()</code> method provided the table contents in a nice formatted output, while <code>repr()</code> simply provided the type and column titles.</p>
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#Defining columns and data lists</span>
+<span class="n">header</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;First Name&#39;</span><span class="p">,</span> <span class="s">&#39;Last Name&#39;</span><span class="p">]</span>
+<span class="n">first</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Daniel&#39;</span><span class="p">,</span> <span class="s">&#39;Ronnie&#39;</span><span class="p">,</span> <span class="s">&#39;Vanessa&#39;</span><span class="p">]</span>
+<span class="n">last</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Chia&#39;</span><span class="p">,</span> <span class="s">&#39;Hernandez&#39;</span><span class="p">,</span> <span class="s">&#39;Luka&#39;</span><span class="p">]</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">Table</span><span class="p">(</span><span class="n">header</span><span class="p">,</span> <span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+
+<span class="c">#Output</span>
+<span class="c">#a formatted table for str()</span>
+<span class="n">First</span> <span class="n">Name</span> <span class="n">Last</span> <span class="n">Name</span>
+<span class="o">==========</span> <span class="o">=========</span>
+<span class="n">Daniel</span>     <span class="n">Chia</span>     
+<span class="n">Ronnie</span>     <span class="n">Hernandez</span>
+<span class="n">Vanessa</span>    <span class="n">Luka</span>     
+
+<span class="c">#type and column titles for repr()</span>
+<span class="n">Table</span><span class="p">(</span><span class="n">header</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;First Name&#39;</span><span class="p">,</span> <span class="s">&#39;Last Name&#39;</span><span class="p">])</span>
+</code></pre></div>
+<p>As an exercise I decided to dive into the code and attempt to decipher what was being written. What followed was a painful time trying to understand the code. I don&#39;t know Pluralsight&#39;s policy on putting their content out in the open, so I won&#39;t put up all the code, only snippets of it. Explaining whatever stumped me, so this post is to:</p>
+
+<ul>
+<li>reinforce my learning</li>
+<li>show insight to those who haven&#39;t seen these practices</li>
+</ul>
+
+<p>Without further ado, let&#39;s begin:</p>
+
+<p>As you can see above, we&#39;re passing a couple of lists (a header for the column titles, followed by lists of data) to the the Table class. This data is then manipulated in the <code>str()</code> method to provide the formatted output shown.  </p>
+
+<p>The breakdown of the <code>str()</code> function was actually quite simple:</p>
+
+<p>First, a few variables are defined:</p>
+
+<ol>
+<li>number of columns</li>
+<li>widths of the colums, placed in a list
+
+<ul>
+<li>compare the longest string in a column vs. column title, the higher of the two becomes the width for that column<br></li>
+</ul></li>
+<li>string formatters, to provide space padding for strings </li>
+</ol>
+
+<p>The 3rd defined variable, provides a list of the string formatters, <code>[{:column_width}, {:column_width_2}, .. ]</code></p>
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#padding, example</span>
+<span class="n">first_name</span> <span class="o">=</span> <span class="s">&#39;{:10}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&#39;Daniel&#39;</span><span class="p">)</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">output -&gt; &#39;Daniel    &#39;</span>
+<span class="sd">&#39;&#39;&#39;</span>
+</code></pre></div>
+<p>After setting up those variables, the table is built row by row.</p>
+
+<p>First an empty list is created, then 3 append calls are made, one for the header, one for the = line separators and lastly pair up the data lists and place them row by row. Each row is then tied together with a space (column divider), and returned with new line separators for a tabular display. </p>
+
+<p>I provide the code to create the table, you can get it from:</p>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh">git clone https://gist.github.com/9840c91f8e94e5177aec.git table
+python3 table/table.py
+</code></pre></div>
+<p>First the empty list,</p>
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#empyt list</span>
+<span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+</code></pre></div>
+<p>Next, append the headers,</p>
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#append header, a generator expression </span>
+<span class="c">#formatters is the list with {:col_width}</span>
+<span class="c">#ie. {:10}</span>
+<span class="c">#header is a list of column titles</span>
+<span class="c">#ie. [&#39;First name&#39;, &#39;Last name&#39;]</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">outputs -&gt; (&#39;First name&#39;, &#39;Last Name&#39;)</span>
+<span class="sd">note: You don&#39;t actually see this, it is hidden in a generator expression, unless you decide to iterate over it. Note that the expression is inside the result list, [(gen. expr), ..]</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+    <span class="n">formatters</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">header</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">col_count</span><span class="p">))</span>
+</code></pre></div>
+<p>the line separators (=),</p>
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#append = line separator, also a generator expression</span>
+<span class="c">#grab the widths, ie. [10, 9]</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">outputs -&gt; (&#39;==========&#39;, &#39;=========&#39;)</span>
+<span class="sd">note: can&#39;t see this either</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+    <span class="p">(</span><span class="s">&#39;=&#39;</span> <span class="o">*</span> <span class="n">col_widths</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">col_count</span><span class="p">)))</span>
+</code></pre></div>
+<p>creating the rows based on the provided data lists,</p>
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#append data from lists (first and last names), tricky part</span>
+<span class="c">#data is a tuple of lists </span>
+<span class="c">#ie. ( [first_names], [last_names], etc )</span>
+<span class="c">#by using zip and the * operator, we&#39;re unpacking this tuple and creating the pairs</span>
+<span class="c">#we end up with [(first_name, last_name), (another_fn, another_ln), ..], which are the rows themselves!</span>
+<span class="c">#we&#39;re giving the appropiate padding to each string</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">outputs -&gt; [&#39;Daniel    &#39;, &#39;Chia     &#39;],</span>
+<span class="sd">           [&#39;Ronnie    &#39;, &#39;Hernandez&#39;], </span>
+<span class="sd">           [&#39;Vanessa   &#39;, &#39;Luka     &#39;]</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">data</span><span class="p">):</span>
+    <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+        <span class="p">[</span><span class="n">formatters</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">col_count</span><span class="p">)])</span>
+</code></pre></div>
+<p>and tying everything together.</p>
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#at this point our result list is almost complete</span>
+<span class="c">#it looks like this, printing the items inside it</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">[ (&#39;First name&#39;, &#39;Last Name&#39;)</span>
+<span class="sd">  (&#39;==========&#39;, &#39;=========&#39;)</span>
+<span class="sd">  [&#39;Daniel    &#39;, &#39;Chia     &#39;] </span>
+<span class="sd">  [&#39;Ronnie    &#39;, &#39;Hernandez&#39;]</span>
+<span class="sd">  [&#39;Vanessa   &#39;, &#39;Luka     &#39;] ]</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="c">#join the rows with spaces </span>
+<span class="n">result</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">result</span><span class="p">)</span>
+
+<span class="c">#return the list with line separators added</span>
+<span class="c">#voila! the list is done</span>
+<span class="k">return</span> <span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">rslt</span><span class="p">)</span>
+</code></pre></div>
+<p>Looking back at the code, it doesn&#39;t seem so bad. It&#39;s often lack of understanding that brings those &#39;wat&#39; moments, so it&#39;s worthwhile to spend the time understading concepts. Read and read more code. Narrowing down on the concepts that threw me off a bit, there are:</p>
+
+<ul>
+<li>lists comprehensions <code>[]</code> vs. generator expressions <code>()</code>
+
+<ul>
+<li>these are similar in providing a group a values</li>
+<li>some differences are that gen. expressions take less memory and cannot be accessed by index</li>
+<li>usage, for several iterations use a list, one time use, a generator expression</li>
+</ul></li>
+<li>zip function, unpacking arguments with *
+
+<ul>
+<li>passing the * operator to <code>zip()</code>, unpacks whatever arguments you throw at it</li>
+<li>in the example above, data is a tuple of lists (first, last) and we want to create rows out of that data. Without *, the lists would have been needed to be passed indidually to zip, <code>zip(list1, list2, ...)</code></li>
+</ul></li>
+<li>escaping the <code>{}</code> on format method
+
+<ul>
+<li>in order to create a list of formatters <code>{:col_widths}</code>, the <code>{</code> character needed to be escaped</li>
+<li>more info in the <a href="https://docs.python.org/2/library/string.html#format-string-syntax">official docs</a></li>
+</ul></li>
+</ul>
+
+<h3>Conclusion</h3>
+
+<p>Reading someone else&#39;s code can be a humbling experience. It can be tough to break down the complexity of the code or peeling the layers, but at the same time, it is extremely rewarding. The <strong>Aha, I GOT IT!</strong> moment. Using pen and paper to draw out the problem definitely helped in reducing the logic that I had to wrestle with in my mind.</p>
+
+<h3>References</h3>
+
+<p>[1] <a href="http://code-maven.com/list-comprehension-vs-generator-expression">Generator expressions</a></p>
+
+<p>[2] Zip, <a href="http://stackoverflow.com/questions/2511300/why-does-x-y-zipzipa-b-work-in-python">here</a> and <a href="http://pavdmyt.com/python-zip-fu/">here</a></p>
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2016/01/21/goal-oriented/">
+            Being goal oriented
+            <small>21 Jan 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2016/01/12/resuming-python/">
+            Resuming TDD with Python
+            <small>12 Jan 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2016/01/02/my-setup/">
+            Thinkpad saves the day
+            <small>02 Jan 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+
+			
+
+<div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+
+    var disqus_config = function () {
+        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        
+        s.src = '//danielcodess.disqus.com/embed.js';
+        
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+    </div>
+
+  </body>
+</html>

@@ -4,13 +4,183 @@
  <title>Daniel Chia</title>
  <link href="/atom.xml" rel="self"/>
  <link href="/"/>
- <updated>2016-01-21T01:38:20-05:00</updated>
+ <updated>2016-01-22T18:20:10-05:00</updated>
  <id></id>
  <author>
    <name>Daniel Chia</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Reading Python, a formatted table</title>
+   <link href="/2016/01/22/python-table-formatting/"/>
+   <updated>2016-01-22T00:00:00-05:00</updated>
+   <id>/2016/01/22/python-table-formatting</id>
+   <content type="html">&lt;p&gt;After finshing the &lt;strong&gt;Python Fundamentals&lt;/strong&gt; course on Pluralsight, the next step was the follow-up course, &lt;strong&gt;Python - Beyond the Basics&lt;/strong&gt;. I recently went over the module about string and representations, which covered &lt;code&gt;str()&lt;/code&gt; and &lt;code&gt;repr()&lt;/code&gt;. Both methods when called on, provide information about the object instance. &lt;code&gt;str()&lt;/code&gt; providing a general description (contents) while &lt;code&gt;repr()&lt;/code&gt; provides a fuller description (type and other small details). The module was short and sweet, about 20 minutes long. However, near the end of the course, a program was introduced that created tables based on provided lists. And this Table class had &lt;code&gt;str()&lt;/code&gt; and &lt;code&gt;repr()&lt;/code&gt; methods defined. The &lt;code&gt;str()&lt;/code&gt; method provided the table contents in a nice formatted output, while &lt;code&gt;repr()&lt;/code&gt; simply provided the type and column titles.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;c&quot;&gt;#Defining columns and data lists&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;header&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;First Name&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;Last Name&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;first&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;Daniel&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;Ronnie&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;Vanessa&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;last&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;Chia&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;Hernandez&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;Luka&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Table&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;header&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;first&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;last&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;repr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#Output&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#a formatted table for str()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;First&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Name&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Last&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Name&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;==========&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=========&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Daniel&lt;/span&gt;     &lt;span class=&quot;n&quot;&gt;Chia&lt;/span&gt;     
+&lt;span class=&quot;n&quot;&gt;Ronnie&lt;/span&gt;     &lt;span class=&quot;n&quot;&gt;Hernandez&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Vanessa&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;Luka&lt;/span&gt;     
+
+&lt;span class=&quot;c&quot;&gt;#type and column titles for repr()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Table&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;header&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;First Name&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;Last Name&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;As an exercise I decided to dive into the code and attempt to decipher what was being written. What followed was a painful time trying to understand the code. I don&amp;#39;t know Pluralsight&amp;#39;s policy on putting their content out in the open, so I won&amp;#39;t put up all the code, only snippets of it. Explaining whatever stumped me, so this post is to:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;reinforce my learning&lt;/li&gt;
+&lt;li&gt;show insight to those who haven&amp;#39;t seen these practices&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Without further ado, let&amp;#39;s begin:&lt;/p&gt;
+
+&lt;p&gt;As you can see above, we&amp;#39;re passing a couple of lists (a header for the column titles, followed by lists of data) to the the Table class. This data is then manipulated in the &lt;code&gt;str()&lt;/code&gt; method to provide the formatted output shown.  &lt;/p&gt;
+
+&lt;p&gt;The breakdown of the &lt;code&gt;str()&lt;/code&gt; function was actually quite simple:&lt;/p&gt;
+
+&lt;p&gt;First, a few variables are defined:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;number of columns&lt;/li&gt;
+&lt;li&gt;widths of the colums, placed in a list
+
+&lt;ul&gt;
+&lt;li&gt;compare the longest string in a column vs. column title, the higher of the two becomes the width for that column&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;string formatters, to provide space padding for strings &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The 3rd defined variable, provides a list of the string formatters, &lt;code&gt;[{:column_width}, {:column_width_2}, .. ]&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;c&quot;&gt;#padding, example&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;first_name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;{:10}&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;Daniel&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;sd&quot;&gt;&amp;#39;&amp;#39;&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;output -&amp;gt; &amp;#39;Daniel    &amp;#39;&lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;&amp;#39;&amp;#39;&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;After setting up those variables, the table is built row by row.&lt;/p&gt;
+
+&lt;p&gt;First an empty list is created, then 3 append calls are made, one for the header, one for the = line separators and lastly pair up the data lists and place them row by row. Each row is then tied together with a space (column divider), and returned with new line separators for a tabular display. &lt;/p&gt;
+
+&lt;p&gt;I provide the code to create the table, you can get it from:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;git clone https://gist.github.com/9840c91f8e94e5177aec.git table
+python3 table/table.py
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;First the empty list,&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;c&quot;&gt;#empyt list&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Next, append the headers,&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;c&quot;&gt;#append header, a generator expression &lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#formatters is the list with {:col_width}&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#ie. {:10}&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#header is a list of column titles&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#ie. [&amp;#39;First name&amp;#39;, &amp;#39;Last name&amp;#39;]&lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;&amp;#39;&amp;#39;&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;outputs -&amp;gt; (&amp;#39;First name&amp;#39;, &amp;#39;Last Name&amp;#39;)&lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;note: You don&amp;#39;t actually see this, it is hidden in a generator expression, unless you decide to iterate over it. Note that the expression is inside the result list, [(gen. expr), ..]&lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;&amp;#39;&amp;#39;&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;formatters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;header&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;col_count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;the line separators (=),&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;c&quot;&gt;#append = line separator, also a generator expression&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#grab the widths, ie. [10, 9]&lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;&amp;#39;&amp;#39;&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;outputs -&amp;gt; (&amp;#39;==========&amp;#39;, &amp;#39;=========&amp;#39;)&lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;note: can&amp;#39;t see this either&lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;&amp;#39;&amp;#39;&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;=&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col_widths&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+     &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;col_count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;creating the rows based on the provided data lists,&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;c&quot;&gt;#append data from lists (first and last names), tricky part&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#data is a tuple of lists &lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#ie. ( [first_names], [last_names], etc )&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#by using zip and the * operator, we&amp;#39;re unpacking this tuple and creating the pairs&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#we end up with [(first_name, last_name), (another_fn, another_ln), ..], which are the rows themselves!&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#we&amp;#39;re giving the appropiate padding to each string&lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;&amp;#39;&amp;#39;&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;outputs -&amp;gt; [&amp;#39;Daniel    &amp;#39;, &amp;#39;Chia     &amp;#39;],&lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;           [&amp;#39;Ronnie    &amp;#39;, &amp;#39;Hernandez&amp;#39;], &lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;           [&amp;#39;Vanessa   &amp;#39;, &amp;#39;Luka     &amp;#39;]&lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;&amp;#39;&amp;#39;&amp;#39;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;row&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;zip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;formatters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+         &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;col_count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)])&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;and tying everything together.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;c&quot;&gt;#at this point our result list is almost complete&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#it looks like this, printing the items inside it&lt;/span&gt;
+
+&lt;span class=&quot;sd&quot;&gt;&amp;#39;&amp;#39;&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;[ (&amp;#39;First name&amp;#39;, &amp;#39;Last Name&amp;#39;)&lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;  (&amp;#39;==========&amp;#39;, &amp;#39;=========&amp;#39;)&lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;  [&amp;#39;Daniel    &amp;#39;, &amp;#39;Chia     &amp;#39;] &lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;  [&amp;#39;Ronnie    &amp;#39;, &amp;#39;Hernandez&amp;#39;]&lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;  [&amp;#39;Vanessa   &amp;#39;, &amp;#39;Luka     &amp;#39;] ]&lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;&amp;#39;&amp;#39;&amp;#39;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#join the rows with spaces &lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39; &amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#return the list with line separators added&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#voila! the list is done&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rslt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Looking back at the code, it doesn&amp;#39;t seem so bad. It&amp;#39;s often lack of understanding that brings those &amp;#39;wat&amp;#39; moments, so it&amp;#39;s worthwhile to spend the time understading concepts. Read and read more code. Narrowing down on the concepts that threw me off a bit, there are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;lists comprehensions &lt;code&gt;[]&lt;/code&gt; vs. generator expressions &lt;code&gt;()&lt;/code&gt;
+
+&lt;ul&gt;
+&lt;li&gt;these are similar in providing a group a values&lt;/li&gt;
+&lt;li&gt;some differences are that gen. expressions take less memory and cannot be accessed by index&lt;/li&gt;
+&lt;li&gt;usage, for several iterations use a list, one time use, a generator expression&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;zip function, unpacking arguments with *
+
+&lt;ul&gt;
+&lt;li&gt;passing the * operator to &lt;code&gt;zip()&lt;/code&gt;, unpacks whatever arguments you throw at it&lt;/li&gt;
+&lt;li&gt;in the example above, data is a tuple of lists (first, last) and we want to create rows out of that data. Without *, the lists would have been needed to be passed indidually to zip, &lt;code&gt;zip(list1, list2, ...)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;escaping the &lt;code&gt;{}&lt;/code&gt; on format method
+
+&lt;ul&gt;
+&lt;li&gt;in order to create a list of formatters &lt;code&gt;{:col_widths}&lt;/code&gt;, the &lt;code&gt;{&lt;/code&gt; character needed to be escaped&lt;/li&gt;
+&lt;li&gt;more info in the &lt;a href=&quot;https://docs.python.org/2/library/string.html#format-string-syntax&quot;&gt;official docs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Conclusion&lt;/h3&gt;
+
+&lt;p&gt;Reading someone else&amp;#39;s code can be a humbling experience. It can be tough to break down the complexity of the code or peeling the layers, but at the same time, it is extremely rewarding. The &lt;strong&gt;Aha, I GOT IT!&lt;/strong&gt; moment. Using pen and paper to draw out the problem definitely helped in reducing the logic that I had to wrestle with in my mind.&lt;/p&gt;
+
+&lt;h3&gt;References&lt;/h3&gt;
+
+&lt;p&gt;[1] &lt;a href=&quot;http://code-maven.com/list-comprehension-vs-generator-expression&quot;&gt;Generator expressions&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;[2] Zip, &lt;a href=&quot;http://stackoverflow.com/questions/2511300/why-does-x-y-zipzipa-b-work-in-python&quot;&gt;here&lt;/a&gt; and &lt;a href=&quot;http://pavdmyt.com/python-zip-fu/&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Being goal oriented</title>
