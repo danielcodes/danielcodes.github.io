@@ -26,8 +26,29 @@
         {% endif %}
       {% endfor %}
 
+
     </nav>
 
-    <p>&copy; {{ site.time | date: '%Y' }}. All rights reserved.</p>
+		<!--Social Icons here-->
+		<!--Github | Bitbucket | Twitter | RSS-->
+		<a href="{{site.author.github}}">
+			<i class="fa fa-github fa-3x" ></i>
+		</a>		
+		
+		<a href="{{site.author.bitbucket}}">
+			<i class="fa fa-bitbucket fa-3x"></i>
+		</a>		
+
+		<a href="{{site.author.twitter}}">
+			<i class="fa fa-twitter fa-3x"></i>
+		</a>		
+
+		<a href="/atom.xml">
+			<i class="fa fa-rss fa-3x"></i>
+		</a>		
+
+		<p>&copy; {{ site.time | date: '%Y' }}. All rights reserved.</p>
   </div>
 </div>
+
+

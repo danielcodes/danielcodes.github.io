@@ -14,7 +14,11 @@ baseurl:          /
 
 author:
   name:           'Daniel Chia'
-  url:            https://github.com/danielcodes
+  email:          'danielarmandochia@gmail.com'
+  url:            ''
+  github:         'https://github.com/danielcodes'
+  bitbucket:      'https://bitbucket.org/danielcodes/'
+  twitter:        'https://twitter.com/danielchiaa'
 
 paginate:         5
 
