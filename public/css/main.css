@@ -1,0 +1,9 @@
+/*Some customization*/
+
+/*removing the ugly shadow from links*/
+.social-media-list { list-style: none; margin-left: 0; padding: 0; }
+.social-media-list li { display: inline-block; }
+.social-media-list li a:hover { color: #111; text-decoration: underline; }
+
+
+
