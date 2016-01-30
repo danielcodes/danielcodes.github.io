@@ -11,7 +11,7 @@
 
   <title>
     
-      Resuming TDD with Python &middot; Daniel Chia
+      Adding minimal social media icons &middot; Daniel Chia
     
   </title>
 
@@ -119,36 +119,44 @@
 
     <div class="content container">
       <div class="post">
-  <h1 class="post-title">Resuming TDD with Python</h1>
-  <span class="post-date">12 Jan 2016</span>
-  <p>I am taking a small detour from learning Javascript. Reason being that there is still some unfinished Python business. I got the wake up call from watching this <a href="https://youtu.be/z_ESakf05PQ">small clip</a>. The point is you can&#39;t start something and not finish it. You want to...</p>
+  <h1 class="post-title">Adding minimal social media icons</h1>
+  <span class="post-date">30 Jan 2016</span>
+  <p>I set out to adding a list of social media icons this last week, I had been postponing the task for a while now and I finally got around doing it. It shouldn&#39;t have been hard, find icon images and link them up, right? Well.. things didn&#39;t go as well for me. Actually it did work, but there was a pesky little aesthetic detail that drove me a bit crazy. </p>
 
-<blockquote>
-<p>Always be closing</p>
-</blockquote>
+<p>I decided to use Font Awesome for the icons, from its vast collection of icons, I only needed 4. But who knows later on I might create other profiles that might require them, it&#39;s nice to have options.</p>
 
-<p>This fall semester I was tasked with learning and developing an application with Django, and do it in a Test-Driven manner if possible. This was hard, especially since my first tutorial on Django was <a href="http://www.tangowithdjango.com/">Tango with Django</a>. As good as this tutorial was at teaching me the workflow for developing my first Django application, I still didn&#39;t know a thing about testing (it was only touched on very briefly in one of the later chapters). Like any other curious programmer, I consulted the web. After a few searches, I found <a href="http://chimera.labs.oreilly.com/books/1234000000754/index.html">Test-Driven Development with Python</a>. This was the perfect solution for my woes, I had found <strong>THE MANUAL</strong> on how to get started with building an application on a test-first basis. I quickly went through the first 6 chapters, doing one chapter a day. With this I was able to dip my toes into TDD and use the code as reference for my <a href="https://bitbucket.org/danielcodes/pipeline_monitor">class project</a>. However, I would be stuck on this chapter for a month or so since school things would take priority.</p>
+<p>I chose to be lazy and simply added the provided CDN to my site:</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css&quot;</span><span class="nt">&gt;</span>
+</code></pre></div>
+<p>From here, you can start inserting icons with the <code>&lt;i&gt;</code> tag, and add the icon of your selection through a class:</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;fa fa-camera-retro&quot;</span><span class="nt">&gt;&lt;/i&gt;</span>
+</code></pre></div>
+<p>So I had the icons, the only thing extra that I did was wrap these tags with <code>&lt;a&gt;</code> to link them to my profiles. Check it out in the JSFiddle below:</p>
 
-<p>Fast foward a bit (school ended), I was still stuck on Chapter 8 of the tutorial. This chapter covered deployment, the requirements included a server and a domain name. I got mine from the <a href="https://education.github.com/pack">GitHub Student Package</a>, both were being used to serve my class project and it needed to stay up for the professor to check that it was &quot;live&quot;. I waited until I received my grade and finally unhooked the domain name and destroyed the droplet. It was time to continue this TDD with Python tutorial. You can check my progress <a href="https://github.com/danielcodes/superlists">here</a>. Currently <a href="http://danielchia.me/">live</a>! :) </p>
+<iframe width="100%" height="200" src="//jsfiddle.net/m2s2qshm/3/embedded/html,result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
-<p>It just leaves a bad taste to leave things hanging, so it feels good to finally get this tutorial rolling again. I&#39;m learning a ton. While I&#39;m at it, I also solidifying my Python knowledge through this <a href="https://www.pluralsight.com/courses/python-fundamentals">Pluralsight course</a>. The learning never stops.</p>
+<p>At this point, I had something working, icons and their respective links. Now, if you look at the result tab in the fiddle, you&#39;ll see that the first three icons have some type of dash shadow at the bottom. Whenever I&#39;d hover over the icon, the shadow would show. I can only assume that it has to do with links themselves, just how on hovering text links they become darker and underlined.</p>
 
-<p><strong>TL;DR</strong> Wrapping up TDD with Python, and learning more Python on Pluralsight </p>
+<p>I looked at other tutorials and it turned out that they placed all the links in a <code>&lt;ul&gt;</code> tag. I proceded to play around with things, but it must of not been my day as it did not work yesterday. I was pretty close to giving up on the issue altogether.</p>
+
+<p>Today, out of curiosity I looked over a repository that a friend starred on GitHub. Out of curiosity, I visited the <a href="https://nusmods.com/timetable/2015-2016/sem2">website</a> and saw that they had the icons I wanted. I decided to give it one last ditch effort. Opened up Developer Tools and proceeded to look at the markup. I saw that the site used a <code>&lt;ul&gt;</code> tag, and I started wondering, &quot;Why the heck didn&#39;t it work yesterday?&quot;. Whatever the case may be. I proceeded to wrapping the links in <code>&lt;li&gt;</code> tags and the whole thing in a <code>&lt;ul&gt;</code> tag.</p>
+
+<p>Only two things remained to be done, remove the bullet points from the list and place the elements inline, done with the following bit of CSS:</p>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/*the &lt;ul&gt; has a social-icons class */</span>
+<span class="nc">.social-icons</span> <span class="p">{</span> <span class="k">list-style</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.social-icons</span> <span class="nt">li</span> <span class="p">{</span> <span class="k">display</span><span class="o">:</span> <span class="k">inline</span><span class="o">-</span><span class="k">block</span><span class="p">;</span> <span class="p">}</span>
+</code></pre></div>
+<p>Here&#39;s the final result:</p>
+
+<iframe width="100%" height="150" src="//jsfiddle.net/kn3y78gz/2/embedded/result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<p>Seems like I wrote a little bit more than anticipated.</p>
 
 </div>
 
 <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
-    
-      <li>
-        <h3>
-          <a href="/2016/01/30/adding-minimal-icons/">
-            Adding minimal social media icons
-            <small>30 Jan 2016</small>
-          </a>
-        </h3>
-      </li>
     
       <li>
         <h3>
@@ -164,6 +172,15 @@
           <a href="/2016/01/21/goal-oriented/">
             Being goal oriented
             <small>21 Jan 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2016/01/12/resuming-python/">
+            Resuming TDD with Python
+            <small>12 Jan 2016</small>
           </a>
         </h3>
       </li>

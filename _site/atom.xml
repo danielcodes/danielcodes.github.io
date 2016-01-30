@@ -4,13 +4,51 @@
  <title>Daniel Chia</title>
  <link href="/atom.xml" rel="self"/>
  <link href="/"/>
- <updated>2016-01-29T21:33:32-05:00</updated>
+ <updated>2016-01-29T23:50:20-05:00</updated>
  <id></id>
  <author>
    <name>Daniel Chia</name>
    <email>danielarmandochia@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Adding minimal social media icons</title>
+   <link href="/2016/01/30/adding-minimal-icons/"/>
+   <updated>2016-01-30T00:00:00-05:00</updated>
+   <id>/2016/01/30/adding-minimal-icons</id>
+   <content type="html">&lt;p&gt;I set out to adding a list of social media icons this last week, I had been postponing the task for a while now and I finally got around doing it. It shouldn&amp;#39;t have been hard, find icon images and link them up, right? Well.. things didn&amp;#39;t go as well for me. Actually it did work, but there was a pesky little aesthetic detail that drove me a bit crazy. &lt;/p&gt;
+
+&lt;p&gt;I decided to use Font Awesome for the icons, from its vast collection of icons, I only needed 4. But who knows later on I might create other profiles that might require them, it&amp;#39;s nice to have options.&lt;/p&gt;
+
+&lt;p&gt;I chose to be lazy and simply added the provided CDN to my site:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;stylesheet&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;From here, you can start inserting icons with the &lt;code&gt;&amp;lt;i&amp;gt;&lt;/code&gt; tag, and add the icon of your selection through a class:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;i&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;fa fa-camera-retro&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/i&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;So I had the icons, the only thing extra that I did was wrap these tags with &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt; to link them to my profiles. Check it out in the JSFiddle below:&lt;/p&gt;
+
+&lt;iframe width=&quot;100%&quot; height=&quot;200&quot; src=&quot;//jsfiddle.net/m2s2qshm/3/embedded/html,result/&quot; allowfullscreen=&quot;allowfullscreen&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;At this point, I had something working, icons and their respective links. Now, if you look at the result tab in the fiddle, you&amp;#39;ll see that the first three icons have some type of dash shadow at the bottom. Whenever I&amp;#39;d hover over the icon, the shadow would show. I can only assume that it has to do with links themselves, just how on hovering text links they become darker and underlined.&lt;/p&gt;
+
+&lt;p&gt;I looked at other tutorials and it turned out that they placed all the links in a &lt;code&gt;&amp;lt;ul&amp;gt;&lt;/code&gt; tag. I proceded to play around with things, but it must of not been my day as it did not work yesterday. I was pretty close to giving up on the issue altogether.&lt;/p&gt;
+
+&lt;p&gt;Today, out of curiosity I looked over a repository that a friend starred on GitHub. Out of curiosity, I visited the &lt;a href=&quot;https://nusmods.com/timetable/2015-2016/sem2&quot;&gt;website&lt;/a&gt; and saw that they had the icons I wanted. I decided to give it one last ditch effort. Opened up Developer Tools and proceeded to look at the markup. I saw that the site used a &lt;code&gt;&amp;lt;ul&amp;gt;&lt;/code&gt; tag, and I started wondering, &amp;quot;Why the heck didn&amp;#39;t it work yesterday?&amp;quot;. Whatever the case may be. I proceeded to wrapping the links in &lt;code&gt;&amp;lt;li&amp;gt;&lt;/code&gt; tags and the whole thing in a &lt;code&gt;&amp;lt;ul&amp;gt;&lt;/code&gt; tag.&lt;/p&gt;
+
+&lt;p&gt;Only two things remained to be done, remove the bullet points from the list and place the elements inline, done with the following bit of CSS:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;c&quot;&gt;/*the &amp;lt;ul&amp;gt; has a social-icons class */&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.social-icons&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;list-style&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.social-icons&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;li&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;inline&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;block&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Here&amp;#39;s the final result:&lt;/p&gt;
+
+&lt;iframe width=&quot;100%&quot; height=&quot;150&quot; src=&quot;//jsfiddle.net/kn3y78gz/2/embedded/result/&quot; allowfullscreen=&quot;allowfullscreen&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Seems like I wrote a little bit more than anticipated.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Reading Python, a formatted table</title>
