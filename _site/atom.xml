@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
  <title>Daniel Chia</title>
- <link href="/atom.xml" rel="self"/>
- <link href="/"/>
- <updated>2016-01-31T17:57:23-05:00</updated>
- <id></id>
+ <link href="http://danielcodes.github.io/atom.xml" rel="self"/>
+ <link href="http://danielcodes.github.io/"/>
+ <updated>2016-01-31T23:08:08-05:00</updated>
+ <id>http://danielcodes.github.io</id>
  <author>
    <name>Daniel Chia</name>
    <email>danielarmandochia@gmail.com</email>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>Adding minimal social media icons</title>
-   <link href="/2016/01/30/adding-minimal-icons/"/>
+   <link href="http://danielcodes.github.io/2016/01/30/adding-minimal-icons/"/>
    <updated>2016-01-30T00:00:00-05:00</updated>
-   <id>/2016/01/30/adding-minimal-icons</id>
+   <id>http://danielcodes.github.io/2016/01/30/adding-minimal-icons</id>
    <content type="html">&lt;p&gt;I set out to add a list of social media icons this past week, I had been postponing the task for a while now and finally got around doing it. It shouldn&amp;#39;t have been hard, find icon images and link them up, right? Well.. things didn&amp;#39;t go so smoothly for me. Actually, it did work, but there was a pesky little aesthetic detail that drove me a bit crazy.&lt;/p&gt;
 
 &lt;p&gt;I decided to use &lt;a href=&quot;https://fortawesome.github.io/Font-Awesome/&quot;&gt;Font Awesome&lt;/a&gt; for the icons, from its vast collection of icons, I only needed 4. But who knows later on I might create other profiles that might require them, it&amp;#39;s nice to have options.&lt;/p&gt;
@@ -62,9 +62,9 @@
  
  <entry>
    <title>Reading Python, a formatted table</title>
-   <link href="/2016/01/22/python-table-formatting/"/>
+   <link href="http://danielcodes.github.io/2016/01/22/python-table-formatting/"/>
    <updated>2016-01-22T00:00:00-05:00</updated>
-   <id>/2016/01/22/python-table-formatting</id>
+   <id>http://danielcodes.github.io/2016/01/22/python-table-formatting</id>
    <content type="html">&lt;p&gt;After finshing the &lt;strong&gt;Python Fundamentals&lt;/strong&gt; course on Pluralsight, the next step was the follow-up course, &lt;strong&gt;Python - Beyond the Basics&lt;/strong&gt;. I recently went over the module about string and representations, which covered &lt;code&gt;str()&lt;/code&gt; and &lt;code&gt;repr()&lt;/code&gt;. Both methods when called on, provide information about the object instance. &lt;code&gt;str()&lt;/code&gt; providing a general description (contents) while &lt;code&gt;repr()&lt;/code&gt; provides a fuller description (type and other small details). The module was short and sweet, about 20 minutes long. However, near the end of the course, a program was introduced that created tables based on provided lists. And this Table class had &lt;code&gt;str()&lt;/code&gt; and &lt;code&gt;repr()&lt;/code&gt; methods defined. The &lt;code&gt;str()&lt;/code&gt; method provided the table contents in a nice formatted output, while &lt;code&gt;repr()&lt;/code&gt; simply provided the type and column titles.&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;c&quot;&gt;#Defining columns and data lists&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;header&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;First Name&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;Last Name&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
@@ -232,9 +232,9 @@ python3 table/table.py
  
  <entry>
    <title>Being goal oriented</title>
-   <link href="/2016/01/21/goal-oriented/"/>
+   <link href="http://danielcodes.github.io/2016/01/21/goal-oriented/"/>
    <updated>2016-01-21T00:00:00-05:00</updated>
-   <id>/2016/01/21/goal-oriented</id>
+   <id>http://danielcodes.github.io/2016/01/21/goal-oriented</id>
    <content type="html">&lt;p&gt;I have been having trouble thoughts lately, mostly leaning towards jealousy. Whether it&amp;#39;d be a relationship that i don&amp;#39;t have, or a material thing. I then begin to think as to what is it that I have. And obviously, the answer is that I have none of those things that I wish I had, that relationship or that material thing. All I have are goals. A mission, and work ethic. A willingness to bust my behind everyday and do whatever it takes to get to my goals. I understand that nothing is handed to anyone and only through hard work and sacrifice you will get to where you want to be in life.&lt;/p&gt;
 
 &lt;p&gt;Around the same time, I came across this video by Elliot Hulse:&lt;/p&gt;
@@ -247,9 +247,9 @@ python3 table/table.py
  
  <entry>
    <title>Resuming TDD with Python</title>
-   <link href="/2016/01/12/resuming-python/"/>
+   <link href="http://danielcodes.github.io/2016/01/12/resuming-python/"/>
    <updated>2016-01-12T00:00:00-05:00</updated>
-   <id>/2016/01/12/resuming-python</id>
+   <id>http://danielcodes.github.io/2016/01/12/resuming-python</id>
    <content type="html">&lt;p&gt;I am taking a small detour from learning Javascript. Reason being that there is still some unfinished Python business. I got the wake up call from watching this &lt;a href=&quot;https://youtu.be/z_ESakf05PQ&quot;&gt;small clip&lt;/a&gt;. The point is you can&amp;#39;t start something and not finish it. You want to...&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -268,9 +268,9 @@ python3 table/table.py
  
  <entry>
    <title>Thinkpad saves the day</title>
-   <link href="/2016/01/02/my-setup/"/>
+   <link href="http://danielcodes.github.io/2016/01/02/my-setup/"/>
    <updated>2016-01-02T00:00:00-05:00</updated>
-   <id>/2016/01/02/my-setup</id>
+   <id>http://danielcodes.github.io/2016/01/02/my-setup</id>
    <content type="html">&lt;p&gt;The first laptop I bought, a &lt;a href=&quot;http://www.cnet.com/products/lenovo-y40-70-laptop-59423030-black-doorbuster-4th-generation-intel-core-i7-4510u-2-00ghz-1600-mhz-4mb/specs/&quot;&gt;Lenovo Y40&lt;/a&gt;, turned out to be horrible disappointment. From a keyboard that I didn&amp;#39;t like, a screen resolution that sucked and to top things off the battery died on me after 5 months of usage. It didn&amp;#39;t completely die on me, but the darn machine would not work unless it was plugged in. Rendering my laptop&amp;#39;s portability useless, as everytime I&amp;#39;d need ot use it, boot up was necessary. I sent in the laptop since it was still under warranty but I was still in need of a laptop for my coding needs as school was already in session.&lt;/p&gt;
 
 &lt;p&gt;I first resorted to borrowing a friend&amp;#39;s tiny notebook. It was a really tiny machine with Ubuntu on it, ultimately the laptop&amp;#39;s keyboard was too small and the fan noise was irritable enough to keep me from using it. But I&amp;#39;d found something cool, that Linux could run on machines with minimal specs! &lt;/p&gt;
@@ -293,9 +293,9 @@ python3 table/table.py
  
  <entry>
    <title>Javascript Bootcamp</title>
-   <link href="/2015/12/29/js-bootcamp/"/>
+   <link href="http://danielcodes.github.io/2015/12/29/js-bootcamp/"/>
    <updated>2015-12-29T00:00:00-05:00</updated>
-   <id>/2015/12/29/js-bootcamp</id>
+   <id>http://danielcodes.github.io/2015/12/29/js-bootcamp</id>
    <content type="html">&lt;p&gt;Right after my finals ended I thought about how to maximize my productivity during this upcoming winter break. I started reading articles on Medium, about the latest programming craze. Of course, it turned out to be Javascript. Although I&amp;#39;ve dabbed into the language, can&amp;#39;t say that I have full understanding of it. This left a bad taste whenever I&amp;#39;d have to write Javascript. I read The Good Parts by Douglas Crockford, some bits resonated while others just seemed too dense. What really got the ball rolling was this &lt;a href=&quot;https://medium.com/@_cmdv_/i-want-to-learn-javascript-in-2015-e96cd85ad225#.hcraa63br&quot;&gt;post&lt;/a&gt;. Next I started the You-Dont-Know-JS series. And after having finished the first two installments, I have to say that the style of teaching is very enjoyable and I am slowly uncovering Javascript. Anything that we can&amp;#39;t comprehend creates frustration, but if you have an understanding of things, there isn&amp;#39;t such problem.&lt;/p&gt;
 
 &lt;p&gt;Then, by some crazy/lucky occurrence, I was on the Javascript subreddit and found that these books were offered in video form. However, they were offered from sites such as Frontend Masters and Pluralsight, both of which required a paid subscription. Luckily, one of the comments pointed to the &lt;a href=&quot;https://www.visualstudio.com/en-us/products/visual-studio-dev-essentials-vs.aspx&quot;&gt;Visual Studio Dev Essentials&lt;/a&gt; site, which gave a free 6-month subscription to Pluralsight. Of course, I signed up right away.&lt;/p&gt;
@@ -306,9 +306,9 @@ python3 table/table.py
  
  <entry>
    <title>An unhealthy amount of screen time</title>
-   <link href="/2015/12/25/screen-time/"/>
+   <link href="http://danielcodes.github.io/2015/12/25/screen-time/"/>
    <updated>2015-12-25T00:00:00-05:00</updated>
-   <id>/2015/12/25/screen-time</id>
+   <id>http://danielcodes.github.io/2015/12/25/screen-time</id>
    <content type="html">&lt;p&gt;It&amp;#39;s Christmas morning, so Merry Christmas!&lt;/p&gt;
 
 &lt;p&gt;Today I want to share my insight on eye strain. I fully knew this, that before committing myself to become a software developer, that I&amp;#39;d have to spend endless time in front of computer. Although I&amp;#39;ve been trying methods here and there to manage this unhealthy, almost unavoidable habit, I always seem to break right back in. The bad habit is to sit in front of a computer for a solid 2-3 hours. This adds up if it&amp;#39;s happening on a daily basis (which it is).&lt;/p&gt;
@@ -323,9 +323,9 @@ python3 table/table.py
  
  <entry>
    <title>On using Tmux</title>
-   <link href="/2015/12/16/tmux-setup/"/>
+   <link href="http://danielcodes.github.io/2015/12/16/tmux-setup/"/>
    <updated>2015-12-16T00:00:00-05:00</updated>
-   <id>/2015/12/16/tmux-setup</id>
+   <id>http://danielcodes.github.io/2015/12/16/tmux-setup</id>
    <content type="html">&lt;h4&gt;Update&lt;/h4&gt;
 
 &lt;h6&gt;01/12/16 - Scrollbar locked when using tmux&lt;/h6&gt;
@@ -405,9 +405,9 @@ setw -g mode-mouse on
  
  <entry>
    <title>Calm and health</title>
-   <link href="/2015/12/15/calm-and-balance/"/>
+   <link href="http://danielcodes.github.io/2015/12/15/calm-and-balance/"/>
    <updated>2015-12-15T00:00:00-05:00</updated>
-   <id>/2015/12/15/calm-and-balance</id>
+   <id>http://danielcodes.github.io/2015/12/15/calm-and-balance</id>
    <content type="html">&lt;p&gt;It&amp;#39;s been one heck of a semester. From thinking, &amp;#39;oh it&amp;#39;s going to be fun learning this and that&amp;#39; to &amp;#39;shit, I have to get this and that done&amp;#39;, see the difference, not much fun. While I underestimated the semester&amp;#39;s course load, I&amp;#39;d say that I&amp;#39;ve improved in other aspects. Those being controlling my temper when things go wrong and maintaining a healthy lifestyle. &lt;/p&gt;
 
 &lt;p&gt;I&amp;#39;d like to address the first, my temper. Ever since I can remember i&amp;#39;ve always been a hot-head. I would always act in the spur of the moment, and deal with consequences after. This, of course, always got me into lots of trouble. Now, how does this relate to the present? Well, previously I ranted about being in a leadership position and having a hard time getting others to do their part. Although it&amp;#39;s been a frustrating experience, I have learned that nothing good comes out of agitating myself further and that I have to deal with things in a calm manner and try not to break walls.&lt;/p&gt;
@@ -420,9 +420,9 @@ setw -g mode-mouse on
  
  <entry>
    <title>Leadership is hard</title>
-   <link href="/2015/12/03/leadership/"/>
+   <link href="http://danielcodes.github.io/2015/12/03/leadership/"/>
    <updated>2015-12-03T00:00:00-05:00</updated>
-   <id>/2015/12/03/leadership</id>
+   <id>http://danielcodes.github.io/2015/12/03/leadership</id>
    <content type="html">&lt;p&gt;This semester I had to partake in 2 group projects. Both of which I ended up taking leadership roles in, AKA Project Management. Up until now, other than writing I haven&amp;#39;t really collaborated much on any other type of project. For this 2 projects, one of them involved mostly writing and the second was software collaboration. I can&amp;#39;t say that it has been easy nor I&amp;#39;ve done a great job at it, all I can say is that is tough and much improvement is needed.&lt;/p&gt;
 
 &lt;p&gt;It&amp;#39;s tough because being a leader means that you have to lead by example. What do I mean? If the leader (me) works hard, the rest of the group will follow right? This doesn&amp;#39;t necessarily work all the time as some people tend to take advantage and decide to not contribute at all, knowing that you&amp;#39;ll be there to pick up the slack. But I might&amp;#39;ve missed something here, besides showing yourself as capable. That isn&amp;#39;t enough, you have to delegate tasks. These are the kind of people that won&amp;#39;t do work unless you nudge them too. Yeah, it&amp;#39;s extremely annoying. But to save yourself some grief and avoid overworking yourself, you have to be assertive and demand work from others as it is their responsibility just as much as it is yours.&lt;/p&gt;
@@ -435,9 +435,9 @@ setw -g mode-mouse on
  
  <entry>
    <title>Being dumb, painful Jekyll setup</title>
-   <link href="/2015/11/27/being-dumb/"/>
+   <link href="http://danielcodes.github.io/2015/11/27/being-dumb/"/>
    <updated>2015-11-27T00:00:00-05:00</updated>
-   <id>/2015/11/27/being-dumb</id>
+   <id>http://danielcodes.github.io/2015/11/27/being-dumb</id>
    <content type="html">&lt;p&gt;Incredibly annoyed that it took me so long to set things up with jekyll here.
 I began customization through the index page, making edits to the html and every darn time I restarted the server, the changes would never go through. It was by chance that I decided to mess with the &lt;strong&gt;_config.yml&lt;/strong&gt; file and found that some parameters defined here were being passed to the index. This meant that no matter how many times I changed the html itself, it would just get replaced, every single time. I stupidly googled &amp;quot;jekyll not saving changes&amp;quot; too. All I can say is...&lt;/p&gt;
 

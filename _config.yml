@@ -11,6 +11,7 @@ title:            Daniel Chia
 tagline:          'Human'
 description:      "Hi, I'm Daniel. Here's where I rant."
 baseurl:          /
+url:              http://danielcodes.github.io
 
 author:
   name:           'Daniel Chia'
