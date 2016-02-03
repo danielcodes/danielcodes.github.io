@@ -1,48 +1,24 @@
 ---
 layout: post
-title: Adding minimal social media icons
+title: Set your Disqus configuration variables 
 comments: true
 ---
 
+After deciding on the theme that I wanted to use for this site, [Hyde](https://github.com/poole/hyde). I was also actively looking for ways to improve the site. I found a really helpful [here](http://joshualande.com/jekyll-github-pages-poole/). This article in essence helped add an Archive, Analytics and Comments to my page. Everything was well set up, or so I thought. When setting up Disqus comments, I placed the markup provided on my page but neglected to fill in the variables that they had **strongly** suggested me to replace.
 
-I set out to adding a list of social media icons this last week, I had been postponing the task for a while now and I finally got around doing it. It shouldn't have been hard, find icon images and link them up, right? Well.. things didn't go as well for me. Actually it did work, but there was a pesky little aesthetic detail that drove me a bit crazy. 
+These are the variables:
 
-I decided to use Font Awesome for the icons, from its vast collection of icons, I only needed 4. But who knows later on I might create other profiles that might require them, it's nice to have options.
+```javascript
+var disqus_config = function () {
+	// Replace PAGE_URL with your page's canonical URL variable
+	this.page.url = PAGE_URL;
 
-I chose to be lazy and simply added the provided CDN to my site:
+	// Replace PAGE_IDENTIFIER with your page's unique identifier variable
+	this.page.identifier = PAGE_IDENTIFIER;  
+};
+``` 
 
-```html
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-```
+### Where I goofed up
 
-From here, you can start inserting icons with the ```<i>``` tag, and add the icon of your selection through a class:
-
-```html
-<i class="fa fa-camera-retro"></i>
-```
-
-So I had the icons, the only thing extra that I did was wrap these tags with ```<a>``` to link them to my profiles. Check it out in the JSFiddle below:
-
-<iframe width="100%" height="200" src="//jsfiddle.net/m2s2qshm/3/embedded/html,result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-
-At this point, I had something working, icons and their respective links. Now, if you look at the result tab in the fiddle, you'll see that the first three icons have some type of dash shadow at the bottom. Whenever I'd hover over the icon, the shadow would show. I can only assume that it has to do with links themselves, just how on hovering text links they become darker and underlined.
-
-I looked at other tutorials and it turned out that they placed all the links in a ```<ul>``` tag. I proceded to play around with things, but it must of not been my day as it did not work yesterday. I was pretty close to giving up on the issue altogether.
-
-Today, out of curiosity I looked over a repository that a friend starred on GitHub. Out of curiosity, I visited the [website](https://nusmods.com/timetable/2015-2016/sem2) and saw that they had the icons I wanted. I decided to give it one last ditch effort. Opened up Developer Tools and proceeded to look at the markup. I saw that the site used a ```<ul>``` tag, and I started wondering, "Why the heck didn't it work yesterday?". Whatever the case may be. I proceeded to wrapping the links in ```<li>``` tags and the whole thing in a ```<ul>``` tag.
-
-Only two things remained to be done, remove the bullet points from the list and place the elements inline, done with the following bit of CSS:
-
-```css
-/*the <ul> has a social-icons class */
-.social-icons { list-style: none; }
-.social-icons li { display: inline-block; }
-```
-
-Here's the final result:
-
-<iframe width="100%" height="150" src="//jsfiddle.net/kn3y78gz/2/embedded/result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-
-Seems like I wrote a little bit more than anticipated.
-
+The way Disqus works is by keying a provided URL, defined by a url variable. As you can tell, I did not define this URL and when I received the first comment on my page, sometimes it showed up and sometimes it didn't. The problem was how the page was being access, by that I mean the protocol used. Disqus was creating two different comment thread
 
