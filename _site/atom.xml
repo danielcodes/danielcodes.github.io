@@ -4,13 +4,59 @@
  <title>Daniel Chia</title>
  <link href="http://danielcodes.github.io/atom.xml" rel="self"/>
  <link href="http://danielcodes.github.io/"/>
- <updated>2016-01-31T23:08:08-05:00</updated>
+ <updated>2016-02-03T01:29:10-05:00</updated>
  <id>http://danielcodes.github.io</id>
  <author>
    <name>Daniel Chia</name>
    <email>danielarmandochia@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Set your Disqus configuration variables</title>
+   <link href="http://danielcodes.github.io/2016/02/03/disqus-variables/"/>
+   <updated>2016-02-03T00:00:00-05:00</updated>
+   <id>http://danielcodes.github.io/2016/02/03/disqus-variables</id>
+   <content type="html">&lt;p&gt;After deciding on the theme that I wanted to use for this site, &lt;a href=&quot;https://github.com/poole/hyde&quot;&gt;Hyde&lt;/a&gt;. I was also actively looking for ways to improve my site. I found this really helpful &lt;a href=&quot;http://joshualande.com/jekyll-github-pages-poole/&quot;&gt;article&lt;/a&gt;, which helped me add an &lt;strong&gt;Archive&lt;/strong&gt; to see my posts in log format, &lt;strong&gt;Analytics&lt;/strong&gt; to track views and &lt;strong&gt;Comments&lt;/strong&gt; for feedback. After going through the steps, everything was well set up, or so I thought. When setting up Disqus comments, I placed the provided markup on my page but neglected to fill in the variables that they had &lt;strong&gt;strongly&lt;/strong&gt; suggested me to replace.&lt;/p&gt;
+
+&lt;h3&gt;The variables, url and identifier&lt;/h3&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;disqus_config&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// Replace PAGE_URL with your page&amp;#39;s canonical URL variable&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;PAGE_URL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// Replace PAGE_IDENTIFIER with your page&amp;#39;s unique identifier variable&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;identifier&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;PAGE_IDENTIFIER&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Where I goofed up&lt;/h3&gt;
+
+&lt;p&gt;The way Disqus works is by keying a provided URL, defined by a url variable. As you can tell, I did not define this URL and when I received the first comment on my page, sometimes it showed up and sometimes it didn&amp;#39;t. The problem was how the page was being accessed, by that I mean the protocol used. Disqus was creating two different comment threads for &lt;code&gt;http://&lt;/code&gt; and &lt;code&gt;https://&lt;/code&gt;. And so, I got annoyed and had to fix the problem.&lt;/p&gt;
+
+&lt;p&gt;I headed over to the documentation and found that I needed to provide an absolute url, and the slug part of the url that comes after the domain name.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;c1&quot;&gt;//ie. example url and identifier&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;http://danielcodes.github.io/2016/01/12/resuming-python/&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;identifier&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;/2016/01/12/resuming-python/&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The way to obtain these variables with Jekyll is:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Replace PAGE_URL with your page&amp;#39;s canonical URL variable&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;{{site.url}}{{page.url}}&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Replace PAGE_IDENTIFIER with your page&amp;#39;s unique identifier variable&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;identifier&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;{{page.url}}&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The beginning part, &lt;code&gt;site.url&lt;/code&gt; has to be defined in your &lt;code&gt;_config.yml&lt;/code&gt;, check mine &lt;a href=&quot;https://github.com/danielcodes/danielcodes.github.io/blob/master/_config.yml&quot;&gt;here&lt;/a&gt;. This is followed by, &lt;code&gt;page.url&lt;/code&gt;, which will look for the route of your blog post.&lt;/p&gt;
+
+&lt;p&gt;That&amp;#39;s pretty much it, define your javascript cofiguration variables and avoid the split threads.
+And don&amp;#39;t forget to test things out first!&lt;/p&gt;
+
+&lt;h3&gt;References&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://help.disqus.com/customer/en/portal/articles/2158629&quot;&gt;Avoiding split threads and missing comments&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://help.disqus.com/customer/en/portal/articles/472098-javascript-configuration-variables&quot;&gt;Javascript configuration variables&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Adding minimal social media icons</title>
