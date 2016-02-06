@@ -161,9 +161,9 @@ unbind r
 
 <p>Now that we have much nicer prefix <strong>CTRL+a</strong>, what comes next is pane splitting. The defaults are set to &quot; (vertical) and % (horizontal). These bindings are hard to memorize and not so intuitive, let&#39;s change them. In your <em>.tmux.conf</em> add:</p>
 <div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="c">#intuitive pane splitting</span>
-<span class="nb">bind</span> <span class="p">|</span> split-window -h -c <span class="s2">&quot;#{pane_current_path}&quot;</span>
-<span class="nb">bind</span> - split-window -v -c <span class="s2">&quot;#{pane_current_path}&quot;</span>
-unbind <span class="s1">&#39;&quot;&#39;</span>
+<span class="nb">bind</span> | split-window -h -c <span class="s2">"#{pane_current_path}"</span>
+<span class="nb">bind</span> - split-window -v -c <span class="s2">"#{pane_current_path}"</span>
+unbind <span class="s1">'"'</span>
 unbind %
 </code></pre></div>
 <p>The first line is saying to use the <strong>|</strong> key to do a horizontal split. The <code>-c &quot;#{pane_current_path}&quot;</code> part makes it so that the split pane remains in the current path where you split from. Imagine being into directory that&#39;s 10 levels down, and having to cd there again when you create a new pane. You get the picture.</p>

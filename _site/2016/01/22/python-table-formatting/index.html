@@ -123,9 +123,9 @@
   <span class="post-date">22 Jan 2016</span>
   <p>After finshing the <strong>Python Fundamentals</strong> course on Pluralsight, the next step was the follow-up course, <strong>Python - Beyond the Basics</strong>. I recently went over the module about string and representations, which covered <code>str()</code> and <code>repr()</code>. Both methods when called on, provide information about the object instance. <code>str()</code> providing a general description (contents) while <code>repr()</code> provides a fuller description (type and other small details). The module was short and sweet, about 20 minutes long. However, near the end of the course, a program was introduced that created tables based on provided lists. And this Table class had <code>str()</code> and <code>repr()</code> methods defined. The <code>str()</code> method provided the table contents in a nice formatted output, while <code>repr()</code> simply provided the type and column titles.</p>
 <div class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#Defining columns and data lists</span>
-<span class="n">header</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;First Name&#39;</span><span class="p">,</span> <span class="s">&#39;Last Name&#39;</span><span class="p">]</span>
-<span class="n">first</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Daniel&#39;</span><span class="p">,</span> <span class="s">&#39;Ronnie&#39;</span><span class="p">,</span> <span class="s">&#39;Vanessa&#39;</span><span class="p">]</span>
-<span class="n">last</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Chia&#39;</span><span class="p">,</span> <span class="s">&#39;Hernandez&#39;</span><span class="p">,</span> <span class="s">&#39;Luka&#39;</span><span class="p">]</span>
+<span class="n">header</span> <span class="o">=</span> <span class="p">[</span><span class="s">'First Name'</span><span class="p">,</span> <span class="s">'Last Name'</span><span class="p">]</span>
+<span class="n">first</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Daniel'</span><span class="p">,</span> <span class="s">'Ronnie'</span><span class="p">,</span> <span class="s">'Vanessa'</span><span class="p">]</span>
+<span class="n">last</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Chia'</span><span class="p">,</span> <span class="s">'Hernandez'</span><span class="p">,</span> <span class="s">'Luka'</span><span class="p">]</span>
 
 <span class="n">t</span> <span class="o">=</span> <span class="n">Table</span><span class="p">(</span><span class="n">header</span><span class="p">,</span> <span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="p">)</span>
 
@@ -141,7 +141,7 @@
 <span class="n">Vanessa</span>    <span class="n">Luka</span>     
 
 <span class="c">#type and column titles for repr()</span>
-<span class="n">Table</span><span class="p">(</span><span class="n">header</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;First Name&#39;</span><span class="p">,</span> <span class="s">&#39;Last Name&#39;</span><span class="p">])</span>
+<span class="n">Table</span><span class="p">(</span><span class="n">header</span><span class="o">=</span><span class="p">[</span><span class="s">'First Name'</span><span class="p">,</span> <span class="s">'Last Name'</span><span class="p">])</span>
 </code></pre></div>
 <p>As an exercise I decided to dive into the code and attempt to decipher what was being written. What followed was a painful time trying to understand the code. I don&#39;t know Pluralsight&#39;s policy on putting their content out in the open, so I won&#39;t put up all the code, only snippets of it. Explaining whatever stumped me, so this post is to:</p>
 
@@ -170,11 +170,11 @@
 
 <p>The 3rd defined variable, provides a list of the string formatters, <code>[{:column_width}, {:column_width_2}, .. ]</code></p>
 <div class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#padding, example</span>
-<span class="n">first_name</span> <span class="o">=</span> <span class="s">&#39;{:10}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&#39;Daniel&#39;</span><span class="p">)</span>
+<span class="n">first_name</span> <span class="o">=</span> <span class="s">'{:10}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">'Daniel'</span><span class="p">)</span>
 
-<span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">output -&gt; &#39;Daniel    &#39;</span>
-<span class="sd">&#39;&#39;&#39;</span>
+<span class="s">'''
+output -&gt; 'Daniel    '
+'''</span>
 </code></pre></div>
 <p>After setting up those variables, the table is built row by row.</p>
 
@@ -193,38 +193,40 @@ python3 table/table.py
 <span class="c">#formatters is the list with {:col_width}</span>
 <span class="c">#ie. {:10}</span>
 <span class="c">#header is a list of column titles</span>
-<span class="c">#ie. [&#39;First name&#39;, &#39;Last name&#39;]</span>
-<span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">outputs -&gt; (&#39;First name&#39;, &#39;Last Name&#39;)</span>
-<span class="sd">note: You don&#39;t actually see this, it is hidden in a generator expression, unless you decide to iterate over it. Note that the expression is inside the result list, [(gen. expr), ..]</span>
-<span class="sd">&#39;&#39;&#39;</span>
+<span class="c">#ie. ['First name', 'Last name']</span>
+<span class="s">'''
+outputs -&gt; ('First name', 'Last Name')
+note: You don't actually see this, it is hidden in a generator expression, unless you decide to iterate over it. Note that the expression is inside the result list, [(gen. expr), ..]
+'''</span>
 <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
     <span class="n">formatters</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">header</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">col_count</span><span class="p">))</span>
+
 </code></pre></div>
 <p>the line separators (=),</p>
 <div class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#append = line separator, also a generator expression</span>
 <span class="c">#grab the widths, ie. [10, 9]</span>
-<span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">outputs -&gt; (&#39;==========&#39;, &#39;=========&#39;)</span>
-<span class="sd">note: can&#39;t see this either</span>
-<span class="sd">&#39;&#39;&#39;</span>
+<span class="s">'''
+outputs -&gt; ('==========', '=========')
+note: can't see this either
+'''</span>
 <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-    <span class="p">(</span><span class="s">&#39;=&#39;</span> <span class="o">*</span> <span class="n">col_widths</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="p">(</span><span class="s">'='</span> <span class="o">*</span> <span class="n">col_widths</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
      <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">col_count</span><span class="p">)))</span>
+
 </code></pre></div>
 <p>creating the rows based on the provided data lists,</p>
 <div class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#append data from lists (first and last names), tricky part</span>
 <span class="c">#data is a tuple of lists </span>
 <span class="c">#ie. ( [first_names], [last_names], etc )</span>
-<span class="c">#by using zip and the * operator, we&#39;re unpacking this tuple and creating the pairs</span>
+<span class="c">#by using zip and the * operator, we're unpacking this tuple and creating the pairs</span>
 <span class="c">#we end up with [(first_name, last_name), (another_fn, another_ln), ..], which are the rows themselves!</span>
-<span class="c">#we&#39;re giving the appropiate padding to each string</span>
-<span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">outputs -&gt; [&#39;Daniel    &#39;, &#39;Chia     &#39;],</span>
-<span class="sd">           [&#39;Ronnie    &#39;, &#39;Hernandez&#39;], </span>
-<span class="sd">           [&#39;Vanessa   &#39;, &#39;Luka     &#39;]</span>
-<span class="sd">&#39;&#39;&#39;</span>
+<span class="c">#we're giving the appropiate padding to each string</span>
+<span class="s">'''
+outputs -&gt; ['Daniel    ', 'Chia     '],
+           ['Ronnie    ', 'Hernandez'], 
+           ['Vanessa   ', 'Luka     ']
+'''</span>
 
 <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">data</span><span class="p">):</span>
     <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
@@ -235,20 +237,20 @@ python3 table/table.py
 <div class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#at this point our result list is almost complete</span>
 <span class="c">#it looks like this, printing the items inside it</span>
 
-<span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">[ (&#39;First name&#39;, &#39;Last Name&#39;)</span>
-<span class="sd">  (&#39;==========&#39;, &#39;=========&#39;)</span>
-<span class="sd">  [&#39;Daniel    &#39;, &#39;Chia     &#39;] </span>
-<span class="sd">  [&#39;Ronnie    &#39;, &#39;Hernandez&#39;]</span>
-<span class="sd">  [&#39;Vanessa   &#39;, &#39;Luka     &#39;] ]</span>
-<span class="sd">&#39;&#39;&#39;</span>
+<span class="s">'''
+[ ('First name', 'Last Name')
+  ('==========', '=========')
+  ['Daniel    ', 'Chia     '] 
+  ['Ronnie    ', 'Hernandez']
+  ['Vanessa   ', 'Luka     '] ]
+'''</span>
 
 <span class="c">#join the rows with spaces </span>
-<span class="n">result</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">result</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="p">(</span><span class="s">' '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">result</span><span class="p">)</span>
 
 <span class="c">#return the list with line separators added</span>
 <span class="c">#voila! the list is done</span>
-<span class="k">return</span> <span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">rslt</span><span class="p">)</span>
+<span class="k">return</span> <span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">rslt</span><span class="p">)</span>
 </code></pre></div>
 <p>Looking back at the code, it doesn&#39;t seem so bad. It&#39;s often lack of understanding that brings those &#39;wat&#39; moments, so it&#39;s worthwhile to spend the time understading concepts. Read and read more code. Narrowing down on the concepts that threw me off a bit, there are:</p>
 
