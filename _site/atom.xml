@@ -4,7 +4,7 @@
  <title>Daniel Chia</title>
  <link href="http://danielcodes.github.io/atom.xml" rel="self"/>
  <link href="http://danielcodes.github.io/"/>
- <updated>2016-02-06T17:35:12-05:00</updated>
+ <updated>2016-02-07T17:57:28-05:00</updated>
  <id>http://danielcodes.github.io</id>
  <author>
    <name>Daniel Chia</name>
@@ -20,27 +20,28 @@
    <content type="html">&lt;p&gt;I had a very productive winter break. I managed to hit alot of milestones and that required a drastic change in my day to day routine. Amongst the things that I accomplished are:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Finishing 3 Pluralsight courses&lt;/strong&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Advanced Javascript&lt;/li&gt;
-&lt;li&gt;Python Fundamentals&lt;/li&gt;
-&lt;li&gt;Python Beyond the Basics&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Doing a chapter a day from the Test Driven Development with Python book&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Finishing 3 Pluralsight courses&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Advanced Javascript&lt;/li&gt;
+      &lt;li&gt;Python Fundamentals&lt;/li&gt;
+      &lt;li&gt;Python Beyond the Basics&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Doing a chapter a day from the Test Driven Development with Python book&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;I started by reading the &lt;a href=&quot;https://github.com/getify/You-Dont-Know-JS&quot;&gt;&lt;strong&gt;You-Dont-Know-JS&lt;/strong&gt;&lt;/a&gt; book series, managed to get past the first two and decided to just do the video lesson instead. I still plan to finish the rest of the books somewhere along this semester. As to Python, having worked on a Django project in the Fall, at times I felt that my understanding was lacking. So I took the time to really get the basics down, this has helped tremendously as I feel much more confident in my ability to read Python code. Consuming too much video material in one sitting is always a bad idea (found that the hard way), so I found balance by watching only an hour of the course per day. This was followed by practicing whatever I had learned right away. &lt;/p&gt;
+&lt;p&gt;I started by reading the &lt;a href=&quot;https://github.com/getify/You-Dont-Know-JS&quot;&gt;&lt;strong&gt;You-Dont-Know-JS&lt;/strong&gt;&lt;/a&gt; book series, managed to get past the first two and decided to just do the video lesson instead. I still plan to finish the rest of the books somewhere along this semester. As to Python, having worked on a Django project in the Fall, at times I felt that my understanding was lacking. So I took the time to really get the basics down, this has helped tremendously as I feel much more confident in my ability to read Python code. Consuming too much video material in one sitting is always a bad idea (found that the hard way), so I found balance by watching only an hour of the course per day. This was followed by practicing whatever I had learned right away.&lt;/p&gt;
 
-&lt;p&gt;Learning the basics of a language was only part of my day, I used the rest of the day to read a chapter from &lt;a href=&quot;http://chimera.labs.oreilly.com/books/1234000000754/index.html&quot;&gt;&lt;strong&gt;TDD with Python&lt;/strong&gt;&lt;/a&gt;. These chapters were &lt;strong&gt;DENSE&lt;/strong&gt; so I had to spend a good 2 - 3 hours per chapter, that is only if things went smoothly, at times debugging would take a frustratingly long time. I managed to cover everything from Chapter 8 to Chapter 19. I still have 2 chapters until I wrap up the book, which will get done somewhere in this month. Overall it&amp;#39;s been such a great book, hands-on teaching on the TDD practice. Really can&amp;#39;t wait to start applying it to my own projects.&lt;/p&gt;
+&lt;p&gt;Learning the basics of a language was only part of my day, I used the rest of the day to read a chapter from &lt;a href=&quot;http://chimera.labs.oreilly.com/books/1234000000754/index.html&quot;&gt;&lt;strong&gt;TDD with Python&lt;/strong&gt;&lt;/a&gt;. These chapters were &lt;strong&gt;DENSE&lt;/strong&gt; so I had to spend a good 2 - 3 hours per chapter, that is only if things went smoothly, at times debugging would take a frustratingly long time. I managed to cover everything from Chapter 8 to Chapter 19. I still have 2 chapters until I wrap up the book, which will get done somewhere in this month. Overall it’s been such a great book, hands-on teaching on the TDD practice. Really can’t wait to start applying it to my own projects.&lt;/p&gt;
 
-&lt;p&gt;This pretty much sums it up, most of the week (I&amp;#39;d say 5/7 days) I would make sure that I got a hour of video and one chapter of the book down, no matter what. This wouldn&amp;#39;t have been possible with the irregular sleep schedule that I had at that time. I needed to become a morning person. A morning person, gets more hours in the day and if I was to be productive at all, I needed all the time I could get my hands on.&lt;/p&gt;
+&lt;p&gt;This pretty much sums it up, most of the week (I’d say 5/7 days) I would make sure that I got a hour of video and one chapter of the book down, no matter what. This wouldn’t have been possible with the irregular sleep schedule that I had at that time. I needed to become a morning person. A morning person, gets more hours in the day and if I was to be productive at all, I needed all the time I could get my hands on.&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;Become productivity-obssessed, wake up early, and get work done.&lt;/p&gt;
+  &lt;p&gt;Become productivity-obssessed, wake up early, and get work done.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;That&amp;#39;s my new motto.&lt;/p&gt;
+&lt;p&gt;That’s my new motto.&lt;/p&gt;
+
 </content>
  </entry>
  
@@ -51,44 +52,53 @@
    <id>http://danielcodes.github.io/2016/02/03/disqus-variables</id>
    <content type="html">&lt;p&gt;After deciding on the theme that I wanted to use for this site, &lt;a href=&quot;https://github.com/poole/hyde&quot;&gt;Hyde&lt;/a&gt;. I was also actively looking for ways to improve my site. I found this really helpful &lt;a href=&quot;http://joshualande.com/jekyll-github-pages-poole/&quot;&gt;article&lt;/a&gt;, which helped me add an &lt;strong&gt;Archive&lt;/strong&gt; to see my posts in log format, &lt;strong&gt;Analytics&lt;/strong&gt; to track views and &lt;strong&gt;Comments&lt;/strong&gt; for feedback. After going through the steps, everything was well set up, or so I thought. When setting up Disqus comments, I placed the provided markup on my page but neglected to fill in the variables that they had &lt;strong&gt;strongly&lt;/strong&gt; suggested me to replace.&lt;/p&gt;
 
-&lt;h3&gt;The variables, url and identifier&lt;/h3&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;disqus_config&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// Replace PAGE_URL with your page&#39;s canonical URL variable
-&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;PAGE_URL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;h3 id=&quot;the-variables-url-and-identifier&quot;&gt;The variables, url and identifier&lt;/h3&gt;
 
-    &lt;span class=&quot;c1&quot;&gt;// Replace PAGE_IDENTIFIER with your page&#39;s unique identifier variable
-&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;identifier&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;PAGE_IDENTIFIER&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;Where I goofed up&lt;/h3&gt;
+&lt;p&gt;```javascript
+var disqus_config = function () {
+	// Replace PAGE_URL with your page’s canonical URL variable
+	this.page.url = PAGE_URL;&lt;/p&gt;
 
-&lt;p&gt;The way Disqus works is by keying a provided URL, defined by a url variable. As you can tell, I did not define this URL and when I received the first comment on my page, sometimes it showed up and sometimes it didn&amp;#39;t. The problem was how the page was being accessed, by that I mean the protocol used. Disqus was creating two different comment threads for &lt;code&gt;http://&lt;/code&gt; and &lt;code&gt;https://&lt;/code&gt;. And so, I got annoyed and had to fix the problem.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// Replace PAGE_IDENTIFIER with your page&#39;s unique identifier variable
+this.page.identifier = PAGE_IDENTIFIER;   }; ``` 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;where-i-goofed-up&quot;&gt;Where I goofed up&lt;/h3&gt;
+
+&lt;p&gt;The way Disqus works is by keying a provided URL, defined by a url variable. As you can tell, I did not define this URL and when I received the first comment on my page, sometimes it showed up and sometimes it didn’t. The problem was how the page was being accessed, by that I mean the protocol used. Disqus was creating two different comment threads for &lt;code&gt;http://&lt;/code&gt; and &lt;code&gt;https://&lt;/code&gt;. And so, I got annoyed and had to fix the problem.&lt;/p&gt;
 
 &lt;p&gt;I headed over to the documentation and found that I needed to provide an absolute url, and the slug part of the url that comes after the domain name.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;c1&quot;&gt;//ie. example url and identifier
-&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;http://danielcodes.github.io/2016/01/12/resuming-python/&quot;&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;identifier&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;/2016/01/12/resuming-python/&quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code&gt;javascript
+//ie. example url and identifier
+var this.page.url = &quot;http://danielcodes.github.io/2016/01/12/resuming-python/&quot;
+var this.page.identifier = &quot;/2016/01/12/resuming-python/&quot;
+&lt;/code&gt;&lt;/p&gt;
+
 &lt;p&gt;The way to obtain these variables with Jekyll is:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;
-&lt;span class=&quot;c1&quot;&gt;// Replace PAGE_URL with your page&#39;s canonical URL variable
-&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;{{site.url}}{{page.url}}&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-&lt;span class=&quot;c1&quot;&gt;// Replace PAGE_IDENTIFIER with your page&#39;s unique identifier variable
-&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;identifier&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;{{page.url}}&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;p&gt;```javascript&lt;/p&gt;
 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;// Replace PAGE_URL with your page’s canonical URL variable
+var this.page.url = “{{site.url}}{{page.url}}”;&lt;/p&gt;
+
+&lt;p&gt;// Replace PAGE_IDENTIFIER with your page’s unique identifier variable
+var this.page.identifier = “{{page.url}}”;&lt;/p&gt;
+
+&lt;p&gt;```&lt;/p&gt;
+
 &lt;p&gt;The beginning part, &lt;code&gt;site.url&lt;/code&gt; has to be defined in your &lt;code&gt;_config.yml&lt;/code&gt;, check mine &lt;a href=&quot;https://github.com/danielcodes/danielcodes.github.io/blob/master/_config.yml&quot;&gt;here&lt;/a&gt;. This is followed by, &lt;code&gt;page.url&lt;/code&gt;, which will look for the route of your blog post.&lt;/p&gt;
 
-&lt;p&gt;That&amp;#39;s pretty much it, define your javascript cofiguration variables and avoid the split threads.
-And don&amp;#39;t forget to test things out first!&lt;/p&gt;
+&lt;p&gt;That’s pretty much it, define your javascript cofiguration variables and avoid the split threads.
+And don’t forget to test things out first!&lt;/p&gt;
 
-&lt;h3&gt;References&lt;/h3&gt;
+&lt;h3 id=&quot;references&quot;&gt;References&lt;/h3&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://help.disqus.com/customer/en/portal/articles/2158629&quot;&gt;Avoiding split threads and missing comments&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://help.disqus.com/customer/en/portal/articles/472098-javascript-configuration-variables&quot;&gt;Javascript configuration variables&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://help.disqus.com/customer/en/portal/articles/2158629&quot;&gt;Avoiding split threads and missing comments&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://help.disqus.com/customer/en/portal/articles/472098-javascript-configuration-variables&quot;&gt;Javascript configuration variables&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
 </content>
  </entry>
  
@@ -97,46 +107,57 @@ And don&amp;#39;t forget to test things out first!&lt;/p&gt;
    <link href="http://danielcodes.github.io/2016/01/30/adding-minimal-icons/"/>
    <updated>2016-01-30T00:00:00-05:00</updated>
    <id>http://danielcodes.github.io/2016/01/30/adding-minimal-icons</id>
-   <content type="html">&lt;p&gt;I set out to add a list of social media icons this past week, I had been postponing the task for a while now and finally got around doing it. It shouldn&amp;#39;t have been hard, find icon images and link them up, right? Well.. things didn&amp;#39;t go so smoothly for me. Actually, it did work, but there was a pesky little aesthetic detail that drove me a bit crazy.&lt;/p&gt;
+   <content type="html">&lt;p&gt;I set out to add a list of social media icons this past week, I had been postponing the task for a while now and finally got around doing it. It shouldn’t have been hard, find icon images and link them up, right? Well.. things didn’t go so smoothly for me. Actually, it did work, but there was a pesky little aesthetic detail that drove me a bit crazy.&lt;/p&gt;
 
-&lt;p&gt;I decided to use &lt;a href=&quot;https://fortawesome.github.io/Font-Awesome/&quot;&gt;Font Awesome&lt;/a&gt; for the icons, from its vast collection of icons, I only needed 4. But who knows later on I might create other profiles that might require them, it&amp;#39;s nice to have options.&lt;/p&gt;
+&lt;p&gt;I decided to use &lt;a href=&quot;https://fortawesome.github.io/Font-Awesome/&quot;&gt;Font Awesome&lt;/a&gt; for the icons, from its vast collection of icons, I only needed 4. But who knows later on I might create other profiles that might require them, it’s nice to have options.&lt;/p&gt;
 
 &lt;p&gt;I chose to be lazy and simply added the provided CDN to my site:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;```html&lt;/p&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css&quot; /&gt;
+
+&lt;p&gt;```&lt;/p&gt;
+
 &lt;p&gt;With that in place, icon insertion is just a matter of placing &lt;code&gt;&amp;lt;i&amp;gt;&lt;/code&gt; tags, selecting the ones you want through a class:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;i&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;fa fa-github&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/i&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code&gt;html
+&amp;lt;i class=&quot;fa fa-github&quot;&amp;gt;&amp;lt;/i&amp;gt;
+&lt;/code&gt;&lt;/p&gt;
+
 &lt;p&gt;So I had the icons, the only extra thing that I did was wrap these tags with &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt; tags to link them to my profiles. Check it out in the JSFiddle below:&lt;/p&gt;
 
 &lt;iframe width=&quot;100%&quot; height=&quot;200&quot; src=&quot;//jsfiddle.net/m2s2qshm/3/embedded/html,result/&quot; allowfullscreen=&quot;allowfullscreen&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
 
-&lt;h3&gt;The Problem&lt;/h3&gt;
+&lt;h3 id=&quot;the-problem&quot;&gt;The Problem&lt;/h3&gt;
 
-&lt;p&gt;At this point, I had something working, icons and their respective links. Now, if you look at the result tab in the fiddle, you&amp;#39;ll see that the first three icons have some type of dash shadow at the bottom. Whenever I&amp;#39;d hover over these icons, the shadow would show. I can only assume that it has to do with links themselves, similar to how hovering over text links makes them darker and underlined.&lt;/p&gt;
+&lt;p&gt;At this point, I had something working, icons and their respective links. Now, if you look at the result tab in the fiddle, you’ll see that the first three icons have some type of dash shadow at the bottom. Whenever I’d hover over these icons, the shadow would show. I can only assume that it has to do with links themselves, similar to how hovering over text links makes them darker and underlined.&lt;/p&gt;
 
 &lt;p&gt;I looked at other tutorials and it turned out that they placed all the links in a &lt;code&gt;&amp;lt;ul&amp;gt;&lt;/code&gt; tag. I proceded to play around with things, but it must of not been my day as it did not work. I was pretty close to giving up on the issue altogether.&lt;/p&gt;
 
-&lt;h3&gt;Solution&lt;/h3&gt;
+&lt;h3 id=&quot;solution&quot;&gt;Solution&lt;/h3&gt;
 
-&lt;p&gt;Today, out of curiosity I looked over a repository that a friend starred on GitHub. I visited the &lt;a href=&quot;https://nusmods.com/timetable/2015-2016/sem2&quot;&gt;website&lt;/a&gt; and saw that they had the icons I wanted. I decided to give it one last ditch effort. I opened up Developer Tools and proceeded to look at the markup. I saw that the site used a &lt;code&gt;&amp;lt;ul&amp;gt;&lt;/code&gt; tag, and I wondered, &lt;/p&gt;
+&lt;p&gt;Today, out of curiosity I looked over a repository that a friend starred on GitHub. I visited the &lt;a href=&quot;https://nusmods.com/timetable/2015-2016/sem2&quot;&gt;website&lt;/a&gt; and saw that they had the icons I wanted. I decided to give it one last ditch effort. I opened up Developer Tools and proceeded to look at the markup. I saw that the site used a &lt;code&gt;&amp;lt;ul&amp;gt;&lt;/code&gt; tag, and I wondered,&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;Why the heck didn&amp;#39;t it work the other time?&lt;/p&gt;
+  &lt;p&gt;Why the heck didn’t it work the other time?&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;Whatever the case may be. I proceeded to wrap the links in &lt;code&gt;&amp;lt;li&amp;gt;&lt;/code&gt; tags and the whole thing in a &lt;code&gt;&amp;lt;ul&amp;gt;&lt;/code&gt; tag.&lt;/p&gt;
 
 &lt;p&gt;Only two things remained to be done, remove the bullet points from the list and place the elements inline, done with the following bit of CSS:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;c&quot;&gt;/*targetting the &amp;lt;ul&amp;gt; with social-icons class*/&lt;/span&gt;
-&lt;span class=&quot;nc&quot;&gt;.social-icons&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;list-style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;nc&quot;&gt;.social-icons&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;li&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inline-block&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Here&amp;#39;s the final result:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;css
+/*targetting the &amp;lt;ul&amp;gt; with social-icons class*/
+.social-icons { list-style: none; }
+.social-icons li { display: inline-block; }
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Here’s the final result:&lt;/p&gt;
 
 &lt;iframe width=&quot;100%&quot; height=&quot;150&quot; src=&quot;//jsfiddle.net/kn3y78gz/2/embedded/result/&quot; allowfullscreen=&quot;allowfullscreen&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;No more annoying little dashes at the bottom, good grief.&lt;/p&gt;
+
 </content>
  </entry>
  
@@ -146,169 +167,192 @@ And don&amp;#39;t forget to test things out first!&lt;/p&gt;
    <updated>2016-01-22T00:00:00-05:00</updated>
    <id>http://danielcodes.github.io/2016/01/22/python-table-formatting</id>
    <content type="html">&lt;p&gt;After finshing the &lt;strong&gt;Python Fundamentals&lt;/strong&gt; course on Pluralsight, the next step was the follow-up course, &lt;strong&gt;Python - Beyond the Basics&lt;/strong&gt;. I recently went over the module about string and representations, which covered &lt;code&gt;str()&lt;/code&gt; and &lt;code&gt;repr()&lt;/code&gt;. Both methods when called on, provide information about the object instance. &lt;code&gt;str()&lt;/code&gt; providing a general description (contents) while &lt;code&gt;repr()&lt;/code&gt; provides a fuller description (type and other small details). The module was short and sweet, about 20 minutes long. However, near the end of the course, a program was introduced that created tables based on provided lists. And this Table class had &lt;code&gt;str()&lt;/code&gt; and &lt;code&gt;repr()&lt;/code&gt; methods defined. The &lt;code&gt;str()&lt;/code&gt; method provided the table contents in a nice formatted output, while &lt;code&gt;repr()&lt;/code&gt; simply provided the type and column titles.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;c&quot;&gt;#Defining columns and data lists&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;header&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;First Name&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;Last Name&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;first&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;Daniel&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;Ronnie&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;Vanessa&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;last&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;Chia&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;Hernandez&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;Luka&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
 
-&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Table&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;header&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;first&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;last&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;p&gt;```python
+#Defining columns and data lists
+header = [‘First Name’, ‘Last Name’]
+first = [‘Daniel’, ‘Ronnie’, ‘Vanessa’]
+last = [‘Chia’, ‘Hernandez’, ‘Luka’]&lt;/p&gt;
 
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;repr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;p&gt;t = Table(header, first, last)&lt;/p&gt;
 
-&lt;span class=&quot;c&quot;&gt;#Output&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#a formatted table for str()&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;First&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Name&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Last&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Name&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;==========&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=========&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;Daniel&lt;/span&gt;     &lt;span class=&quot;n&quot;&gt;Chia&lt;/span&gt;     
-&lt;span class=&quot;n&quot;&gt;Ronnie&lt;/span&gt;     &lt;span class=&quot;n&quot;&gt;Hernandez&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;Vanessa&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;Luka&lt;/span&gt;     
+&lt;p&gt;print(str(t))
+print(repr(t))&lt;/p&gt;
 
-&lt;span class=&quot;c&quot;&gt;#type and column titles for repr()&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;Table&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;header&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;First Name&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;Last Name&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;As an exercise I decided to dive into the code and attempt to decipher what was being written. What followed was a painful time trying to understand the code. I don&amp;#39;t know Pluralsight&amp;#39;s policy on putting their content out in the open, so I won&amp;#39;t put up all the code, only snippets of it. Explaining whatever stumped me, so this post is to:&lt;/p&gt;
+&lt;h1 id=&quot;output&quot;&gt;Output&lt;/h1&gt;
+&lt;p&gt;#a formatted table for str()
+First Name Last Name
+========== =========
+Daniel     Chia   &lt;br /&gt;
+Ronnie     Hernandez
+Vanessa    Luka&lt;/p&gt;
+
+&lt;h1 id=&quot;type-and-column-titles-for-repr&quot;&gt;type and column titles for repr()&lt;/h1&gt;
+&lt;p&gt;Table(header=[‘First Name’, ‘Last Name’])
+```&lt;/p&gt;
+
+&lt;p&gt;As an exercise I decided to dive into the code and attempt to decipher what was being written. What followed was a painful time trying to understand the code. I don’t know Pluralsight’s policy on putting their content out in the open, so I won’t put up all the code, only snippets of it. Explaining whatever stumped me, so this post is to:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;reinforce my learning&lt;/li&gt;
-&lt;li&gt;show insight to those who haven&amp;#39;t seen these practices&lt;/li&gt;
+  &lt;li&gt;reinforce my learning&lt;/li&gt;
+  &lt;li&gt;show insight to those who haven’t seen these practices&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Without further ado, let&amp;#39;s begin:&lt;/p&gt;
+&lt;p&gt;Without further ado, let’s begin:&lt;/p&gt;
 
-&lt;p&gt;As you can see above, we&amp;#39;re passing a couple of lists (a header for the column titles, followed by lists of data) to the the Table class. This data is then manipulated in the &lt;code&gt;str()&lt;/code&gt; method to provide the formatted output shown.  &lt;/p&gt;
+&lt;p&gt;As you can see above, we’re passing a couple of lists (a header for the column titles, followed by lists of data) to the the Table class. This data is then manipulated in the &lt;code&gt;str()&lt;/code&gt; method to provide the formatted output shown.&lt;/p&gt;
 
 &lt;p&gt;The breakdown of the &lt;code&gt;str()&lt;/code&gt; function was actually quite simple:&lt;/p&gt;
 
 &lt;p&gt;First, a few variables are defined:&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;number of columns&lt;/li&gt;
-&lt;li&gt;widths of the colums, placed in a list
-
-&lt;ul&gt;
-&lt;li&gt;compare the longest string in a column vs. column title, the higher of the two becomes the width for that column&lt;br&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;string formatters, to provide space padding for strings &lt;/li&gt;
+  &lt;li&gt;number of columns&lt;/li&gt;
+  &lt;li&gt;widths of the colums, placed in a list
+    &lt;ul&gt;
+      &lt;li&gt;compare the longest string in a column vs. column title, the higher of the two becomes the width for that column&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;string formatters, to provide space padding for strings&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;The 3rd defined variable, provides a list of the string formatters, &lt;code&gt;[{:column_width}, {:column_width_2}, .. ]&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;c&quot;&gt;#padding, example&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;first_name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;{:10}&#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;Daniel&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
-&lt;span class=&quot;s&quot;&gt;&#39;&#39;&#39;
-output -&amp;gt; &#39;Daniel    &#39;
-&#39;&#39;&#39;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;```python
+#padding, example
+first_name = ‘‘.format(‘Daniel’)&lt;/p&gt;
+
+&lt;p&gt;’’’
+output -&amp;gt; ‘Daniel    ‘
+‘’’
+```&lt;/p&gt;
+
 &lt;p&gt;After setting up those variables, the table is built row by row.&lt;/p&gt;
 
-&lt;p&gt;First an empty list is created, then 3 append calls are made, one for the header, one for the = line separators and lastly pair up the data lists and place them row by row. Each row is then tied together with a space (column divider), and returned with new line separators for a tabular display. &lt;/p&gt;
+&lt;p&gt;First an empty list is created, then 3 append calls are made, one for the header, one for the = line separators and lastly pair up the data lists and place them row by row. Each row is then tied together with a space (column divider), and returned with new line separators for a tabular display.&lt;/p&gt;
 
 &lt;p&gt;I provide the code to create the table, you can get it from:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;git clone https://gist.github.com/9840c91f8e94e5177aec.git table
+
+&lt;p&gt;&lt;code&gt;sh
+git clone https://gist.github.com/9840c91f8e94e5177aec.git table
 python3 table/table.py
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/p&gt;
+
 &lt;p&gt;First the empty list,&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;c&quot;&gt;#empyt list&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code&gt;python
+#empyt list
+result = []
+&lt;/code&gt;&lt;/p&gt;
+
 &lt;p&gt;Next, append the headers,&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;c&quot;&gt;#append header, a generator expression &lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#formatters is the list with {:col_width}&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#ie. {:10}&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#header is a list of column titles&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#ie. [&#39;First name&#39;, &#39;Last name&#39;]&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;&#39;&#39;&#39;
-outputs -&amp;gt; (&#39;First name&#39;, &#39;Last Name&#39;)
-note: You don&#39;t actually see this, it is hidden in a generator expression, unless you decide to iterate over it. Note that the expression is inside the result list, [(gen. expr), ..]
-&#39;&#39;&#39;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;formatters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;header&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;col_count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;```python
+#append header, a generator expression 
+#formatters is the list with {:col_width}
+#ie. {:10}
+#header is a list of column titles
+#ie. [‘First name’, ‘Last name’]
+‘’’
+outputs -&amp;gt; (‘First name’, ‘Last Name’)
+note: You don’t actually see this, it is hidden in a generator expression, unless you decide to iterate over it. Note that the expression is inside the result list, [(gen. expr), ..]
+‘’’
+result.append(
+	formatters[i].format(header[i])
+	for i in range(col_count))&lt;/p&gt;
+
+&lt;p&gt;```&lt;/p&gt;
+
 &lt;p&gt;the line separators (=),&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;c&quot;&gt;#append = line separator, also a generator expression&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#grab the widths, ie. [10, 9]&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;&#39;&#39;&#39;
-outputs -&amp;gt; (&#39;==========&#39;, &#39;=========&#39;)
-note: can&#39;t see this either
-&#39;&#39;&#39;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;=&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col_widths&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-     &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;col_count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;```python
+#append = line separator, also a generator expression
+#grab the widths, ie. [10, 9]
+‘’’
+outputs -&amp;gt; (‘==========’, ‘=========’)
+note: can’t see this either
+‘’’
+result.append(
+	(‘=’ * col_widths[i]
+	 for i in range(col_count)))&lt;/p&gt;
+
+&lt;p&gt;```&lt;/p&gt;
+
 &lt;p&gt;creating the rows based on the provided data lists,&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;c&quot;&gt;#append data from lists (first and last names), tricky part&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#data is a tuple of lists &lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#ie. ( [first_names], [last_names], etc )&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#by using zip and the * operator, we&#39;re unpacking this tuple and creating the pairs&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#we end up with [(first_name, last_name), (another_fn, another_ln), ..], which are the rows themselves!&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#we&#39;re giving the appropiate padding to each string&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;&#39;&#39;&#39;
-outputs -&amp;gt; [&#39;Daniel    &#39;, &#39;Chia     &#39;],
-           [&#39;Ronnie    &#39;, &#39;Hernandez&#39;], 
-           [&#39;Vanessa   &#39;, &#39;Luka     &#39;]
-&#39;&#39;&#39;&lt;/span&gt;
 
-&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;row&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;zip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;formatters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-         &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;col_count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)])&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;```python
+#append data from lists (first and last names), tricky part
+#data is a tuple of lists 
+#ie. ( [first_names], [last_names], etc )
+#by using zip and the * operator, we’re unpacking this tuple and creating the pairs
+#we end up with [(first_name, last_name), (another_fn, another_ln), ..], which are the rows themselves!
+#we’re giving the appropiate padding to each string
+‘’’
+outputs -&amp;gt; [‘Daniel    ‘, ‘Chia     ‘],
+		   [‘Ronnie    ‘, ‘Hernandez’], 
+		   [‘Vanessa   ‘, ‘Luka     ‘]
+‘’’&lt;/p&gt;
+
+&lt;p&gt;for row in zip(*data):
+	result.append(
+		[formatters[i].format(row[i])
+		 for i in range(col_count)])
+```&lt;/p&gt;
+
 &lt;p&gt;and tying everything together.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;c&quot;&gt;#at this point our result list is almost complete&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#it looks like this, printing the items inside it&lt;/span&gt;
 
-&lt;span class=&quot;s&quot;&gt;&#39;&#39;&#39;
-[ (&#39;First name&#39;, &#39;Last Name&#39;)
-  (&#39;==========&#39;, &#39;=========&#39;)
-  [&#39;Daniel    &#39;, &#39;Chia     &#39;] 
-  [&#39;Ronnie    &#39;, &#39;Hernandez&#39;]
-  [&#39;Vanessa   &#39;, &#39;Luka     &#39;] ]
-&#39;&#39;&#39;&lt;/span&gt;
+&lt;p&gt;```python
+#at this point our result list is almost complete
+#it looks like this, printing the items inside it&lt;/p&gt;
 
-&lt;span class=&quot;c&quot;&gt;#join the rows with spaces &lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39; &#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;p&gt;’’’
+[ (‘First name’, ‘Last Name’)
+  (‘==========’, ‘=========’)
+  [‘Daniel    ‘, ‘Chia     ‘] 
+  [‘Ronnie    ‘, ‘Hernandez’]
+  [‘Vanessa   ‘, ‘Luka     ‘] ]
+‘’’&lt;/p&gt;
 
-&lt;span class=&quot;c&quot;&gt;#return the list with line separators added&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#voila! the list is done&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rslt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Looking back at the code, it doesn&amp;#39;t seem so bad. It&amp;#39;s often lack of understanding that brings those &amp;#39;wat&amp;#39; moments, so it&amp;#39;s worthwhile to spend the time understading concepts. Read and read more code. Narrowing down on the concepts that threw me off a bit, there are:&lt;/p&gt;
+&lt;h1 id=&quot;join-the-rows-with-spaces&quot;&gt;join the rows with spaces&lt;/h1&gt;
+&lt;p&gt;result = (‘ ‘.join(r) for r in result)&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;lists comprehensions &lt;code&gt;[]&lt;/code&gt; vs. generator expressions &lt;code&gt;()&lt;/code&gt;
+&lt;h1 id=&quot;return-the-list-with-line-separators-added&quot;&gt;return the list with line separators added&lt;/h1&gt;
+&lt;p&gt;#voila! the list is done
+return ‘\n’.join(rslt)
+```&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;these are similar in providing a group a values&lt;/li&gt;
-&lt;li&gt;some differences are that gen. expressions take less memory and cannot be accessed by index&lt;/li&gt;
-&lt;li&gt;usage, for several iterations use a list, one time use, a generator expression&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;zip function, unpacking arguments with *
+&lt;p&gt;Looking back at the code, it doesn’t seem so bad. It’s often lack of understanding that brings those ‘wat’ moments, so it’s worthwhile to spend the time understading concepts. Read and read more code. Narrowing down on the concepts that threw me off a bit, there are:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;passing the * operator to &lt;code&gt;zip()&lt;/code&gt;, unpacks whatever arguments you throw at it&lt;/li&gt;
-&lt;li&gt;in the example above, data is a tuple of lists (first, last) and we want to create rows out of that data. Without *, the lists would have been needed to be passed indidually to zip, &lt;code&gt;zip(list1, list2, ...)&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;escaping the &lt;code&gt;{}&lt;/code&gt; on format method
-
-&lt;ul&gt;
-&lt;li&gt;in order to create a list of formatters &lt;code&gt;{:col_widths}&lt;/code&gt;, the &lt;code&gt;{&lt;/code&gt; character needed to be escaped&lt;/li&gt;
-&lt;li&gt;more info in the &lt;a href=&quot;https://docs.python.org/2/library/string.html#format-string-syntax&quot;&gt;official docs&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+  &lt;li&gt;lists comprehensions &lt;code&gt;[]&lt;/code&gt; vs. generator expressions &lt;code&gt;()&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;these are similar in providing a group a values&lt;/li&gt;
+      &lt;li&gt;some differences are that gen. expressions take less memory and cannot be accessed by index&lt;/li&gt;
+      &lt;li&gt;usage, for several iterations use a list, one time use, a generator expression&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;zip function, unpacking arguments with *
+    &lt;ul&gt;
+      &lt;li&gt;passing the * operator to &lt;code&gt;zip()&lt;/code&gt;, unpacks whatever arguments you throw at it&lt;/li&gt;
+      &lt;li&gt;in the example above, data is a tuple of lists (first, last) and we want to create rows out of that data. Without *, the lists would have been needed to be passed indidually to zip, &lt;code&gt;zip(list1, list2, ...)&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;escaping the &lt;code&gt;{}&lt;/code&gt; on format method
+    &lt;ul&gt;
+      &lt;li&gt;in order to create a list of formatters &lt;code&gt;{:col_widths}&lt;/code&gt;, the &lt;code&gt;{&lt;/code&gt; character needed to be escaped&lt;/li&gt;
+      &lt;li&gt;more info in the &lt;a href=&quot;https://docs.python.org/2/library/string.html#format-string-syntax&quot;&gt;official docs&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3&gt;Conclusion&lt;/h3&gt;
+&lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
+&lt;p&gt;Reading someone else’s code can be a humbling experience. It can be tough to break down the complexity of the code or peeling the layers, but at the same time, it is extremely rewarding. The &lt;strong&gt;Aha, I GOT IT!&lt;/strong&gt; moment. Using pen and paper to draw out the problem definitely helped in reducing the logic that I had to wrestle with in my mind.&lt;/p&gt;
 
-&lt;p&gt;Reading someone else&amp;#39;s code can be a humbling experience. It can be tough to break down the complexity of the code or peeling the layers, but at the same time, it is extremely rewarding. The &lt;strong&gt;Aha, I GOT IT!&lt;/strong&gt; moment. Using pen and paper to draw out the problem definitely helped in reducing the logic that I had to wrestle with in my mind.&lt;/p&gt;
-
-&lt;h3&gt;References&lt;/h3&gt;
-
+&lt;h3 id=&quot;references&quot;&gt;References&lt;/h3&gt;
 &lt;p&gt;[1] &lt;a href=&quot;http://code-maven.com/list-comprehension-vs-generator-expression&quot;&gt;Generator expressions&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;[2] Zip, &lt;a href=&quot;http://stackoverflow.com/questions/2511300/why-does-x-y-zipzipa-b-work-in-python&quot;&gt;here&lt;/a&gt; and &lt;a href=&quot;http://pavdmyt.com/python-zip-fu/&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+
 </content>
  </entry>
  
@@ -317,13 +361,14 @@ outputs -&amp;gt; [&#39;Daniel    &#39;, &#39;Chia     &#39;],
    <link href="http://danielcodes.github.io/2016/01/21/goal-oriented/"/>
    <updated>2016-01-21T00:00:00-05:00</updated>
    <id>http://danielcodes.github.io/2016/01/21/goal-oriented</id>
-   <content type="html">&lt;p&gt;I have been having trouble thoughts lately, mostly leaning towards jealousy. Whether it&amp;#39;d be a relationship that i don&amp;#39;t have, or a material thing. I then begin to think as to what is it that I have. And obviously, the answer is that I have none of those things that I wish I had, that relationship or that material thing. All I have are goals. A mission, and work ethic. A willingness to bust my behind everyday and do whatever it takes to get to my goals. I understand that nothing is handed to anyone and only through hard work and sacrifice you will get to where you want to be in life.&lt;/p&gt;
+   <content type="html">&lt;p&gt;I have been having trouble thoughts lately, mostly leaning towards jealousy. Whether it’d be a relationship that i don’t have, or a material thing. I then begin to think as to what is it that I have. And obviously, the answer is that I have none of those things that I wish I had, that relationship or that material thing. All I have are goals. A mission, and work ethic. A willingness to bust my behind everyday and do whatever it takes to get to my goals. I understand that nothing is handed to anyone and only through hard work and sacrifice you will get to where you want to be in life.&lt;/p&gt;
 
 &lt;p&gt;Around the same time, I came across this video by Elliot Hulse:&lt;/p&gt;
 
-&lt;iframe style=&quot;padding-bottom: 20px;&quot; width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/r4RgAlz2pmM&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;iframe style=&quot;padding-bottom: 20px;&quot; width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/r4RgAlz2pmM&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 
-&lt;p&gt;It couldn&amp;#39;t have come at a better time as I was feeling a bit down. It talks about man&amp;#39;s mission-driven mentality. That you must not deter from your path no matter what. In the video, he&amp;#39;s giving advice to a guy who&amp;#39;s girlfriend wants him to go in a different direction than the one he wants to pursue. Things are a little different in my case, as I already have a goal in mind. I just need to execute.&lt;/p&gt;
+&lt;p&gt;It couldn’t have come at a better time as I was feeling a bit down. It talks about man’s mission-driven mentality. That you must not deter from your path no matter what. In the video, he’s giving advice to a guy who’s girlfriend wants him to go in a different direction than the one he wants to pursue. Things are a little different in my case, as I already have a goal in mind. I just need to execute.&lt;/p&gt;
+
 </content>
  </entry>
  
@@ -332,19 +377,19 @@ outputs -&amp;gt; [&#39;Daniel    &#39;, &#39;Chia     &#39;],
    <link href="http://danielcodes.github.io/2016/01/12/resuming-python/"/>
    <updated>2016-01-12T00:00:00-05:00</updated>
    <id>http://danielcodes.github.io/2016/01/12/resuming-python</id>
-   <content type="html">&lt;p&gt;I am taking a small detour from learning Javascript. Reason being that there is still some unfinished Python business. I got the wake up call from watching this &lt;a href=&quot;https://youtu.be/z_ESakf05PQ&quot;&gt;small clip&lt;/a&gt;. The point is you can&amp;#39;t start something and not finish it. You want to...&lt;/p&gt;
+   <content type="html">&lt;p&gt;I am taking a small detour from learning Javascript. Reason being that there is still some unfinished Python business. I got the wake up call from watching this &lt;a href=&quot;https://youtu.be/z_ESakf05PQ&quot;&gt;small clip&lt;/a&gt;. The point is you can’t start something and not finish it. You want to…&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;Always be closing&lt;/p&gt;
+  &lt;p&gt;Always be closing&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;This fall semester I was tasked with learning and developing an application with Django, and do it in a Test-Driven manner if possible. This was hard, especially since my first tutorial on Django was &lt;a href=&quot;http://www.tangowithdjango.com/&quot;&gt;Tango with Django&lt;/a&gt;. As good as this tutorial was at teaching me the workflow for developing my first Django application, I still didn&amp;#39;t know a thing about testing (it was only touched on very briefly in one of the later chapters). Like any other curious programmer, I consulted the web. After a few searches, I found &lt;a href=&quot;http://chimera.labs.oreilly.com/books/1234000000754/index.html&quot;&gt;Test-Driven Development with Python&lt;/a&gt;. This was the perfect solution for my woes, I had found &lt;strong&gt;THE MANUAL&lt;/strong&gt; on how to get started with building an application on a test-first basis. I quickly went through the first 6 chapters, doing one chapter a day. With this I was able to dip my toes into TDD and use the code as reference for my &lt;a href=&quot;https://bitbucket.org/danielcodes/pipeline_monitor&quot;&gt;class project&lt;/a&gt;. However, I would be stuck on this chapter for a month or so since school things would take priority.&lt;/p&gt;
+&lt;p&gt;This fall semester I was tasked with learning and developing an application with Django, and do it in a Test-Driven manner if possible. This was hard, especially since my first tutorial on Django was &lt;a href=&quot;http://www.tangowithdjango.com/&quot;&gt;Tango with Django&lt;/a&gt;. As good as this tutorial was at teaching me the workflow for developing my first Django application, I still didn’t know a thing about testing (it was only touched on very briefly in one of the later chapters). Like any other curious programmer, I consulted the web. After a few searches, I found &lt;a href=&quot;http://chimera.labs.oreilly.com/books/1234000000754/index.html&quot;&gt;Test-Driven Development with Python&lt;/a&gt;. This was the perfect solution for my woes, I had found &lt;strong&gt;THE MANUAL&lt;/strong&gt; on how to get started with building an application on a test-first basis. I quickly went through the first 6 chapters, doing one chapter a day. With this I was able to dip my toes into TDD and use the code as reference for my &lt;a href=&quot;https://bitbucket.org/danielcodes/pipeline_monitor&quot;&gt;class project&lt;/a&gt;. However, I would be stuck on this chapter for a month or so since school things would take priority.&lt;/p&gt;
 
-&lt;p&gt;Fast foward a bit (school ended), I was still stuck on Chapter 8 of the tutorial. This chapter covered deployment, the requirements included a server and a domain name. I got mine from the &lt;a href=&quot;https://education.github.com/pack&quot;&gt;GitHub Student Package&lt;/a&gt;, both were being used to serve my class project and it needed to stay up for the professor to check that it was &amp;quot;live&amp;quot;. I waited until I received my grade and finally unhooked the domain name and destroyed the droplet. It was time to continue this TDD with Python tutorial. You can check my progress &lt;a href=&quot;https://github.com/danielcodes/superlists&quot;&gt;here&lt;/a&gt;. Currently &lt;a href=&quot;http://danielchia.me/&quot;&gt;live&lt;/a&gt;! :) &lt;/p&gt;
+&lt;p&gt;Fast foward a bit (school ended), I was still stuck on Chapter 8 of the tutorial. This chapter covered deployment, the requirements included a server and a domain name. I got mine from the &lt;a href=&quot;https://education.github.com/pack&quot;&gt;GitHub Student Package&lt;/a&gt;, both were being used to serve my class project and it needed to stay up for the professor to check that it was “live”. I waited until I received my grade and finally unhooked the domain name and destroyed the droplet. It was time to continue this TDD with Python tutorial. You can check my progress &lt;a href=&quot;https://github.com/danielcodes/superlists&quot;&gt;here&lt;/a&gt;. Currently &lt;a href=&quot;http://danielchia.me/&quot;&gt;live&lt;/a&gt;! :)&lt;/p&gt;
 
-&lt;p&gt;It just leaves a bad taste to leave things hanging, so it feels good to finally get this tutorial rolling again. I&amp;#39;m learning a ton. While I&amp;#39;m at it, I also solidifying my Python knowledge through this &lt;a href=&quot;https://www.pluralsight.com/courses/python-fundamentals&quot;&gt;Pluralsight course&lt;/a&gt;. The learning never stops.&lt;/p&gt;
+&lt;p&gt;It just leaves a bad taste to leave things hanging, so it feels good to finally get this tutorial rolling again. I’m learning a ton. While I’m at it, I also solidifying my Python knowledge through this &lt;a href=&quot;https://www.pluralsight.com/courses/python-fundamentals&quot;&gt;Pluralsight course&lt;/a&gt;. The learning never stops.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt; Wrapping up TDD with Python, and learning more Python on Pluralsight &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt; Wrapping up TDD with Python, and learning more Python on Pluralsight&lt;/p&gt;
 </content>
  </entry>
  
@@ -353,23 +398,23 @@ outputs -&amp;gt; [&#39;Daniel    &#39;, &#39;Chia     &#39;],
    <link href="http://danielcodes.github.io/2016/01/02/my-setup/"/>
    <updated>2016-01-02T00:00:00-05:00</updated>
    <id>http://danielcodes.github.io/2016/01/02/my-setup</id>
-   <content type="html">&lt;p&gt;The first laptop I bought, a &lt;a href=&quot;http://www.cnet.com/products/lenovo-y40-70-laptop-59423030-black-doorbuster-4th-generation-intel-core-i7-4510u-2-00ghz-1600-mhz-4mb/specs/&quot;&gt;Lenovo Y40&lt;/a&gt;, turned out to be horrible disappointment. From a keyboard that I didn&amp;#39;t like, a screen resolution that sucked and to top things off the battery died on me after 5 months of usage. It didn&amp;#39;t completely die on me, but the darn machine would not work unless it was plugged in. Rendering my laptop&amp;#39;s portability useless, as everytime I&amp;#39;d need ot use it, boot up was necessary. I sent in the laptop since it was still under warranty but I was still in need of a laptop for my coding needs as school was already in session.&lt;/p&gt;
+   <content type="html">&lt;p&gt;The first laptop I bought, a &lt;a href=&quot;http://www.cnet.com/products/lenovo-y40-70-laptop-59423030-black-doorbuster-4th-generation-intel-core-i7-4510u-2-00ghz-1600-mhz-4mb/specs/&quot;&gt;Lenovo Y40&lt;/a&gt;, turned out to be horrible disappointment. From a keyboard that I didn’t like, a screen resolution that sucked and to top things off the battery died on me after 5 months of usage. It didn’t completely die on me, but the darn machine would not work unless it was plugged in. Rendering my laptop’s portability useless, as everytime I’d need ot use it, boot up was necessary. I sent in the laptop since it was still under warranty but I was still in need of a laptop for my coding needs as school was already in session.&lt;/p&gt;
 
-&lt;p&gt;I first resorted to borrowing a friend&amp;#39;s tiny notebook. It was a really tiny machine with Ubuntu on it, ultimately the laptop&amp;#39;s keyboard was too small and the fan noise was irritable enough to keep me from using it. But I&amp;#39;d found something cool, that Linux could run on machines with minimal specs! &lt;/p&gt;
+&lt;p&gt;I first resorted to borrowing a friend’s tiny notebook. It was a really tiny machine with Ubuntu on it, ultimately the laptop’s keyboard was too small and the fan noise was irritable enough to keep me from using it. But I’d found something cool, that Linux could run on machines with minimal specs!&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/public/img/laptop/screen.jpg&quot; alt=&quot;Screen&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/public/img/laptop/screen.jpg&quot; alt=&quot;Screen&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;I started looking around for cheap computer options, and eventually after much fishing, chose to buy a used ThinkPad T420. You can find these &lt;a href=&quot;http://www.ebay.com/sch/i.html?_from=R40&amp;amp;_trksid=p2050601.m570.l1311.R1.TR12.TRC2.A0.H0.Xthinkpad+t.TRS0&amp;amp;_nkw=thinkpad+t420&amp;amp;_sacat=0&quot;&gt;under 200 on ebay&lt;/a&gt;. I coughed up a tiny bit more to get one that wasn&amp;#39;t too beat up. The specs were decent, i5, 250GB storage and 4GB RAM, more than enough for any Linux OS. After receiving the computer, I instantly liked it a lot more than the being-repaired Y40. The screen was still mediocre but the keyboard made a world&amp;#39;s difference. One thing that I can&amp;#39;t stand is having a shortened right SHIFT key. Exactly what the Y40 had, and to add onto the bad design, the keys had the depth of about a nanometer. This ThinkPad had the old school IBM keyboards, it felt clicky, and the right SHIFT was not shortened. The only downside is that, it is literally a brick to carry around.&lt;/p&gt;
+&lt;p&gt;I started looking around for cheap computer options, and eventually after much fishing, chose to buy a used ThinkPad T420. You can find these &lt;a href=&quot;http://www.ebay.com/sch/i.html?_from=R40&amp;amp;_trksid=p2050601.m570.l1311.R1.TR12.TRC2.A0.H0.Xthinkpad+t.TRS0&amp;amp;_nkw=thinkpad+t420&amp;amp;_sacat=0&quot;&gt;under 200 on ebay&lt;/a&gt;. I coughed up a tiny bit more to get one that wasn’t too beat up. The specs were decent, i5, 250GB storage and 4GB RAM, more than enough for any Linux OS. After receiving the computer, I instantly liked it a lot more than the being-repaired Y40. The screen was still mediocre but the keyboard made a world’s difference. One thing that I can’t stand is having a shortened right SHIFT key. Exactly what the Y40 had, and to add onto the bad design, the keys had the depth of about a nanometer. This ThinkPad had the old school IBM keyboards, it felt clicky, and the right SHIFT was not shortened. The only downside is that, it is literally a brick to carry around.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/public/img/laptop/keyboard.jpg&quot; alt=&quot;Keyboard&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/public/img/laptop/keyboard.jpg&quot; alt=&quot;Keyboard&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Soon after, a friend helped me install Linux on it, specifically &lt;a href=&quot;https://ubuntugnome.org/&quot;&gt;Ubuntu-GNOME&lt;/a&gt;. It felt good to finally work in this OS after many failed attempts to get it on VirtualBox. Not that I failed, the VM&amp;#39;s ran so slow (2 - 3 second delays), that it was pretty unbearable so I gave up on it. Then I found about Vagrant + Cygwin, which initially cost me a lot of grief (it lost my VM at some point). But I did have Linux-y tools for a brief period of time (troubled times with symlinks and shared folders).&lt;/p&gt;
+&lt;p&gt;Soon after, a friend helped me install Linux on it, specifically &lt;a href=&quot;https://ubuntugnome.org/&quot;&gt;Ubuntu-GNOME&lt;/a&gt;. It felt good to finally work in this OS after many failed attempts to get it on VirtualBox. Not that I failed, the VM’s ran so slow (2 - 3 second delays), that it was pretty unbearable so I gave up on it. Then I found about Vagrant + Cygwin, which initially cost me a lot of grief (it lost my VM at some point). But I did have Linux-y tools for a brief period of time (troubled times with symlinks and shared folders).&lt;/p&gt;
 
-&lt;p&gt;I really can&amp;#39;t emphasize how good it is once you make the switch to a Linux OS. I&amp;#39;m being biased here, as I&amp;#39;ve always wanted this environment where I can just do all my work in a terminal. But if you&amp;#39;re a developer or an aspiring programmer, definitely try it out this set up if you have 200 bucks to spare.&lt;/p&gt;
+&lt;p&gt;I really can’t emphasize how good it is once you make the switch to a Linux OS. I’m being biased here, as I’ve always wanted this environment where I can just do all my work in a terminal. But if you’re a developer or an aspiring programmer, definitely try it out this set up if you have 200 bucks to spare.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt; Don&amp;#39;t be fooled by a laptop&amp;#39;s specs. If you just want to program, buy a cheap Thinkpad and throw Linux on it. Or get a Mac if you can afford it.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt; Don’t be fooled by a laptop’s specs. If you just want to program, buy a cheap Thinkpad and throw Linux on it. Or get a Mac if you can afford it.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/public/img/laptop/cover.jpg&quot; alt=&quot;Cover&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/public/img/laptop/cover.jpg&quot; alt=&quot;Cover&quot; /&gt;&lt;/p&gt;
 </content>
  </entry>
  
@@ -378,11 +423,11 @@ outputs -&amp;gt; [&#39;Daniel    &#39;, &#39;Chia     &#39;],
    <link href="http://danielcodes.github.io/2015/12/29/js-bootcamp/"/>
    <updated>2015-12-29T00:00:00-05:00</updated>
    <id>http://danielcodes.github.io/2015/12/29/js-bootcamp</id>
-   <content type="html">&lt;p&gt;Right after my finals ended I thought about how to maximize my productivity during this upcoming winter break. I started reading articles on Medium, about the latest programming craze. Of course, it turned out to be Javascript. Although I&amp;#39;ve dabbed into the language, can&amp;#39;t say that I have full understanding of it. This left a bad taste whenever I&amp;#39;d have to write Javascript. I read The Good Parts by Douglas Crockford, some bits resonated while others just seemed too dense. What really got the ball rolling was this &lt;a href=&quot;https://medium.com/@_cmdv_/i-want-to-learn-javascript-in-2015-e96cd85ad225#.hcraa63br&quot;&gt;post&lt;/a&gt;. Next I started the You-Dont-Know-JS series. And after having finished the first two installments, I have to say that the style of teaching is very enjoyable and I am slowly uncovering Javascript. Anything that we can&amp;#39;t comprehend creates frustration, but if you have an understanding of things, there isn&amp;#39;t such problem.&lt;/p&gt;
+   <content type="html">&lt;p&gt;Right after my finals ended I thought about how to maximize my productivity during this upcoming winter break. I started reading articles on Medium, about the latest programming craze. Of course, it turned out to be Javascript. Although I’ve dabbed into the language, can’t say that I have full understanding of it. This left a bad taste whenever I’d have to write Javascript. I read The Good Parts by Douglas Crockford, some bits resonated while others just seemed too dense. What really got the ball rolling was this &lt;a href=&quot;https://medium.com/@_cmdv_/i-want-to-learn-javascript-in-2015-e96cd85ad225#.hcraa63br&quot;&gt;post&lt;/a&gt;. Next I started the You-Dont-Know-JS series. And after having finished the first two installments, I have to say that the style of teaching is very enjoyable and I am slowly uncovering Javascript. Anything that we can’t comprehend creates frustration, but if you have an understanding of things, there isn’t such problem.&lt;/p&gt;
 
 &lt;p&gt;Then, by some crazy/lucky occurrence, I was on the Javascript subreddit and found that these books were offered in video form. However, they were offered from sites such as Frontend Masters and Pluralsight, both of which required a paid subscription. Luckily, one of the comments pointed to the &lt;a href=&quot;https://www.visualstudio.com/en-us/products/visual-studio-dev-essentials-vs.aspx&quot;&gt;Visual Studio Dev Essentials&lt;/a&gt; site, which gave a free 6-month subscription to Pluralsight. Of course, I signed up right away.&lt;/p&gt;
 
-&lt;p&gt;Pluralsight not only has the YDKJS&amp;#39;s author videos but also a plethora of anything software related. I felt like I hit the jackpot. This is the perfect opportunity for me since I&amp;#39;ve been wanting to learn all things Javascript, and the tutorials seem legit enough. Now it&amp;#39;s only a matter of creating a sane schedule where I can slowly chip at the content everyday.&lt;/p&gt;
+&lt;p&gt;Pluralsight not only has the YDKJS’s author videos but also a plethora of anything software related. I felt like I hit the jackpot. This is the perfect opportunity for me since I’ve been wanting to learn all things Javascript, and the tutorials seem legit enough. Now it’s only a matter of creating a sane schedule where I can slowly chip at the content everyday.&lt;/p&gt;
 </content>
  </entry>
  
@@ -391,15 +436,15 @@ outputs -&amp;gt; [&#39;Daniel    &#39;, &#39;Chia     &#39;],
    <link href="http://danielcodes.github.io/2015/12/25/screen-time/"/>
    <updated>2015-12-25T00:00:00-05:00</updated>
    <id>http://danielcodes.github.io/2015/12/25/screen-time</id>
-   <content type="html">&lt;p&gt;It&amp;#39;s Christmas morning, so Merry Christmas!&lt;/p&gt;
+   <content type="html">&lt;p&gt;It’s Christmas morning, so Merry Christmas!&lt;/p&gt;
 
-&lt;p&gt;Today I want to share my insight on eye strain. I fully knew this, that before committing myself to become a software developer, that I&amp;#39;d have to spend endless time in front of computer. Although I&amp;#39;ve been trying methods here and there to manage this unhealthy, almost unavoidable habit, I always seem to break right back in. The bad habit is to sit in front of a computer for a solid 2-3 hours. This adds up if it&amp;#39;s happening on a daily basis (which it is).&lt;/p&gt;
+&lt;p&gt;Today I want to share my insight on eye strain. I fully knew this, that before committing myself to become a software developer, that I’d have to spend endless time in front of computer. Although I’ve been trying methods here and there to manage this unhealthy, almost unavoidable habit, I always seem to break right back in. The bad habit is to sit in front of a computer for a solid 2-3 hours. This adds up if it’s happening on a daily basis (which it is).&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/public/img/eye_strain.jpg&quot; alt=&quot;Patrick&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/public/img/eye_strain.jpg&quot; alt=&quot;Patrick&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;I&amp;#39;ve always had the thought of eye health in the back of my mind, but it wasn&amp;#39;t until recently that it hit me, with a vengeance. Of course, it happened during finals week. For the past week, I&amp;#39;ve spent an insane amonut of time in front of the screen. I was mildly aware until I took a look in the mirror and saw how bad my eyes looked, they were bloodshot. I looked like Patrick. To make things worse, I started rubbing them and this is a no-no since it&amp;#39;ll make it itch more and thus continue the vicious cycle. Since the semester is over, and I didn&amp;#39;t feel like kicking back and rather learn all of the things that I&amp;#39;ve been wanting to learn. This led to more computer time, so the eye strain symptoms have started again.&lt;/p&gt;
+&lt;p&gt;I’ve always had the thought of eye health in the back of my mind, but it wasn’t until recently that it hit me, with a vengeance. Of course, it happened during finals week. For the past week, I’ve spent an insane amonut of time in front of the screen. I was mildly aware until I took a look in the mirror and saw how bad my eyes looked, they were bloodshot. I looked like Patrick. To make things worse, I started rubbing them and this is a no-no since it’ll make it itch more and thus continue the vicious cycle. Since the semester is over, and I didn’t feel like kicking back and rather learn all of the things that I’ve been wanting to learn. This led to more computer time, so the eye strain symptoms have started again.&lt;/p&gt;
 
-&lt;p&gt;This is a serious problem, if my eyes are bad how am I supposed write code? From now on, I&amp;#39;ll be prioritizing my eye health. My plan is to have 1 hour bursts of productivity and then taking 10-15 minute breaks.&lt;/p&gt;
+&lt;p&gt;This is a serious problem, if my eyes are bad how am I supposed write code? From now on, I’ll be prioritizing my eye health. My plan is to have 1 hour bursts of productivity and then taking 10-15 minute breaks.&lt;/p&gt;
 </content>
  </entry>
  
@@ -408,60 +453,79 @@ outputs -&amp;gt; [&#39;Daniel    &#39;, &#39;Chia     &#39;],
    <link href="http://danielcodes.github.io/2015/12/16/tmux-setup/"/>
    <updated>2015-12-16T00:00:00-05:00</updated>
    <id>http://danielcodes.github.io/2015/12/16/tmux-setup</id>
-   <content type="html">&lt;h4&gt;Update&lt;/h4&gt;
+   <content type="html">&lt;h4 id=&quot;update&quot;&gt;Update&lt;/h4&gt;
+&lt;p&gt;######01/12/16 - Scrollbar locked when using tmux&lt;/p&gt;
 
-&lt;h6&gt;01/12/16 - Scrollbar locked when using tmux&lt;/h6&gt;
+&lt;hr /&gt;
 
-&lt;p&gt;&lt;hr&gt;&lt;/p&gt;
+&lt;p&gt;I’ve been wanting to write this one for a while now. This summer, I got learn two very exciting tools, &lt;strong&gt;Vim&lt;/strong&gt; an &lt;strong&gt;Tmux&lt;/strong&gt;. These two are a must-have for any terminal junkie and together they’ve taken my workflow to a whole new level. Although tmux has some extended functionality, in this post I am going to focus on how I personally use it. Also, I am going to assume that you’ve installed the tool on your machine and know how to fire it up. Ok, onto the big question, what do you customize?&lt;/p&gt;
 
-&lt;p&gt;I&amp;#39;ve been wanting to write this one for a while now. This summer, I got learn two very exciting tools, &lt;strong&gt;Vim&lt;/strong&gt; an &lt;strong&gt;Tmux&lt;/strong&gt;. These two are a must-have for any terminal junkie and together they&amp;#39;ve taken my workflow to a whole new level. Although tmux has some extended functionality, in this post I am going to focus on how I personally use it. Also, I am going to assume that you&amp;#39;ve installed the tool on your machine and know how to fire it up. Ok, onto the big question, what do you customize?&lt;/p&gt;
+&lt;h3 id=&quot;changing-the-prefix&quot;&gt;Changing the prefix&lt;/h3&gt;
 
-&lt;h3&gt;Changing the prefix&lt;/h3&gt;
+&lt;p&gt;The first thing you ought to do is change the pesky default prefix mapping, &lt;strong&gt;CTRL+b&lt;/strong&gt;. To do this, first create your &lt;strong&gt;~/.tmux.conf&lt;/strong&gt; file, this file allows you to configure tmux settings to your liking. In there, add:&lt;/p&gt;
 
-&lt;p&gt;The first thing you ought to do is change the pesky default prefix mapping, &lt;strong&gt;CTRL+b&lt;/strong&gt;. To do this, first create your &lt;strong&gt;~/.tmux.conf&lt;/strong&gt; file, this file allows you to configure tmux settings to your liking. In there, add: &lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;&lt;span class=&quot;c&quot;&gt;#prefix to ctrl+a&lt;/span&gt;
+&lt;p&gt;&lt;code&gt;sh
+#prefix to ctrl+a
 unbind C-b
-&lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt; -g prefix C-a 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;However, your pinky finger still has to travel a mile to get to that CTRL key at the bottom left. To fix this, I&amp;#39;d recommend looking into your system and changing the &lt;strong&gt;Caps Lock&lt;/strong&gt; key mapping to &lt;strong&gt;CTRL&lt;/strong&gt;. I have Ubuntu-Gnome, and it came with a nice little piece of software called Tweak Tool, here I was able to turn my Caps Lock key into CTRL.&lt;/p&gt;
+set -g prefix C-a 
+&lt;/code&gt;&lt;/p&gt;
 
-&lt;h3&gt;Refreshing the .tmux.conf file&lt;/h3&gt;
+&lt;p&gt;However, your pinky finger still has to travel a mile to get to that CTRL key at the bottom left. To fix this, I’d recommend looking into your system and changing the &lt;strong&gt;Caps Lock&lt;/strong&gt; key mapping to &lt;strong&gt;CTRL&lt;/strong&gt;. I have Ubuntu-Gnome, and it came with a nice little piece of software called Tweak Tool, here I was able to turn my Caps Lock key into CTRL.&lt;/p&gt;
 
-&lt;p&gt;Next, you gotta know how to refresh these updates that you&amp;#39;re adding. Usually, it is done by CTRL+a followed by :, then on the prompt you type, &lt;/p&gt;
+&lt;h3 id=&quot;refreshing-the-tmuxconf-file&quot;&gt;Refreshing the .tmux.conf file&lt;/h3&gt;
+&lt;p&gt;Next, you gotta know how to refresh these updates that you’re adding. Usually, it is done by CTRL+a followed by :, then on the prompt you type,&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;:source-file ~/.tmux.conf&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;but this is cumbersome and hard to remember, instead add:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;&lt;span class=&quot;c&quot;&gt;#reload of the config file&lt;/span&gt;
+
+&lt;p&gt;&lt;code&gt;sh
+#reload of the config file
 unbind r
-&lt;span class=&quot;nb&quot;&gt;bind &lt;/span&gt;r &lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt;-file ~/.tmux.conf
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+bind r source-file ~/.tmux.conf
+&lt;/code&gt;&lt;/p&gt;
+
 &lt;p&gt;this will allow you to refresh with CTRL+a + r.&lt;/p&gt;
 
 &lt;p&gt;You can test this by changing window tab colors on the status bar, add,&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;&lt;span class=&quot;c&quot;&gt;#highlight current window&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt;-window-option -g window-status-current-bg white 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code&gt;sh
+#highlight current window
+set-window-option -g window-status-current-bg white 
+&lt;/code&gt;&lt;/p&gt;
+
 &lt;p&gt;try out different colors and refresh with CTRL+a + r.&lt;/p&gt;
 
-&lt;h3&gt;Pane Splitting&lt;/h3&gt;
+&lt;h3 id=&quot;pane-splitting&quot;&gt;Pane Splitting&lt;/h3&gt;
 
-&lt;p&gt;Now that we have much nicer prefix &lt;strong&gt;CTRL+a&lt;/strong&gt;, what comes next is pane splitting. The defaults are set to &amp;quot; (vertical) and % (horizontal). These bindings are hard to memorize and not so intuitive, let&amp;#39;s change them. In your &lt;em&gt;.tmux.conf&lt;/em&gt; add:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;&lt;span class=&quot;c&quot;&gt;#intuitive pane splitting&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;bind&lt;/span&gt; | split-window -h -c &lt;span class=&quot;s2&quot;&gt;&quot;#{pane_current_path}&quot;&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;bind&lt;/span&gt; - split-window -v -c &lt;span class=&quot;s2&quot;&gt;&quot;#{pane_current_path}&quot;&lt;/span&gt;
-unbind &lt;span class=&quot;s1&quot;&gt;&#39;&quot;&#39;&lt;/span&gt;
+&lt;p&gt;Now that we have much nicer prefix &lt;strong&gt;CTRL+a&lt;/strong&gt;, what comes next is pane splitting. The defaults are set to “ (vertical) and % (horizontal). These bindings are hard to memorize and not so intuitive, let’s change them. In your &lt;em&gt;.tmux.conf&lt;/em&gt; add:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;sh
+#intuitive pane splitting
+bind | split-window -h -c &quot;#{pane_current_path}&quot;
+bind - split-window -v -c &quot;#{pane_current_path}&quot;
+unbind &#39;&quot;&#39;
 unbind %
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;The first line is saying to use the &lt;strong&gt;|&lt;/strong&gt; key to do a horizontal split. The &lt;code&gt;-c &amp;quot;#{pane_current_path}&amp;quot;&lt;/code&gt; part makes it so that the split pane remains in the current path where you split from. Imagine being into directory that&amp;#39;s 10 levels down, and having to cd there again when you create a new pane. You get the picture.&lt;/p&gt;
+&lt;/code&gt;&lt;/p&gt;
 
-&lt;h3&gt;Moving between panes&lt;/h3&gt;
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;The first line is saying to use the **&lt;/td&gt;
+      &lt;td&gt;** key to do a horizontal split. The &lt;code&gt;-c &quot;#{pane_current_path}&quot;&lt;/code&gt; part makes it so that the split pane remains in the current path where you split from. Imagine being into directory that’s 10 levels down, and having to cd there again when you create a new pane. You get the picture.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
 
+&lt;h3 id=&quot;moving-between-panes&quot;&gt;Moving between panes&lt;/h3&gt;
 &lt;p&gt;By now, you can split panes, but how do you move aronud? One way to go about it, is to hit the prefix key followed by an arrow key movement. This is sloppy though, as you have to move your hand down to the arrow keys. A better way is the following, add:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;&lt;span class=&quot;c&quot;&gt;#quick pane cycling, prefix + Ctrl-a &lt;/span&gt;
+
+&lt;p&gt;&lt;code&gt;sh
+#quick pane cycling, prefix + Ctrl-a 
 unbind ^A
-&lt;span class=&quot;nb&quot;&gt;bind&lt;/span&gt; ^A &lt;span class=&quot;k&quot;&gt;select&lt;/span&gt;-pane -t :.+
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+bind ^A select-pane -t :.+
+&lt;/code&gt;&lt;/p&gt;
+
 &lt;p&gt;with this, you can move from pane to pane by hitting your prefix twice.
 If you mapped your control key to CAPS LOCK, you can hit the prefix once, keep your pinky on CAPS and press &lt;em&gt;a&lt;/em&gt; again. Ah, so, so, efficient.&lt;/p&gt;
 
@@ -469,19 +533,21 @@ If you mapped your control key to CAPS LOCK, you can hit the prefix once, keep y
 
 &lt;p&gt;If by any chance, a pane crashes on you, you can close it with &lt;strong&gt;prefix&lt;/strong&gt; + x.&lt;/p&gt;
 
-&lt;h3&gt;Zooming in&lt;/h3&gt;
+&lt;h3 id=&quot;zooming-in&quot;&gt;Zooming in&lt;/h3&gt;
+&lt;p&gt;One final feature that I want to talk about is zoom. Having multiple panes is great and all but truth is most of the time your focus is only one, the pane in which you’re writing code. Tmux has a neat little feature that helps with this problem, do &lt;strong&gt;CTRL+a + z&lt;/strong&gt;. This command, full screens the current pane, to exit, just use the same command.&lt;/p&gt;
 
-&lt;p&gt;One final feature that I want to talk about is zoom. Having multiple panes is great and all but truth is most of the time your focus is only one, the pane in which you&amp;#39;re writing code. Tmux has a neat little feature that helps with this problem, do &lt;strong&gt;CTRL+a + z&lt;/strong&gt;. This command, full screens the current pane, to exit, just use the same command.&lt;/p&gt;
+&lt;h3 id=&quot;scrolling---updated-011216&quot;&gt;Scrolling - updated 01/12/16&lt;/h3&gt;
+&lt;p&gt;I noticed a small issue with Tmux when I first started using it. It locked up my scrollbar. At first I didn’t think much of the issue. But ever since failing tests started giving error messages that cover the screen and more, it has become imperative for me to get this functionality back. This is solved with the following lines:&lt;/p&gt;
 
-&lt;h3&gt;Scrolling - updated 01/12/16&lt;/h3&gt;
-
-&lt;p&gt;I noticed a small issue with Tmux when I first started using it. It locked up my scrollbar. At first I didn&amp;#39;t think much of the issue. But ever since failing tests started giving error messages that cover the screen and more, it has become imperative for me to get this functionality back. This is solved with the following lines:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;&lt;span class=&quot;c&quot;&gt;#allows scrolling&lt;/span&gt;
+&lt;p&gt;&lt;code&gt;sh
+#allows scrolling
 setw -g mode-mouse on
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/p&gt;
+
 &lt;p&gt;TL;DL My .tmux.conf is &lt;a href=&quot;https://gist.github.com/danielcodes/ea6ee30d2ff032421b2e&quot;&gt;here&lt;/a&gt;. Leave me a comment if I can improve on anything.&lt;/p&gt;
 
 &lt;p&gt;Hope you found these helpful, and happy tmuxing !&lt;/p&gt;
+
 </content>
  </entry>
  
@@ -490,13 +556,13 @@ setw -g mode-mouse on
    <link href="http://danielcodes.github.io/2015/12/15/calm-and-balance/"/>
    <updated>2015-12-15T00:00:00-05:00</updated>
    <id>http://danielcodes.github.io/2015/12/15/calm-and-balance</id>
-   <content type="html">&lt;p&gt;It&amp;#39;s been one heck of a semester. From thinking, &amp;#39;oh it&amp;#39;s going to be fun learning this and that&amp;#39; to &amp;#39;shit, I have to get this and that done&amp;#39;, see the difference, not much fun. While I underestimated the semester&amp;#39;s course load, I&amp;#39;d say that I&amp;#39;ve improved in other aspects. Those being controlling my temper when things go wrong and maintaining a healthy lifestyle. &lt;/p&gt;
+   <content type="html">&lt;p&gt;It’s been one heck of a semester. From thinking, ‘oh it’s going to be fun learning this and that’ to ‘shit, I have to get this and that done’, see the difference, not much fun. While I underestimated the semester’s course load, I’d say that I’ve improved in other aspects. Those being controlling my temper when things go wrong and maintaining a healthy lifestyle.&lt;/p&gt;
 
-&lt;p&gt;I&amp;#39;d like to address the first, my temper. Ever since I can remember i&amp;#39;ve always been a hot-head. I would always act in the spur of the moment, and deal with consequences after. This, of course, always got me into lots of trouble. Now, how does this relate to the present? Well, previously I ranted about being in a leadership position and having a hard time getting others to do their part. Although it&amp;#39;s been a frustrating experience, I have learned that nothing good comes out of agitating myself further and that I have to deal with things in a calm manner and try not to break walls.&lt;/p&gt;
+&lt;p&gt;I’d like to address the first, my temper. Ever since I can remember i’ve always been a hot-head. I would always act in the spur of the moment, and deal with consequences after. This, of course, always got me into lots of trouble. Now, how does this relate to the present? Well, previously I ranted about being in a leadership position and having a hard time getting others to do their part. Although it’s been a frustrating experience, I have learned that nothing good comes out of agitating myself further and that I have to deal with things in a calm manner and try not to break walls.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/public/img/desk_flip.jpg&quot; alt=&quot;Fliptable&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/public/img/desk_flip.jpg&quot; alt=&quot;Fliptable&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;While learning to maintain calm in situations of high stress, I have also learned the importance of my health. It hasn&amp;#39;t been the best year for me in terms of health. I got a severe injury that has prevented me from going into the gym to lift weights and will remain that way for the next couple of months. As much as this sucks, I can&amp;#39;t do anything. Maintaining good health is crucial to suceed in others aspects of life. Just as easily as it has taken me out of the weight room, it can do so as well for everyday tasks that I take for granted. Health comes above all else. &lt;/p&gt;
+&lt;p&gt;While learning to maintain calm in situations of high stress, I have also learned the importance of my health. It hasn’t been the best year for me in terms of health. I got a severe injury that has prevented me from going into the gym to lift weights and will remain that way for the next couple of months. As much as this sucks, I can’t do anything. Maintaining good health is crucial to suceed in others aspects of life. Just as easily as it has taken me out of the weight room, it can do so as well for everyday tasks that I take for granted. Health comes above all else.&lt;/p&gt;
 </content>
  </entry>
  
@@ -505,13 +571,13 @@ setw -g mode-mouse on
    <link href="http://danielcodes.github.io/2015/12/03/leadership/"/>
    <updated>2015-12-03T00:00:00-05:00</updated>
    <id>http://danielcodes.github.io/2015/12/03/leadership</id>
-   <content type="html">&lt;p&gt;This semester I had to partake in 2 group projects. Both of which I ended up taking leadership roles in, AKA Project Management. Up until now, other than writing I haven&amp;#39;t really collaborated much on any other type of project. For this 2 projects, one of them involved mostly writing and the second was software collaboration. I can&amp;#39;t say that it has been easy nor I&amp;#39;ve done a great job at it, all I can say is that is tough and much improvement is needed.&lt;/p&gt;
+   <content type="html">&lt;p&gt;This semester I had to partake in 2 group projects. Both of which I ended up taking leadership roles in, AKA Project Management. Up until now, other than writing I haven’t really collaborated much on any other type of project. For this 2 projects, one of them involved mostly writing and the second was software collaboration. I can’t say that it has been easy nor I’ve done a great job at it, all I can say is that is tough and much improvement is needed.&lt;/p&gt;
 
-&lt;p&gt;It&amp;#39;s tough because being a leader means that you have to lead by example. What do I mean? If the leader (me) works hard, the rest of the group will follow right? This doesn&amp;#39;t necessarily work all the time as some people tend to take advantage and decide to not contribute at all, knowing that you&amp;#39;ll be there to pick up the slack. But I might&amp;#39;ve missed something here, besides showing yourself as capable. That isn&amp;#39;t enough, you have to delegate tasks. These are the kind of people that won&amp;#39;t do work unless you nudge them too. Yeah, it&amp;#39;s extremely annoying. But to save yourself some grief and avoid overworking yourself, you have to be assertive and demand work from others as it is their responsibility just as much as it is yours.&lt;/p&gt;
+&lt;p&gt;It’s tough because being a leader means that you have to lead by example. What do I mean? If the leader (me) works hard, the rest of the group will follow right? This doesn’t necessarily work all the time as some people tend to take advantage and decide to not contribute at all, knowing that you’ll be there to pick up the slack. But I might’ve missed something here, besides showing yourself as capable. That isn’t enough, you have to delegate tasks. These are the kind of people that won’t do work unless you nudge them too. Yeah, it’s extremely annoying. But to save yourself some grief and avoid overworking yourself, you have to be assertive and demand work from others as it is their responsibility just as much as it is yours.&lt;/p&gt;
 
-&lt;p&gt;Other things that I&amp;#39;ve noticed are that as a leader, you need to provide a sense of direction. This is very important if you have very passive team members whom will solely rely on you to provide them with work to do. If it was up to me, I&amp;#39;d take initiative and start improvising things on my own. Sadly, not everyone shares the same mindset. You&amp;#39;re stunt when somebody asks, &amp;quot;what do I do?&amp;quot;. And even after you feel that you have a grasp on direction, an open mind is necessary because feedback is extremely important as the project develops. Your teammates might notice something amiss, and you have to take that into account and not ignore them, like I&amp;#39;ve done.&lt;/p&gt;
+&lt;p&gt;Other things that I’ve noticed are that as a leader, you need to provide a sense of direction. This is very important if you have very passive team members whom will solely rely on you to provide them with work to do. If it was up to me, I’d take initiative and start improvising things on my own. Sadly, not everyone shares the same mindset. You’re stunt when somebody asks, “what do I do?”. And even after you feel that you have a grasp on direction, an open mind is necessary because feedback is extremely important as the project develops. Your teammates might notice something amiss, and you have to take that into account and not ignore them, like I’ve done.&lt;/p&gt;
 
-&lt;p&gt;It has been a tough experience, and one that isn&amp;#39;t totally over. As bad as it sounds, I still believe that I&amp;#39;m capable of leadership and it is just something that I need to keep working on. I gotta take in everything calmly and not just rage when everything goes wrong and out of place.&lt;/p&gt;
+&lt;p&gt;It has been a tough experience, and one that isn’t totally over. As bad as it sounds, I still believe that I’m capable of leadership and it is just something that I need to keep working on. I gotta take in everything calmly and not just rage when everything goes wrong and out of place.&lt;/p&gt;
 </content>
  </entry>
  
@@ -521,9 +587,9 @@ setw -g mode-mouse on
    <updated>2015-11-27T00:00:00-05:00</updated>
    <id>http://danielcodes.github.io/2015/11/27/being-dumb</id>
    <content type="html">&lt;p&gt;Incredibly annoyed that it took me so long to set things up with jekyll here.
-I began customization through the index page, making edits to the html and every darn time I restarted the server, the changes would never go through. It was by chance that I decided to mess with the &lt;strong&gt;_config.yml&lt;/strong&gt; file and found that some parameters defined here were being passed to the index. This meant that no matter how many times I changed the html itself, it would just get replaced, every single time. I stupidly googled &amp;quot;jekyll not saving changes&amp;quot; too. All I can say is...&lt;/p&gt;
+I began customization through the index page, making edits to the html and every darn time I restarted the server, the changes would never go through. It was by chance that I decided to mess with the &lt;strong&gt;_config.yml&lt;/strong&gt; file and found that some parameters defined here were being passed to the index. This meant that no matter how many times I changed the html itself, it would just get replaced, every single time. I stupidly googled “jekyll not saving changes” too. All I can say is…&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/public/img/facepalm.jpg&quot; alt=&quot;Facepalm&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/public/img/facepalm.jpg&quot; alt=&quot;Facepalm&quot; /&gt;&lt;/p&gt;
 </content>
  </entry>
  

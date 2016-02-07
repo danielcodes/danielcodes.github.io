@@ -123,44 +123,53 @@
   <span class="post-date">03 Feb 2016</span>
   <p>After deciding on the theme that I wanted to use for this site, <a href="https://github.com/poole/hyde">Hyde</a>. I was also actively looking for ways to improve my site. I found this really helpful <a href="http://joshualande.com/jekyll-github-pages-poole/">article</a>, which helped me add an <strong>Archive</strong> to see my posts in log format, <strong>Analytics</strong> to track views and <strong>Comments</strong> for feedback. After going through the steps, everything was well set up, or so I thought. When setting up Disqus comments, I placed the provided markup on my page but neglected to fill in the variables that they had <strong>strongly</strong> suggested me to replace.</p>
 
-<h3>The variables, url and identifier</h3>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">disqus_config</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="c1">// Replace PAGE_URL with your page's canonical URL variable
-</span>    <span class="k">this</span><span class="p">.</span><span class="nx">page</span><span class="p">.</span><span class="nx">url</span> <span class="o">=</span> <span class="nx">PAGE_URL</span><span class="p">;</span>
+<h3 id="the-variables-url-and-identifier">The variables, url and identifier</h3>
 
-    <span class="c1">// Replace PAGE_IDENTIFIER with your page's unique identifier variable
-</span>    <span class="k">this</span><span class="p">.</span><span class="nx">page</span><span class="p">.</span><span class="nx">identifier</span> <span class="o">=</span> <span class="nx">PAGE_IDENTIFIER</span><span class="p">;</span>  
-<span class="p">};</span>
-</code></pre></div>
-<h3>Where I goofed up</h3>
+<p>```javascript
+var disqus_config = function () {
+	// Replace PAGE_URL with your page’s canonical URL variable
+	this.page.url = PAGE_URL;</p>
 
-<p>The way Disqus works is by keying a provided URL, defined by a url variable. As you can tell, I did not define this URL and when I received the first comment on my page, sometimes it showed up and sometimes it didn&#39;t. The problem was how the page was being accessed, by that I mean the protocol used. Disqus was creating two different comment threads for <code>http://</code> and <code>https://</code>. And so, I got annoyed and had to fix the problem.</p>
+<pre><code>// Replace PAGE_IDENTIFIER with your page's unique identifier variable
+this.page.identifier = PAGE_IDENTIFIER;   }; ``` 
+</code></pre>
+
+<h3 id="where-i-goofed-up">Where I goofed up</h3>
+
+<p>The way Disqus works is by keying a provided URL, defined by a url variable. As you can tell, I did not define this URL and when I received the first comment on my page, sometimes it showed up and sometimes it didn’t. The problem was how the page was being accessed, by that I mean the protocol used. Disqus was creating two different comment threads for <code>http://</code> and <code>https://</code>. And so, I got annoyed and had to fix the problem.</p>
 
 <p>I headed over to the documentation and found that I needed to provide an absolute url, and the slug part of the url that comes after the domain name.</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">//ie. example url and identifier
-</span><span class="kd">var</span> <span class="k">this</span><span class="p">.</span><span class="nx">page</span><span class="p">.</span><span class="nx">url</span> <span class="o">=</span> <span class="s2">"http://danielcodes.github.io/2016/01/12/resuming-python/"</span>
-<span class="kd">var</span> <span class="k">this</span><span class="p">.</span><span class="nx">page</span><span class="p">.</span><span class="nx">identifier</span> <span class="o">=</span> <span class="s2">"/2016/01/12/resuming-python/"</span>
-</code></pre></div>
+
+<p><code>javascript
+//ie. example url and identifier
+var this.page.url = "http://danielcodes.github.io/2016/01/12/resuming-python/"
+var this.page.identifier = "/2016/01/12/resuming-python/"
+</code></p>
+
 <p>The way to obtain these variables with Jekyll is:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript">
-<span class="c1">// Replace PAGE_URL with your page's canonical URL variable
-</span><span class="kd">var</span> <span class="k">this</span><span class="p">.</span><span class="nx">page</span><span class="p">.</span><span class="nx">url</span> <span class="o">=</span> <span class="s2">"{{site.url}}{{page.url}}"</span><span class="p">;</span>
 
-<span class="c1">// Replace PAGE_IDENTIFIER with your page's unique identifier variable
-</span><span class="kd">var</span> <span class="k">this</span><span class="p">.</span><span class="nx">page</span><span class="p">.</span><span class="nx">identifier</span> <span class="o">=</span> <span class="s2">"{{page.url}}"</span><span class="p">;</span>
+<p>```javascript</p>
 
-</code></pre></div>
+<p>// Replace PAGE_URL with your page’s canonical URL variable
+var this.page.url = “{{site.url}}{{page.url}}”;</p>
+
+<p>// Replace PAGE_IDENTIFIER with your page’s unique identifier variable
+var this.page.identifier = “{{page.url}}”;</p>
+
+<p>```</p>
+
 <p>The beginning part, <code>site.url</code> has to be defined in your <code>_config.yml</code>, check mine <a href="https://github.com/danielcodes/danielcodes.github.io/blob/master/_config.yml">here</a>. This is followed by, <code>page.url</code>, which will look for the route of your blog post.</p>
 
-<p>That&#39;s pretty much it, define your javascript cofiguration variables and avoid the split threads.
-And don&#39;t forget to test things out first!</p>
+<p>That’s pretty much it, define your javascript cofiguration variables and avoid the split threads.
+And don’t forget to test things out first!</p>
 
-<h3>References</h3>
+<h3 id="references">References</h3>
 
 <ul>
-<li><a href="https://help.disqus.com/customer/en/portal/articles/2158629">Avoiding split threads and missing comments</a></li>
-<li><a href="https://help.disqus.com/customer/en/portal/articles/472098-javascript-configuration-variables">Javascript configuration variables</a></li>
+  <li><a href="https://help.disqus.com/customer/en/portal/articles/2158629">Avoiding split threads and missing comments</a></li>
+  <li><a href="https://help.disqus.com/customer/en/portal/articles/472098-javascript-configuration-variables">Javascript configuration variables</a></li>
 </ul>
+
 
 </div>
 
