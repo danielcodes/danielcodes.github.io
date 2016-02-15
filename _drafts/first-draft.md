@@ -1,24 +1,62 @@
 ---
 layout: post
-title: Celebrating too early
+title: Playing with GET/POST on Flask
 comments: true
 ---
 
-I had derp moment this Thursday when I thought a deed was done when it wasn't.
+I signed up to give a web development workshop for my school's ACM club. Of course, beginning with the basics HTML/CSS to creating a small application with Flask. Planning this has been a little tougher than expected as to what I want people to come out the workshop knowing. Of course, the musts are the **main three elements** that go into a web framework: 
 
-> Things are not done until they're done.
+* **URL handling** 
+* **Templating** 
+* **Object Relational Mapper (ORM)** 
 
-I should have known as the procedure felt super rushed and I was just so hyped that there had been a tiny bit of progress on what had been a week long struggle.
+With Flask, one and two are simple, the third one is a little trickier as an extension is needed. After going through the quickstart tutorial for **Flask-sqlalchemy**, I was confident that I'd be able to produce some useful **GET/POST** examples. What I found was that these methods can be abused.
 
-This reminded me of 2014's **Rockets vs. Trail Blazers** playoff series. The Rockets were up 2, but the Trail Blazers had one last possession with very little time left. Note that this was Game 6 with the Trail Blazers up 3 - 2, so it was very likely that the Rockets were going to force that Game 7. Lillard sunk a game winning 3, closing out the Rockets.
+### The GET method
 
-### Check it out here:
+**GET** is the default http method when accessing a page, you're retrieving a page. However, ```GET``` can also be triggered by a form or by a query string in the URL.
 
-<iframe style="padding-bottom: 20px; padding-top: 20px;" width="560" height="400" src="https://www.youtube.com/embed/V2GJ2PwXQ4E" frameborder="0" allowfullscreen></iframe>
+#### GET Form
+```html
+<form action="/get_something" method="GET">
+	<input type="text" name="name" >
+	<input type="text" name="job" >
+	<input type="submit" value="Add Person">
+</form>
+```
 
-Funny thing was that Lillard was pretty expressionless after that shot. On an interview with Conan (which I can't seem to find) he'd said that he knew better than to celebrate early as he'd lost a High School game in that same manner and vowed to never celebrate too early again.
+#### GET Query string
+```
+http://anrandomurl.com/get_something?name=daniel&job=student
+```
 
-### Moral of the story is:
+These are the two ways to pass parameters to a GET request, the way to retrieve them on Flask is by accessing the ```args``` attribute, which returns a dictionary, containing the the key-value pairs passed. In this case, name and job.
 
-> Don't rush the process, follow through and finish
+```python
+#Accessing the parameters
+#the whole thing, a dict
+argumest = request.args
+
+#a specific parameter
+name = request.args.get('name')
+```
+
+### The POST method
+
+
+
+
+
+
+
+
+
+
+
+
+
+### References
+* []()
+* [What is a web framework?](https://www.jeffknupp.com/blog/2014/03/03/what-is-a-web-framework/)
+* [Flask-sqlalchemy](http://flask-sqlalchemy.pocoo.org/2.1/quickstart/)
 

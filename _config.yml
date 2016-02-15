@@ -1,4 +1,5 @@
 # Dependencies
+# redcarpet | kramdown
 markdown:         kramdown
 highlighter:      rouge
 
