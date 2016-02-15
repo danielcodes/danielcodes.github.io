@@ -4,13 +4,122 @@
  <title>Daniel Chia</title>
  <link href="http://danielcodes.github.io/atom.xml" rel="self"/>
  <link href="http://danielcodes.github.io/"/>
- <updated>2016-02-15T02:45:03-05:00</updated>
+ <updated>2016-02-15T15:21:16-05:00</updated>
  <id>http://danielcodes.github.io</id>
  <author>
    <name>Daniel Chia</name>
    <email>danielarmandochia@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Playing with GET/POST on Flask</title>
+   <link href="http://danielcodes.github.io/2016/02/15/get-and-post-on-flask/"/>
+   <updated>2016-02-15T00:00:00-05:00</updated>
+   <id>http://danielcodes.github.io/2016/02/15/get-and-post-on-flask</id>
+   <content type="html">&lt;p&gt;I signed up to give a web development workshop for my school’s ACM club. Beginning with the basics HTML/CSS to creating a small application with Flask. Planning this has been a little tougher than expected as to what I want people to come out the workshop knowing. Of course, the musts are the &lt;strong&gt;main three elements&lt;/strong&gt; that go into a web framework:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;URL handling&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Templating&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Object Relational Mapper (ORM)&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;With Flask, one and two are simple, the third one is a little trickier as an extension is needed. After going through the quickstart tutorial for &lt;strong&gt;Flask-sqlalchemy&lt;/strong&gt;, I was confident that I’d be able to produce some useful &lt;strong&gt;GET/POST&lt;/strong&gt; examples. What I found was that these methods could be used interchangeably and abused. Here’s why:&lt;/p&gt;
+
+&lt;h3 id=&quot;the-get-method&quot;&gt;The GET method&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;GET&lt;/strong&gt; is the default http method when accessing a page, you’re retrieving a page.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;code&gt;GET&lt;/code&gt; can be passed arguments by a form or by a query string in the URL.&lt;/p&gt;
+
+&lt;h4 id=&quot;get-form&quot;&gt;GET Form&lt;/h4&gt;
+&lt;p&gt;```html&lt;/p&gt;
+&lt;form action=&quot;/get_something&quot; method=&quot;GET&quot;&gt;
+	&lt;input type=&quot;text&quot; name=&quot;name&quot; /&gt;
+	&lt;input type=&quot;text&quot; name=&quot;job&quot; /&gt;
+	&lt;input type=&quot;submit&quot; value=&quot;Add Person&quot; /&gt;
+&lt;/form&gt;
+&lt;p&gt;```&lt;/p&gt;
+
+&lt;h4 id=&quot;get-query-string&quot;&gt;GET Query string&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;
+http://arandomurl.com/get_something?name=daniel&amp;amp;job=student
+the ? is followed by key=value pairs tied together with an &amp;amp;
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;These are the two ways to pass arguments to a GET request, the way to retrieve them on Flask is by accessing the &lt;code&gt;args&lt;/code&gt; attribute, which returns a dictionary, containing the the key-value pairs passed. In this case, name and job.&lt;/p&gt;
+
+&lt;p&gt;```python
+#a dict
+#check out the reference below for more on python dictionaries
+arguments = request.args&lt;/p&gt;
+
+&lt;h1 id=&quot;a-specifir-argument&quot;&gt;a specifir argument&lt;/h1&gt;
+&lt;p&gt;name = request.args.get(‘name’) 
+#or
+name = request.args[‘name’]&lt;/p&gt;
+
+&lt;h1 id=&quot;note-if-argument-is-not-there-get-returns-none-access-with-brackets-gives-a-keyerror&quot;&gt;Note: if argument is not there, get returns None, access with brackets gives a KeyError&lt;/h1&gt;
+&lt;p&gt;```&lt;/p&gt;
+
+&lt;h3 id=&quot;the-post-method&quot;&gt;The POST method&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;POST&lt;/strong&gt; is the http method used when you want to alter the application.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;ie. creating a new account, saving records to a database.&lt;/p&gt;
+
+&lt;h4 id=&quot;post-form&quot;&gt;POST Form&lt;/h4&gt;
+&lt;p&gt;```html&lt;/p&gt;
+&lt;form action=&quot;/post_something&quot; method=&quot;POST&quot;&gt;
+	&lt;input type=&quot;text&quot; name=&quot;name&quot; /&gt;
+	&lt;input type=&quot;text&quot; name=&quot;job&quot; /&gt;
+	&lt;input type=&quot;submit&quot; value=&quot;Add Person&quot; /&gt;
+&lt;/form&gt;
+&lt;p&gt;```&lt;/p&gt;
+
+&lt;p&gt;When this form is submitted, the following passed arguments, name and job can be accessed in the following manner:&lt;/p&gt;
+
+&lt;p&gt;```python
+#a dict
+arguments = request.form&lt;/p&gt;
+
+&lt;h1 id=&quot;a-specific-argument&quot;&gt;a specific argument&lt;/h1&gt;
+&lt;p&gt;name = request.form.get(‘name’)
+#or
+name = request.form[‘name’]&lt;/p&gt;
+
+&lt;h1 id=&quot;note-if-argument-is-not-there-get-returns-none-access-with-brackets-gives-a-keyerror-1&quot;&gt;Note: if argument is not there, get returns None, access with brackets gives a KeyError&lt;/h1&gt;
+&lt;p&gt;```&lt;/p&gt;
+
+&lt;h3 id=&quot;abusing-getpost&quot;&gt;Abusing GET/POST&lt;/h3&gt;
+&lt;p&gt;So far, I’ve shown that both &lt;strong&gt;GET&lt;/strong&gt; and &lt;strong&gt;POST&lt;/strong&gt; can take arguments in pretty much the same manner. Difference is that one receives it in &lt;code&gt;args&lt;/code&gt; while the other in &lt;code&gt;form&lt;/code&gt;. In Flask, it looks a little like this:&lt;/p&gt;
+
+&lt;p&gt;```python
+@app.route(‘/&lt;some-url&gt;&#39;, methods=[&#39;GET&#39;, &#39;POST&#39;])
+def some_view():
+	#depending on what method you used to pass arguments
+	#retrieve them from args or form and do something&lt;/some-url&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;return &amp;lt;some_html&amp;gt;  ```
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
+&lt;p&gt;Since you can pass arguments to either method, they can be used interchangeably and therefore abused. To prevent this, &lt;strong&gt;be informed&lt;/strong&gt; as to what GET and POST are. GET should only retrieves information, while POST is used to create new information.&lt;/p&gt;
+
+&lt;h3 id=&quot;references&quot;&gt;References&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.jeffknupp.com/blog/2015/08/30/python-dictionaries/&quot;&gt;Python Dictionaries&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.jeffknupp.com/blog/2014/03/03/what-is-a-web-framework/&quot;&gt;What is a web framework?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://flask-sqlalchemy.pocoo.org/2.1/quickstart/&quot;&gt;Flask-sqlalchemy&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>Celebrating too early</title>
