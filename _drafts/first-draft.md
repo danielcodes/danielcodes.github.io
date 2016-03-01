@@ -1,100 +1,44 @@
 ---
 layout: post
-title: Playing with GET/POST on Flask
+title: More Javascript practice
 comments: true
 ---
 
-I signed up to give a web development workshop for my school's ACM club. Beginning with the basics HTML/CSS to creating a small application with Flask. Planning this has been a little tougher than expected as to what I want people to come out the workshop knowing. Of course, the musts are the **main three elements** that go into a web framework: 
+I have had my eye on [Free Code Camp](http://www.freecodecamp.com/) for a while now, but I saw that it was teaching lot of the basics that I felt that I'd already learned (at least some of it). But, after getting told on a phone interview that I would need to do a coding challenge in Javascript, I immediately jumped onto the Algorithms section and did as many as time allowed. I was dumb and did not pick a large enough window to practice these exercises. Of course, this was all after I was panicking as to what would be the best way to practice. I found the exercises, quite enjoyable and I managed to cram all the exercises in 2 days. Not bad for something that's supposed to take an estimated 50 hours. Guess these 4 years in college haven't been for nothing, HAHA.
 
-* **URL handling** 
-* **Templating** 
-* **Object Relational Mapper (ORM)** 
+![Badge](/public/img/fcc/basic_algo.png)
 
-With Flask, one and two are simple, the third one is a little trickier as an extension is needed. After going through the quickstart tutorial for **Flask-sqlalchemy**, I was confident that I'd be able to produce some useful **GET/POST** examples. What I found was that these methods could be used interchangeably and abused. Here's why:
-
-### The GET method
-
-> **GET** is the default http method when accessing a page, you're retrieving a page. 
-
-```GET``` can be passed arguments by a form or by a query string in the URL.
-
-#### GET Form
-```html
-<form action="/get_something" method="GET">
-	<input type="text" name="name" >
-	<input type="text" name="job" >
-	<input type="submit" value="Add Person">
-</form>
-```
-
-#### GET Query string
-```
-http://arandomurl.com/get_something?name=daniel&job=student
-the ? is followed by key=value pairs tied together with an &
-```
-
-These are the two ways to pass arguments to a GET request, the way to retrieve them on Flask is by accessing the ```args``` attribute, which returns a dictionary, containing the the key-value pairs passed. In this case, name and job.
-
-```python
-#a dict
-#check out the reference below for more on python dictionaries
-arguments = request.args
-
-#a specifir argument 
-name = request.args.get('name') 
-#or
-name = request.args['name']
-
-#Note: if argument is not there, get returns None, access with brackets gives a KeyError
-```
-
-### The POST method
-
-> **POST** is the http method used when you want to alter the application.
-
-ie. creating a new account, saving records to a database.
-
-#### POST Form
-```html
-<form action="/post_something" method="POST">
-	<input type="text" name="name" >
-	<input type="text" name="job" >
-	<input type="submit" value="Add Person">
-</form>
-```
-
-When this form is submitted, the following passed arguments, name and job can be accessed in the following manner:
-
-```python
-#a dict
-arguments = request.form
-
-#a specific argument 
-name = request.form.get('name')
-#or
-name = request.form['name']
-
-#Note: if argument is not there, get returns None, access with brackets gives a KeyError
-```
-
-### Abusing GET/POST
-So far, I've shown that both **GET** and **POST** can take arguments in pretty much the same manner. Difference is that one receives it in ```args``` while the other in ```form```. In Flask, it looks a little like this:
-
-```python
-@app.route('/<some-url>', methods=['GET', 'POST'])
-def some_view():
-	#depending on what method you used to pass arguments
-	#retrieve them from args or form and do something
-
-    return <some_html> 
-```
-
-### Conclusion
-Since you can pass arguments to either method, they can be used interchangeably and therefore abused. To prevent this, **be informed** as to what GET and POST are. GET should only retrieves information, while POST is used to create new information.
+However, this wasn't met without some resistance. I wasn't super smooth at completing all the challenges and a couple of them took a fair bit of head banging. Here are some of the things I learned,
 
 
-### References
-* [Python Dictionaries](https://www.jeffknupp.com/blog/2015/08/30/python-dictionaries/)
-* [What is a web framework?](https://www.jeffknupp.com/blog/2014/03/03/what-is-a-web-framework/)
-* [Flask-sqlalchemy](http://flask-sqlalchemy.pocoo.org/2.1/quickstart/)
+### DO NOT be a blind coder
+
+`console.log(all_things)`
+
+By this, I mean that do not write a mess of logic without making sure that these logic steps are correct. ie. if you're creating an array of values, **PRINT** that array and make sure that those values are there, same thing goes if you're modifying it, always check that the output is as expected. The saying goes, 
+
+> Seeing is believing
+
+which is absolutely true for programming, do not program blindly. 
+
+
+### Incorporate functional programming 
+
+This turned out to be a good chance to practice functional programming. Getting used to applying, `map(), filter() and reduce()` whenever possible. If you don't know what those are, here's a brief overview:
+
+* Map, applies a function to each element of an array
+* Filter, same as map, but only keeps the elements that return true
+* Reduce, takes an array and compresses it into a single value
+
+Some examples for each of these functions are, adding one to each element, getting the odds/evens and getting the sum of integers. Check out the [Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) here.
+
+
+### Use all the built-ins
+
+Most of the time, a lot of the functionality that you require is already provided in a method. A good example are strings, there is `split(), join(), splice(), etc' just to name a few. Check out [Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) here.
+
+## Conclusion
+
+That sums it up. See your output, do not code logic on top of logic without seeing the results. Try to use `map, filter and reduce`, chances are there are plenty of use cases. And use built-ins, these methods are there to make your life easier. With that said, happy coding :D
+
 
