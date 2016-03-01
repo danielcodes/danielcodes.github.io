@@ -11,7 +11,7 @@
 
   <title>
     
-      Javascript Bootcamp &middot; Daniel Chia
+      More Javascript practice &middot; Daniel Chia
     
   </title>
 
@@ -123,28 +123,52 @@
 
     <div class="content container">
       <div class="post">
-  <h1 class="post-title">Javascript Bootcamp</h1>
-  <span class="post-date">29 Dec 2015</span>
-  <p>Right after my finals ended I thought about how to maximize my productivity during this upcoming winter break. I started reading articles on Medium, about the latest programming craze. Of course, it turned out to be Javascript. Although I’ve dabbed into the language, can’t say that I have full understanding of it. This left a bad taste whenever I’d have to write Javascript. I read The Good Parts by Douglas Crockford, some bits resonated while others just seemed too dense. What really got the ball rolling was this <a href="https://medium.com/@_cmdv_/i-want-to-learn-javascript-in-2015-e96cd85ad225#.hcraa63br">post</a>. Next I started the You-Dont-Know-JS series. And after having finished the first two installments, I have to say that the style of teaching is very enjoyable and I am slowly uncovering Javascript. Anything that we can’t comprehend creates frustration, but if you have an understanding of things, there isn’t such problem.</p>
+  <h1 class="post-title">More Javascript practice</h1>
+  <span class="post-date">01 Mar 2016</span>
+  <p>I have had my eye on <a href="http://www.freecodecamp.com/">Free Code Camp</a> for a while now, but I saw that it was teaching lot of the basics that I felt that I had already learned (at least some of it). But, after getting told on a phone interview that I would need to do a coding challenge in Javascript, I immediately jumped onto the Algorithms section and did as many of the challenges as time allowed. I was dumb and did not pick a large enough time window to practice all of these exercises. Of course, this was all happened after I was panicking as to what would be the best way to practice. After going through a couple of the exercises, I found them quite enjoyable and I managed to cram all the exercises (the basic algorithms section) in 2 days. Not bad for something that’s supposed to take an estimated 50 hours. Guess these 4 years in college haven’t been for nothing, HAHA.</p>
 
-<p>Then, by some crazy/lucky occurrence, I was on the Javascript subreddit and found that these books were offered in video form. However, they were offered from sites such as Frontend Masters and Pluralsight, both of which required a paid subscription. Luckily, one of the comments pointed to the <a href="https://www.visualstudio.com/en-us/products/visual-studio-dev-essentials-vs.aspx">Visual Studio Dev Essentials</a> site, which gave a free 6-month subscription to Pluralsight. Of course, I signed up right away.</p>
+<p><img src="/public/img/fcc/basic_algo.png" alt="Badge" /></p>
 
-<p>Pluralsight not only has the YDKJS’s author videos but also a plethora of anything software related. I felt like I hit the jackpot. This is the perfect opportunity for me since I’ve been wanting to learn all things Javascript, and the tutorials seem legit enough. Now it’s only a matter of creating a sane schedule where I can slowly chip at the content everyday.</p>
+<p>However, this wasn’t met without some resistance. I wasn’t super smooth at completing all the challenges and a couple of them took a fair bit of head banging. Here are some of the things I learned:</p>
+
+<h3 id="do-not-be-a-blind-coder">1. DO NOT be a blind coder</h3>
+
+<p><code>console.log(all_things)</code></p>
+
+<p>By this, I mean that do not write a mess of logic without making sure that these logic steps are correct. ie. if you’re creating an array of values, <strong>PRINT</strong> that array and make sure that those values are there, same thing goes if you’re modifying it, always check that the output is as expected. The saying goes,</p>
+
+<blockquote>
+  <p>Seeing is believing</p>
+</blockquote>
+
+<p>which is absolutely true for programming, do not program blindly.</p>
+
+<h3 id="incorporate-functional-programming">2. Incorporate functional programming</h3>
+
+<p>This turned out to be a good chance to practice functional programming. Getting used to applying, <code>map(), filter() and reduce()</code> whenever possible. If you don’t know what those are, here’s a brief overview:</p>
+
+<ul>
+  <li><strong>Map</strong>, applies a function to each element of an array</li>
+  <li><strong>Filter</strong>, same as map, but only keeps the elements that return true</li>
+  <li><strong>Reduce</strong>, takes an array and compresses it into a single value</li>
+</ul>
+
+<p>Some examples for each of these functions are, adding one to each element, getting the odds/evens and getting the sum of integers. Check out the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Docs</a>.</p>
+
+<h3 id="use-all-the-built-ins">3. Use all the built-ins</h3>
+
+<p>Most of the time, a lot of the functionality that you require is already provided in a method. A good example are Strings, there is <code>split(), join(), splice(), etc.</code> just to name a few. Check out more <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">Docs</a>.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>That sums it up. See your output, do not code logic on top of logic without seeing the results. Try to use <code>map, filter and reduce</code>, chances are there are plenty of use cases. And use built-ins, these methods are there to make your life easier. With that said, happy coding :D</p>
+
 
 </div>
 
 <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
-    
-      <li>
-        <h3>
-          <a href="/2016/03/01/more-js-practice/">
-            More Javascript practice
-            <small>01 Mar 2016</small>
-          </a>
-        </h3>
-      </li>
     
       <li>
         <h3>
@@ -164,6 +188,15 @@
         </h3>
       </li>
     
+      <li>
+        <h3>
+          <a href="/2016/02/06/productive-winter-break/">
+            A productive winter break
+            <small>06 Feb 2016</small>
+          </a>
+        </h3>
+      </li>
+    
   </ul>
 </div>
 
@@ -179,10 +212,10 @@
 
     var disqus_config = function () {
 				// Replace PAGE_URL with your page's canonical URL variable
-				this.page.url = "http://danielcodes.github.io/2015/12/29/js-bootcamp/";
+				this.page.url = "http://danielcodes.github.io/2016/03/01/more-js-practice/";
 
 				// Replace PAGE_IDENTIFIER with your page's unique identifier variable
-				this.page.identifier = "/2015/12/29/js-bootcamp/";  
+				this.page.identifier = "/2016/03/01/more-js-practice/";  
     };
 
     (function() {  // DON'T EDIT BELOW THIS LINE
