@@ -1,14 +1,34 @@
 ---
 layout: post
-title: Things on Medium
+title: Vagrant, we meet again
 comments: true
 ---
 
-I have been reading a lot of stuff on Medium lately, though mostly the *Programming* and *Javascript* tags (duh). However, at times my attention diverts to top stories if the title is interesting or click-baity enough. Like the article about the [girl who got fired from Yelp](https://medium.com/@taliajane/an-open-letter-to-my-ceo-fb73df021e7a#.c0q7fr9do), the lady who followed up with a lecture from her own life lessons, the guy who wrote about that we shouldn't make judgement based on one article as we don't know that person. Lastly, the lady who reprimanded the previous lady for lacking basic empathy. I referenced only the first article as the rest of the responses you can find on Medium just by typing the name of the author that created this crazy chain reaction. Though make sure you have time, as these articles are not short and maybe after you'll start qusetioning why you decided to start reading this at all.
+TODOs
+* insert blog post for fixing vagrant
 
-On a different note, I came across a more relevant article, titled [Learning programming isn't that hard, deep work is hard](https://medium.com/@benedictfritz/learning-programming-isn-t-that-hard-deep-work-is-hard-40a4cf3104f4). This piece describes the mentality needed to learn to program, that programming takes time to solve and progress comes in slowly **(deep work)** rather than being able to immediately tackle TODO's such as emails, meetings, etc **(shallow work)**. This hit home for me as I am starting to immerse myself in programming, I see that even though at times you feel that you understand things (looking at code, going through tutorials, etc), **you *MUST* go through the struggle of doing the problem yourself**. There is a need to create that muscle memory connection, if your brain remembers struggling with the problem, chances are it'll be no problem the next time around.
+I haven't logged on into my desktop vagrant box since October 2015. After logging in a couple of days ago, I managed to mess things up again, and lost my VM (might have to do with the VirtualBox upgrade). No worries though, it was the box spun up from the [Getting Started](https://www.vagrantup.com/docs/getting-started/) tutorial. I did attempt to fix the problem by following [this blog post]() but ultimately failed as when I did a `vagrant up` it would hang because of authentication and so I disposed of the box. In the process of trying to acquire a new Linux environment, I found out that 64-bit boxes would not work for whatever reason (this needed some looking into that I clearly didn't want to do), I attempted to install one twice, with **hashicorp/precise64** and **ubuntu/trusty64**, both times failed. And so, I had to stick with my old **hashicorp/precise32** box.
 
-And, I finally wrapped up the Intermmediate Algorithms on Free Code Camp :)
+The reason that I needed a Linux environment in my Windows machine was to run some C++ programs. Yeah, I know that it is completely overkill as all I needed to do was install [MinGW](http://www.mingw.org/) and the compilers. But after getting used to working on Linux on my laptop, MinGW is just not good enough. Who knows, maybe I need to run some Python as well, or anything that is a nightmare setting up on Windows (everything). 
 
-![Algo Badge](/public/img/fcc/inter_algo.png)
+After loading the box, I did a quick `vagrant ssh` and ran the usual:
+
+```shell
+sudo apt-get update
+sudo apt-get upgrade
+```
+
+to get the machine up to date, and proceeded to install the software I needed, `gcc, vim, git and some python tools`.
+
+Process was relatively fast, about 10 minutes and I now had a fully working Linux environment. Maybe that is a bit of a stretch as I can only access the box through `ssh` but good enough. With some basic tooling up, I needed to re-create my development environment which mainly includes just adding my `.vimrc and .bash_aliases`. I have had to do this process a couple of times from the servers that I have rented so it might be time to learn some shell scripting and automate this process.
+
+## Conclusion
+If you need a quick and dirty way to set up a Linux environment, the Cygwin + Vagrant combo is pretty good. The only downside is that you to learn some UNIX basics.
+
+
+### References
+* My dotfiles, https://github.com/danielcodes/dotfiles
+* Vagrant boxes, https://atlas.hashicorp.com/boxes/search
+* Unix basics, http://www.ee.surrey.ac.uk/Teaching/Unix/
+
 
