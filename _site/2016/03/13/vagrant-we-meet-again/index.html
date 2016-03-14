@@ -11,7 +11,7 @@
 
   <title>
     
-      Things on Medium &middot; Daniel Chia
+      Vagrant, we meet again &middot; Daniel Chia
     
   </title>
 
@@ -123,15 +123,32 @@
 
     <div class="content container">
       <div class="post">
-  <h1 class="post-title">Things on Medium</h1>
-  <span class="post-date">07 Mar 2016</span>
-  <p>I have been reading a lot of stuff on Medium lately, though mostly the <em>Programming</em> and <em>Javascript</em> tags (duh). However, at times my attention diverts to top stories if the title is interesting or click-baity enough. Like the article about the <a href="https://medium.com/@taliajane/an-open-letter-to-my-ceo-fb73df021e7a#.c0q7fr9do">girl who got fired from Yelp</a>, the lady who followed up with a lecture from her own life lessons, the guy who wrote about that we shouldn’t make judgement based on one article as we don’t know that person. Lastly, the lady who reprimanded the previous lady for lacking basic empathy. I referenced only the first article as the rest of the responses you can find on Medium just by typing the name of the author that created this crazy chain reaction. Though make sure you have time, as these articles are not short and maybe after you’ll start qusetioning why you decided to start reading this at all.</p>
+  <h1 class="post-title">Vagrant, we meet again</h1>
+  <span class="post-date">13 Mar 2016</span>
+  <p>I haven’t logged into my desktop vagrant box since October 2015. After logging in a couple of days ago, I managed to mess things up, and lost my VM (might have to do with the VirtualBox upgrade). It wasn’t a big deal though, it was the box spun up from the <a href="https://www.vagrantup.com/docs/getting-started/">Getting Started</a> tutorial. Although, I did attempt to fix the problem by following <a href="http://zachwills.net/fix-for-vagrant-not-detecting-existing-vm/">this blog post</a> but ultimately failed as when I did a <code>vagrant up</code> it would not connect because of authentication and so I disposed of the box. In the process of trying to acquire a new Linux environment, I found out that 64-bit boxes would not work for whatever reason (this needed some looking into that I clearly didn’t want to do, vagrant bugs are notorious and I didn’t want to spend hours trying to fix this, speaking from experience), The boxes that I attempted to install are <strong>hashicorp/precise64</strong> and <strong>ubuntu/trusty64</strong>, both of which failed. And so, I had to stick with my old <strong>hashicorp/precise32</strong> box.</p>
 
-<p>On a different note, I came across a more relevant article, titled <a href="https://medium.com/@benedictfritz/learning-programming-isn-t-that-hard-deep-work-is-hard-40a4cf3104f4">Learning programming isn’t that hard, deep work is hard</a>. This piece describes the mentality needed to learn to program, that programming takes time to solve and progress comes in slowly <strong>(deep work)</strong> rather than being able to immediately tackle TODO’s such as emails, meetings, etc <strong>(shallow work)</strong>. This hit home for me as I am starting to immerse myself in programming, I see that even though at times you feel that you understand things (looking at code, going through tutorials, etc), <strong>you <em>MUST</em> go through the struggle of doing the problem yourself</strong>. There is a need to create that muscle memory connection, if your brain remembers struggling with the problem, chances are it’ll be no problem the next time around.</p>
+<p>The reason that I needed a Linux environment in my Windows machine was to run some C++ programs. I am currently a TA for an introductory course that requires me to grade programs. I didn’t want to do things on my small laptop screen and thought things would be much smoother on my larger 23-inch desktop monitor. Yeah, I know that it is completely overkill as all I needed to do was install <a href="http://www.mingw.org/">MinGW</a> and the compiler. But after getting used to working on Linux on my laptop, MinGW is just not good enough. Who knows, maybe I might need to run some Python later on, or anything that is a nightmare setting up on Windows (everything).</p>
 
-<p>And, I finally wrapped up the Intermmediate Algorithms on Free Code Camp :)</p>
+<p>After loading the box, I did a quick <code>vagrant ssh</code> and ran the usual:</p>
 
-<p><img src="/public/img/fcc/inter_algo.png" alt="Algo Badge" /></p>
+<p><code>shell
+sudo apt-get update
+sudo apt-get upgrade
+</code></p>
+
+<p>to get the machine up to date, and proceeded to install the software I needed, <code>gcc, vim, git and some python tools</code>.</p>
+
+<p>Process was relatively fast, about 10 minutes and I now had a fully working Linux environment. Maybe that is a bit of a stretch as I can only access the box through <code>ssh</code> but good enough. With some basic tooling up, I needed to re-create my development environment which mainly includes of adding my <code>.vimrc and .bash_aliases</code>. I have had to do this process a couple of times from the servers that I have had to configure so it might be time to learn some shell scripting and automate this process.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>If you need a quick and dirty way to set up a Linux environment on Windows, the <strong>Cygwin + Vagrant</strong> combo is pretty good. The only downside is that you to learn some UNIX basics, and it’s preferred if you know Vim, although they do provide you with a shared folder where you can edit files with your native editor.</p>
+
+<h3 id="references">References</h3>
+<ul>
+  <li><a href="https://github.com/danielcodes/dotfiles">My dotfiles</a></li>
+  <li><a href="https://atlas.hashicorp.com/boxes/search">Vagrant boxes</a></li>
+  <li><a href="http://www.ee.surrey.ac.uk/Teaching/Unix/">Unix basics</a></li>
+</ul>
 
 
 </div>
@@ -142,9 +159,9 @@
     
       <li>
         <h3>
-          <a href="/2016/03/13/vagrant-we-meet-again/">
-            Vagrant, we meet again
-            <small>13 Mar 2016</small>
+          <a href="/2016/03/07/things-on-medium/">
+            Things on Medium
+            <small>07 Mar 2016</small>
           </a>
         </h3>
       </li>
@@ -182,10 +199,10 @@
 
     var disqus_config = function () {
 				// Replace PAGE_URL with your page's canonical URL variable
-				this.page.url = "http://danielcodes.github.io/2016/03/07/things-on-medium/";
+				this.page.url = "http://danielcodes.github.io/2016/03/13/vagrant-we-meet-again/";
 
 				// Replace PAGE_IDENTIFIER with your page's unique identifier variable
-				this.page.identifier = "/2016/03/07/things-on-medium/";  
+				this.page.identifier = "/2016/03/13/vagrant-we-meet-again/";  
     };
 
     (function() {  // DON'T EDIT BELOW THIS LINE

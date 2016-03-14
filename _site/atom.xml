@@ -4,13 +4,46 @@
  <title>Daniel Chia</title>
  <link href="http://danielcodes.github.io/atom.xml" rel="self"/>
  <link href="http://danielcodes.github.io/"/>
- <updated>2016-03-07T19:26:28-05:00</updated>
+ <updated>2016-03-14T01:25:59-04:00</updated>
  <id>http://danielcodes.github.io</id>
  <author>
    <name>Daniel Chia</name>
    <email>danielarmandochia@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Vagrant, we meet again</title>
+   <link href="http://danielcodes.github.io/2016/03/13/vagrant-we-meet-again/"/>
+   <updated>2016-03-13T00:00:00-05:00</updated>
+   <id>http://danielcodes.github.io/2016/03/13/vagrant-we-meet-again</id>
+   <content type="html">&lt;p&gt;I haven’t logged into my desktop vagrant box since October 2015. After logging in a couple of days ago, I managed to mess things up, and lost my VM (might have to do with the VirtualBox upgrade). It wasn’t a big deal though, it was the box spun up from the &lt;a href=&quot;https://www.vagrantup.com/docs/getting-started/&quot;&gt;Getting Started&lt;/a&gt; tutorial. Although, I did attempt to fix the problem by following &lt;a href=&quot;http://zachwills.net/fix-for-vagrant-not-detecting-existing-vm/&quot;&gt;this blog post&lt;/a&gt; but ultimately failed as when I did a &lt;code&gt;vagrant up&lt;/code&gt; it would not connect because of authentication and so I disposed of the box. In the process of trying to acquire a new Linux environment, I found out that 64-bit boxes would not work for whatever reason (this needed some looking into that I clearly didn’t want to do, vagrant bugs are notorious and I didn’t want to spend hours trying to fix this, speaking from experience), The boxes that I attempted to install are &lt;strong&gt;hashicorp/precise64&lt;/strong&gt; and &lt;strong&gt;ubuntu/trusty64&lt;/strong&gt;, both of which failed. And so, I had to stick with my old &lt;strong&gt;hashicorp/precise32&lt;/strong&gt; box.&lt;/p&gt;
+
+&lt;p&gt;The reason that I needed a Linux environment in my Windows machine was to run some C++ programs. I am currently a TA for an introductory course that requires me to grade programs. I didn’t want to do things on my small laptop screen and thought things would be much smoother on my larger 23-inch desktop monitor. Yeah, I know that it is completely overkill as all I needed to do was install &lt;a href=&quot;http://www.mingw.org/&quot;&gt;MinGW&lt;/a&gt; and the compiler. But after getting used to working on Linux on my laptop, MinGW is just not good enough. Who knows, maybe I might need to run some Python later on, or anything that is a nightmare setting up on Windows (everything).&lt;/p&gt;
+
+&lt;p&gt;After loading the box, I did a quick &lt;code&gt;vagrant ssh&lt;/code&gt; and ran the usual:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;shell
+sudo apt-get update
+sudo apt-get upgrade
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;to get the machine up to date, and proceeded to install the software I needed, &lt;code&gt;gcc, vim, git and some python tools&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Process was relatively fast, about 10 minutes and I now had a fully working Linux environment. Maybe that is a bit of a stretch as I can only access the box through &lt;code&gt;ssh&lt;/code&gt; but good enough. With some basic tooling up, I needed to re-create my development environment which mainly includes of adding my &lt;code&gt;.vimrc and .bash_aliases&lt;/code&gt;. I have had to do this process a couple of times from the servers that I have had to configure so it might be time to learn some shell scripting and automate this process.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;If you need a quick and dirty way to set up a Linux environment on Windows, the &lt;strong&gt;Cygwin + Vagrant&lt;/strong&gt; combo is pretty good. The only downside is that you to learn some UNIX basics, and it’s preferred if you know Vim, although they do provide you with a shared folder where you can edit files with your native editor.&lt;/p&gt;
+
+&lt;h3 id=&quot;references&quot;&gt;References&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/danielcodes/dotfiles&quot;&gt;My dotfiles&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://atlas.hashicorp.com/boxes/search&quot;&gt;Vagrant boxes&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.ee.surrey.ac.uk/Teaching/Unix/&quot;&gt;Unix basics&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>Things on Medium</title>
