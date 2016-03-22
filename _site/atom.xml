@@ -4,13 +4,27 @@
  <title>Daniel Chia</title>
  <link href="http://danielcodes.github.io/atom.xml" rel="self"/>
  <link href="http://danielcodes.github.io/"/>
- <updated>2016-03-14T01:25:59-04:00</updated>
+ <updated>2016-03-22T02:21:11-04:00</updated>
  <id>http://danielcodes.github.io</id>
  <author>
    <name>Daniel Chia</name>
    <email>danielarmandochia@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Positivity</title>
+   <link href="http://danielcodes.github.io/2016/03/22/positivity/"/>
+   <updated>2016-03-22T00:00:00-04:00</updated>
+   <id>http://danielcodes.github.io/2016/03/22/positivity</id>
+   <content type="html">&lt;p&gt;I type this as I already crossed out two previously written paragraphs. I hate it when this happens, but I don’t want to push out any negative vibes so I will halt. Haven’t been feeling 100% as of lately, but that’s about to change.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;In order to carry a positive action we must develop here a positive vision - Dalai Lama&lt;/p&gt;
+&lt;/blockquote&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>Vagrant, we meet again</title>
