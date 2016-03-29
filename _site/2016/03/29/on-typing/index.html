@@ -11,7 +11,7 @@
 
   <title>
     
-      Set your Disqus configuration variables &middot; Daniel Chia
+      On typing &middot; Daniel Chia
     
   </title>
 
@@ -123,55 +123,33 @@
 
     <div class="content container">
       <div class="post">
-  <h1 class="post-title">Set your Disqus configuration variables</h1>
-  <span class="post-date">03 Feb 2016</span>
-  <p>After deciding on the theme that I wanted to use for this site, <a href="https://github.com/poole/hyde">Hyde</a>. I was also actively looking for ways to improve my site. I found this really helpful <a href="http://joshualande.com/jekyll-github-pages-poole/">article</a>, which helped me add an <strong>Archive</strong> to see my posts in log format, <strong>Analytics</strong> to track views and <strong>Comments</strong> for feedback. After going through the steps, everything was well set up, or so I thought. When setting up Disqus comments, I placed the provided markup on my page but neglected to fill in the variables that they had <strong>strongly</strong> suggested me to replace.</p>
+  <h1 class="post-title">On typing</h1>
+  <span class="post-date">29 Mar 2016</span>
+  <h2 id="humble-beginnings">Humble beginnings</h2>
 
-<h3 id="the-variables-url-and-identifier">The variables, url and identifier</h3>
+<p>I <em>first learned to type</em> and then learned to program. I remember when I was still in High School a couple years back (wow, more than 5!) whenever I had the need to type papers or anything on the computer, I would type.. like a noob. I did a bit better than hunt and peck as I used more than just my index fingers to type but I was still heavily inefficient. And so I decided to change things, there had to be a <em>correct way to type</em>, and there was, it is called <strong>touch typing</strong>. <a href="https://en.wikipedia.org/wiki/Touch_typing">Touch typing</a> is the ability to type using all ten fingers without looking at the keyboard. When I first read about it, I was pretty amazed, and I would have quickly jumped into learning this new skill. Except that I didn’t, I had a decision to make between keyboard layouts, QWERTY or Dvorak.</p>
 
-<p>```javascript
-var disqus_config = function () {
-	// Replace PAGE_URL with your page’s canonical URL variable
-	this.page.url = PAGE_URL;</p>
+<h2 id="introducing-dvorak">Introducing Dvorak</h2>
 
-<pre><code>// Replace PAGE_IDENTIFIER with your page's unique identifier variable
-this.page.identifier = PAGE_IDENTIFIER;   }; ``` 
-</code></pre>
+<p>Around this same time, I was into cubing (only 3x3). I followed this guy, Shotaro Makisumi, who had set various records. In his website, he had a section on <a href="https://en.wikipedia.org/wiki/Dvorak_Simplified_Keyboard">Dvorak</a>. Dvorak is a different keyboard layout made for comfortable typing in the English language. Here I was, having just found out about this magical keyboard layout and on my quest to learn to touch type. Coincidence? I think not. So began my this little adventure. It was a very frustrating experience at first. I was not a touch typer and learning a keystroke at a time really tested my patience. However, once I had learned the home row keys (10 keys), things started to get fun! In Dvorak, all the consonants are placed on your left hand side, so lots of words are readily available without lifting a finger unlike it’s counterpart QWERTY. After about a month or so of practicing (yeah, I took my time), I was finally able to touch type in Dvorak! It was an amazing feeling, it still is an amazing feeling everyday I get to type in this beautifully laid out set of letters. My words-per-minute (WPM) also skyrocketed from about 35-40 to about 60 (I type at about 70 - 80 WPM now). It was pretty life changing. I mean let’s face it, the past couple of years has been a lot of staring at the computer and a lot of typing.</p>
 
-<h3 id="where-i-goofed-up">Where I goofed up</h3>
+<h2 id="qwerty-again">QWERTY again</h2>
 
-<p>The way Disqus works is by keying a provided URL, defined by a url variable. As you can tell, I did not define this URL and when I received the first comment on my page, sometimes it showed up and sometimes it didn’t. The problem was how the page was being accessed, by that I mean the protocol used. Disqus was creating two different comment threads for <code>http://</code> and <code>https://</code>. And so, I got annoyed and had to fix the problem.</p>
+<p>Funny enough, I thought that once I had learned Dvorak, I would never have to touch QWERTY again. <strong>WRONG</strong>. The only time I could type in Dvorak, was at home. This left me largely dependent on computer usage at school. I postponed this as much as possible but once I found out I would need to program for an exam in a QWERTY keyboard, I was finally forced to learn QWERTY. Although I had been spoiled by the Dvorak keyboard, learning to touch type QWERTY wasn’t all that bad. I was familiar with the procedure, more patient and managed to complete the task in about 2 - 3 weeks with daily practice. This turned out benefitial in the long run, with my efficiency no longer bound to using my personal computer.</p>
 
-<p>I headed over to the documentation and found that I needed to provide an absolute url, and the slug part of the url that comes after the domain name.</p>
+<h2 id="why-you-should-learn-to-touch-type">Why you should learn to touch type</h2>
 
-<p><code>javascript
-//ie. example url and identifier
-var this.page.url = "http://danielcodes.github.io/2016/01/12/resuming-python/"
-var this.page.identifier = "/2016/01/12/resuming-python/"
-</code></p>
+<p>Now <em>drumroll please</em>, why you should learn to touch type? Well, if you’re like me and you use your computer on a daily basis it is well worth the investment to learn to type properly. You won’t dread computer tasks anymore, and actually have an enjoyable experience. So whether it’d be Dvorak which I highly recommend or QWERTY, invest the time to learn this ubiquitous skill. It will take time, it will be challenging, but very well worth it at the end!</p>
 
-<p>The way to obtain these variables with Jekyll is:</p>
+<p>PS. Here a screenshot of my favorite typing game, <a href="https://www.keyhero.com/">KeyHero</a></p>
 
-<p>```javascript</p>
-
-<p>// Replace PAGE_URL with your page’s canonical URL variable
-var this.page.url = “{{site.url}}{{page.url}}”;</p>
-
-<p>// Replace PAGE_IDENTIFIER with your page’s unique identifier variable
-var this.page.identifier = “{{page.url}}”;</p>
-
-<p>```</p>
-
-<p>The beginning part, <code>site.url</code> has to be defined in your <code>_config.yml</code>, check mine <a href="https://github.com/danielcodes/danielcodes.github.io/blob/master/_config.yml">here</a>. This is followed by, <code>page.url</code>, which will look for the route of your blog post.</p>
-
-<p>That’s pretty much it, define your javascript cofiguration variables and avoid the split threads.
-And don’t forget to test things out first!</p>
+<p><img src="/public/img/key_hero.png" alt="Key Hero" /></p>
 
 <h3 id="references">References</h3>
-
 <ul>
-  <li><a href="https://help.disqus.com/customer/en/portal/articles/2158629">Avoiding split threads and missing comments</a></li>
-  <li><a href="https://help.disqus.com/customer/en/portal/articles/472098-javascript-configuration-variables">Javascript configuration variables</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Typing#Hunt_and_peck">Hunt and peck</a></li>
+  <li><a href="http://makisumi.com/dvorak/">Dvorak first encounter</a></li>
+  <li><a href="https://learn.dvorak.nl/">Dvorak training</a></li>
 </ul>
 
 
@@ -180,15 +158,6 @@ And don’t forget to test things out first!</p>
 <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
-    
-      <li>
-        <h3>
-          <a href="/2016/03/29/on-typing/">
-            On typing
-            <small>29 Mar 2016</small>
-          </a>
-        </h3>
-      </li>
     
       <li>
         <h3>
@@ -208,6 +177,15 @@ And don’t forget to test things out first!</p>
         </h3>
       </li>
     
+      <li>
+        <h3>
+          <a href="/2016/03/07/things-on-medium/">
+            Things on Medium
+            <small>07 Mar 2016</small>
+          </a>
+        </h3>
+      </li>
+    
   </ul>
 </div>
 
@@ -223,10 +201,10 @@ And don’t forget to test things out first!</p>
 
     var disqus_config = function () {
 				// Replace PAGE_URL with your page's canonical URL variable
-				this.page.url = "http://danielcodes.github.io/2016/02/03/disqus-variables/";
+				this.page.url = "http://danielcodes.github.io/2016/03/29/on-typing/";
 
 				// Replace PAGE_IDENTIFIER with your page's unique identifier variable
-				this.page.identifier = "/2016/02/03/disqus-variables/";  
+				this.page.identifier = "/2016/03/29/on-typing/";  
     };
 
     (function() {  // DON'T EDIT BELOW THIS LINE
