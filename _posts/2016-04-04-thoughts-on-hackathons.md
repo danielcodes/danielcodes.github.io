@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Thoughts on hackathons
-comments: false
+comments: true
 ---
 
 This weekend I had the pleasure of attending my second hackathon, HackNY Spring 2016. The first one I attended was in the summer, AngelHack Brooklyn 2015. This time around, things were a bit tougher, it wasn't all smooth sailing and I just want to write about things that I could have done better in terms of preparation and on-site.
