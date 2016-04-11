@@ -1,22 +1,28 @@
 ---
 layout: post
-title: Thoughts on hackathons
+title: A commit a day
 comments: false
 ---
 
-This weekend I had the pleasure of attending my second hackathon, HackNY Spring 2016. The first one I attended was in the summer, AngelHack Brooklyn 2015. This time around, things were a bit tougher, it wasn't all smooth sailing and I just want to write about things that I could have done better in terms of preparation and on-site.
+### The decision
 
-### Decide on a goal
+Last month, I set a goal to keep a GitHub streak, that is a commit a day. There were a couple of reasons that led to this decision:
 
-Hackathons have prizes, these come in two kinds, specific categories (design, technical, etc) and technology specific (companies want you to use their API's). Before entering the hackathon, you should have made up your mind as to what your target is. Of course, this also implies that you must have an idea that you want to work on. This was my team's biggest setback during the hackathon, we did not have a concrete idea to work with and were pivoting from time to time resulting lots of wasted time and energy that could have been better used for development.
+* practice ABC (always be coding)
+* work on more projects
 
-### Try to sleep?
+There's probably more, but those are the main ones. I had gotten into programming a bit late, if I wanted to keep up I needed to be constantly improving my skills. 
 
-I believe that I only got about 40 minutes of sleep that night. These 24-hour hackathons encourage you to code through the night and you probably will since you want to win (duh) are pretty damn exhausting. In fact, I was dozing off near the end of the demos. Once I got home, I could not wait to close my eyes and just get some rest. I crashed from 7 PM to 8 AM the next day. Be aware that hackathons do have a high burnout rate. Though I guess it's ok, since it is a once in a while thing.
+### What I've learned
 
-### Conclusion
+I have managed to push a commit for the past 40 days
 
-This hackathon was specially tough since my team had gone in with the goal to win (what team doesn't) but came up short. The biggest downfall was being prize-driven and trying to create an idea out of a narrow set of contraints (API's) rather than letting an idea open up our creativity.
+![commit-streak](/public/img/github-streak.png)
 
-PS. Despite the negative tone, hackathons are hella fun and you should try them out if you get the chance :)
+I can't say that I have managed to stay 100% true to my goal but I do have some interesting feedback. Setting the goal in itself was easy, so that was easiest part, cutting the mental barrier. I also told myself that I wouldn't push out stupid commits, as in commits that didn't really count, my commits would be meaningful (or at least I would hope so). It is super hard to push out meaningful commits on a daily basis, coding is something that requires you to sit for an uninterrupted amount of time and just fight through problems. As fun as this is, I didn't always find the time to sit and think and program. And thus I cheated. But not really. The projects I worked on through the month of March were not really big projects so there wasn't a need to place it in a GitHub repo. There were mostly small tasks for which CodePen sufficed. And so I kept a log of the projects links in a GitHub repo to the CodePen projects. The rest of my commits came from a TIL (today i learned) repo that I started for myself as I am reading more about programming, I like jot down the little nuggets of knowledge and going through the snippets of code is good practice. Lastly, writing blog posts also counted as a form of commit since this page is hosted on a GitHub repo.
+
+### What can be improved
+
+This model is not perfect. I understand that the commits don't seem super meaningful but I have managed to find some work arounds that still center on me learning a bit of code everyday. Things to improve on include finding more of that quiet time where I can just sit uninterrupted and code away at a project. This is the most meaningful way to push commits and level up.
+
 
