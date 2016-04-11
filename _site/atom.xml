@@ -4,13 +4,50 @@
  <title>Daniel Chia</title>
  <link href="http://danielcodes.github.io/atom.xml" rel="self"/>
  <link href="http://danielcodes.github.io/"/>
- <updated>2016-04-04T23:02:59-04:00</updated>
+ <updated>2016-04-11T00:52:01-04:00</updated>
  <id>http://danielcodes.github.io</id>
  <author>
    <name>Daniel Chia</name>
    <email>danielarmandochia@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>A commit a day</title>
+   <link href="http://danielcodes.github.io/2016/04/11/commit-streak/"/>
+   <updated>2016-04-11T00:00:00-04:00</updated>
+   <id>http://danielcodes.github.io/2016/04/11/commit-streak</id>
+   <content type="html">&lt;h3 id=&quot;the-decision&quot;&gt;The decision&lt;/h3&gt;
+
+&lt;p&gt;Last month, I set a goal to keep a GitHub commit streak, that is a commit a day. There were a couple of reasons that led to this decision:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;practice ABC (always be coding)&lt;/li&gt;
+  &lt;li&gt;work on more projects&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;There’s probably more, but those are the main ones. I had gotten into programming a bit late, if I wanted to keep up I needed to be constantly improving my skills.&lt;/p&gt;
+
+&lt;h3 id=&quot;what-ive-learned&quot;&gt;What I’ve learned&lt;/h3&gt;
+
+&lt;p&gt;I have managed to push a daily commit for the past 40 days&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/img/github-streak.png&quot; alt=&quot;commit-streak&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I can’t say that I have managed to stay 100% true to my goal but I do have some interesting feedback. Setting the goal in itself was easy, so that was the easiest part, cutting the mental barrier. I also told myself that I wouldn’t push out stupid commits, as in commits that didn’t really count, my commits would be meaningful (or at least I would hope so). It is super hard to push out meaningful commits on a daily basis, coding is something that requires you to sit for an uninterrupted amount of time and just fight through problems. As fun as this is, I didn’t always find the time to sit and think and program. And thus I cheated. But not really. Here’s the breakdown of the repositories that I pushed to most often:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/danielcodes/fcc-projects&quot;&gt;FreeCodeCamp log&lt;/a&gt;, most of the FCC projects were done in CodePen so I just linked references to them in a repo&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/danielcodes/today-i-learned&quot;&gt;Today I learned&lt;/a&gt;, I started reading programming books and decided to jot down useful code snippets&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/danielcodes/danielcodes.github.io&quot;&gt;Blog posts&lt;/a&gt;, this posts are hosted through the GitHub, so free commits for every blog post&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;what-can-be-improved&quot;&gt;What can be improved&lt;/h3&gt;
+
+&lt;p&gt;This model is not perfect. I understand that the commits don’t seem super meaningful but I have managed to find some work arounds that still center on me learning a bit of code everyday. Things to improve on include finding more of that quiet time where I can just sit uninterrupted and code away at a project. This is the most meaningful way to push commits to immerse yourself in a project and code away.&lt;/p&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>Thoughts on hackathons</title>

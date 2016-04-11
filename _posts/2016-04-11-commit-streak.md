@@ -1,7 +1,7 @@
 ---
 layout: post
 title: A commit a day
-comments: false
+comments: true
 ---
 
 ### The decision
