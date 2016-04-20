@@ -4,13 +4,27 @@
  <title>Daniel Chia</title>
  <link href="http://danielcodes.github.io/atom.xml" rel="self"/>
  <link href="http://danielcodes.github.io/"/>
- <updated>2016-04-11T00:52:01-04:00</updated>
+ <updated>2016-04-20T10:11:07-04:00</updated>
  <id>http://danielcodes.github.io</id>
  <author>
    <name>Daniel Chia</name>
    <email>danielarmandochia@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Going back to the gym</title>
+   <link href="http://danielcodes.github.io/2016/04/20/going-back-to-the-gym/"/>
+   <updated>2016-04-20T00:00:00-04:00</updated>
+   <id>http://danielcodes.github.io/2016/04/20/going-back-to-the-gym</id>
+   <content type="html">&lt;p&gt;I went back to the gym this week. I did it to stop myself from making anymore excuses. I have feeling super lackluster in terms of drive lately and so to reignite myself with a sense of purpose, I have decided to start exercising again. It doesn’t matter that I am injured, simply work around the problem. No excuses.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Either you run the day or the day runs you. - Jim Rohn&lt;/p&gt;
+&lt;/blockquote&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>A commit a day</title>
