@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Write more
-comments: false
+comments: true
 ---
 
 I previously wrote about having my productivity on tilt. This week, I slowly started to turn things around. The answer was simple, just find work to do. It's pretty easy nowadays. Whether working on a new project, learning a tip or two from blog posts, reading books, etc. Most importantly, the thing that really helped me find my groove was writing. Writing forces you to make time and __do__, it helps with discipline. And once you get the discipline ball rolling, it's hard to stop. 

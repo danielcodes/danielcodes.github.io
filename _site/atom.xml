@@ -4,13 +4,35 @@
  <title>Daniel Chia</title>
  <link href="http://danielcodes.github.io/atom.xml" rel="self"/>
  <link href="http://danielcodes.github.io/"/>
- <updated>2016-04-20T10:11:07-04:00</updated>
+ <updated>2016-04-28T23:45:34-04:00</updated>
  <id>http://danielcodes.github.io</id>
  <author>
    <name>Daniel Chia</name>
    <email>danielarmandochia@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Write more</title>
+   <link href="http://danielcodes.github.io/2016/04/29/write-more/"/>
+   <updated>2016-04-29T00:00:00-04:00</updated>
+   <id>http://danielcodes.github.io/2016/04/29/write-more</id>
+   <content type="html">&lt;p&gt;I previously wrote about having my productivity on tilt. This week, I slowly started to turn things around. The answer was simple, just find work to do. It’s pretty easy nowadays. Whether working on a new project, learning a tip or two from blog posts, reading books, etc. Most importantly, the thing that really helped me find my groove was writing. Writing forces you to make time and &lt;strong&gt;do&lt;/strong&gt;, it helps with discipline. And once you get the discipline ball rolling, it’s hard to stop.&lt;/p&gt;
+
+&lt;p&gt;The things that I have been recently working on are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;My kendama collection app&lt;/li&gt;
+  &lt;li&gt;Finishing the Free Code Camp zipline projects&lt;/li&gt;
+  &lt;li&gt;And jotting down nuggets of knowledge on a TIL (today I learned) repo&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I ran into a bit of a wall while working on the Wikipedia search project, diving into documentation that was super dense. This led to me working on it on and off since it was so frustrating, but I finally told myself that I should wrap it up and move on. What really helped was asking for help on the Gitter chat. As a senior student, I sometimes feel too arrogant to ask for help and that is a BIG mistake. Although Google is great, getting direct hints from others who have ran into these problems provides you with way better feedback.&lt;/p&gt;
+
+&lt;p&gt;That was all a bit too weird. To conclude, write more, get disciplined through writing and just find joy in the work.&lt;/p&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>Going back to the gym</title>
