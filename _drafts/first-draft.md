@@ -1,18 +1,64 @@
 ---
 layout: post
-title: Write more
+title: GUI madness
 comments: false
 ---
 
-I previously wrote about having my productivity on tilt. This week, I slowly started to turn things around. The answer was simple, just find work to do. It's pretty easy nowadays. Whether working on a new project, learning a tip or two from blog posts, reading books, etc. Most importantly, the thing that really helped me find my groove was writing. Writing forces you to make time and __do__, it helps with discipline. And once you get the discipline ball rolling, it's hard to stop. 
+steps
+- unzip the tarball
+-- wth were the commands
 
-The things that I have been recently working on are:
+- could compile a sample program but not the ones from the book
+-- did a little more digging
 
-* My kendama collection app 
-* Finishing the Free Code Camp zipline projects
-* And jotting down nuggets of knowledge on a TIL (today I learned) repo
+- no avail
+-- will try to do this on my windows machine and install a bunch of clutter I will never touch again
 
-I ran into a bit of a wall while working on the Wikipedia search project, diving into documentation that was super dense. This led to me working on it on and off since it was so frustrating, but I finally told myself that I should wrap it up and move on. What really helped was asking for help on the Gitter chat. As a senior student, I sometimes feel too arrogant to ask for help and that is a BIG mistake. Although Google is great, getting direct hints from others who have ran into these problems provides you with way better feedback.
+This weekend I spent a solid day trying to configure my computer to run FLTK with the examples from this book [here](http://stroustrup.com/Programming/). FLTK is software used to write graphical applications. So far my experiences with these types of set ups have been nothing but disastrous. A semester ago, I had to install Qt, the process was pretty nightmarish and there wasn't a proper tutorial and it was basically me searching all of stackoverflow. In the end I got it, but the experience was quite painful and something that I thought I wouldn't have to go through again. Fast forward, here I am, in need to install GUI software again. Can you feel what's coming?
 
-That was all a bit too weird. To conclude, write more, get disciplined through writing and just find joy in the work.
+### Lesson not learned
+
+From my experience with Qt, I should have known that the process was going to be a bit tricky. But even so, I ignore everything and thought that a simple google search would solve things (Oh, how wrong was I). After a bit of searching I found that I needed to get the tarball (later found that there was a package), unzip the tarball and run some commands. It went something like this...
+
+Well first I had to unzip the `tarball`, which was done with much help from [here](http://askubuntu.com/questions/25347/what-command-do-i-need-to-unzip-extract-a-tar-gz-file),
+
+```sh
+tar -xvf file-ending-with.tar.gz
+
+# the flags
+# x extracts, v outputs files being extracted, f for path and name of file
+```
+
+This was followed by me running some commands, to install the software,
+
+```sh
+# I got these instructions from somewhere in the internet
+
+./configure
+sudo make
+sudo make install
+```
+
+From here on I gained access to the command line tool which was `fltk-config`, and to compile a file all that was needed was the `--compile` flag. Some samples worked, and some didn't. The one that I needed to work, did not.
+
+I soon found out that the `tarball` that I had unzipped, contained a `README` for Unix systems, describing the exact same process above. Man, I could have saved myself some time if I had been more attentive. Documentation is king.
+
+In there, I was able to run a demo that worked fine. But most importantly, it told me where it had installed the files. They were located in the following paths,
+
+* `/usr/local/include` for headers
+* `/usr/local/lib` for libraries (files with ending with `.a`)
+
+### The problem
+
+I soon found out that my program wasn't compiling because of a bunch of headers. In the same link above, there is a link called `The complete collection of code ...`, another zip. Inside the zip, there was a `GUI` folder with the missing headers. I proceeded to place this `GUI` folder in `/usr/local/include`. This did not work, as the files where inside a directory, and so I had to bring them out cluttering everything. After this, the program no longer gave the header errors but now there are undefined references everywhere.
+
+### Theory
+
+My gut tells me that the reason for the errors is a missing library (oh, I had to run `make` on the GUI folder to obtain a library). I couldn't solve this the way I had done above with the missing headers.
+
+Check this,
+
+![fltk](/public/img/fltk.png)
+
+As you can see in those very tiny letters, the `fltk-config --compile file.cpp` command is an abbreviation for a `g++` compilation command which is looking for a very specific `libfltk.a` file. What I attempted to do was, place the missing library path there. And it still didn't work. And such was the end of my day. Fill with frustration and a lesson learned. 
 
