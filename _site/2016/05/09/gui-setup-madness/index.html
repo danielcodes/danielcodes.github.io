@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      GUI setup madness &middot; Daniel Chia
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="/public/css/main.css">
+
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+	<!--Font awesome-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71833164-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          Daniel Chia
+        </a>
+      </h1>
+      <p class="lead">Hi, I'm Daniel. Here's where I rant.</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about/">About</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/archive/">Archive</a>
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/projects/">Projects</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+
+
+    </nav>
+
+		<!--Social Icons here-->
+		<!--Github | Bitbucket | Twitter | RSS-->
+		<ul class="social-icons">
+			<li> <a href="https://github.com/danielcodes" target="_blank"> <i class="fa fa-github fa-3x" ></i> </a>	</li>
+			<li> <a href="https://bitbucket.org/danielcodes/" target="_blank"> <i class="fa fa-bitbucket fa-3x"></i> </a> </li>
+			<li> <a href="https://twitter.com/danielchiaa" target="_blank"> <i class="fa fa-twitter fa-3x"></i> </a> </li>
+			<li> <a href="/atom.xml" target="_blank"> <i class="fa fa-rss fa-3x"></i> </a> </li>
+		</ul>
+
+		<p>&copy; 2016. All rights reserved.</p>
+  </div>
+</div>
+
+
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">GUI setup madness</h1>
+  <span class="post-date">09 May 2016</span>
+  <p>This weekend I spent a solid day trying to configure my computer to run FLTK with the examples from this book <a href="http://stroustrup.com/Programming/">here</a>. FLTK is software used to write graphical applications. So far my experiences with these types of set ups have been nothing but disastrous. A semester ago, I had to install Qt, the process was pretty nightmarish, there wasn’t a proper tutorial and it was basically me searching all of stackoverflow. In the end I got it, but the experience was quite painful and something that I thought I wouldn’t have to go through again. Fast forward, here I am, in need to install GUI software again. Can you feel what’s coming?</p>
+
+<h3 id="lesson-not-learned">Lesson not learned</h3>
+
+<p>From my experience with Qt, I should have known that the process was going to be a bit tricky. But even so, I ignored everything and thought that a simple google search would solve things (Oh, how wrong was I). After a bit of searching I found that I needed to get the tarball (later found that there was an apt-get package), unzip the tarball and run some commands. It went something like this…</p>
+
+<p>First <code>tarball</code>, which was done with much help from <a href="http://askubuntu.com/questions/25347/what-command-do-i-need-to-unzip-extract-a-tar-gz-file">here</a>,</p>
+
+<p>```sh
+tar -xvf file-ending-with.tar.gz</p>
+
+<h1 id="the-flags">the flags</h1>
+<p># x extracts, v outputs files being extracted, f for path and name of file
+```</p>
+
+<p>This was followed by me running some commands, to install the software,</p>
+
+<p>```sh
+# I got these instructions from somewhere in the internet</p>
+
+<p>./configure
+sudo make
+sudo make install
+```</p>
+
+<p>From here on I gained access to the command line tool which was <code>fltk-config</code>, and to compile a file all that was needed was the <code>--compile</code> flag. Some samples worked, and some didn’t. The one that needed to work, did not.</p>
+
+<p>Later, I found that the <code>tarball</code> that I had unzipped, contained a <code>README</code> for Unix systems, describing the exact same process above. Man, I could have saved myself some time if I had been more attentive. Documentation is king.</p>
+
+<p>In there, I was able to run a demo that worked fine. But most importantly, it told me where it had installed the files. They were located in the following paths,</p>
+
+<ul>
+  <li><code>/usr/local/include</code> for headers</li>
+  <li><code>/usr/local/lib</code> for libraries (files with ending with <code>.a</code>)</li>
+</ul>
+
+<h3 id="the-problem">The problem</h3>
+
+<p>I found out that the sample program wasn’t compiling because of a bunch of missing headers. In the same link above, there is a link called <code>The complete collection of code ...</code>, another zip. Inside the zip, there was a <code>GUI</code> folder with the missing headers. I proceeded to place this <code>GUI</code> folder in <code>/usr/local/include</code>. This did not work, as the files where inside a directory (GUI/), and so I had to bring them out to the top directory, cluttering everything. After this, the program no longer gave the header errors but now there were undefined references everywhere.</p>
+
+<h3 id="theory">Theory</h3>
+
+<p>My gut tells me that the reason for the errors was a missing library (oh, I had to run <code>make</code> on the GUI folder to obtain a <code>.a</code> file). I couldn’t solve this the way I had done above with the missing headers.</p>
+
+<p>Check this,</p>
+
+<p><img src="/public/img/fltk.png" alt="fltk" /></p>
+
+<p>As you can see in those very tiny letters, the <code>fltk-config --compile file.cpp</code> command is an abbreviation for a <code>g++</code> compilation command which is looking for a very specific <code>libfltk.a</code> file. What I attempted to do was, place the missing library path there. And it still didn’t work. And such was the end of my day. Filled with frustration and a lesson learned.</p>
+
+<h3 id="what-not-to-do-in-the-future">What not to do in the future</h3>
+
+<ul>
+  <li>Don’t install software based on stackoverflow instructions, take the time to find the proper documentation (README inside zip file)</li>
+  <li>Patience is a virtue, when things don’t work, I start looking for the first hacky solution. Take the time to analyze the error</li>
+</ul>
+
+<p>PS. I am most likely just going to install the software on my Windows Desktop as there is a proper instruction for how to do it there.</p>
+
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2016/04/29/write-more/">
+            Write more
+            <small>29 Apr 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2016/04/20/going-back-to-the-gym/">
+            Going back to the gym
+            <small>20 Apr 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2016/04/11/commit-streak/">
+            A commit a day
+            <small>11 Apr 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+
+			
+
+<div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+
+    var disqus_config = function () {
+				// Replace PAGE_URL with your page's canonical URL variable
+				this.page.url = "http://danielcodes.github.io/2016/05/09/gui-setup-madness/";
+
+				// Replace PAGE_IDENTIFIER with your page's unique identifier variable
+				this.page.identifier = "/2016/05/09/gui-setup-madness/";  
+    };
+
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        
+        s.src = '//danielcodess.disqus.com/embed.js';
+        
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+    </div>
+
+  </body>
+</html>

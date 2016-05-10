@@ -1,7 +1,7 @@
 ---
 layout: post
 title: GUI setup madness
-comments: false
+comments: true
 ---
 
 This weekend I spent a solid day trying to configure my computer to run FLTK with the examples from this book [here](http://stroustrup.com/Programming/). FLTK is software used to write graphical applications. So far my experiences with these types of set ups have been nothing but disastrous. A semester ago, I had to install Qt, the process was pretty nightmarish, there wasn't a proper tutorial and it was basically me searching all of stackoverflow. In the end I got it, but the experience was quite painful and something that I thought I wouldn't have to go through again. Fast forward, here I am, in need to install GUI software again. Can you feel what's coming?

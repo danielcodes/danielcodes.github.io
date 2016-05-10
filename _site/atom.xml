@@ -4,13 +4,80 @@
  <title>Daniel Chia</title>
  <link href="http://danielcodes.github.io/atom.xml" rel="self"/>
  <link href="http://danielcodes.github.io/"/>
- <updated>2016-04-28T23:45:34-04:00</updated>
+ <updated>2016-05-09T22:58:55-04:00</updated>
  <id>http://danielcodes.github.io</id>
  <author>
    <name>Daniel Chia</name>
    <email>danielarmandochia@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>GUI setup madness</title>
+   <link href="http://danielcodes.github.io/2016/05/09/gui-setup-madness/"/>
+   <updated>2016-05-09T00:00:00-04:00</updated>
+   <id>http://danielcodes.github.io/2016/05/09/gui-setup-madness</id>
+   <content type="html">&lt;p&gt;This weekend I spent a solid day trying to configure my computer to run FLTK with the examples from this book &lt;a href=&quot;http://stroustrup.com/Programming/&quot;&gt;here&lt;/a&gt;. FLTK is software used to write graphical applications. So far my experiences with these types of set ups have been nothing but disastrous. A semester ago, I had to install Qt, the process was pretty nightmarish, there wasn’t a proper tutorial and it was basically me searching all of stackoverflow. In the end I got it, but the experience was quite painful and something that I thought I wouldn’t have to go through again. Fast forward, here I am, in need to install GUI software again. Can you feel what’s coming?&lt;/p&gt;
+
+&lt;h3 id=&quot;lesson-not-learned&quot;&gt;Lesson not learned&lt;/h3&gt;
+
+&lt;p&gt;From my experience with Qt, I should have known that the process was going to be a bit tricky. But even so, I ignored everything and thought that a simple google search would solve things (Oh, how wrong was I). After a bit of searching I found that I needed to get the tarball (later found that there was an apt-get package), unzip the tarball and run some commands. It went something like this…&lt;/p&gt;
+
+&lt;p&gt;First &lt;code&gt;tarball&lt;/code&gt;, which was done with much help from &lt;a href=&quot;http://askubuntu.com/questions/25347/what-command-do-i-need-to-unzip-extract-a-tar-gz-file&quot;&gt;here&lt;/a&gt;,&lt;/p&gt;
+
+&lt;p&gt;```sh
+tar -xvf file-ending-with.tar.gz&lt;/p&gt;
+
+&lt;h1 id=&quot;the-flags&quot;&gt;the flags&lt;/h1&gt;
+&lt;p&gt;# x extracts, v outputs files being extracted, f for path and name of file
+```&lt;/p&gt;
+
+&lt;p&gt;This was followed by me running some commands, to install the software,&lt;/p&gt;
+
+&lt;p&gt;```sh
+# I got these instructions from somewhere in the internet&lt;/p&gt;
+
+&lt;p&gt;./configure
+sudo make
+sudo make install
+```&lt;/p&gt;
+
+&lt;p&gt;From here on I gained access to the command line tool which was &lt;code&gt;fltk-config&lt;/code&gt;, and to compile a file all that was needed was the &lt;code&gt;--compile&lt;/code&gt; flag. Some samples worked, and some didn’t. The one that needed to work, did not.&lt;/p&gt;
+
+&lt;p&gt;Later, I found that the &lt;code&gt;tarball&lt;/code&gt; that I had unzipped, contained a &lt;code&gt;README&lt;/code&gt; for Unix systems, describing the exact same process above. Man, I could have saved myself some time if I had been more attentive. Documentation is king.&lt;/p&gt;
+
+&lt;p&gt;In there, I was able to run a demo that worked fine. But most importantly, it told me where it had installed the files. They were located in the following paths,&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;/usr/local/include&lt;/code&gt; for headers&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;/usr/local/lib&lt;/code&gt; for libraries (files with ending with &lt;code&gt;.a&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;the-problem&quot;&gt;The problem&lt;/h3&gt;
+
+&lt;p&gt;I found out that the sample program wasn’t compiling because of a bunch of missing headers. In the same link above, there is a link called &lt;code&gt;The complete collection of code ...&lt;/code&gt;, another zip. Inside the zip, there was a &lt;code&gt;GUI&lt;/code&gt; folder with the missing headers. I proceeded to place this &lt;code&gt;GUI&lt;/code&gt; folder in &lt;code&gt;/usr/local/include&lt;/code&gt;. This did not work, as the files where inside a directory (GUI/), and so I had to bring them out to the top directory, cluttering everything. After this, the program no longer gave the header errors but now there were undefined references everywhere.&lt;/p&gt;
+
+&lt;h3 id=&quot;theory&quot;&gt;Theory&lt;/h3&gt;
+
+&lt;p&gt;My gut tells me that the reason for the errors was a missing library (oh, I had to run &lt;code&gt;make&lt;/code&gt; on the GUI folder to obtain a &lt;code&gt;.a&lt;/code&gt; file). I couldn’t solve this the way I had done above with the missing headers.&lt;/p&gt;
+
+&lt;p&gt;Check this,&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/img/fltk.png&quot; alt=&quot;fltk&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;As you can see in those very tiny letters, the &lt;code&gt;fltk-config --compile file.cpp&lt;/code&gt; command is an abbreviation for a &lt;code&gt;g++&lt;/code&gt; compilation command which is looking for a very specific &lt;code&gt;libfltk.a&lt;/code&gt; file. What I attempted to do was, place the missing library path there. And it still didn’t work. And such was the end of my day. Filled with frustration and a lesson learned.&lt;/p&gt;
+
+&lt;h3 id=&quot;what-not-to-do-in-the-future&quot;&gt;What not to do in the future&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Don’t install software based on stackoverflow instructions, take the time to find the proper documentation (README inside zip file)&lt;/li&gt;
+  &lt;li&gt;Patience is a virtue, when things don’t work, I start looking for the first hacky solution. Take the time to analyze the error&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;PS. I am most likely just going to install the software on my Windows Desktop as there is a proper instruction for how to do it there.&lt;/p&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>Write more</title>

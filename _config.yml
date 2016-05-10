@@ -1,6 +1,6 @@
 # Dependencies
 # redcarpet | kramdown
-markdown:         kramdown 
+markdown:         kramdown
 highlighter:      rouge
 
 # Permalinks
