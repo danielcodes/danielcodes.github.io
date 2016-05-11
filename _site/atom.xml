@@ -4,7 +4,7 @@
  <title>Daniel Chia</title>
  <link href="http://danielcodes.github.io/atom.xml" rel="self"/>
  <link href="http://danielcodes.github.io/"/>
- <updated>2016-05-09T22:58:55-04:00</updated>
+ <updated>2016-05-11T15:18:54-04:00</updated>
  <id>http://danielcodes.github.io</id>
  <author>
    <name>Daniel Chia</name>
@@ -17,7 +17,36 @@
    <link href="http://danielcodes.github.io/2016/05/09/gui-setup-madness/"/>
    <updated>2016-05-09T00:00:00-04:00</updated>
    <id>http://danielcodes.github.io/2016/05/09/gui-setup-madness</id>
-   <content type="html">&lt;p&gt;This weekend I spent a solid day trying to configure my computer to run FLTK with the examples from this book &lt;a href=&quot;http://stroustrup.com/Programming/&quot;&gt;here&lt;/a&gt;. FLTK is software used to write graphical applications. So far my experiences with these types of set ups have been nothing but disastrous. A semester ago, I had to install Qt, the process was pretty nightmarish, there wasn’t a proper tutorial and it was basically me searching all of stackoverflow. In the end I got it, but the experience was quite painful and something that I thought I wouldn’t have to go through again. Fast forward, here I am, in need to install GUI software again. Can you feel what’s coming?&lt;/p&gt;
+   <content type="html">&lt;h2 id=&quot;update-051116&quot;&gt;Update 05/11/16&lt;/h2&gt;
+
+&lt;p&gt;I attempted to a last ditch effort to get this running, and it worked.&lt;/p&gt;
+
+&lt;p&gt;It was mostly thanks to these two posts,&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;https://groups.google.com/forum/#!topic/ppp-public/BtlzdWGuQpQ&lt;/li&gt;
+  &lt;li&gt;http://stackoverflow.com/questions/31924162/stroustrups-header-error-working-with-fltk&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;With the FLTK package installed, I created a new directory with the sample program and dumped all the headers from &lt;code&gt;GUI/&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;This was followed by,&lt;/p&gt;
+
+&lt;p&gt;```sh
+# replace PROGRAM_NAME with your C++ file&lt;/p&gt;
+
+&lt;p&gt;g++ -w -Wall -std=c++11 Graph.cpp Window.cpp GUI.cpp Simple_window.cpp PROGRAM_NAME.cpp -L/usr/local/lib -lfltk_images -lpng -lz -ljpeg -lfltk -lXcursor -lXfixes -lXext -lXft -lfontconfig -lXinerama -lpthread -ldl -lm -lX11 -o PROGRAM_NAME
+```&lt;/p&gt;
+
+&lt;p&gt;On first run, it did not work due to some inability to convert ifstream to bool as a return value, this was fixed with&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;return (bool)ifstrean_value&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;No need to set up Eclipse, thank goodness.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;This weekend I spent a solid day trying to configure my computer to run FLTK with the examples from this book &lt;a href=&quot;http://stroustrup.com/Programming/&quot;&gt;here&lt;/a&gt;. FLTK is software used to write graphical applications. So far my experiences with these types of set ups have been nothing but disastrous. A semester ago, I had to install Qt, the process was pretty nightmarish, there wasn’t a proper tutorial and it was basically me searching all of stackoverflow. In the end I got it, but the experience was quite painful and something that I thought I wouldn’t have to go through again. Fast forward, here I am, in need to install GUI software again. Can you feel what’s coming?&lt;/p&gt;
 
 &lt;h3 id=&quot;lesson-not-learned&quot;&gt;Lesson not learned&lt;/h3&gt;
 

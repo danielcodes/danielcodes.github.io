@@ -129,7 +129,36 @@
       <div class="post">
   <h1 class="post-title">GUI setup madness</h1>
   <span class="post-date">09 May 2016</span>
-  <p>This weekend I spent a solid day trying to configure my computer to run FLTK with the examples from this book <a href="http://stroustrup.com/Programming/">here</a>. FLTK is software used to write graphical applications. So far my experiences with these types of set ups have been nothing but disastrous. A semester ago, I had to install Qt, the process was pretty nightmarish, there wasn’t a proper tutorial and it was basically me searching all of stackoverflow. In the end I got it, but the experience was quite painful and something that I thought I wouldn’t have to go through again. Fast forward, here I am, in need to install GUI software again. Can you feel what’s coming?</p>
+  <h2 id="update-051116">Update 05/11/16</h2>
+
+<p>I attempted to a last ditch effort to get this running, and it worked.</p>
+
+<p>It was mostly thanks to these two posts,</p>
+
+<ul>
+  <li>https://groups.google.com/forum/#!topic/ppp-public/BtlzdWGuQpQ</li>
+  <li>http://stackoverflow.com/questions/31924162/stroustrups-header-error-working-with-fltk</li>
+</ul>
+
+<p>With the FLTK package installed, I created a new directory with the sample program and dumped all the headers from <code>GUI/</code>.</p>
+
+<p>This was followed by,</p>
+
+<p>```sh
+# replace PROGRAM_NAME with your C++ file</p>
+
+<p>g++ -w -Wall -std=c++11 Graph.cpp Window.cpp GUI.cpp Simple_window.cpp PROGRAM_NAME.cpp -L/usr/local/lib -lfltk_images -lpng -lz -ljpeg -lfltk -lXcursor -lXfixes -lXext -lXft -lfontconfig -lXinerama -lpthread -ldl -lm -lX11 -o PROGRAM_NAME
+```</p>
+
+<p>On first run, it did not work due to some inability to convert ifstream to bool as a return value, this was fixed with</p>
+
+<p><code>return (bool)ifstrean_value</code></p>
+
+<p>No need to set up Eclipse, thank goodness.</p>
+
+<hr />
+
+<p>This weekend I spent a solid day trying to configure my computer to run FLTK with the examples from this book <a href="http://stroustrup.com/Programming/">here</a>. FLTK is software used to write graphical applications. So far my experiences with these types of set ups have been nothing but disastrous. A semester ago, I had to install Qt, the process was pretty nightmarish, there wasn’t a proper tutorial and it was basically me searching all of stackoverflow. In the end I got it, but the experience was quite painful and something that I thought I wouldn’t have to go through again. Fast forward, here I am, in need to install GUI software again. Can you feel what’s coming?</p>
 
 <h3 id="lesson-not-learned">Lesson not learned</h3>
 

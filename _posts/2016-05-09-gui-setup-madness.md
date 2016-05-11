@@ -4,6 +4,33 @@ title: GUI setup madness
 comments: true
 ---
 
+## Update 05/11/16
+
+I attempted to a last ditch effort to get this running, and it worked.
+
+It was mostly thanks to these two posts,
+
+* https://groups.google.com/forum/#!topic/ppp-public/BtlzdWGuQpQ
+* http://stackoverflow.com/questions/31924162/stroustrups-header-error-working-with-fltk
+
+With the FLTK package installed, I created a new directory with the sample program and dumped all the headers from `GUI/`. 
+
+This was followed by, 
+
+```sh
+# replace PROGRAM_NAME with your C++ file
+
+g++ -w -Wall -std=c++11 Graph.cpp Window.cpp GUI.cpp Simple_window.cpp PROGRAM_NAME.cpp -L/usr/local/lib -lfltk_images -lpng -lz -ljpeg -lfltk -lXcursor -lXfixes -lXext -lXft -lfontconfig -lXinerama -lpthread -ldl -lm -lX11 -o PROGRAM_NAME
+```
+
+On first run, it did not work due to some inability to convert ifstream to bool as a return value, this was fixed with
+
+`return (bool)ifstrean_value`
+
+No need to set up Eclipse, thank goodness.
+
+<hr>
+
 This weekend I spent a solid day trying to configure my computer to run FLTK with the examples from this book [here](http://stroustrup.com/Programming/). FLTK is software used to write graphical applications. So far my experiences with these types of set ups have been nothing but disastrous. A semester ago, I had to install Qt, the process was pretty nightmarish, there wasn't a proper tutorial and it was basically me searching all of stackoverflow. In the end I got it, but the experience was quite painful and something that I thought I wouldn't have to go through again. Fast forward, here I am, in need to install GUI software again. Can you feel what's coming?
 
 ### Lesson not learned

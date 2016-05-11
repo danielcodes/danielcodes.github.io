@@ -137,7 +137,7 @@
 
     <span class="post-date">09 May 2016</span>
 
-		This weekend I spent a solid day trying to configure my computer to run FLTK with the examples from this book here. FLTK is software used to write graphical applications. So far my experiences with these types of set ups have been nothing but disastrous. A semester ago, I had to install Qt, the process was pretty nightmarish, there wasn’t a proper tutorial and it was basically me searching all of stackoverflow. In the...
+		Update 05/11/16 I attempted to a last ditch effort to get this running, and it worked. It was mostly thanks to these two posts,  https://groups.google.com/forum/#!topic/ppp-public/BtlzdWGuQpQ http://stackoverflow.com/questions/31924162/stroustrups-header-error-working-with-fltk  With the FLTK package installed, I created a new directory with the sample program and dumped all the headers from GUI/. This was followed by, ```sh # replace PROGRAM_NAME with your C++ file g++ -w -Wall -std=c++11 Graph.cpp Window.cpp GUI.cpp Simple_window.cpp PROGRAM_NAME.cpp -L/usr/local/lib -lfltk_images -lpng -lz...
 	  <a href="/2016/05/09/gui-setup-madness/" class="post-read-more">[Read&nbsp;More]</a>
 
   </div>
