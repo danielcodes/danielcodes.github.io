@@ -3,6 +3,21 @@ layout: page
 title: Projects 
 ---
 
+### Free Code Camp
+
+I started the Free Code Camp curriculum back in March. Reason was to brush on some Javascript, I mainly focused on attacking the algorithms sections, but soon found myself just wanting to finish everything.
+
+The projects, I have done so far are:
+
+* Tribute page
+* Personal Portfolia Webpage
+* Random Quote Machine
+* Local weather
+* Wikipedia viewer
+* Twitch.tv viewer (in the works)
+
+Links to the codepens can be found on [this page](https://github.com/danielcodes/fcc-projects/tree/master/front-end-dev-projects).
+
 ### Pipeline Visualizer | <a href="https://bitbucket.org/danielcodes/pipeline_monitor" target="_blank"> <i class="fa fa-bitbucket" ></i> </a>		
 Web application that creates a visual of the stages of a process. The process chosen was a news aggregator that collected articles from RSS feeds.
 
