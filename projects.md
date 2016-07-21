@@ -5,7 +5,9 @@ title: Projects
 
 ### Overwatch | <a href="https://github.com/danielcodes/overwatch" target="_blank"> <i class="fa fa-github" ></i> </a>		
 
-api chaining is all
+Web application that checks people's sentiment on certain issues in the US (ie. Gun Control). The procedure is done by gathering data from Twitter, then passing it through HP Haven OnDemand sentiment analysis API and lastly this data is passed to Esri to be mapped into the choropleths.
+
+This project was created in the AngelHack Brooklyn 2016 hackathon.
 
 ![overwatch](/public/img/choropleths.png)
 
@@ -13,7 +15,7 @@ api chaining is all
 
 ### Kendama Collection | <a href="https://github.com/danielcodes/kendama-collection" target="_blank"> <i class="fa fa-github" ></i> </a>		
 
-kendamas
+A fun little project to keep list of all my kendamas. This project has allowed me to explore all parts of the Web Development stack from the backend, using tools such as Flask and SqlAlchemy to the front end where I applied Jquery and Bootstrap.
 
 <ul class="bxslider">
 	<li><img src="/public/img/kendama/collection.png" alt=""></li>
@@ -25,7 +27,7 @@ kendamas
 
 ### Free Code Camp | <a href="http://codepen.io/danielcodes/pens/popular/" target="_blank"> <i class="fa fa-codepen" ></i> </a>		
 
-I started Free Code Camp to brush up on the basics, check out what I've done so far!
+I started Free Code Camp to brush up on the basics, so it's only natural to do the rest of the projects.
 
 ![codepens](/public/img/fcc/codepen.png)
 
@@ -34,6 +36,7 @@ Links to the codepens can be found on [here](http://codepen.io/danielcodes/pens/
 <hr>
 
 ### Pipeline Visualizer | <a href="https://bitbucket.org/danielcodes/pipeline_monitor" target="_blank"> <i class="fa fa-bitbucket" ></i> </a>		
+
 Web application that creates a visual of the stages of a process. The process chosen was a news aggregator that collected articles from RSS feeds.
 
 ![pipeline](https://bytebucket.org/danielcodes/pipeline_monitor/raw/7b185fc18abff50a276a07169292979ccd4f70e5/site/docs/img/pipeline.png)
@@ -41,12 +44,11 @@ Web application that creates a visual of the stages of a process. The process ch
 <hr>
 
 ### Facilities Content Management System (CMS) | <a href="https://github.com/danielcodes/facility-CMS" target="_blank"> <i class="fa fa-github-alt" ></i> </a>	
+
 A single page prototype to ease access to room information in buildings.
 
 <ul class="bxslider">
 	<li><img src="/public/img/facilities/dots.png" alt=""></li>
 	<li><img src="/public/img/facilities/dots_info.png" alt=""></li>
 </ul>
-
-
 
