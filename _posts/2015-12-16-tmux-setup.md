@@ -4,8 +4,9 @@ title: On using Tmux
 comments: true
 ---
 
-####Update
-######01/12/16 - Scrollbar locked when using tmux
+#### Update
+
+###### 01/12/16 - Scrollbar locked when using tmux
 
 <hr>
 
@@ -15,11 +16,11 @@ I've been wanting to write this one for a while now. This summer, I got learn tw
 
 The first thing you ought to do is change the pesky default prefix mapping, **CTRL+b**. To do this, first create your **~/.tmux.conf** file, this file allows you to configure tmux settings to your liking. In there, add: 
 
-```sh
+~~~ sh
 #prefix to ctrl+a
 unbind C-b
 set -g prefix C-a 
-```
+~~~
 
 However, your pinky finger still has to travel a mile to get to that CTRL key at the bottom left. To fix this, I'd recommend looking into your system and changing the **Caps Lock** key mapping to **CTRL**. I have Ubuntu-Gnome, and it came with a nice little piece of software called Tweak Tool, here I was able to turn my Caps Lock key into CTRL.
 
@@ -30,20 +31,20 @@ Next, you gotta know how to refresh these updates that you're adding. Usually, i
 
 but this is cumbersome and hard to remember, instead add:
 
-```sh
+~~~ sh
 #reload of the config file
 unbind r
 bind r source-file ~/.tmux.conf
-```
+~~~
 
 this will allow you to refresh with CTRL+a + r.
 
 You can test this by changing window tab colors on the status bar, add,
 
-```sh
+~~~ sh
 #highlight current window
 set-window-option -g window-status-current-bg white 
-```
+~~~
 
 try out different colors and refresh with CTRL+a + r.
 
@@ -51,24 +52,24 @@ try out different colors and refresh with CTRL+a + r.
 
 Now that we have much nicer prefix **CTRL+a**, what comes next is pane splitting. The defaults are set to " (vertical) and % (horizontal). These bindings are hard to memorize and not so intuitive, let's change them. In your *.tmux.conf* add:
 
-```sh
+~~~ sh
 #intuitive pane splitting
 bind | split-window -h -c "#{pane_current_path}"
 bind - split-window -v -c "#{pane_current_path}"
 unbind '"'
 unbind %
-```
+~~~
 
-The first line is saying to use the **|** key to do a horizontal split. The ```-c "#{pane_current_path}"``` part makes it so that the split pane remains in the current path where you split from. Imagine being into directory that's 10 levels down, and having to cd there again when you create a new pane. You get the picture.
+The first line is saying to use the ```|``` key to do a horizontal split. The ```-c "#{pane_current_path}"``` part makes it so that the split pane remains in the current path where you split from. Imagine being into directory that's 10 levels down, and having to cd there again when you create a new pane. You get the picture.
 
 ###Moving between panes
 By now, you can split panes, but how do you move aronud? One way to go about it, is to hit the prefix key followed by an arrow key movement. This is sloppy though, as you have to move your hand down to the arrow keys. A better way is the following, add:
 
-```sh
+~~~ sh
 #quick pane cycling, prefix + Ctrl-a 
 unbind ^A
 bind ^A select-pane -t :.+
-```
+~~~
 
 with this, you can move from pane to pane by hitting your prefix twice.
 If you mapped your control key to CAPS LOCK, you can hit the prefix once, keep your pinky on CAPS and press *a* again. Ah, so, so, efficient.
@@ -83,10 +84,10 @@ One final feature that I want to talk about is zoom. Having multiple panes is gr
 ###Scrolling - updated 01/12/16
 I noticed a small issue with Tmux when I first started using it. It locked up my scrollbar. At first I didn't think much of the issue. But ever since failing tests started giving error messages that cover the screen and more, it has become imperative for me to get this functionality back. This is solved with the following lines:
 
-```sh
+~~~ sh
 #allows scrolling
 setw -g mode-mouse on
-```
+~~~
 
 TL;DL My .tmux.conf is [here](https://gist.github.com/danielcodes/ea6ee30d2ff032421b2e). Leave me a comment if I can improve on anything.
 
