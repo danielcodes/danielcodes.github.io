@@ -4,13 +4,83 @@
  <title>Daniel Chia</title>
  <link href="http://danielcodes.github.io/atom.xml" rel="self"/>
  <link href="http://danielcodes.github.io/"/>
- <updated>2016-11-21T12:42:57-05:00</updated>
+ <updated>2016-11-21T19:11:04-05:00</updated>
  <id>http://danielcodes.github.io</id>
  <author>
    <name>Daniel Chia</name>
    <email>danielarmandochia@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Sudoku bug</title>
+   <link href="http://danielcodes.github.io/2016/11/21/sudoku-bug/"/>
+   <updated>2016-11-21T00:00:00-05:00</updated>
+   <id>http://danielcodes.github.io/2016/11/21/sudoku-bug</id>
+   <content type="html">&lt;p&gt;The other day I was trying to implement a Sudoku Solver, specifically the one from Elements of Programming Interviews. My usual approach to these type of problems has been to write down the sudo code on paper, step through it and if I understand it, I can usually implement it without looking at the solution. This was certainly the case with this Sudoku Solver, except that I missed a crucial keyword in the program that created a bug that sent everything spiraling out of control.&lt;/p&gt;
+
+&lt;h3 id=&quot;pseudo-code&quot;&gt;Pseudo-code&lt;/h3&gt;
+
+&lt;p&gt;First, let me explain how this Sudoku Solver is supposed to work on a step-by-step basis.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Iterate through each slot in the grid&lt;/li&gt;
+  &lt;li&gt;Two base cases
+    &lt;ul&gt;
+      &lt;li&gt;The grid has been filled both horizontally and vertically&lt;/li&gt;
+      &lt;li&gt;The slot already has a value&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;If it doesn’t fall into the two categories above, the program proceeds to attempt all values from 1-9&lt;/li&gt;
+  &lt;li&gt;If the value is valid, set the value and recurse, if this recursion passes, return True&lt;/li&gt;
+  &lt;li&gt;If the loop above terminates, undo the assignment (backtrack) and return False&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;One thing to note is that this solves the puzzle in a vertical manner, filling in the columns and moving towards the right.&lt;/p&gt;
+
+&lt;p&gt;The code to this can be found &lt;a href=&quot;https://github.com/danielcodes/practice-problems/blob/master/epi/16-recursion/sudokuSolver.py&quot;&gt;here&lt;/a&gt;. Take a glance at it since I’ll be discussing it in the snippets below.&lt;/p&gt;
+
+&lt;h3 id=&quot;where-it-all-went-wrong&quot;&gt;Where it all went wrong&lt;/h3&gt;
+
+&lt;p&gt;This looks implementation doesn’t look too bad. However, I ran into a pretty nasty bug. On the case base case where the slot already has a value, I wrote:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;# recurse onto the next row
+if grid[i][j] != 0:
+    sudokuSolverHelper(i+1, j, grid)	
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&quot;so-whats-wrong-with-this&quot;&gt;So, what’s wrong with this?&lt;/h5&gt;
+
+&lt;p&gt;The problem lies when this call gets returned, say it recurses down to the next value and all values from 1-9 are not valid. This returns &lt;code&gt;False&lt;/code&gt; but the rest of the code continues to execute. This means that the code then attempts to try to use all values from 1-9 on this already filled-in value. No bueno.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-solution&quot;&gt;The solution&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;# add return prior to the recursion
+if grid[i][j] != 0:
+    return sudokuSolverHelper(i+1, j, grid)	
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It’s hard to see how this helps right away, so let’s run through an example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;_ empty
+5 pre-filled 5
+_ empty
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Say the first empty value is a 2, it recurses and goes to 5 which hits our&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;return rec(...)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;case, now we’re at the second empty slot, then say after attempting all values on the second empty slot, False is returned. But now since we have the return statement, the code below it will not run and this same False value will be given to the recursive step when 2 was the attempted value.&lt;/p&gt;
+
+&lt;h3 id=&quot;in-short&quot;&gt;In short&lt;/h3&gt;
+
+&lt;p&gt;That missing &lt;code&gt;return&lt;/code&gt; caused the pre-filled values to be overwritten, adding it prevents it.&lt;/p&gt;
+
+&lt;p&gt;PS. Copy the code and go to &lt;a href=&quot;https://repl.it/languages/python&quot;&gt;repl.it&lt;/a&gt; and try it out, adding and removing the return keyword&lt;/p&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>GUI setup madness</title>

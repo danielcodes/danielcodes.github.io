@@ -11,7 +11,7 @@
 
   <title>
     
-      A productive winter break &middot; Daniel Chia
+      Sudoku bug &middot; Daniel Chia
     
   </title>
 
@@ -132,32 +132,69 @@
 
     <div class="content container">
       <div class="post">
-  <h1 class="post-title">A productive winter break</h1>
-  <span class="post-date">06 Feb 2016</span>
-  <p>I had a very productive winter break. I managed to hit alot of milestones and that required a drastic change in my day to day routine. Amongst the things that I accomplished are:</p>
+  <h1 class="post-title">Sudoku bug</h1>
+  <span class="post-date">21 Nov 2016</span>
+  <p>The other day I was trying to implement a Sudoku Solver, specifically the one from Elements of Programming Interviews. My usual approach to these type of problems has been to write down the sudo code on paper, step through it and if I understand it, I can usually implement it without looking at the solution. This was certainly the case with this Sudoku Solver, except that I missed a crucial keyword in the program that created a bug that sent everything spiraling out of control.</p>
 
-<ul>
-  <li><strong>Finishing 3 Pluralsight courses</strong>
+<h3 id="pseudo-code">Pseudo-code</h3>
+
+<p>First, let me explain how this Sudoku Solver is supposed to work on a step-by-step basis.</p>
+
+<ol>
+  <li>Iterate through each slot in the grid</li>
+  <li>Two base cases
     <ul>
-      <li>Advanced Javascript</li>
-      <li>Python Fundamentals</li>
-      <li>Python Beyond the Basics</li>
+      <li>The grid has been filled both horizontally and vertically</li>
+      <li>The slot already has a value</li>
     </ul>
   </li>
-  <li><strong>Doing a chapter a day from the Test Driven Development with Python book</strong></li>
-</ul>
+  <li>If it doesn’t fall into the two categories above, the program proceeds to attempt all values from 1-9</li>
+  <li>If the value is valid, set the value and recurse, if this recursion passes, return True</li>
+  <li>If the loop above terminates, undo the assignment (backtrack) and return False</li>
+</ol>
 
-<p>I started by reading the <a href="https://github.com/getify/You-Dont-Know-JS"><strong>You-Dont-Know-JS</strong></a> book series, managed to get past the first two and decided to just do the video lesson instead. I still plan to finish the rest of the books somewhere along this semester. As to Python, having worked on a Django project in the Fall, at times I felt that my understanding was lacking. So I took the time to really get the basics down, this has helped tremendously as I feel much more confident in my ability to read Python code. Consuming too much video material in one sitting is always a bad idea (found that the hard way), so I found balance by watching only an hour of the course per day. This was followed by practicing whatever I had learned right away.</p>
+<p>One thing to note is that this solves the puzzle in a vertical manner, filling in the columns and moving towards the right.</p>
 
-<p>Learning the basics of a language was only part of my day, I used the rest of the day to read a chapter from <a href="http://chimera.labs.oreilly.com/books/1234000000754/index.html"><strong>TDD with Python</strong></a>. These chapters were <strong>DENSE</strong> so I had to spend a good 2 - 3 hours per chapter, that is only if things went smoothly, at times debugging would take a frustratingly long time. I managed to cover everything from Chapter 8 to Chapter 19. I still have 2 chapters until I wrap up the book, which will get done somewhere in this month. Overall it’s been such a great book, hands-on teaching on the TDD practice. Really can’t wait to start applying it to my own projects.</p>
+<p>The code to this can be found <a href="https://github.com/danielcodes/practice-problems/blob/master/epi/16-recursion/sudokuSolver.py">here</a>. Take a glance at it since I’ll be discussing it in the snippets below.</p>
 
-<p>This pretty much sums it up, most of the week (I’d say 5/7 days) I would make sure that I got a hour of video and one chapter of the book down, no matter what. This wouldn’t have been possible with the irregular sleep schedule that I had at that time. I needed to become a morning person. A morning person, gets more hours in the day and if I was to be productive at all, I needed all the time I could get my hands on.</p>
+<h3 id="where-it-all-went-wrong">Where it all went wrong</h3>
 
-<blockquote>
-  <p>Become productivity-obssessed, wake up early, and get work done.</p>
-</blockquote>
+<p>This looks implementation doesn’t look too bad. However, I ran into a pretty nasty bug. On the case base case where the slot already has a value, I wrote:</p>
 
-<p>That’s my new motto.</p>
+<pre><code class="language-python"># recurse onto the next row
+if grid[i][j] != 0:
+    sudokuSolverHelper(i+1, j, grid)	
+</code></pre>
+
+<h5 id="so-whats-wrong-with-this">So, what’s wrong with this?</h5>
+
+<p>The problem lies when this call gets returned, say it recurses down to the next value and all values from 1-9 are not valid. This returns <code>False</code> but the rest of the code continues to execute. This means that the code then attempts to try to use all values from 1-9 on this already filled-in value. No bueno.</p>
+
+<h3 id="the-solution">The solution</h3>
+
+<pre><code class="language-python"># add return prior to the recursion
+if grid[i][j] != 0:
+    return sudokuSolverHelper(i+1, j, grid)	
+</code></pre>
+
+<p>It’s hard to see how this helps right away, so let’s run through an example:</p>
+
+<pre><code>_ empty
+5 pre-filled 5
+_ empty
+</code></pre>
+
+<p>Say the first empty value is a 2, it recurses and goes to 5 which hits our</p>
+
+<p><code>return rec(...)</code></p>
+
+<p>case, now we’re at the second empty slot, then say after attempting all values on the second empty slot, False is returned. But now since we have the return statement, the code below it will not run and this same False value will be given to the recursive step when 2 was the attempted value.</p>
+
+<h3 id="in-short">In short</h3>
+
+<p>That missing <code>return</code> caused the pre-filled values to be overwritten, adding it prevents it.</p>
+
+<p>PS. Copy the code and go to <a href="https://repl.it/languages/python">repl.it</a> and try it out, adding and removing the return keyword</p>
 
 
 </div>
@@ -165,15 +202,6 @@
 <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
-    
-      <li>
-        <h3>
-          <a href="/2016/11/21/sudoku-bug/">
-            Sudoku bug
-            <small>21 Nov 2016</small>
-          </a>
-        </h3>
-      </li>
     
       <li>
         <h3>
@@ -193,6 +221,15 @@
         </h3>
       </li>
     
+      <li>
+        <h3>
+          <a href="/2016/04/20/going-back-to-the-gym/">
+            Going back to the gym
+            <small>20 Apr 2016</small>
+          </a>
+        </h3>
+      </li>
+    
   </ul>
 </div>
 
@@ -208,10 +245,10 @@
 
     var disqus_config = function () {
 				// Replace PAGE_URL with your page's canonical URL variable
-				this.page.url = "http://danielcodes.github.io/2016/02/06/productive-winter-break/";
+				this.page.url = "http://danielcodes.github.io/2016/11/21/sudoku-bug/";
 
 				// Replace PAGE_IDENTIFIER with your page's unique identifier variable
-				this.page.identifier = "/2016/02/06/productive-winter-break/";  
+				this.page.identifier = "/2016/11/21/sudoku-bug/";  
     };
 
     (function() {  // DON'T EDIT BELOW THIS LINE
