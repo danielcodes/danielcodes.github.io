@@ -1,67 +1,119 @@
 ---
 layout: post
-title: Sudoku bug
+title: Building a Tic Tac Toe game
 comments: false
 ---
 
-The other day I was trying to implement a Sudoku Solver, specifically the one from Elements of Programming Interviews. My usual approach to these type of problems has been to write down the sudo code on paper, step through it and if I understand it, I can usually implement it without looking at the solution. This was certainly the case with this Sudoku Solver, except that I missed a crucial keyword in the program that created a bug that sent everything spiraling out of control.
+In the past two weeks, I have been working on a Tic Tac Toe game for Free Code Camp. This one took a couple of sitting as it required me to learn quite a few things. I chose to use React for the project as it is something that I've been meaning to learn for the longest time and had some momemntum coming in after finish my Pomodoro Clock in React. 
 
-### Pseudo-code
+The user stories for the project were simple:
 
-First, let me explain how this Sudoku Solver is supposed to work on a step-by-step basis.
+* I can play a game of Tic Tac Toe with the computer.
+* My game will reset as soon as it's over so I can play again.
+* I can choose whether I want to play as X or O.
 
-1. Iterate through each slot in the grid
-2. Two base cases
-  * The grid has been filled both horizontally and vertically
-  * The slot already has a value
-3. If it doesn't fall into the two categories above, the program proceeds to attempt all values from 1-9
-4. If the value is valid, set the value and recurse, if this recursion passes, return True
-5. If the loop above terminates, undo the assignment (backtrack) and return False
+Not too bad, have a choice between X or O, create an AI and reset when game ends.
 
-One thing to note is that this solves the puzzle in a vertical manner, filling in the columns and moving towards the right.
+## Starting out
 
-The code to this can be found [here](https://github.com/danielcodes/practice-problems/blob/master/epi/16-recursion/sudokuSolver.py). Take a glance at it since I'll be discussing it in the snippets below.
+The first thing I did was prototype the user interface, which was just a grid. After this, I soon found that I had put together a huge component and didn't know how to break it up. Also, if I had kept that grid component, each square would need to have an ```onClick``` handle attached to it to display X or O on that square. So soon and things were already starting to look ugly. I needed to break down this HTML. Luckily, I happened to come across the tutorial on [ React's main site ], which was a Tic-Tac-Toe game.
 
-### Where it all went wrong
+## Going through the tutorial
 
-This looks implementation doesn't look too bad. However, I ran into a pretty nasty bug. On the case base case where the slot already has a value, I wrote:
+This tutorial was a lot of fun, I highly recommend it. I found the main thing that I needed, which was to break the components apart. They did this, by creating a Game, a Board and a Square. You start small with all the functionality contained in the Square and refactor up. This means the parent component contains the data and passes a function down to the child for it to modify this data. This was the only thing I needed, but there were other goodies in the tutorial, such as creating a history of all the moves and being able to move back and start playing from there.
 
-~~~ python
-# recurse onto the next row
-if grid[i][j] != 0:
-    sudokuSolverHelper(i+1, j, grid)	
-~~~
+After finishing the tutorial, there were additional features that you could implement if you wanted to test your knowledge. Since I wanted to learn, I did them. 
 
-##### So, what's wrong with this?
+<p data-height="306" data-theme-id="0" data-slug-hash="LbBMyK" data-default-tab="result" data-user="danielcodes" data-embed-version="2" data-pen-title="Tic Tac Toe new features" class="codepen">See the Pen <a href="http://codepen.io/danielcodes/pen/LbBMyK/">Tic Tac Toe new features</a> by Daniel Chia (<a href="http://codepen.io/danielcodes">@danielcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
-The problem lies when this call gets returned, say it recurses down to the next value and all values from 1-9 are not valid. This returns ```False``` but the rest of the code continues to execute. This means that the code then attempts to try to use all values from 1-9 on this already filled-in value. No bueno.
+The most noticeable additions are, bolding the current move, the button to sort the moves and highlighting the winning line.
 
-### The solution
+## Back to my prototype
 
-~~~ python
-# add return prior to the recursion
-if grid[i][j] != 0:
-    return sudokuSolverHelper(i+1, j, grid)	
-~~~
+Armed with this new knowledge, I proceeded to add these separated components to my own game. At this point, I thought that I was ready to start looking into creating the AI to play the game.
 
-It's hard to see how this helps right away, so let's run through an example:
+## Thinking about the AI
+
+The first idea to create this, was to have the computer capture the center or corner on its first move. From here, look for threats which is when the opposite player has two pieces lined up. A couple of limitations with this train of thought:
 
 ~~~
-_ empty
-5 pre-filled 5
-_ empty
+There's no threat right away, but if it play its move either of the T spots, it is looking at a lost.
+
+ |T|O
+-----
+ |X|T
+-----
+X| |
 ~~~
 
-Say the first empty value is a 2, it recurses and goes to 5 which hits our 
+This is when I realized that I couldn't really come up with a few simple checks to solve this problem.
+After some research, I found that there was an algorithm that I could specifically use for these kind of problems, **Minimax**.
 
-```return rec(...)``` 
+## Minimax
 
-case, now we're at the second empty slot, then say after attempting all values on the second empty slot, False is returned. But now since we have the return statement, the code below it will not run and this same False value will be given to the recursive step when 2 was the attempted value.
+I got to understand this algorithm from two main sources:
 
-### In short
+* http://neverstopbuilding.com/minimax
+* https://www.youtube.com/watch?v=CwziaVrM_vc
 
-That missing ```return``` caused the pre-filled values to be overwritten, adding it prevents it.
+The first is an article that explains in depth how things work, and the second is a video that actually implements the algorithm, done in ```C++```.
 
-PS. Copy the code and go to [repl.it](https://repl.it/languages/python) and try it out, adding and removing the return keyword
+## Back to my project
 
+However, even though I understood the concep, I had a bit of trouble getting started on writing the algorithm. The main roadblock was that I needed to extend my 2 player version to one where I played against the computer. So I went and created a dumb AI that placed that a move anywhere on the board. Now, things were much clearer, I just needed to update this one function so it used Minimax instead of the dumb AI.
+
+## Understading Minimax
+
+Essentially, Minimax is a brute-force algorithm that explores every possible option. It does this by playing out all scenarios and giving each square a score. The score can be of 3 kinds, positive for a win, 0 for a draw and negative for a loss. At the end, you pick the highest score and play that move.
+
+I won't go into much detail as to how the recursion works, as the two sources above can do a much better job at explaining.
+
+But, I do want to mention a small optimization that I made to the algorithm. Since Minimax is a brute force algorithm, this makes it really slow. When I first wrote the function, it took a good 30 seconds to finish computing, and this was running it locally on node. No doubt this was gonna crash my browser. 
+
+To see this, think about the tree, 
+
+~~~
+
+First choice,                 | 9 options |
+                            | | | | | | | | | 
+Second choice,        | 8 options | ...       for the 9 branches
+                 | | | | | | | | 
+Third choice,  | 7 options |        ...       for the 8 branches
+
+~~~
+
+Hopefully that paints a picture as to how huge this tree is, no wonder it takes forever to run.
+
+## Optimizing Minimax
+
+Obviously, the first computation is completely unnecessary as there's no go-to move that will guarantee a win and  as explained it is very expensive. And so I optimized for the first and second move, if the AI has the first move, it either plays it in one of the corners or the center. Given the first move, you can actually tie all the time but if you play a corner and the center and the opponent (you) goof up, you'll end up losing. As for the second move, I made it so that it captures either the center or a corner if that's taken since these two spots will prevent the other from winning.
+
+Getting the first or second move fast makes the tree start from the 7 options node and the browser didn't seem to lock from this computation.
+
+## Putting it all together
+
+After creating this function, I just had to add it to my component. This was easy enough to do.
+
+<p data-height="553" data-theme-id="0" data-slug-hash="MbVXLv" data-default-tab="result" data-user="danielcodes" data-embed-version="2" data-pen-title="Tic Tac Toe" class="codepen">See the Pen <a href="http://codepen.io/danielcodes/pen/MbVXLv/">Tic Tac Toe</a> by Daniel Chia (<a href="http://codepen.io/danielcodes">@danielcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+This was the end result, now the final step was to style it up.
+
+## Final touches
+
+Phew, most of the logic had been wrapped up at this point, now the task was to make it appealing to users.
+Right from the get-go I thought of using a modal to first prompt the user for input, play what (X or O) and who goes first. Start the game and reset back to the modal when the game finishes.
+
+But I had no idea how to implement this modal. Thankfully, I found this [tutorial], that had just what I needed.
+After adding some color, and rewiring things here and there, this was the end result.
+
+<p data-height="573" data-theme-id="0" data-slug-hash="qqzbyd" data-default-tab="result" data-user="danielcodes" data-embed-version="2" data-pen-title="Tic Tac Toe" class="codepen">See the Pen <a href="http://codepen.io/danielcodes/pen/qqzbyd/">Tic Tac Toe</a> by Daniel Chia (<a href="http://codepen.io/danielcodes">@danielcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+## Conclusion
+
+It was a fun project overall. It definitely tested my patience, from not knowing how to break down the big grid, having to learn about a new algorithm and creating the user interface. It was a great reminder that projects take time and the small victories count as the final product is always worth seeing.
+
+And that's a wrap :)
 
