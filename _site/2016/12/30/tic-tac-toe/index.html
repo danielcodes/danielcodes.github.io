@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Building a Tic Tac Toe game &middot; Daniel Chia
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="/public/css/main.css">
+  <link rel="stylesheet" href="/public/css/jquery.bxslider.css">
+
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+	<!--Font awesome-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71833164-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          Daniel Chia
+        </a>
+      </h1>
+      <p class="lead">Hi, I'm Daniel. Here's where I rant.</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about/">About</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/archive/">Archive</a>
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/projects/">Projects</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+
+
+    </nav>
+
+		<!--Social Icons here-->
+		<!--Github | Bitbucket | Twitter | RSS-->
+		<ul class="social-icons">
+			<li> <a href="https://github.com/danielcodes" target="_blank"> <i class="fa fa-github fa-3x" ></i> </a>	</li>
+			<li> <a href="https://bitbucket.org/danielcodes/" target="_blank"> <i class="fa fa-bitbucket fa-3x"></i> </a> </li>
+			<li> <a href="https://twitter.com/danielchiaa" target="_blank"> <i class="fa fa-twitter fa-3x"></i> </a> </li>
+			<li> <a href="/atom.xml" target="_blank"> <i class="fa fa-rss fa-3x"></i> </a> </li>
+		</ul>
+
+		<p>&copy; 2016. All rights reserved.</p>
+  </div>
+</div>
+
+
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">Building a Tic Tac Toe game</h1>
+  <span class="post-date">30 Dec 2016</span>
+  <p>In the past two weeks, I have been working on a Tic Tac Toe game for Free Code Camp. This one took a couple of sittings as it required me to learn quite a few things. I chose to use React for the project as it is something that I’ve been meaning to learn for the longest time and had some momentum coming in after finishing my Pomodoro Clock in React.</p>
+
+<p>The user stories for the project were simple:</p>
+
+<ul>
+  <li>I can play a game of Tic Tac Toe with the computer.</li>
+  <li>My game will reset as soon as it’s over so I can play again.</li>
+  <li>I can choose whether I want to play as X or O.</li>
+</ul>
+
+<p>Not too bad, have a choice between X or O, create an AI and reset when the game ends.</p>
+
+<h2 id="starting-out">Starting out</h2>
+
+<p>The first thing I did was prototype the user interface, which was just a grid. After this, I soon found that I had put together a huge component and didn’t know how to break it up. Also, if I had kept that grid component, each square would need to have an <code>onClick</code> handle attached to it to display X or O on that square. So soon and things were already starting to look ugly. I needed to break down this HTML. Luckily, I happened to come across the tutorial on <a href="https://facebook.github.io/react/tutorial/tutorial.html">React’s main site</a>, which was a Tic-Tac-Toe game.</p>
+
+<h2 id="going-through-the-tutorial">Going through the tutorial</h2>
+
+<p>This tutorial was a lot of fun, I highly recommend it. I found the main thing that I needed, which was to break the components apart. They did this by creating several components such as a Game, a Board and a Square. You start small with all the functionality contained in the Square and refactor up. This means the parent component contains the data and passes a function down to the child for it to modify this data. This was the only thing I needed, but there were other goodies in the tutorial, such as creating a history of all the moves and being able to move back and start playing from there.</p>
+
+<p>After finishing the tutorial, there were additional features that you could implement if you wanted to test your knowledge. Since I wanted to learn, I did them.</p>
+
+<p data-height="306" data-theme-id="0" data-slug-hash="LbBMyK" data-default-tab="result" data-user="danielcodes" data-embed-version="2" data-pen-title="Tic Tac Toe new features" class="codepen">See the Pen <a href="http://codepen.io/danielcodes/pen/LbBMyK/">Tic Tac Toe new features</a> by Daniel Chia (<a href="http://codepen.io/danielcodes">@danielcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async="" src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+<p>The most noticeable additions are, bolding the current move, the button to sort the moves and highlighting the winning line.</p>
+
+<h2 id="back-to-my-prototype">Back to my prototype</h2>
+
+<p>Armed with this new knowledge, I proceeded to add these separated components to my own game. At this point, I thought that I was ready to start looking into creating the AI to play the game.</p>
+
+<h2 id="thinking-about-the-ai">Thinking about the AI</h2>
+
+<p>The first idea that came to mind to create this AI, was to have the computer capture the center or corner on its first move. From here, look for threats which is when the opposite player has two pieces lined up. A couple of limitations with this approach:</p>
+
+<pre><code>Here, there's no threat right away, but if it play its move on either of the T spots, it is going to lose.
+
+ |T|O
+-----
+ |X|T
+-----
+X| |
+</code></pre>
+
+<p>This is when I realized that I couldn’t really come up with a few simple checks to solve this problem.
+After some research, I found that there was an algorithm that I could specifically use for these kind of turn taking games, <strong>Minimax</strong>.</p>
+
+<h2 id="minimax">Minimax</h2>
+
+<p>I got to understand this algorithm from two main sources:</p>
+
+<ul>
+  <li><a href="http://neverstopbuilding.com/minimax">Article</a></li>
+  <li><a href="https://www.youtube.com/watch?v=CwziaVrM_vc">Video</a></li>
+</ul>
+
+<p>The article explains in depth how Minimax works, and the second is a video that actually implements the algorithm, done in <code>C++</code>.</p>
+
+<h2 id="back-to-my-project">Back to my project</h2>
+
+<p>However, even though I understood the concept, I had a bit of trouble getting started on writing the algorithm. The main roadblock was that I needed to extend my two player version to one where I played against the computer. So I went and created a dumb AI that placed a move anywhere on the board. Now, the goal was clear, I just needed to update this one function so it used Minimax to pick the best move instead of the dumb AI.</p>
+
+<h2 id="understading-minimax">Understading Minimax</h2>
+
+<p>Essentially, Minimax is a brute-force algorithm that explores every possible option. It does this by playing out all scenarios and giving each square a score. The score can be of 3 kinds, <strong>positive for a win, 0 for a draw and negative for a loss</strong>. At the end, you pick the highest score and play that move.</p>
+
+<p>I won’t go into much detail as to how the recursion works, as the two sources above can do a much better job at explaining.</p>
+
+<p>But, I do want to mention a small optimization that I made to the algorithm. Since Minimax is a brute force algorithm, it is really slow. When I first wrote the function, it took a good 30 seconds to finish computing on an empty board, and this was running locally on node. No doubt this was gonna crash my browser.</p>
+
+<p>To see this, think about the tree,</p>
+
+<pre><code>First choice,                  (9 options)
+                            |         | | | | | | | | 
+Second choice,         (8 options)      ...
+                     |        | | | | | | | 
+Third choice,   (7 options)             ...     
+                  |     | | | | | | 
+		...       ...
+</code></pre>
+
+<p>If the computer runs the algorithm from the beginning, it first has 9 options and each one of these expand into a tree that each have 8 options each, subsequently these 8 nodes each expand into 7 trees of their own. Try to draw it, to get a feel for the sheer magnitude of the tree.</p>
+
+<h2 id="first-move-doesnt-help">First move doesn’t help</h2>
+
+<p>Running the algorithm on an empty board returns a score of <strong>0 for each of the squares</strong>.</p>
+
+<pre><code> | |    | |X    | |X
+-----  -----   -----
+ | |    | |     |O|
+-----  -----   -----
+ | |    | |     | |
+</code></pre>
+
+<p>Say the AI plays a corner, it then runs the algorithm and finds that the center is the only safe move so it plays that and eventually brings the game to a draw. It does this for each of the other 9 squares. No matter where the first move is placed, the second player can always tie the game. Thus, the zero scores for all 9 squares.</p>
+
+<h2 id="optimizing-minimax">Optimizing Minimax</h2>
+
+<p>As explained, the first computation is completely unnecessary as there’s no go-to move that will guarantee a win and as explained it is very expensive. And so to save some computation time, I optimized for the first and second move, if the AI has the first move, it either plays it in one of the corners or the center. Given the first move, you can actually play anywhere and tie all the time but if you play a corner or the center and the opponent (you) goof up, you’ll end up losing. As for the second move, I made it so that it captures either the center or a corner if the center is taken since these two spots will prevent the other from winning.</p>
+
+<p>Getting the first or second move fast makes the tree start from the node with 7 options. Thankfully, the browser seemed to be able to handle this computation just fine.</p>
+
+<h2 id="putting-it-all-together">Putting it all together</h2>
+
+<p>After creating this function, I just had to add it to my component. This was easy enough to do.</p>
+
+<p data-height="553" data-theme-id="0" data-slug-hash="MbVXLv" data-default-tab="result" data-user="danielcodes" data-embed-version="2" data-pen-title="Tic Tac Toe" class="codepen">See the Pen <a href="http://codepen.io/danielcodes/pen/MbVXLv/">Tic Tac Toe</a> by Daniel Chia (<a href="http://codepen.io/danielcodes">@danielcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async="" src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+<p>This was the end result, now the final step was to style it up.</p>
+
+<h2 id="final-touches">Final touches</h2>
+
+<p>Phew, most of the logic had been wrapped up at this point, now the task was to make it appealing to users.
+Right from the get-go I thought of using a modal to first prompt the user for input, select an icon (X or O) and who goes first. Then, start the game and reset back to the modal when the game finished.</p>
+
+<p>But I had no idea how to implement this modal. Thankfully, I found this <a href="https://daveceddia.com/open-modal-in-react/">tutorial</a>, that had just what I needed.
+After adding some color, and rewiring things here and there, this was the end result.</p>
+
+<p data-height="573" data-theme-id="0" data-slug-hash="qqzbyd" data-default-tab="result" data-user="danielcodes" data-embed-version="2" data-pen-title="Tic Tac Toe" class="codepen">See the Pen <a href="http://codepen.io/danielcodes/pen/qqzbyd/">Tic Tac Toe</a> by Daniel Chia (<a href="http://codepen.io/danielcodes">@danielcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async="" src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>It was a fun project overall. It definitely tested my patience, from not knowing how to break down the big grid, having to learn about a new algorithm and creating the user interface. It was a great reminder that projects take time and that small victories count as the final product is always worth seeing.</p>
+
+<p>And that’s a wrap :)</p>
+
+<p>PS. Since this was done in a CodePen, I ended up with 400 lines of JS. Time to move this locally and give the project some structure.</p>
+
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2016/11/21/sudoku-bug/">
+            Sudoku bug
+            <small>21 Nov 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2016/05/09/gui-setup-madness/">
+            GUI setup madness
+            <small>09 May 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2016/04/29/write-more/">
+            Write more
+            <small>29 Apr 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+
+			
+
+<div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+
+    var disqus_config = function () {
+				// Replace PAGE_URL with your page's canonical URL variable
+				this.page.url = "http://danielcodes.github.io/2016/12/30/tic-tac-toe/";
+
+				// Replace PAGE_IDENTIFIER with your page's unique identifier variable
+				this.page.identifier = "/2016/12/30/tic-tac-toe/";  
+    };
+
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        
+        s.src = '//danielcodess.disqus.com/embed.js';
+        
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+    </div>
+
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script src="/public/js/jquery.bxslider.min.js"></script>
+		<script src="/public/js/main.js"></script>
+
+
+  </body>
+</html>

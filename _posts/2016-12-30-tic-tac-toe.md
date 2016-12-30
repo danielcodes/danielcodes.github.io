@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Building a Tic Tac Toe game
-comments: false
+comments: true
 ---
 
 In the past two weeks, I have been working on a Tic Tac Toe game for Free Code Camp. This one took a couple of sittings as it required me to learn quite a few things. I chose to use React for the project as it is something that I've been meaning to learn for the longest time and had some momentum coming in after finishing my Pomodoro Clock in React. 
