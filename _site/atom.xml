@@ -4,7 +4,7 @@
  <title>Daniel Chia</title>
  <link href="http://danielcodes.github.io/atom.xml" rel="self"/>
  <link href="http://danielcodes.github.io/"/>
- <updated>2016-12-30T16:46:42-05:00</updated>
+ <updated>2016-12-31T03:55:15-05:00</updated>
  <id>http://danielcodes.github.io</id>
  <author>
    <name>Daniel Chia</name>
@@ -79,7 +79,7 @@ After some research, I found that there was an algorithm that I could specifical
 
 &lt;p&gt;However, even though I understood the concept, I had a bit of trouble getting started on writing the algorithm. The main roadblock was that I needed to extend my two player version to one where I played against the computer. So I went and created a dumb AI that placed a move anywhere on the board. Now, the goal was clear, I just needed to update this one function so it used Minimax to pick the best move instead of the dumb AI.&lt;/p&gt;
 
-&lt;h2 id=&quot;understading-minimax&quot;&gt;Understading Minimax&lt;/h2&gt;
+&lt;h2 id=&quot;understanding-minimax&quot;&gt;Understanding Minimax&lt;/h2&gt;
 
 &lt;p&gt;Essentially, Minimax is a brute-force algorithm that explores every possible option. It does this by playing out all scenarios and giving each square a score. The score can be of 3 kinds, &lt;strong&gt;positive for a win, 0 for a draw and negative for a loss&lt;/strong&gt;. At the end, you pick the highest score and play that move.&lt;/p&gt;
 

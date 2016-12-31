@@ -63,7 +63,7 @@ The article explains in depth how Minimax works, and the second is a video that 
 
 However, even though I understood the concept, I had a bit of trouble getting started on writing the algorithm. The main roadblock was that I needed to extend my two player version to one where I played against the computer. So I went and created a dumb AI that placed a move anywhere on the board. Now, the goal was clear, I just needed to update this one function so it used Minimax to pick the best move instead of the dumb AI.
 
-## Understading Minimax
+## Understanding Minimax
 
 Essentially, Minimax is a brute-force algorithm that explores every possible option. It does this by playing out all scenarios and giving each square a score. The score can be of 3 kinds, **positive for a win, 0 for a draw and negative for a loss**. At the end, you pick the highest score and play that move.
 
