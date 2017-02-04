@@ -99,26 +99,94 @@ for(var i=1; i<=5; i++){
 }
 ~~~
 
-The setTimout function is used if you want to execute something after an 'x' amount of time. Now, the function benig passed to setTimeout is returning a function. This is a common JS problem where if we didn't have this, the values of i would not freeze and the values printed would all be 6. So to get around it, the functions being passed to timeout are all frozen with the i values (1, 2, 3, 4, 5) that we want. 
+The setTimout function is used if you want to execute something after an 'x' amount of time. Now, the function benig passed to setTimeout is returning a function. This is a common JS problem where if we didn't have this, the values of i would not freeze and the values printed would all be 6. So to get around it, we pass a function that is executed right away, this returns a function which has access to the unique 'i' value.
 
 And this was exactly was I needed to perform my sequence of blinks, mainly just replacing the print statement with the bit of code that activated the blink.
 
-From this point on, it was quite simple to develop the game further. I was able to add a level up, after the user entered a correct sequence and reset the level on bad input.
+From this point on, it was quite simple to develop the game further. I was able to add a level up, after the user entered a correct sequence and reset the level on bad input. However, things weren't quite finished. The sequence could play and all, but the user had an infinite amount of time to enter the correct sequence. What's the fun if you aren't being timed? That brought me to my third task, a timer.
 
+## Third task - creating a timer for the user
 
+Although I had implemented a timer before for the previous project, a Pomodoro clock. When it came time to implement it again, I delayed it for as long as possible. Mainly because when I put that code together, I didn't plan on looking back at it, funny how things turn out. It was time to look at that mess. 
 
+From looking over the code, the timer was implemented in this manner:
 
+~~~
+function getRemainingTime(endtime){
+  var t = Date.parse(endtime) - Date.parse(new Date());
+  var seconds = Math.floor((t/1000) % 60);
+  var minutes = Math.floor((t/1000/60) % 60);
+  
+  return {
+    'total': t,
+    'minutes': minutes,
+    'seconds': seconds   
+  }
+}
 
+var endtime = new Date();
+endtime.setSeconds(endtime.getSeconds() + 10);
 
+var timer = setInterval(function(){
+  var t = getRemainingTime(endtime);
+  console.log('counting ', t.total, t.minutes, t.seconds);
+  
+  if(t.total == 0){
+    console.log('Finished counting');
+    clearInterval(timer);
+  }
+}, 1000);
+~~~
 
+The way this works is by first creating a 'deadline' (ie. 10 seconds from now). The next bit that runs is our setInterval, what this does is run the function inside for an 'x' delay which in this case is set to 1000 ms. So here there will be an initial delay before our function executes, by then 't' will start counting down starting at 9. And this function will be called over and over until our timer is exhausted down to 0, which is when it'll stop.
+This bit of code is taken from [here](https://www.sitepoint.com/build-javascript-countdown-timer-no-dependencies/), so I highly suggest you take a look as it does a much better job at explaining timers than I do.
 
+After re-reading and understanding this timer mechanism, I proceeded to add this to the game.
 
+The flow of the game now was:
 
+1. Play sequence, following it start a timer that awaits user input
+2. If timer runs out, replay the the step above
+3. The other two cases that affect timer are on level up, where a new step is added to the sequence and then we go back to step 1 and on wrong input where we go straight back to step 1
 
+Doing this, I also discovered I needed to disable the ability to click the blinks at several steps, other wise there are some craaazy bugs. Race conditions and what not, very ugly stuff. The disables were placed, during sequence animation, after wrong input and after level up.
 
+The disabling was done by setting the CSS property of 'pointer-events' to 'none'.
 
+Almost done, fourth step was adding sound to the clicks.
 
+## Fourth task - adding the sound
 
+Several sounds were given to add to each blinker. Given that they were links, naturally my thought was that I needed to use AJAX to retrieve the sounds first, store them and play them when needed. And so, I set off to learn how to do AJAX calls in React. I read [this article](http://andrewhfarmer.com/react-ajax-best-practices/) and [this one](https://daveceddia.com/ajax-requests-in-react/) too. At the end, I decided to go with 'axios' as it had an example. But this failed, as I was not able to retrieve the sound data, but it did work for regular JSON format data. This was annoying. 
 
+I remember going home frustrated that day, have my progress halted by a stupid AJAX call. However, the next day I managed to figure it out. The answer came from this [StackOverflow question](http://stackoverflow.com/questions/9419263/playing-audio-with-javascript).
+
+~~~
+// JS code to load and play audio
+var audio = new Audio('audio_file.mp3');
+audio.play();
+~~~
+
+It turns out that I could just place the source of the mp3 file and this Audio API would do all the heavy lifting for me. Pretty sweet solution considering the frustration on the day prior.
+
+And with this, most of the logic of my game was done. Here's what I had after this point:
+
+<p data-height="341" data-theme-id="0" data-slug-hash="KaMBEm" data-default-tab="result" data-user="danielcodes" data-embed-version="2" data-pen-title="working simon game" class="codepen">See the Pen <a href="http://codepen.io/danielcodes/pen/KaMBEm/">working simon game</a> by Daniel Chia (<a href="http://codepen.io/danielcodes">@danielcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+## Fifth task - Polishing the User Interface
+
+This is always the most dreaded task, ha. In this case, what I needed to do was straight forward. First create the quarters, then create the set of controls and finally wired up everything. Creating the quarters was something new, and was able to do it thanks to [this JS Fiddle](http://jsfiddle.net/cardeo/8ku6T/). The circular control board was a bit more tedious to do as everything little aspect of it required custom sizing. This ended up being alot of ID tagging and a lot of repetitive CSS, especially centering, I've become really good at centering text and blocks.
+
+This is the final product:
+
+<p data-height="416" data-theme-id="0" data-slug-hash="xgrpbw" data-default-tab="result" data-user="danielcodes" data-embed-version="2" data-pen-title="Simon game" class="codepen">See the Pen <a href="http://codepen.io/danielcodes/pen/xgrpbw/">Simon game</a> by Daniel Chia (<a href="http://codepen.io/danielcodes">@danielcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+One of the reasons, why it is a bit oversized is that when I was developing this on my CodePen, I had my browser size set to 75%. This is mainly because I can see about 10 more lines of code on the editor this way. But yes, I goofed up. However, it doesn't look too bad when it is fully expanded on a browser.
+
+## Conclusion
+
+This last Free Code Camp project was one of the toughest for sure. Highly due to the research aspect of it, not knowing how to do many things and oftentimes getting trying to find the answer. But I'm glad that I decided to stick with things and eventually I did finish it up. :)
 
 
