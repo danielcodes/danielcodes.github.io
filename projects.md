@@ -3,6 +3,18 @@ layout: page
 title: Projects 
 ---
 
+### Simon game | <a href="http://codepen.io/danielcodes/full/xgrpbw/" target="_blank"> <i class="fa fa-codepen" ></i> </a>		
+
+An implementation of the classic memory game Simon. The device will play a pattern of blinking colors, your job is to match this pattern. The number of steps goes up by one after each level.
+
+![simon](/public/img/fcc/simon_game.png)
+
+### Tic Tac Toe | <a href="http://codepen.io/danielcodes/full/qqzbyd/" target="_blank"> <i class="fa fa-codepen" ></i> </a>		
+
+An unbeatable Tic Tac Toe game. Implemented using the Minimax algorithm, you can't beat the machine, only tie or lose.
+
+![tictactoe](/public/img/fcc/tic_tac_toe.png)
+
 ### Overwatch | <a href="https://github.com/danielcodes/overwatch" target="_blank"> <i class="fa fa-github" ></i> </a>		
 
 Web application that checks people's sentiment on certain issues in the US (ie. Gun Control). The procedure is done by gathering data from Twitter, then passing it through HP Haven OnDemand sentiment analysis API and lastly this data is passed to Esri to be mapped into the choropleths.
@@ -31,7 +43,7 @@ I started Free Code Camp to brush up on the basics, so it's only natural to do t
 
 ![codepens](/public/img/fcc/codepen.png)
 
-Links to the codepens can be found on [here](http://codepen.io/danielcodes/pens/popular/) or in the icon link above.
+Links to the codepens can be found on [here](http://codepen.io/danielcodes/) or in the icon link above.
 
 <hr>
 
