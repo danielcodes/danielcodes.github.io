@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Building a Simon game
-comments: false
+comments: true
 ---
 
 After finishing the Tic Tac Toe game, I set out to finish the last Front End project from Free Code Camp, a [Simon Game](https://www.freecodecamp.com/challenges/build-a-simon-game). The game consists of 4 buttons, from which a sequence will play. The player's job is to match that sequence. If you do, the sequence grows, otherwise it plays the same sequence until you pass the current level. Straight forward rules, but I really had no clue how to implement this. The first couple of sessions, I mainly sat down to think about the structure of the game as it had many parts. A little later on, I came up with my first task, which was creating a ```div``` that blinked when it was clicked.
@@ -134,5 +134,4 @@ One of the reasons, why it is a bit oversized is that when I was developing this
 This last Free Code Camp project was one of the toughest for sure. Highly due to the research aspect of it, not knowing how to do many things and oftentimes getting stuck trying to find the answer. But I'm glad that I decided to stick with things and eventually finishing it up. :)
 
 PS. Here is the [full page version](http://codepen.io/danielcodes/full/xgrpbw/)
-
 
