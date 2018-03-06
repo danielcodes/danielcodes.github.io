@@ -10,7 +10,7 @@ permalink:        pretty
 title:            Daniel Chia 
 tagline:          'Human'
 description:      "Mostly computer things"
-baseurl:          /
+baseurl:          ""
 url:              http://danielcodes.github.io
 
 author:
