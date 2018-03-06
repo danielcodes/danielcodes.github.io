@@ -9,7 +9,7 @@ permalink:        pretty
 # Setup
 title:            Daniel Chia 
 tagline:          'Human'
-description:      "Hi, I'm Daniel. Here's where I rant."
+description:      "Mostly computer things"
 baseurl:          /
 url:              http://danielcodes.github.io
 
@@ -22,4 +22,3 @@ author:
   twitter:        'https://twitter.com/danielchiaa'
 
 paginate:         5
-

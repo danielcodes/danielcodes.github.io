@@ -4,7 +4,7 @@
  <title>Daniel Chia</title>
  <link href="http://danielcodes.github.io/atom.xml" rel="self"/>
  <link href="http://danielcodes.github.io/"/>
- <updated>2017-02-25T01:33:12-05:00</updated>
+ <updated>2018-03-06T12:18:57-05:00</updated>
  <id>http://danielcodes.github.io</id>
  <author>
    <name>Daniel Chia</name>
@@ -288,245 +288,6 @@ After adding some color, and rewiring things here and there, this was the end re
  </entry>
  
  <entry>
-   <title>Sudoku bug</title>
-   <link href="http://danielcodes.github.io/2016/11/21/sudoku-bug/"/>
-   <updated>2016-11-21T00:00:00-05:00</updated>
-   <id>http://danielcodes.github.io/2016/11/21/sudoku-bug</id>
-   <content type="html">&lt;p&gt;The other day I was trying to implement a Sudoku Solver, specifically the one from Elements of Programming Interviews. My usual approach to these type of problems has been to write down the sudo code on paper, step through it and if I understand it, I can usually implement it without looking at the solution. This was certainly the case with this Sudoku Solver, except that I missed a crucial keyword in the program that created a bug that sent everything spiraling out of control.&lt;/p&gt;
-
-&lt;h3 id=&quot;pseudo-code&quot;&gt;Pseudo-code&lt;/h3&gt;
-
-&lt;p&gt;First, let me explain how this Sudoku Solver is supposed to work on a step-by-step basis.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Iterate through each slot in the grid&lt;/li&gt;
-  &lt;li&gt;Two base cases
-    &lt;ul&gt;
-      &lt;li&gt;The grid has been filled both horizontally and vertically&lt;/li&gt;
-      &lt;li&gt;The slot already has a value&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;If it doesn’t fall into the two categories above, the program proceeds to attempt all values from 1-9&lt;/li&gt;
-  &lt;li&gt;If the value is valid, set the value and recurse, if this recursion passes, return True&lt;/li&gt;
-  &lt;li&gt;If the loop above terminates, undo the assignment (backtrack) and return False&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;One thing to note is that this solves the puzzle in a vertical manner, filling in the columns and moving towards the right.&lt;/p&gt;
-
-&lt;p&gt;The code to this can be found &lt;a href=&quot;https://github.com/danielcodes/practice-problems/blob/master/epi/16-recursion/sudokuSolver.py&quot;&gt;here&lt;/a&gt;. Take a glance at it since I’ll be discussing it in the snippets below.&lt;/p&gt;
-
-&lt;h3 id=&quot;where-it-all-went-wrong&quot;&gt;Where it all went wrong&lt;/h3&gt;
-
-&lt;p&gt;This looks implementation doesn’t look too bad. However, I ran into a pretty nasty bug. On the case base case where the slot already has a value, I wrote:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;# recurse onto the next row
-if grid[i][j] != 0:
-    sudokuSolverHelper(i+1, j, grid)	
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h5 id=&quot;so-whats-wrong-with-this&quot;&gt;So, what’s wrong with this?&lt;/h5&gt;
-
-&lt;p&gt;The problem lies when this call gets returned, say it recurses down to the next value and all values from 1-9 are not valid. This returns &lt;code&gt;False&lt;/code&gt; but the rest of the code continues to execute. This means that the code then attempts to try to use all values from 1-9 on this already filled-in value. No bueno.&lt;/p&gt;
-
-&lt;h3 id=&quot;the-solution&quot;&gt;The solution&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;# add return prior to the recursion
-if grid[i][j] != 0:
-    return sudokuSolverHelper(i+1, j, grid)	
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;It’s hard to see how this helps right away, so let’s run through an example:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;_ empty
-5 pre-filled 5
-_ empty
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Say the first empty value is a 2, it recurses and goes to 5 which hits our&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;return rec(...)&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;case, now we’re at the second empty slot, then say after attempting all values on the second empty slot, False is returned. But now since we have the return statement, the code below it will not run and this same False value will be given to the recursive step when 2 was the attempted value.&lt;/p&gt;
-
-&lt;h3 id=&quot;in-short&quot;&gt;In short&lt;/h3&gt;
-
-&lt;p&gt;That missing &lt;code&gt;return&lt;/code&gt; caused the pre-filled values to be overwritten, adding it prevents it.&lt;/p&gt;
-
-&lt;p&gt;PS. Copy the code and go to &lt;a href=&quot;https://repl.it/languages/python&quot;&gt;repl.it&lt;/a&gt; and try it out, adding and removing the return keyword&lt;/p&gt;
-
-</content>
- </entry>
- 
- <entry>
-   <title>GUI setup madness</title>
-   <link href="http://danielcodes.github.io/2016/05/09/gui-setup-madness/"/>
-   <updated>2016-05-09T00:00:00-04:00</updated>
-   <id>http://danielcodes.github.io/2016/05/09/gui-setup-madness</id>
-   <content type="html">&lt;h2 id=&quot;update-051116&quot;&gt;Update 05/11/16&lt;/h2&gt;
-
-&lt;p&gt;I attempted to a last ditch effort to get this running, and it worked.&lt;/p&gt;
-
-&lt;p&gt;It was mostly thanks to these two posts,&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;https://groups.google.com/forum/#!topic/ppp-public/BtlzdWGuQpQ&lt;/li&gt;
-  &lt;li&gt;http://stackoverflow.com/questions/31924162/stroustrups-header-error-working-with-fltk&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;With the FLTK package installed, I created a new directory with the sample program and dumped all the headers from &lt;code&gt;GUI/&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;This was followed by,&lt;/p&gt;
-
-&lt;p&gt;```sh
-# replace PROGRAM_NAME with your C++ file&lt;/p&gt;
-
-&lt;p&gt;g++ -w -Wall -std=c++11 Graph.cpp Window.cpp GUI.cpp Simple_window.cpp PROGRAM_NAME.cpp -L/usr/local/lib -lfltk_images -lpng -lz -ljpeg -lfltk -lXcursor -lXfixes -lXext -lXft -lfontconfig -lXinerama -lpthread -ldl -lm -lX11 -o PROGRAM_NAME
-```&lt;/p&gt;
-
-&lt;p&gt;On first run, it did not work due to some inability to convert ifstream to bool as a return value, this was fixed with&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;return (bool)ifstrean_value&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;No need to set up Eclipse, thank goodness.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;This weekend I spent a solid day trying to configure my computer to run FLTK with the examples from this book &lt;a href=&quot;http://stroustrup.com/Programming/&quot;&gt;here&lt;/a&gt;. FLTK is software used to write graphical applications. So far my experiences with these types of set ups have been nothing but disastrous. A semester ago, I had to install Qt, the process was pretty nightmarish, there wasn’t a proper tutorial and it was basically me searching all of stackoverflow. In the end I got it, but the experience was quite painful and something that I thought I wouldn’t have to go through again. Fast forward, here I am, in need to install GUI software again. Can you feel what’s coming?&lt;/p&gt;
-
-&lt;h3 id=&quot;lesson-not-learned&quot;&gt;Lesson not learned&lt;/h3&gt;
-
-&lt;p&gt;From my experience with Qt, I should have known that the process was going to be a bit tricky. But even so, I ignored everything and thought that a simple google search would solve things (Oh, how wrong was I). After a bit of searching I found that I needed to get the tarball (later found that there was an apt-get package), unzip the tarball and run some commands. It went something like this…&lt;/p&gt;
-
-&lt;p&gt;First &lt;code&gt;tarball&lt;/code&gt;, which was done with much help from &lt;a href=&quot;http://askubuntu.com/questions/25347/what-command-do-i-need-to-unzip-extract-a-tar-gz-file&quot;&gt;here&lt;/a&gt;,&lt;/p&gt;
-
-&lt;p&gt;```sh
-tar -xvf file-ending-with.tar.gz&lt;/p&gt;
-
-&lt;h1 id=&quot;the-flags&quot;&gt;the flags&lt;/h1&gt;
-&lt;p&gt;# x extracts, v outputs files being extracted, f for path and name of file
-```&lt;/p&gt;
-
-&lt;p&gt;This was followed by me running some commands, to install the software,&lt;/p&gt;
-
-&lt;p&gt;```sh
-# I got these instructions from somewhere in the internet&lt;/p&gt;
-
-&lt;p&gt;./configure
-sudo make
-sudo make install
-```&lt;/p&gt;
-
-&lt;p&gt;From here on I gained access to the command line tool which was &lt;code&gt;fltk-config&lt;/code&gt;, and to compile a file all that was needed was the &lt;code&gt;--compile&lt;/code&gt; flag. Some samples worked, and some didn’t. The one that needed to work, did not.&lt;/p&gt;
-
-&lt;p&gt;Later, I found that the &lt;code&gt;tarball&lt;/code&gt; that I had unzipped, contained a &lt;code&gt;README&lt;/code&gt; for Unix systems, describing the exact same process above. Man, I could have saved myself some time if I had been more attentive. Documentation is king.&lt;/p&gt;
-
-&lt;p&gt;In there, I was able to run a demo that worked fine. But most importantly, it told me where it had installed the files. They were located in the following paths,&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;/usr/local/include&lt;/code&gt; for headers&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;/usr/local/lib&lt;/code&gt; for libraries (files with ending with &lt;code&gt;.a&lt;/code&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;the-problem&quot;&gt;The problem&lt;/h3&gt;
-
-&lt;p&gt;I found out that the sample program wasn’t compiling because of a bunch of missing headers. In the same link above, there is a link called &lt;code&gt;The complete collection of code ...&lt;/code&gt;, another zip. Inside the zip, there was a &lt;code&gt;GUI&lt;/code&gt; folder with the missing headers. I proceeded to place this &lt;code&gt;GUI&lt;/code&gt; folder in &lt;code&gt;/usr/local/include&lt;/code&gt;. This did not work, as the files where inside a directory (GUI/), and so I had to bring them out to the top directory, cluttering everything. After this, the program no longer gave the header errors but now there were undefined references everywhere.&lt;/p&gt;
-
-&lt;h3 id=&quot;theory&quot;&gt;Theory&lt;/h3&gt;
-
-&lt;p&gt;My gut tells me that the reason for the errors was a missing library (oh, I had to run &lt;code&gt;make&lt;/code&gt; on the GUI folder to obtain a &lt;code&gt;.a&lt;/code&gt; file). I couldn’t solve this the way I had done above with the missing headers.&lt;/p&gt;
-
-&lt;p&gt;Check this,&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/public/img/fltk.png&quot; alt=&quot;fltk&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;As you can see in those very tiny letters, the &lt;code&gt;fltk-config --compile file.cpp&lt;/code&gt; command is an abbreviation for a &lt;code&gt;g++&lt;/code&gt; compilation command which is looking for a very specific &lt;code&gt;libfltk.a&lt;/code&gt; file. What I attempted to do was, place the missing library path there. And it still didn’t work. And such was the end of my day. Filled with frustration and a lesson learned.&lt;/p&gt;
-
-&lt;h3 id=&quot;what-not-to-do-in-the-future&quot;&gt;What not to do in the future&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Don’t install software based on stackoverflow instructions, take the time to find the proper documentation (README inside zip file)&lt;/li&gt;
-  &lt;li&gt;Patience is a virtue, when things don’t work, I start looking for the first hacky solution. Take the time to analyze the error&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;PS. I am most likely just going to install the software on my Windows Desktop as there is a proper instruction for how to do it there.&lt;/p&gt;
-
-</content>
- </entry>
- 
- <entry>
-   <title>Write more</title>
-   <link href="http://danielcodes.github.io/2016/04/29/write-more/"/>
-   <updated>2016-04-29T00:00:00-04:00</updated>
-   <id>http://danielcodes.github.io/2016/04/29/write-more</id>
-   <content type="html">&lt;p&gt;I previously wrote about having my productivity on tilt. This week, I slowly started to turn things around. The answer was simple, just find work to do. It’s pretty easy nowadays. Whether working on a new project, learning a tip or two from blog posts, reading books, etc. Most importantly, the thing that really helped me find my groove was writing. Writing forces you to make time and &lt;strong&gt;do&lt;/strong&gt;, it helps with discipline. And once you get the discipline ball rolling, it’s hard to stop.&lt;/p&gt;
-
-&lt;p&gt;The things that I have been recently working on are:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;My kendama collection app&lt;/li&gt;
-  &lt;li&gt;Finishing the Free Code Camp zipline projects&lt;/li&gt;
-  &lt;li&gt;And jotting down nuggets of knowledge on a TIL (today I learned) repo&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;I ran into a bit of a wall while working on the Wikipedia search project, diving into documentation that was super dense. This led to me working on it on and off since it was so frustrating, but I finally told myself that I should wrap it up and move on. What really helped was asking for help on the Gitter chat. As a senior student, I sometimes feel too arrogant to ask for help and that is a BIG mistake. Although Google is great, getting direct hints from others who have ran into these problems provides you with way better feedback.&lt;/p&gt;
-
-&lt;p&gt;That was all a bit too weird. To conclude, write more, get disciplined through writing and just find joy in the work.&lt;/p&gt;
-
-</content>
- </entry>
- 
- <entry>
-   <title>Going back to the gym</title>
-   <link href="http://danielcodes.github.io/2016/04/20/going-back-to-the-gym/"/>
-   <updated>2016-04-20T00:00:00-04:00</updated>
-   <id>http://danielcodes.github.io/2016/04/20/going-back-to-the-gym</id>
-   <content type="html">&lt;p&gt;I went back to the gym this week. I did it to stop myself from making anymore excuses. I have feeling super lackluster in terms of drive lately and so to reignite myself with a sense of purpose, I have decided to start exercising again. It doesn’t matter that I am injured, simply work around the problem. No excuses.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Either you run the day or the day runs you. - Jim Rohn&lt;/p&gt;
-&lt;/blockquote&gt;
-
-</content>
- </entry>
- 
- <entry>
-   <title>A commit a day</title>
-   <link href="http://danielcodes.github.io/2016/04/11/commit-streak/"/>
-   <updated>2016-04-11T00:00:00-04:00</updated>
-   <id>http://danielcodes.github.io/2016/04/11/commit-streak</id>
-   <content type="html">&lt;h3 id=&quot;the-decision&quot;&gt;The decision&lt;/h3&gt;
-
-&lt;p&gt;Last month, I set a goal to keep a GitHub commit streak, that is a commit a day. There were a couple of reasons that led to this decision:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;practice ABC (always be coding)&lt;/li&gt;
-  &lt;li&gt;work on more projects&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;There’s probably more, but those are the main ones. I had gotten into programming a bit late, if I wanted to keep up I needed to be constantly improving my skills.&lt;/p&gt;
-
-&lt;h3 id=&quot;what-ive-learned&quot;&gt;What I’ve learned&lt;/h3&gt;
-
-&lt;p&gt;I have managed to push a daily commit for the past 40 days&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/public/img/github-streak.png&quot; alt=&quot;commit-streak&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;I can’t say that I have managed to stay 100% true to my goal but I do have some interesting feedback. Setting the goal in itself was easy, so that was the easiest part, cutting the mental barrier. I also told myself that I wouldn’t push out stupid commits, as in commits that didn’t really count, my commits would be meaningful (or at least I would hope so). It is super hard to push out meaningful commits on a daily basis, coding is something that requires you to sit for an uninterrupted amount of time and just fight through problems. As fun as this is, I didn’t always find the time to sit and think and program. And thus I cheated. But not really. Here’s the breakdown of the repositories that I pushed to most often:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/danielcodes/fcc-projects&quot;&gt;FreeCodeCamp log&lt;/a&gt;, most of the FCC projects were done in CodePen so I just linked references to them in a repo&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/danielcodes/today-i-learned&quot;&gt;Today I learned&lt;/a&gt;, I started reading programming books and decided to jot down useful code snippets&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/danielcodes/danielcodes.github.io&quot;&gt;Blog posts&lt;/a&gt;, this posts are hosted through the GitHub, so free commits for every blog post&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;what-can-be-improved&quot;&gt;What can be improved&lt;/h3&gt;
-
-&lt;p&gt;This model is not perfect. I understand that the commits don’t seem super meaningful but I have managed to find some work arounds that still center on me learning a bit of code everyday. Things to improve on include finding more of that quiet time where I can just sit uninterrupted and code away at a project. This is the most meaningful way to push commits to immerse yourself in a project and code away.&lt;/p&gt;
-
-</content>
- </entry>
- 
- <entry>
    <title>Thoughts on hackathons</title>
    <link href="http://danielcodes.github.io/2016/04/04/thoughts-on-hackathons/"/>
    <updated>2016-04-04T00:00:00-04:00</updated>
@@ -586,115 +347,6 @@ sudo make install
  </entry>
  
  <entry>
-   <title>Positivity</title>
-   <link href="http://danielcodes.github.io/2016/03/22/positivity/"/>
-   <updated>2016-03-22T00:00:00-04:00</updated>
-   <id>http://danielcodes.github.io/2016/03/22/positivity</id>
-   <content type="html">&lt;p&gt;I type this as I already crossed out two previously written paragraphs. I hate it when this happens, but I don’t want to push out any negative vibes so I will halt. Haven’t been feeling 100% as of lately, but that’s about to change.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;In order to carry a positive action we must develop here a positive vision - Dalai Lama&lt;/p&gt;
-&lt;/blockquote&gt;
-
-</content>
- </entry>
- 
- <entry>
-   <title>Vagrant, we meet again</title>
-   <link href="http://danielcodes.github.io/2016/03/13/vagrant-we-meet-again/"/>
-   <updated>2016-03-13T00:00:00-05:00</updated>
-   <id>http://danielcodes.github.io/2016/03/13/vagrant-we-meet-again</id>
-   <content type="html">&lt;p&gt;I haven’t logged into my desktop vagrant box since October 2015. After logging in a couple of days ago, I managed to mess things up, and lost my VM (might have to do with the VirtualBox upgrade). It wasn’t a big deal though, it was the box spun up from the &lt;a href=&quot;https://www.vagrantup.com/docs/getting-started/&quot;&gt;Getting Started&lt;/a&gt; tutorial. Although, I did attempt to fix the problem by following &lt;a href=&quot;http://zachwills.net/fix-for-vagrant-not-detecting-existing-vm/&quot;&gt;this blog post&lt;/a&gt; but ultimately failed as when I did a &lt;code&gt;vagrant up&lt;/code&gt; it would not connect because of authentication and so I disposed of the box. In the process of trying to acquire a new Linux environment, I found out that 64-bit boxes would not work for whatever reason (this needed some looking into that I clearly didn’t want to do, vagrant bugs are notorious and I didn’t want to spend hours trying to fix this, speaking from experience), The boxes that I attempted to install are &lt;strong&gt;hashicorp/precise64&lt;/strong&gt; and &lt;strong&gt;ubuntu/trusty64&lt;/strong&gt;, both of which failed. And so, I had to stick with my old &lt;strong&gt;hashicorp/precise32&lt;/strong&gt; box.&lt;/p&gt;
-
-&lt;p&gt;The reason that I needed a Linux environment in my Windows machine was to run some C++ programs. I am currently a TA for an introductory course that requires me to grade programs. I didn’t want to do things on my small laptop screen and thought things would be much smoother on my larger 23-inch desktop monitor. Yeah, I know that it is completely overkill as all I needed to do was install &lt;a href=&quot;http://www.mingw.org/&quot;&gt;MinGW&lt;/a&gt; and the compiler. But after getting used to working on Linux on my laptop, MinGW is just not good enough. Who knows, maybe I might need to run some Python later on, or anything that is a nightmare setting up on Windows (everything).&lt;/p&gt;
-
-&lt;p&gt;After loading the box, I did a quick &lt;code&gt;vagrant ssh&lt;/code&gt; and ran the usual:&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;shell
-sudo apt-get update
-sudo apt-get upgrade
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;to get the machine up to date, and proceeded to install the software I needed, &lt;code&gt;gcc, vim, git and some python tools&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Process was relatively fast, about 10 minutes and I now had a fully working Linux environment. Maybe that is a bit of a stretch as I can only access the box through &lt;code&gt;ssh&lt;/code&gt; but good enough. With some basic tooling up, I needed to re-create my development environment which mainly includes of adding my &lt;code&gt;.vimrc and .bash_aliases&lt;/code&gt;. I have had to do this process a couple of times from the servers that I have had to configure so it might be time to learn some shell scripting and automate this process.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;If you need a quick and dirty way to set up a Linux environment on Windows, the &lt;strong&gt;Cygwin + Vagrant&lt;/strong&gt; combo is pretty good. The only downside is that you to learn some UNIX basics, and it’s preferred if you know Vim, although they do provide you with a shared folder where you can edit files with your native editor.&lt;/p&gt;
-
-&lt;h3 id=&quot;references&quot;&gt;References&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/danielcodes/dotfiles&quot;&gt;My dotfiles&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://atlas.hashicorp.com/boxes/search&quot;&gt;Vagrant boxes&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.ee.surrey.ac.uk/Teaching/Unix/&quot;&gt;Unix basics&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-</content>
- </entry>
- 
- <entry>
-   <title>Things on Medium</title>
-   <link href="http://danielcodes.github.io/2016/03/07/things-on-medium/"/>
-   <updated>2016-03-07T00:00:00-05:00</updated>
-   <id>http://danielcodes.github.io/2016/03/07/things-on-medium</id>
-   <content type="html">&lt;p&gt;I have been reading a lot of stuff on Medium lately, though mostly the &lt;em&gt;Programming&lt;/em&gt; and &lt;em&gt;Javascript&lt;/em&gt; tags (duh). However, at times my attention diverts to top stories if the title is interesting or click-baity enough. Like the article about the &lt;a href=&quot;https://medium.com/@taliajane/an-open-letter-to-my-ceo-fb73df021e7a#.c0q7fr9do&quot;&gt;girl who got fired from Yelp&lt;/a&gt;, the lady who followed up with a lecture from her own life lessons, the guy who wrote about that we shouldn’t make judgement based on one article as we don’t know that person. Lastly, the lady who reprimanded the previous lady for lacking basic empathy. I referenced only the first article as the rest of the responses you can find on Medium just by typing the name of the author that created this crazy chain reaction. Though make sure you have time, as these articles are not short and maybe after you’ll start qusetioning why you decided to start reading this at all.&lt;/p&gt;
-
-&lt;p&gt;On a different note, I came across a more relevant article, titled &lt;a href=&quot;https://medium.com/@benedictfritz/learning-programming-isn-t-that-hard-deep-work-is-hard-40a4cf3104f4&quot;&gt;Learning programming isn’t that hard, deep work is hard&lt;/a&gt;. This piece describes the mentality needed to learn to program, that programming takes time to solve and progress comes in slowly &lt;strong&gt;(deep work)&lt;/strong&gt; rather than being able to immediately tackle TODO’s such as emails, meetings, etc &lt;strong&gt;(shallow work)&lt;/strong&gt;. This hit home for me as I am starting to immerse myself in programming, I see that even though at times you feel that you understand things (looking at code, going through tutorials, etc), &lt;strong&gt;you &lt;em&gt;MUST&lt;/em&gt; go through the struggle of doing the problem yourself&lt;/strong&gt;. There is a need to create that muscle memory connection, if your brain remembers struggling with the problem, chances are it’ll be no problem the next time around.&lt;/p&gt;
-
-&lt;p&gt;And, I finally wrapped up the Intermmediate Algorithms on Free Code Camp :)&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/public/img/fcc/inter_algo.png&quot; alt=&quot;Algo Badge&quot; /&gt;&lt;/p&gt;
-
-</content>
- </entry>
- 
- <entry>
-   <title>More Javascript practice</title>
-   <link href="http://danielcodes.github.io/2016/03/01/more-js-practice/"/>
-   <updated>2016-03-01T00:00:00-05:00</updated>
-   <id>http://danielcodes.github.io/2016/03/01/more-js-practice</id>
-   <content type="html">&lt;p&gt;I have had my eye on &lt;a href=&quot;http://www.freecodecamp.com/&quot;&gt;Free Code Camp&lt;/a&gt; for a while now, but I saw that it was teaching lot of the basics that I felt that I had already learned (at least some of it). But, after getting told on a phone interview that I would need to do a coding challenge in Javascript, I immediately jumped onto the Algorithms section and did as many of the challenges as time allowed. I was dumb and did not pick a large enough time window to practice all of these exercises. Of course, this was all happened after I was panicking as to what would be the best way to practice. After going through a couple of the exercises, I found them quite enjoyable and I managed to cram all the exercises (the basic algorithms section) in 2 days. Not bad for something that’s supposed to take an estimated 50 hours. Guess these 4 years in college haven’t been for nothing, HAHA.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/public/img/fcc/basic_algo.png&quot; alt=&quot;Badge&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;However, this wasn’t met without some resistance. I wasn’t super smooth at completing all the challenges and a couple of them took a fair bit of head banging. Here are some of the things I learned:&lt;/p&gt;
-
-&lt;h3 id=&quot;do-not-be-a-blind-coder&quot;&gt;1. DO NOT be a blind coder&lt;/h3&gt;
-
-&lt;p&gt;&lt;code&gt;console.log(all_things)&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;By this, I mean that do not write a mess of logic without making sure that these logic steps are correct. ie. if you’re creating an array of values, &lt;strong&gt;PRINT&lt;/strong&gt; that array and make sure that those values are there, same thing goes if you’re modifying it, always check that the output is as expected. The saying goes,&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Seeing is believing&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;which is absolutely true for programming, do not program blindly.&lt;/p&gt;
-
-&lt;h3 id=&quot;incorporate-functional-programming&quot;&gt;2. Incorporate functional programming&lt;/h3&gt;
-
-&lt;p&gt;This turned out to be a good chance to practice functional programming. Getting used to applying, &lt;code&gt;map(), filter() and reduce()&lt;/code&gt; whenever possible. If you don’t know what those are, here’s a brief overview:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Map&lt;/strong&gt;, applies a function to each element of an array&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Filter&lt;/strong&gt;, same as map, but only keeps the elements that return true&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Reduce&lt;/strong&gt;, takes an array and compresses it into a single value&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Some examples for each of these functions are, adding one to each element, getting the odds/evens and getting the sum of integers. Check out the &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array&quot;&gt;Docs&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;use-all-the-built-ins&quot;&gt;3. Use all the built-ins&lt;/h3&gt;
-
-&lt;p&gt;Most of the time, a lot of the functionality that you require is already provided in a method. A good example are Strings, there is &lt;code&gt;split(), join(), splice(), etc.&lt;/code&gt; just to name a few. Check out more &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String&quot;&gt;Docs&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
-
-&lt;p&gt;That sums it up. See your output, do not code logic on top of logic without seeing the results. Try to use &lt;code&gt;map, filter and reduce&lt;/code&gt;, chances are there are plenty of use cases. And use built-ins, these methods are there to make your life easier. With that said, happy coding :D&lt;/p&gt;
-
-</content>
- </entry>
- 
- <entry>
    <title>Playing with GET/POST on Flask</title>
    <link href="http://danielcodes.github.io/2016/02/15/get-and-post-on-flask/"/>
    <updated>2016-02-15T00:00:00-05:00</updated>
@@ -718,34 +370,31 @@ sudo apt-get upgrade
 &lt;p&gt;&lt;code&gt;GET&lt;/code&gt; can be passed arguments by a form or by a query string in the URL.&lt;/p&gt;
 
 &lt;h4 id=&quot;get-form&quot;&gt;GET Form&lt;/h4&gt;
-&lt;p&gt;```html&lt;/p&gt;
-&lt;form action=&quot;/get_something&quot; method=&quot;GET&quot;&gt;
-	&lt;input type=&quot;text&quot; name=&quot;name&quot; /&gt;
-	&lt;input type=&quot;text&quot; name=&quot;job&quot; /&gt;
-	&lt;input type=&quot;submit&quot; value=&quot;Add Person&quot; /&gt;
-&lt;/form&gt;
-&lt;p&gt;```&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;form action=&quot;/get_something&quot; method=&quot;GET&quot;&amp;gt;
+	&amp;lt;input type=&quot;text&quot; name=&quot;name&quot; &amp;gt;
+	&amp;lt;input type=&quot;text&quot; name=&quot;job&quot; &amp;gt;
+	&amp;lt;input type=&quot;submit&quot; value=&quot;Add Person&quot;&amp;gt;
+&amp;lt;/form&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h4 id=&quot;get-query-string&quot;&gt;GET Query string&lt;/h4&gt;
-&lt;p&gt;&lt;code&gt;
-http://arandomurl.com/get_something?name=daniel&amp;amp;job=student
+&lt;pre&gt;&lt;code&gt;http://arandomurl.com/get_something?name=daniel&amp;amp;job=student
 the ? is followed by key=value pairs tied together with an &amp;amp;
-&lt;/code&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;These are the two ways to pass arguments to a GET request, the way to retrieve them on Flask is by accessing the &lt;code&gt;args&lt;/code&gt; attribute, which returns a dictionary, containing the the key-value pairs passed. In this case, name and job.&lt;/p&gt;
 
-&lt;p&gt;```python
-#a dict
+&lt;pre&gt;&lt;code&gt;#a dict
 #check out the reference below for more on python dictionaries
-arguments = request.args&lt;/p&gt;
+arguments = request.args
 
-&lt;h1 id=&quot;a-specifir-argument&quot;&gt;a specifir argument&lt;/h1&gt;
-&lt;p&gt;name = request.args.get(‘name’) 
+#a specific argument 
+name = request.args.get(&#39;name&#39;) 
 #or
-name = request.args[‘name’]&lt;/p&gt;
+name = request.args[&#39;name&#39;]
 
-&lt;h1 id=&quot;note-if-argument-is-not-there-get-returns-none-access-with-brackets-gives-a-keyerror&quot;&gt;Note: if argument is not there, get returns None, access with brackets gives a KeyError&lt;/h1&gt;
-&lt;p&gt;```&lt;/p&gt;
+#Note: if argument is not there, get returns None, access with brackets gives a KeyError
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h3 id=&quot;the-post-method&quot;&gt;The POST method&lt;/h3&gt;
 
@@ -756,38 +405,35 @@ name = request.args[‘name’]&lt;/p&gt;
 &lt;p&gt;ie. creating a new account, saving records to a database.&lt;/p&gt;
 
 &lt;h4 id=&quot;post-form&quot;&gt;POST Form&lt;/h4&gt;
-&lt;p&gt;```html&lt;/p&gt;
-&lt;form action=&quot;/post_something&quot; method=&quot;POST&quot;&gt;
-	&lt;input type=&quot;text&quot; name=&quot;name&quot; /&gt;
-	&lt;input type=&quot;text&quot; name=&quot;job&quot; /&gt;
-	&lt;input type=&quot;submit&quot; value=&quot;Add Person&quot; /&gt;
-&lt;/form&gt;
-&lt;p&gt;```&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;form action=&quot;/post_something&quot; method=&quot;POST&quot;&amp;gt;
+	&amp;lt;input type=&quot;text&quot; name=&quot;name&quot; &amp;gt;
+	&amp;lt;input type=&quot;text&quot; name=&quot;job&quot; &amp;gt;
+	&amp;lt;input type=&quot;submit&quot; value=&quot;Add Person&quot;&amp;gt;
+&amp;lt;/form&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;When this form is submitted, the following passed arguments, name and job can be accessed in the following manner:&lt;/p&gt;
 
-&lt;p&gt;```python
-#a dict
-arguments = request.form&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#a dict
+arguments = request.form
 
-&lt;h1 id=&quot;a-specific-argument&quot;&gt;a specific argument&lt;/h1&gt;
-&lt;p&gt;name = request.form.get(‘name’)
+#a specific argument 
+name = request.form.get(&#39;name&#39;)
 #or
-name = request.form[‘name’]&lt;/p&gt;
+name = request.form[&#39;name&#39;]
 
-&lt;h1 id=&quot;note-if-argument-is-not-there-get-returns-none-access-with-brackets-gives-a-keyerror-1&quot;&gt;Note: if argument is not there, get returns None, access with brackets gives a KeyError&lt;/h1&gt;
-&lt;p&gt;```&lt;/p&gt;
+#Note: if argument is not there, get returns None, access with brackets gives a KeyError
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h3 id=&quot;abusing-getpost&quot;&gt;Abusing GET/POST&lt;/h3&gt;
 &lt;p&gt;So far, I’ve shown that both &lt;strong&gt;GET&lt;/strong&gt; and &lt;strong&gt;POST&lt;/strong&gt; can take arguments in pretty much the same manner. Difference is that one receives it in &lt;code&gt;args&lt;/code&gt; while the other in &lt;code&gt;form&lt;/code&gt;. In Flask, it looks a little like this:&lt;/p&gt;
 
-&lt;p&gt;```python
-@app.route(‘/&lt;some-url&gt;&#39;, methods=[&#39;GET&#39;, &#39;POST&#39;])
+&lt;pre&gt;&lt;code&gt;@app.route(&#39;/&amp;lt;some-url&amp;gt;&#39;, methods=[&#39;GET&#39;, &#39;POST&#39;])
 def some_view():
 	#depending on what method you used to pass arguments
-	#retrieve them from args or form and do something&lt;/some-url&gt;&lt;/p&gt;
+	#retrieve them from args or form and do something
 
-&lt;pre&gt;&lt;code&gt;return &amp;lt;some_html&amp;gt;  ```
+    return &amp;lt;some_html&amp;gt; 
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
@@ -799,70 +445,6 @@ def some_view():
   &lt;li&gt;&lt;a href=&quot;https://www.jeffknupp.com/blog/2014/03/03/what-is-a-web-framework/&quot;&gt;What is a web framework?&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://flask-sqlalchemy.pocoo.org/2.1/quickstart/&quot;&gt;Flask-sqlalchemy&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-</content>
- </entry>
- 
- <entry>
-   <title>Celebrating too early</title>
-   <link href="http://danielcodes.github.io/2016/02/13/celebrating-too-early/"/>
-   <updated>2016-02-13T00:00:00-05:00</updated>
-   <id>http://danielcodes.github.io/2016/02/13/celebrating-too-early</id>
-   <content type="html">&lt;p&gt;I had derp moment this Thursday when I thought a deed was done when it wasn’t.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Things are not done until they’re done.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;I should have known as the procedure felt super rushed and I was just so hyped that there had been a tiny bit of progress on what had been a week long struggle.&lt;/p&gt;
-
-&lt;p&gt;This reminded me of 2014’s &lt;strong&gt;Rockets vs. Trail Blazers&lt;/strong&gt; playoff series. The Rockets were up 2, but the Trail Blazers had one last possession with very little time left. Note that this was Game 6 with the Trail Blazers up 3 - 2, so it was very likely that the Rockets were going to force that Game 7. Lillard sunk a game winning 3, closing out the Rockets.&lt;/p&gt;
-
-&lt;h3 id=&quot;check-it-out-here&quot;&gt;Check it out here:&lt;/h3&gt;
-
-&lt;iframe style=&quot;padding-bottom: 20px; padding-top: 20px;&quot; width=&quot;560&quot; height=&quot;400&quot; src=&quot;https://www.youtube.com/embed/V2GJ2PwXQ4E&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;Funny thing was that Lillard was pretty expressionless after that shot. On an interview with Conan (which I can’t seem to find) he’d said that he knew better than to celebrate early as he’d lost a High School game in that same manner and vowed to never celebrate too early again.&lt;/p&gt;
-
-&lt;h3 id=&quot;moral-of-the-story-is&quot;&gt;Moral of the story is:&lt;/h3&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Don’t rush the process, follow through and finish&lt;/p&gt;
-&lt;/blockquote&gt;
-
-</content>
- </entry>
- 
- <entry>
-   <title>A productive winter break</title>
-   <link href="http://danielcodes.github.io/2016/02/06/productive-winter-break/"/>
-   <updated>2016-02-06T00:00:00-05:00</updated>
-   <id>http://danielcodes.github.io/2016/02/06/productive-winter-break</id>
-   <content type="html">&lt;p&gt;I had a very productive winter break. I managed to hit alot of milestones and that required a drastic change in my day to day routine. Amongst the things that I accomplished are:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Finishing 3 Pluralsight courses&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Advanced Javascript&lt;/li&gt;
-      &lt;li&gt;Python Fundamentals&lt;/li&gt;
-      &lt;li&gt;Python Beyond the Basics&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Doing a chapter a day from the Test Driven Development with Python book&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;I started by reading the &lt;a href=&quot;https://github.com/getify/You-Dont-Know-JS&quot;&gt;&lt;strong&gt;You-Dont-Know-JS&lt;/strong&gt;&lt;/a&gt; book series, managed to get past the first two and decided to just do the video lesson instead. I still plan to finish the rest of the books somewhere along this semester. As to Python, having worked on a Django project in the Fall, at times I felt that my understanding was lacking. So I took the time to really get the basics down, this has helped tremendously as I feel much more confident in my ability to read Python code. Consuming too much video material in one sitting is always a bad idea (found that the hard way), so I found balance by watching only an hour of the course per day. This was followed by practicing whatever I had learned right away.&lt;/p&gt;
-
-&lt;p&gt;Learning the basics of a language was only part of my day, I used the rest of the day to read a chapter from &lt;a href=&quot;http://chimera.labs.oreilly.com/books/1234000000754/index.html&quot;&gt;&lt;strong&gt;TDD with Python&lt;/strong&gt;&lt;/a&gt;. These chapters were &lt;strong&gt;DENSE&lt;/strong&gt; so I had to spend a good 2 - 3 hours per chapter, that is only if things went smoothly, at times debugging would take a frustratingly long time. I managed to cover everything from Chapter 8 to Chapter 19. I still have 2 chapters until I wrap up the book, which will get done somewhere in this month. Overall it’s been such a great book, hands-on teaching on the TDD practice. Really can’t wait to start applying it to my own projects.&lt;/p&gt;
-
-&lt;p&gt;This pretty much sums it up, most of the week (I’d say 5/7 days) I would make sure that I got a hour of video and one chapter of the book down, no matter what. This wouldn’t have been possible with the irregular sleep schedule that I had at that time. I needed to become a morning person. A morning person, gets more hours in the day and if I was to be productive at all, I needed all the time I could get my hands on.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Become productivity-obssessed, wake up early, and get work done.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;That’s my new motto.&lt;/p&gt;
-
 </content>
  </entry>
  
@@ -875,13 +457,13 @@ def some_view():
 
 &lt;h3 id=&quot;the-variables-url-and-identifier&quot;&gt;The variables, url and identifier&lt;/h3&gt;
 
-&lt;p&gt;```javascript
-var disqus_config = function () {
-	// Replace PAGE_URL with your page’s canonical URL variable
-	this.page.url = PAGE_URL;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var disqus_config = function () {
+	// Replace PAGE_URL with your page&#39;s canonical URL variable
+	this.page.url = PAGE_URL;
 
-&lt;pre&gt;&lt;code&gt;// Replace PAGE_IDENTIFIER with your page&#39;s unique identifier variable
-this.page.identifier = PAGE_IDENTIFIER;   }; ``` 
+	// Replace PAGE_IDENTIFIER with your page&#39;s unique identifier variable
+	this.page.identifier = PAGE_IDENTIFIER;  
+};
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h3 id=&quot;where-i-goofed-up&quot;&gt;Where I goofed up&lt;/h3&gt;
@@ -890,23 +472,21 @@ this.page.identifier = PAGE_IDENTIFIER;   }; ```
 
 &lt;p&gt;I headed over to the documentation and found that I needed to provide an absolute url, and the slug part of the url that comes after the domain name.&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;javascript
-//ie. example url and identifier
+&lt;pre&gt;&lt;code&gt;//ie. example url and identifier
 var this.page.url = &quot;http://danielcodes.github.io/2016/01/12/resuming-python/&quot;
 var this.page.identifier = &quot;/2016/01/12/resuming-python/&quot;
-&lt;/code&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;The way to obtain these variables with Jekyll is:&lt;/p&gt;
 
-&lt;p&gt;```javascript&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;
+// Replace PAGE_URL with your page&#39;s canonical URL variable
+var this.page.url = &quot;{{site.url}}{{page.url}}&quot;;
 
-&lt;p&gt;// Replace PAGE_URL with your page’s canonical URL variable
-var this.page.url = “{{site.url}}{{page.url}}”;&lt;/p&gt;
+// Replace PAGE_IDENTIFIER with your page&#39;s unique identifier variable
+var this.page.identifier = &quot;{{page.url}}&quot;;
 
-&lt;p&gt;// Replace PAGE_IDENTIFIER with your page’s unique identifier variable
-var this.page.identifier = “{{page.url}}”;&lt;/p&gt;
-
-&lt;p&gt;```&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;The beginning part, &lt;code&gt;site.url&lt;/code&gt; has to be defined in your &lt;code&gt;_config.yml&lt;/code&gt;, check mine &lt;a href=&quot;https://github.com/danielcodes/danielcodes.github.io/blob/master/_config.yml&quot;&gt;here&lt;/a&gt;. This is followed by, &lt;code&gt;page.url&lt;/code&gt;, which will look for the route of your blog post.&lt;/p&gt;
 
@@ -934,16 +514,13 @@ And don’t forget to test things out first!&lt;/p&gt;
 
 &lt;p&gt;I chose to be lazy and simply added the provided CDN to my site:&lt;/p&gt;
 
-&lt;p&gt;```html&lt;/p&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css&quot; /&gt;
-
-&lt;p&gt;```&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css&quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;With that in place, icon insertion is just a matter of placing &lt;code&gt;&amp;lt;i&amp;gt;&lt;/code&gt; tags, selecting the ones you want through a class:&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;html
-&amp;lt;i class=&quot;fa fa-github&quot;&amp;gt;&amp;lt;/i&amp;gt;
-&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;i class=&quot;fa fa-github&quot;&amp;gt;&amp;lt;/i&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;So I had the icons, the only extra thing that I did was wrap these tags with &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt; tags to link them to my profiles. Check it out in the JSFiddle below:&lt;/p&gt;
 
@@ -967,11 +544,10 @@ And don’t forget to test things out first!&lt;/p&gt;
 
 &lt;p&gt;Only two things remained to be done, remove the bullet points from the list and place the elements inline, done with the following bit of CSS:&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;css
-/*targetting the &amp;lt;ul&amp;gt; with social-icons class*/
+&lt;pre&gt;&lt;code&gt;/*targetting the &amp;lt;ul&amp;gt; with social-icons class*/
 .social-icons { list-style: none; }
 .social-icons li { display: inline-block; }
-&lt;/code&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Here’s the final result:&lt;/p&gt;
 
@@ -979,238 +555,6 @@ And don’t forget to test things out first!&lt;/p&gt;
 
 &lt;p&gt;No more annoying little dashes at the bottom, good grief.&lt;/p&gt;
 
-</content>
- </entry>
- 
- <entry>
-   <title>Reading Python, a formatted table</title>
-   <link href="http://danielcodes.github.io/2016/01/22/python-table-formatting/"/>
-   <updated>2016-01-22T00:00:00-05:00</updated>
-   <id>http://danielcodes.github.io/2016/01/22/python-table-formatting</id>
-   <content type="html">&lt;p&gt;After finshing the &lt;strong&gt;Python Fundamentals&lt;/strong&gt; course on Pluralsight, the next step was the follow-up course, &lt;strong&gt;Python - Beyond the Basics&lt;/strong&gt;. I recently went over the module about string and representations, which covered &lt;code&gt;str()&lt;/code&gt; and &lt;code&gt;repr()&lt;/code&gt;. Both methods when called on, provide information about the object instance. &lt;code&gt;str()&lt;/code&gt; providing a general description (contents) while &lt;code&gt;repr()&lt;/code&gt; provides a fuller description (type and other small details). The module was short and sweet, about 20 minutes long. However, near the end of the course, a program was introduced that created tables based on provided lists. And this Table class had &lt;code&gt;str()&lt;/code&gt; and &lt;code&gt;repr()&lt;/code&gt; methods defined. The &lt;code&gt;str()&lt;/code&gt; method provided the table contents in a nice formatted output, while &lt;code&gt;repr()&lt;/code&gt; simply provided the type and column titles.&lt;/p&gt;
-
-&lt;p&gt;```python
-#Defining columns and data lists
-header = [‘First Name’, ‘Last Name’]
-first = [‘Daniel’, ‘Ronnie’, ‘Vanessa’]
-last = [‘Chia’, ‘Hernandez’, ‘Luka’]&lt;/p&gt;
-
-&lt;p&gt;t = Table(header, first, last)&lt;/p&gt;
-
-&lt;p&gt;print(str(t))
-print(repr(t))&lt;/p&gt;
-
-&lt;h1 id=&quot;output&quot;&gt;Output&lt;/h1&gt;
-&lt;p&gt;#a formatted table for str()
-First Name Last Name
-========== =========
-Daniel     Chia   &lt;br /&gt;
-Ronnie     Hernandez
-Vanessa    Luka&lt;/p&gt;
-
-&lt;h1 id=&quot;type-and-column-titles-for-repr&quot;&gt;type and column titles for repr()&lt;/h1&gt;
-&lt;p&gt;Table(header=[‘First Name’, ‘Last Name’])
-```&lt;/p&gt;
-
-&lt;p&gt;As an exercise I decided to dive into the code and attempt to decipher what was being written. What followed was a painful time trying to understand the code. I don’t know Pluralsight’s policy on putting their content out in the open, so I won’t put up all the code, only snippets of it. Explaining whatever stumped me, so this post is to:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;reinforce my learning&lt;/li&gt;
-  &lt;li&gt;show insight to those who haven’t seen these practices&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Without further ado, let’s begin:&lt;/p&gt;
-
-&lt;p&gt;As you can see above, we’re passing a couple of lists (a header for the column titles, followed by lists of data) to the the Table class. This data is then manipulated in the &lt;code&gt;str()&lt;/code&gt; method to provide the formatted output shown.&lt;/p&gt;
-
-&lt;p&gt;The breakdown of the &lt;code&gt;str()&lt;/code&gt; function was actually quite simple:&lt;/p&gt;
-
-&lt;p&gt;First, a few variables are defined:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;number of columns&lt;/li&gt;
-  &lt;li&gt;widths of the colums, placed in a list
-    &lt;ul&gt;
-      &lt;li&gt;compare the longest string in a column vs. column title, the higher of the two becomes the width for that column&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;string formatters, to provide space padding for strings&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;The 3rd defined variable, provides a list of the string formatters, &lt;code&gt;[{:column_width}, {:column_width_2}, .. ]&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;```python
-#padding, example
-first_name = ‘‘.format(‘Daniel’)&lt;/p&gt;
-
-&lt;p&gt;’’’
-output -&amp;gt; ‘Daniel    ‘
-‘’’
-```&lt;/p&gt;
-
-&lt;p&gt;After setting up those variables, the table is built row by row.&lt;/p&gt;
-
-&lt;p&gt;First an empty list is created, then 3 append calls are made, one for the header, one for the = line separators and lastly pair up the data lists and place them row by row. Each row is then tied together with a space (column divider), and returned with new line separators for a tabular display.&lt;/p&gt;
-
-&lt;p&gt;I provide the code to create the table, you can get it from:&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;sh
-git clone https://gist.github.com/9840c91f8e94e5177aec.git table
-python3 table/table.py
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;First the empty list,&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;python
-#empyt list
-result = []
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Next, append the headers,&lt;/p&gt;
-
-&lt;p&gt;```python
-#append header, a generator expression 
-#formatters is the list with {:col_width}
-#ie. {:10}
-#header is a list of column titles
-#ie. [‘First name’, ‘Last name’]
-‘’’
-outputs -&amp;gt; (‘First name’, ‘Last Name’)
-note: You don’t actually see this, it is hidden in a generator expression, unless you decide to iterate over it. Note that the expression is inside the result list, [(gen. expr), ..]
-‘’’
-result.append(
-	formatters[i].format(header[i])
-	for i in range(col_count))&lt;/p&gt;
-
-&lt;p&gt;```&lt;/p&gt;
-
-&lt;p&gt;the line separators (=),&lt;/p&gt;
-
-&lt;p&gt;```python
-#append = line separator, also a generator expression
-#grab the widths, ie. [10, 9]
-‘’’
-outputs -&amp;gt; (‘==========’, ‘=========’)
-note: can’t see this either
-‘’’
-result.append(
-	(‘=’ * col_widths[i]
-	 for i in range(col_count)))&lt;/p&gt;
-
-&lt;p&gt;```&lt;/p&gt;
-
-&lt;p&gt;creating the rows based on the provided data lists,&lt;/p&gt;
-
-&lt;p&gt;```python
-#append data from lists (first and last names), tricky part
-#data is a tuple of lists 
-#ie. ( [first_names], [last_names], etc )
-#by using zip and the * operator, we’re unpacking this tuple and creating the pairs
-#we end up with [(first_name, last_name), (another_fn, another_ln), ..], which are the rows themselves!
-#we’re giving the appropiate padding to each string
-‘’’
-outputs -&amp;gt; [‘Daniel    ‘, ‘Chia     ‘],
-		   [‘Ronnie    ‘, ‘Hernandez’], 
-		   [‘Vanessa   ‘, ‘Luka     ‘]
-‘’’&lt;/p&gt;
-
-&lt;p&gt;for row in zip(*data):
-	result.append(
-		[formatters[i].format(row[i])
-		 for i in range(col_count)])
-```&lt;/p&gt;
-
-&lt;p&gt;and tying everything together.&lt;/p&gt;
-
-&lt;p&gt;```python
-#at this point our result list is almost complete
-#it looks like this, printing the items inside it&lt;/p&gt;
-
-&lt;p&gt;’’’
-[ (‘First name’, ‘Last Name’)
-  (‘==========’, ‘=========’)
-  [‘Daniel    ‘, ‘Chia     ‘] 
-  [‘Ronnie    ‘, ‘Hernandez’]
-  [‘Vanessa   ‘, ‘Luka     ‘] ]
-‘’’&lt;/p&gt;
-
-&lt;h1 id=&quot;join-the-rows-with-spaces&quot;&gt;join the rows with spaces&lt;/h1&gt;
-&lt;p&gt;result = (‘ ‘.join(r) for r in result)&lt;/p&gt;
-
-&lt;h1 id=&quot;return-the-list-with-line-separators-added&quot;&gt;return the list with line separators added&lt;/h1&gt;
-&lt;p&gt;#voila! the list is done
-return ‘\n’.join(rslt)
-```&lt;/p&gt;
-
-&lt;p&gt;Looking back at the code, it doesn’t seem so bad. It’s often lack of understanding that brings those ‘wat’ moments, so it’s worthwhile to spend the time understading concepts. Read and read more code. Narrowing down on the concepts that threw me off a bit, there are:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;lists comprehensions &lt;code&gt;[]&lt;/code&gt; vs. generator expressions &lt;code&gt;()&lt;/code&gt;
-    &lt;ul&gt;
-      &lt;li&gt;these are similar in providing a group a values&lt;/li&gt;
-      &lt;li&gt;some differences are that gen. expressions take less memory and cannot be accessed by index&lt;/li&gt;
-      &lt;li&gt;usage, for several iterations use a list, one time use, a generator expression&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;zip function, unpacking arguments with *
-    &lt;ul&gt;
-      &lt;li&gt;passing the * operator to &lt;code&gt;zip()&lt;/code&gt;, unpacks whatever arguments you throw at it&lt;/li&gt;
-      &lt;li&gt;in the example above, data is a tuple of lists (first, last) and we want to create rows out of that data. Without *, the lists would have been needed to be passed indidually to zip, &lt;code&gt;zip(list1, list2, ...)&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;escaping the &lt;code&gt;{}&lt;/code&gt; on format method
-    &lt;ul&gt;
-      &lt;li&gt;in order to create a list of formatters &lt;code&gt;{:col_widths}&lt;/code&gt;, the &lt;code&gt;{&lt;/code&gt; character needed to be escaped&lt;/li&gt;
-      &lt;li&gt;more info in the &lt;a href=&quot;https://docs.python.org/2/library/string.html#format-string-syntax&quot;&gt;official docs&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
-&lt;p&gt;Reading someone else’s code can be a humbling experience. It can be tough to break down the complexity of the code or peeling the layers, but at the same time, it is extremely rewarding. The &lt;strong&gt;Aha, I GOT IT!&lt;/strong&gt; moment. Using pen and paper to draw out the problem definitely helped in reducing the logic that I had to wrestle with in my mind.&lt;/p&gt;
-
-&lt;h3 id=&quot;references&quot;&gt;References&lt;/h3&gt;
-&lt;p&gt;[1] &lt;a href=&quot;http://code-maven.com/list-comprehension-vs-generator-expression&quot;&gt;Generator expressions&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;[2] Zip, &lt;a href=&quot;http://stackoverflow.com/questions/2511300/why-does-x-y-zipzipa-b-work-in-python&quot;&gt;here&lt;/a&gt; and &lt;a href=&quot;http://pavdmyt.com/python-zip-fu/&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
-
-</content>
- </entry>
- 
- <entry>
-   <title>Being goal oriented</title>
-   <link href="http://danielcodes.github.io/2016/01/21/goal-oriented/"/>
-   <updated>2016-01-21T00:00:00-05:00</updated>
-   <id>http://danielcodes.github.io/2016/01/21/goal-oriented</id>
-   <content type="html">&lt;p&gt;I have been having trouble thoughts lately, mostly leaning towards jealousy. Whether it’d be a relationship that i don’t have, or a material thing. I then begin to think as to what is it that I have. And obviously, the answer is that I have none of those things that I wish I had, that relationship or that material thing. All I have are goals. A mission, and work ethic. A willingness to bust my behind everyday and do whatever it takes to get to my goals. I understand that nothing is handed to anyone and only through hard work and sacrifice you will get to where you want to be in life.&lt;/p&gt;
-
-&lt;p&gt;Around the same time, I came across this video by Elliot Hulse:&lt;/p&gt;
-
-&lt;iframe style=&quot;padding-bottom: 20px;&quot; width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/r4RgAlz2pmM&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;It couldn’t have come at a better time as I was feeling a bit down. It talks about man’s mission-driven mentality. That you must not deter from your path no matter what. In the video, he’s giving advice to a guy who’s girlfriend wants him to go in a different direction than the one he wants to pursue. Things are a little different in my case, as I already have a goal in mind. I just need to execute.&lt;/p&gt;
-
-</content>
- </entry>
- 
- <entry>
-   <title>Resuming TDD with Python</title>
-   <link href="http://danielcodes.github.io/2016/01/12/resuming-python/"/>
-   <updated>2016-01-12T00:00:00-05:00</updated>
-   <id>http://danielcodes.github.io/2016/01/12/resuming-python</id>
-   <content type="html">&lt;p&gt;I am taking a small detour from learning Javascript. Reason being that there is still some unfinished Python business. I got the wake up call from watching this &lt;a href=&quot;https://youtu.be/z_ESakf05PQ&quot;&gt;small clip&lt;/a&gt;. The point is you can’t start something and not finish it. You want to…&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Always be closing&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;This fall semester I was tasked with learning and developing an application with Django, and do it in a Test-Driven manner if possible. This was hard, especially since my first tutorial on Django was &lt;a href=&quot;http://www.tangowithdjango.com/&quot;&gt;Tango with Django&lt;/a&gt;. As good as this tutorial was at teaching me the workflow for developing my first Django application, I still didn’t know a thing about testing (it was only touched on very briefly in one of the later chapters). Like any other curious programmer, I consulted the web. After a few searches, I found &lt;a href=&quot;http://chimera.labs.oreilly.com/books/1234000000754/index.html&quot;&gt;Test-Driven Development with Python&lt;/a&gt;. This was the perfect solution for my woes, I had found &lt;strong&gt;THE MANUAL&lt;/strong&gt; on how to get started with building an application on a test-first basis. I quickly went through the first 6 chapters, doing one chapter a day. With this I was able to dip my toes into TDD and use the code as reference for my &lt;a href=&quot;https://bitbucket.org/danielcodes/pipeline_monitor&quot;&gt;class project&lt;/a&gt;. However, I would be stuck on this chapter for a month or so since school things would take priority.&lt;/p&gt;
-
-&lt;p&gt;Fast foward a bit (school ended), I was still stuck on Chapter 8 of the tutorial. This chapter covered deployment, the requirements included a server and a domain name. I got mine from the &lt;a href=&quot;https://education.github.com/pack&quot;&gt;GitHub Student Package&lt;/a&gt;, both were being used to serve my class project and it needed to stay up for the professor to check that it was “live”. I waited until I received my grade and finally unhooked the domain name and destroyed the droplet. It was time to continue this TDD with Python tutorial. You can check my progress &lt;a href=&quot;https://github.com/danielcodes/superlists&quot;&gt;here&lt;/a&gt;. Currently &lt;a href=&quot;http://danielchia.me/&quot;&gt;live&lt;/a&gt;! :)&lt;/p&gt;
-
-&lt;p&gt;It just leaves a bad taste to leave things hanging, so it feels good to finally get this tutorial rolling again. I’m learning a ton. While I’m at it, I also solidifying my Python knowledge through this &lt;a href=&quot;https://www.pluralsight.com/courses/python-fundamentals&quot;&gt;Pluralsight course&lt;/a&gt;. The learning never stops.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt; Wrapping up TDD with Python, and learning more Python on Pluralsight&lt;/p&gt;
 </content>
  </entry>
  
@@ -1236,19 +580,6 @@ return ‘\n’.join(rslt)
 &lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt; Don’t be fooled by a laptop’s specs. If you just want to program, buy a cheap Thinkpad and throw Linux on it. Or get a Mac if you can afford it.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/public/img/laptop/cover.jpg&quot; alt=&quot;Cover&quot; /&gt;&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Javascript Bootcamp</title>
-   <link href="http://danielcodes.github.io/2015/12/29/js-bootcamp/"/>
-   <updated>2015-12-29T00:00:00-05:00</updated>
-   <id>http://danielcodes.github.io/2015/12/29/js-bootcamp</id>
-   <content type="html">&lt;p&gt;Right after my finals ended I thought about how to maximize my productivity during this upcoming winter break. I started reading articles on Medium, about the latest programming craze. Of course, it turned out to be Javascript. Although I’ve dabbed into the language, can’t say that I have full understanding of it. This left a bad taste whenever I’d have to write Javascript. I read The Good Parts by Douglas Crockford, some bits resonated while others just seemed too dense. What really got the ball rolling was this &lt;a href=&quot;https://medium.com/@_cmdv_/i-want-to-learn-javascript-in-2015-e96cd85ad225#.hcraa63br&quot;&gt;post&lt;/a&gt;. Next I started the You-Dont-Know-JS series. And after having finished the first two installments, I have to say that the style of teaching is very enjoyable and I am slowly uncovering Javascript. Anything that we can’t comprehend creates frustration, but if you have an understanding of things, there isn’t such problem.&lt;/p&gt;
-
-&lt;p&gt;Then, by some crazy/lucky occurrence, I was on the Javascript subreddit and found that these books were offered in video form. However, they were offered from sites such as Frontend Masters and Pluralsight, both of which required a paid subscription. Luckily, one of the comments pointed to the &lt;a href=&quot;https://www.visualstudio.com/en-us/products/visual-studio-dev-essentials-vs.aspx&quot;&gt;Visual Studio Dev Essentials&lt;/a&gt; site, which gave a free 6-month subscription to Pluralsight. Of course, I signed up right away.&lt;/p&gt;
-
-&lt;p&gt;Pluralsight not only has the YDKJS’s author videos but also a plethora of anything software related. I felt like I hit the jackpot. This is the perfect opportunity for me since I’ve been wanting to learn all things Javascript, and the tutorials seem legit enough. Now it’s only a matter of creating a sane schedule where I can slowly chip at the content everyday.&lt;/p&gt;
 </content>
  </entry>
  
@@ -1357,21 +688,6 @@ setw -g mode-mouse on
 
 &lt;p&gt;Hope you found these helpful, and happy tmuxing !&lt;/p&gt;
 
-</content>
- </entry>
- 
- <entry>
-   <title>Calm and health</title>
-   <link href="http://danielcodes.github.io/2015/12/15/calm-and-balance/"/>
-   <updated>2015-12-15T00:00:00-05:00</updated>
-   <id>http://danielcodes.github.io/2015/12/15/calm-and-balance</id>
-   <content type="html">&lt;p&gt;It’s been one heck of a semester. From thinking, ‘oh it’s going to be fun learning this and that’ to ‘shit, I have to get this and that done’, see the difference, not much fun. While I underestimated the semester’s course load, I’d say that I’ve improved in other aspects. Those being controlling my temper when things go wrong and maintaining a healthy lifestyle.&lt;/p&gt;
-
-&lt;p&gt;I’d like to address the first, my temper. Ever since I can remember i’ve always been a hot-head. I would always act in the spur of the moment, and deal with consequences after. This, of course, always got me into lots of trouble. Now, how does this relate to the present? Well, previously I ranted about being in a leadership position and having a hard time getting others to do their part. Although it’s been a frustrating experience, I have learned that nothing good comes out of agitating myself further and that I have to deal with things in a calm manner and try not to break walls.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/public/img/desk_flip.jpg&quot; alt=&quot;Fliptable&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;While learning to maintain calm in situations of high stress, I have also learned the importance of my health. It hasn’t been the best year for me in terms of health. I got a severe injury that has prevented me from going into the gym to lift weights and will remain that way for the next couple of months. As much as this sucks, I can’t do anything. Maintaining good health is crucial to suceed in others aspects of life. Just as easily as it has taken me out of the weight room, it can do so as well for everyday tasks that I take for granted. Health comes above all else.&lt;/p&gt;
 </content>
  </entry>
  

@@ -52,7 +52,7 @@
           Daniel Chia
         </a>
       </h1>
-      <p class="lead">Hi, I'm Daniel. Here's where I rant.</p>
+      <p class="lead">Mostly computer things</p>
     </div>
 
     <nav class="sidebar-nav">
@@ -98,18 +98,6 @@
           
         
       
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
 
 
     </nav>
@@ -123,7 +111,7 @@
 			<li> <a href="/atom.xml" target="_blank"> <i class="fa fa-rss fa-3x"></i> </a> </li>
 		</ul>
 
-		<p>&copy; 2017. All rights reserved.</p>
+		<p>&copy; 2018. All rights reserved.</p>
   </div>
 </div>
 
@@ -138,13 +126,13 @@
 
 <h3 id="the-variables-url-and-identifier">The variables, url and identifier</h3>
 
-<p>```javascript
-var disqus_config = function () {
-	// Replace PAGE_URL with your page’s canonical URL variable
-	this.page.url = PAGE_URL;</p>
+<pre><code>var disqus_config = function () {
+	// Replace PAGE_URL with your page's canonical URL variable
+	this.page.url = PAGE_URL;
 
-<pre><code>// Replace PAGE_IDENTIFIER with your page's unique identifier variable
-this.page.identifier = PAGE_IDENTIFIER;   }; ``` 
+	// Replace PAGE_IDENTIFIER with your page's unique identifier variable
+	this.page.identifier = PAGE_IDENTIFIER;  
+};
 </code></pre>
 
 <h3 id="where-i-goofed-up">Where I goofed up</h3>
@@ -153,23 +141,21 @@ this.page.identifier = PAGE_IDENTIFIER;   }; ```
 
 <p>I headed over to the documentation and found that I needed to provide an absolute url, and the slug part of the url that comes after the domain name.</p>
 
-<p><code>javascript
-//ie. example url and identifier
+<pre><code>//ie. example url and identifier
 var this.page.url = "http://danielcodes.github.io/2016/01/12/resuming-python/"
 var this.page.identifier = "/2016/01/12/resuming-python/"
-</code></p>
+</code></pre>
 
 <p>The way to obtain these variables with Jekyll is:</p>
 
-<p>```javascript</p>
+<pre><code>
+// Replace PAGE_URL with your page's canonical URL variable
+var this.page.url = "{{site.url}}{{page.url}}";
 
-<p>// Replace PAGE_URL with your page’s canonical URL variable
-var this.page.url = “{{site.url}}{{page.url}}”;</p>
+// Replace PAGE_IDENTIFIER with your page's unique identifier variable
+var this.page.identifier = "{{page.url}}";
 
-<p>// Replace PAGE_IDENTIFIER with your page’s unique identifier variable
-var this.page.identifier = “{{page.url}}”;</p>
-
-<p>```</p>
+</code></pre>
 
 <p>The beginning part, <code>site.url</code> has to be defined in your <code>_config.yml</code>, check mine <a href="https://github.com/danielcodes/danielcodes.github.io/blob/master/_config.yml">here</a>. This is followed by, <code>page.url</code>, which will look for the route of your blog post.</p>
 
@@ -210,9 +196,9 @@ And don’t forget to test things out first!</p>
     
       <li>
         <h3>
-          <a href="/2016/11/21/sudoku-bug/">
-            Sudoku bug
-            <small>21 Nov 2016</small>
+          <a href="/2016/04/04/thoughts-on-hackathons/">
+            Thoughts on hackathons
+            <small>04 Apr 2016</small>
           </a>
         </h3>
       </li>

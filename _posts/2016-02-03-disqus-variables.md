@@ -8,7 +8,7 @@ After deciding on the theme that I wanted to use for this site, [Hyde](https://g
 
 ### The variables, url and identifier
 
-```javascript
+~~~
 var disqus_config = function () {
 	// Replace PAGE_URL with your page's canonical URL variable
 	this.page.url = PAGE_URL;
@@ -16,7 +16,7 @@ var disqus_config = function () {
 	// Replace PAGE_IDENTIFIER with your page's unique identifier variable
 	this.page.identifier = PAGE_IDENTIFIER;  
 };
-``` 
+~~~
 
 ### Where I goofed up
 
@@ -24,15 +24,15 @@ The way Disqus works is by keying a provided URL, defined by a url variable. As 
 
 I headed over to the documentation and found that I needed to provide an absolute url, and the slug part of the url that comes after the domain name.
 
-```javascript
+~~~
 //ie. example url and identifier
 var this.page.url = "http://danielcodes.github.io/2016/01/12/resuming-python/"
 var this.page.identifier = "/2016/01/12/resuming-python/"
-```
+~~~
 
 The way to obtain these variables with Jekyll is:
 
-```javascript
+~~~
 {% raw %}
 // Replace PAGE_URL with your page's canonical URL variable
 var this.page.url = "{{site.url}}{{page.url}}";
@@ -40,7 +40,7 @@ var this.page.url = "{{site.url}}{{page.url}}";
 // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 var this.page.identifier = "{{page.url}}";
 {% endraw %}
-```
+~~~
 
 The beginning part, ```site.url``` has to be defined in your ```_config.yml```, check mine [here](https://github.com/danielcodes/danielcodes.github.io/blob/master/_config.yml). This is followed by, ```page.url```, which will look for the route of your blog post.
 

@@ -10,15 +10,15 @@ I decided to use [Font Awesome](https://fortawesome.github.io/Font-Awesome/) for
 
 I chose to be lazy and simply added the provided CDN to my site:
 
-```html
+~~~
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-```
+~~~
 
 With that in place, icon insertion is just a matter of placing ```<i>``` tags, selecting the ones you want through a class:
 
-```html
+~~~
 <i class="fa fa-github"></i>
-```
+~~~
 
 So I had the icons, the only extra thing that I did was wrap these tags with ```<a>``` tags to link them to my profiles. Check it out in the JSFiddle below:
 
@@ -40,11 +40,11 @@ Whatever the case may be. I proceeded to wrap the links in ```<li>``` tags and t
 
 Only two things remained to be done, remove the bullet points from the list and place the elements inline, done with the following bit of CSS:
 
-```css
+~~~
 /*targetting the <ul> with social-icons class*/
 .social-icons { list-style: none; }
 .social-icons li { display: inline-block; }
-```
+~~~
 
 Here's the final result:
 

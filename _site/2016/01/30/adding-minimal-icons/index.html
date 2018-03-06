@@ -52,7 +52,7 @@
           Daniel Chia
         </a>
       </h1>
-      <p class="lead">Hi, I'm Daniel. Here's where I rant.</p>
+      <p class="lead">Mostly computer things</p>
     </div>
 
     <nav class="sidebar-nav">
@@ -98,18 +98,6 @@
           
         
       
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
 
 
     </nav>
@@ -123,7 +111,7 @@
 			<li> <a href="/atom.xml" target="_blank"> <i class="fa fa-rss fa-3x"></i> </a> </li>
 		</ul>
 
-		<p>&copy; 2017. All rights reserved.</p>
+		<p>&copy; 2018. All rights reserved.</p>
   </div>
 </div>
 
@@ -140,16 +128,13 @@
 
 <p>I chose to be lazy and simply added the provided CDN to my site:</p>
 
-<p>```html</p>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
-
-<p>```</p>
+<pre><code>&lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"&gt;
+</code></pre>
 
 <p>With that in place, icon insertion is just a matter of placing <code>&lt;i&gt;</code> tags, selecting the ones you want through a class:</p>
 
-<p><code>html
-&lt;i class="fa fa-github"&gt;&lt;/i&gt;
-</code></p>
+<pre><code>&lt;i class="fa fa-github"&gt;&lt;/i&gt;
+</code></pre>
 
 <p>So I had the icons, the only extra thing that I did was wrap these tags with <code>&lt;a&gt;</code> tags to link them to my profiles. Check it out in the JSFiddle below:</p>
 
@@ -173,11 +158,10 @@
 
 <p>Only two things remained to be done, remove the bullet points from the list and place the elements inline, done with the following bit of CSS:</p>
 
-<p><code>css
-/*targetting the &lt;ul&gt; with social-icons class*/
+<pre><code>/*targetting the &lt;ul&gt; with social-icons class*/
 .social-icons { list-style: none; }
 .social-icons li { display: inline-block; }
-</code></p>
+</code></pre>
 
 <p>Here’s the final result:</p>
 
@@ -212,9 +196,9 @@
     
       <li>
         <h3>
-          <a href="/2016/11/21/sudoku-bug/">
-            Sudoku bug
-            <small>21 Nov 2016</small>
+          <a href="/2016/04/04/thoughts-on-hackathons/">
+            Thoughts on hackathons
+            <small>04 Apr 2016</small>
           </a>
         </h3>
       </li>

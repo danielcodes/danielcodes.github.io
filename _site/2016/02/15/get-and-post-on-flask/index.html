@@ -52,7 +52,7 @@
           Daniel Chia
         </a>
       </h1>
-      <p class="lead">Hi, I'm Daniel. Here's where I rant.</p>
+      <p class="lead">Mostly computer things</p>
     </div>
 
     <nav class="sidebar-nav">
@@ -98,18 +98,6 @@
           
         
       
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
 
 
     </nav>
@@ -123,7 +111,7 @@
 			<li> <a href="/atom.xml" target="_blank"> <i class="fa fa-rss fa-3x"></i> </a> </li>
 		</ul>
 
-		<p>&copy; 2017. All rights reserved.</p>
+		<p>&copy; 2018. All rights reserved.</p>
   </div>
 </div>
 
@@ -153,34 +141,31 @@
 <p><code>GET</code> can be passed arguments by a form or by a query string in the URL.</p>
 
 <h4 id="get-form">GET Form</h4>
-<p>```html</p>
-<form action="/get_something" method="GET">
-	<input type="text" name="name" />
-	<input type="text" name="job" />
-	<input type="submit" value="Add Person" />
-</form>
-<p>```</p>
+<pre><code>&lt;form action="/get_something" method="GET"&gt;
+	&lt;input type="text" name="name" &gt;
+	&lt;input type="text" name="job" &gt;
+	&lt;input type="submit" value="Add Person"&gt;
+&lt;/form&gt;
+</code></pre>
 
 <h4 id="get-query-string">GET Query string</h4>
-<p><code>
-http://arandomurl.com/get_something?name=daniel&amp;job=student
+<pre><code>http://arandomurl.com/get_something?name=daniel&amp;job=student
 the ? is followed by key=value pairs tied together with an &amp;
-</code></p>
+</code></pre>
 
 <p>These are the two ways to pass arguments to a GET request, the way to retrieve them on Flask is by accessing the <code>args</code> attribute, which returns a dictionary, containing the the key-value pairs passed. In this case, name and job.</p>
 
-<p>```python
-#a dict
+<pre><code>#a dict
 #check out the reference below for more on python dictionaries
-arguments = request.args</p>
+arguments = request.args
 
-<h1 id="a-specifir-argument">a specifir argument</h1>
-<p>name = request.args.get(‘name’) 
+#a specific argument 
+name = request.args.get('name') 
 #or
-name = request.args[‘name’]</p>
+name = request.args['name']
 
-<h1 id="note-if-argument-is-not-there-get-returns-none-access-with-brackets-gives-a-keyerror">Note: if argument is not there, get returns None, access with brackets gives a KeyError</h1>
-<p>```</p>
+#Note: if argument is not there, get returns None, access with brackets gives a KeyError
+</code></pre>
 
 <h3 id="the-post-method">The POST method</h3>
 
@@ -191,38 +176,35 @@ name = request.args[‘name’]</p>
 <p>ie. creating a new account, saving records to a database.</p>
 
 <h4 id="post-form">POST Form</h4>
-<p>```html</p>
-<form action="/post_something" method="POST">
-	<input type="text" name="name" />
-	<input type="text" name="job" />
-	<input type="submit" value="Add Person" />
-</form>
-<p>```</p>
+<pre><code>&lt;form action="/post_something" method="POST"&gt;
+	&lt;input type="text" name="name" &gt;
+	&lt;input type="text" name="job" &gt;
+	&lt;input type="submit" value="Add Person"&gt;
+&lt;/form&gt;
+</code></pre>
 
 <p>When this form is submitted, the following passed arguments, name and job can be accessed in the following manner:</p>
 
-<p>```python
-#a dict
-arguments = request.form</p>
+<pre><code>#a dict
+arguments = request.form
 
-<h1 id="a-specific-argument">a specific argument</h1>
-<p>name = request.form.get(‘name’)
+#a specific argument 
+name = request.form.get('name')
 #or
-name = request.form[‘name’]</p>
+name = request.form['name']
 
-<h1 id="note-if-argument-is-not-there-get-returns-none-access-with-brackets-gives-a-keyerror-1">Note: if argument is not there, get returns None, access with brackets gives a KeyError</h1>
-<p>```</p>
+#Note: if argument is not there, get returns None, access with brackets gives a KeyError
+</code></pre>
 
 <h3 id="abusing-getpost">Abusing GET/POST</h3>
 <p>So far, I’ve shown that both <strong>GET</strong> and <strong>POST</strong> can take arguments in pretty much the same manner. Difference is that one receives it in <code>args</code> while the other in <code>form</code>. In Flask, it looks a little like this:</p>
 
-<p>```python
-@app.route(‘/<some-url>', methods=['GET', 'POST'])
+<pre><code>@app.route('/&lt;some-url&gt;', methods=['GET', 'POST'])
 def some_view():
 	#depending on what method you used to pass arguments
-	#retrieve them from args or form and do something</some-url></p>
+	#retrieve them from args or form and do something
 
-<pre><code>return &lt;some_html&gt;  ```
+    return &lt;some_html&gt; 
 </code></pre>
 
 <h3 id="conclusion">Conclusion</h3>
@@ -234,7 +216,6 @@ def some_view():
   <li><a href="https://www.jeffknupp.com/blog/2014/03/03/what-is-a-web-framework/">What is a web framework?</a></li>
   <li><a href="http://flask-sqlalchemy.pocoo.org/2.1/quickstart/">Flask-sqlalchemy</a></li>
 </ul>
-
 
 </div>
 
@@ -262,9 +243,9 @@ def some_view():
     
       <li>
         <h3>
-          <a href="/2016/11/21/sudoku-bug/">
-            Sudoku bug
-            <small>21 Nov 2016</small>
+          <a href="/2016/04/04/thoughts-on-hackathons/">
+            Thoughts on hackathons
+            <small>04 Apr 2016</small>
           </a>
         </h3>
       </li>
