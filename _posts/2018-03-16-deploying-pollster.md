@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Creating a Voting App with create-react-app and Django
-comments: false
+comments: true
 ---
 
 The latest project that I worked on was **Pollster**, this is the Voting App in Free Code Camp's curriculumn. This was a good chance for me to build a project from the ground up and play with technologies that I had been eye balling for a while (mostly Redux). This also meant deploying the application. Check Github repo [here](https://github.com/danielcodes/voting_app).

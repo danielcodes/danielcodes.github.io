@@ -4,13 +4,178 @@
  <title>Daniel Chia</title>
  <link href="http://danielcodes.github.io/atom.xml" rel="self"/>
  <link href="http://danielcodes.github.io/"/>
- <updated>2018-03-06T13:35:19-05:00</updated>
+ <updated>2018-03-18T16:09:03-04:00</updated>
  <id>http://danielcodes.github.io</id>
  <author>
    <name>Daniel Chia</name>
    <email>danielarmandochia@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Creating a Voting App with create-react-app and Django</title>
+   <link href="http://danielcodes.github.io/2018/03/16/deploying-pollster/"/>
+   <updated>2018-03-16T00:00:00-04:00</updated>
+   <id>http://danielcodes.github.io/2018/03/16/deploying-pollster</id>
+   <content type="html">&lt;p&gt;The latest project that I worked on was &lt;strong&gt;Pollster&lt;/strong&gt;, this is the Voting App in Free Code Camp’s curriculumn. This was a good chance for me to build a project from the ground up and play with technologies that I had been eye balling for a while (mostly Redux). This also meant deploying the application. Check Github repo &lt;a href=&quot;https://github.com/danielcodes/voting_app&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Here are a few pictures:&lt;/p&gt;
+
+&lt;ul class=&quot;bxslider&quot;&gt;
+	&lt;li&gt;&lt;img src=&quot;/public/img/pollster/pollster_1.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;img src=&quot;/public/img/pollster/pollster_2.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;img src=&quot;/public/img/pollster/pollster_3.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The stack that I chose to use was:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;React + Redux&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Django&lt;/strong&gt; (especifically &lt;strong&gt;Django Rest Framework&lt;/strong&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I had used React for several side projects but had yet to integrate Redux for state management. This was a good place to start. After reading through the official docs and several tutorials, I settled on using the model provided in &lt;a href=&quot;http://jasonwatmore.com/post/2017/12/07/react-redux-jwt-authentication-tutorial-example&quot;&gt;this tutorial&lt;/a&gt;. However, after getting started I soon ran into trouble as adding CSS required modifying the webpack configuration. Also, I would need to configure bundling the app to be production ready. Due to this, I migrated most of the app to &lt;a href=&quot;https://github.com/facebook/create-react-app&quot;&gt;create-react-app&lt;/a&gt;. Using CRA, I saved myself some configuration steps and took the good bits from the other tutorial.&lt;/p&gt;
+
+&lt;p&gt;From here on, developing the application took the following workflow:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Create a page and decide on what was the data needed&lt;/li&gt;
+  &lt;li&gt;Create the &lt;strong&gt;constants&lt;/strong&gt; for the actions&lt;/li&gt;
+  &lt;li&gt;Define the &lt;strong&gt;actions&lt;/strong&gt; that would call the services, along with request, success and failure functions&lt;/li&gt;
+  &lt;li&gt;Define &lt;strong&gt;services&lt;/strong&gt;, which make the actual http calls to retrieve data handled in the actions&lt;/li&gt;
+  &lt;li&gt;Define the &lt;strong&gt;reducers&lt;/strong&gt; that will update the &lt;strong&gt;new state&lt;/strong&gt; accordingly&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This was actually a pretty tedious process. I guess that’s the Redux way of things. Also, if that made zero sense, take a look at the tutorial listed above.&lt;/p&gt;
+
+&lt;p&gt;Before starting any work on the above, I had hastily set up an API using &lt;strong&gt;Django Rest Framework&lt;/strong&gt; using viewsets and routers. By creating a few models and their serializers, you can have a full CRUD API with very few lines of code.&lt;/p&gt;
+
+&lt;p&gt;With this configuration, I had the following routes:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;/questions&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;/questions/_id&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;/choices&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;/choices/_id&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;/questions/_id/choices&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;/questions/user/user_id&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The first four were given for free, the last two I had to define on my own. Besides this, I used the &lt;code&gt;djoser&lt;/code&gt; package to provide &lt;strong&gt;JWT authentication&lt;/strong&gt;. Stitching this API and my frontend, I had put together a barebones application.&lt;/p&gt;
+
+&lt;p&gt;However, for certain user stories, I needed to secure parts of the application (ie. only auth users can create polls, only owners can delete questions, etc). For this, I needed to add certain permissions to the application and having the viewsets abstracting a lot of the &lt;code&gt;HTTP methods&lt;/code&gt; for each route, I didn’t have the finer control that I needed. I ended up having to rewrite the routes. I used this chance to write a full test suite for each of the routes, following &lt;a href=&quot;https://realpython.com/blog/python/test-driven-development-of-a-django-restful-api/&quot;&gt;this guide&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;requests-in-development&quot;&gt;Requests in development&lt;/h3&gt;
+
+&lt;p&gt;While developing the app, CRA has this &lt;code&gt;proxy&lt;/code&gt; key that you can throw in &lt;code&gt;package.json&lt;/code&gt;. This basically tells webpack to proxy requests to the specified port. For my Django API being served on port &lt;code&gt;8000&lt;/code&gt;, the setting looked like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&#39;proxy&#39;: &#39;http://localhost:8000&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;preparing-for-production&quot;&gt;Preparing for production&lt;/h3&gt;
+
+&lt;p&gt;I had worked on the app for a week and a half before I had completed all the &lt;a href=&quot;https://www.freecodecamp.org/challenges/build-a-voting-app&quot;&gt;user stories&lt;/a&gt;. Naturally the next step was deploying the application. Here is where I was stumped for some time. I asked, &lt;strong&gt;How would I mimic this development set up in production?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;I proceded by first creating the build bundle with &lt;code&gt;yarn build&lt;/code&gt;, then to serve the static files, I ran (inside the &lt;code&gt;build&lt;/code&gt; directory)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;python -m http.server 3000
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Here’s where the app broke, requests were not going through as there was no proxy redirecting the requests.&lt;/p&gt;
+
+&lt;p&gt;This followed a bit of a research period to find out how I could deploy this application. There weren’t any tutorials with what I was looking for, which was deploying an SPA with a REST API, both sitting on the same machine. However, when I took a closer look, there were tutorials for doing these things separately. I found the following two:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://medium.com/@timmykko/deploying-create-react-app-with-nginx-and-ubuntu-e6fe83c5e9e7&quot;&gt;Deploying create-react-app with Nginx and Ubuntu&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://simpleisbetterthancomplex.com/tutorial/2016/10/14/how-to-deploy-to-digital-ocean.html&quot;&gt;How to Deploy a Django Application to Digital Ocean&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The key to deploying the application was mixing these two tutorials together. Have Nginx serve the static files from the &lt;code&gt;/build&lt;/code&gt; directory created by &lt;code&gt;yarn build&lt;/code&gt; and proxy requests to the port where the Django application was being served. There was only one thing left to do, try it.&lt;/p&gt;
+
+&lt;h3 id=&quot;taking-action&quot;&gt;Taking action&lt;/h3&gt;
+
+&lt;p&gt;I started by first deploying my Django REST API as that was the tougher of the two. I started by first provisioning a $5 linux box from Linode (had some leftover credits). I followed these two guides to set up my server:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://linode.com/docs/getting-started/&quot;&gt;Getting started with Linode&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://linode.com/docs/security/securing-your-server/&quot;&gt;How to secure your server&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Once this was done, I followed the tutorial for deploying a Django app. The steps looked like this:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Update the machine (&lt;code&gt;apt-get update and upgrade&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;Install system dependencies (&lt;strong&gt;PostgreSQL&lt;/strong&gt;, &lt;strong&gt;Nginx&lt;/strong&gt;, &lt;strong&gt;Supervisor&lt;/strong&gt;, &lt;strong&gt;Python packages&lt;/strong&gt;, etc)&lt;/li&gt;
+  &lt;li&gt;Create the &lt;strong&gt;python virtualenv&lt;/strong&gt; and install the app dependencies&lt;/li&gt;
+  &lt;li&gt;Configure &lt;strong&gt;Gunicorn&lt;/strong&gt; to serve the application&lt;/li&gt;
+  &lt;li&gt;Configure &lt;strong&gt;Supervisor&lt;/strong&gt; to run the Gunicorn server&lt;/li&gt;
+  &lt;li&gt;Configure &lt;strong&gt;Nginx&lt;/strong&gt; to proxy requests to Gunicorn&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;adding-in-the-frontend&quot;&gt;Adding in the frontend&lt;/h3&gt;
+
+&lt;p&gt;Once the Django application was running, now I needed to serve the static files from the &lt;code&gt;build&lt;/code&gt; directory. Changes were made to the &lt;a href=&quot;https://simpleisbetterthancomplex.com/tutorial/2016/10/14/how-to-deploy-to-digital-ocean.html#configure-nginx&quot;&gt;original Nginx configuration file&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;To serve the static files from &lt;code&gt;build&lt;/code&gt;, these two lines were added&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;root /home/daniel/voting_app/client/build;
+index index.html index.htm;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Another change was that now the &lt;code&gt;/&lt;/code&gt; route would serve &lt;code&gt;index.html&lt;/code&gt; not proxy to the Django app&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;location / {
+  try_files $uri /index.html;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now the last change that was needed was to proxy the http calls to the Django app&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;location /api {
+  proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+  proxy_set_header Host $http_host;
+  proxy_redirect off;
+  proxy_pass http://app_server;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Doing these 3 modifications gave me the behaviour I wanted, to serve the &lt;code&gt;build/&lt;/code&gt; bundle created by CRA and proxy requests to Gunicorn which was serving the REST API. To see the final Nginx configuration check &lt;a href=&quot;https://gist.github.com/danielcodes/8e6ee3eea155d9e6bcd191e8f7bbab6d&quot;&gt;this gist&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;mistakes-i-made-attempting-this&quot;&gt;Mistakes I made attempting this&lt;/h3&gt;
+
+&lt;p&gt;This procedure was not as smooth of a transition as I described above. I am going to list some parts that I had to wrestle with before everything came together.&lt;/p&gt;
+
+&lt;h5 id=&quot;venv-folder-placement&quot;&gt;venv folder placement&lt;/h5&gt;
+
+&lt;p&gt;While setting up Gunicorn, I initially had my &lt;code&gt;venv&lt;/code&gt; directory set up two directories above my Django app directory. This caused all types of &lt;code&gt;file not found&lt;/code&gt; errors when I accessed the directories with &lt;code&gt;../../venv/activate&lt;/code&gt; on the Gunicorn configuration file.&lt;/p&gt;
+
+&lt;p&gt;To avoid this, place the &lt;code&gt;venv&lt;/code&gt; only a level above your application directory. In my case this looked like:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+├── client
+├── project
+└── venv
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&quot;make-your-api-routes-distinct&quot;&gt;Make your API routes distinct&lt;/h5&gt;
+
+&lt;p&gt;For the frontend, React Router takes care of the routing. In the backend, it is the configured Django urls. Not thinking ahead, I had created conflicting urls, where I had a route for &lt;code&gt;/questions&lt;/code&gt; in both React Router and Django. Navigating through the site to get to &lt;code&gt;/questions&lt;/code&gt; worked fine but if the url was punched in through the browser, I would end up with the Django page serving the JSON data.&lt;/p&gt;
+
+&lt;p&gt;To resolve this, I prefixed all Django urls with &lt;code&gt;/api&lt;/code&gt;. Now the routes set up by React Router and the Django urls did not conflict.&lt;/p&gt;
+
+&lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
+
+&lt;p&gt;Overall, a pretty fun experience. Deployment still isn’t the easiest thing to do but I’m happy with the progress.&lt;/p&gt;
+
+&lt;h3 id=&quot;tldr&quot;&gt;TL;DR&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Deploying a create-react-app SPA and a REST API in the same machine.&lt;/li&gt;
+  &lt;li&gt;Use Nginx to serve the static files from your SPA build bundle and proxy the requests to the server serving the REST API.&lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>Building a Simon game</title>
