@@ -1,9 +1,0 @@
-/*Some customization*/
-
-/*removing the ugly shadow from links*/
-.social-icons { list-style: none; padding: 0; }
-.social-icons li { display: inline-block; }
-.social-icons li a:hover { color: #111; }
-
-
-
